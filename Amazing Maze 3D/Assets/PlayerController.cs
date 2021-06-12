@@ -5,8 +5,9 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float speed = 12f;
+    [SerializeField] private float speed = 12f, birdsEyeCamSmooth = 5f, birdsEyeCamMaxY = 30f;
     private float gravity = -9.81f;
+    private Vector3 target;
     private CharacterController controller;
 
     public Text winnerText;
@@ -15,6 +16,8 @@ public class PlayerController : MonoBehaviour
     public float groundDistance = 0.4f;
     public LayerMask groundLayer;
     bool isGrounded;
+
+    public Camera birdsEyeCam;
 
     Vector3 velocity;
 
@@ -25,9 +28,14 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        PlayerMovement();
+    }
+
+    private void PlayerMovement()
+    {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundLayer);
 
-        if(isGrounded && velocity.y < 0)
+        if (isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
         }
@@ -43,6 +51,7 @@ public class PlayerController : MonoBehaviour
 
         controller.Move(velocity * Time.deltaTime);
     }
+
 
     private void OnTriggerEnter(Collider other)
     {
