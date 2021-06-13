@@ -34,6 +34,7 @@ public class Paintable : MonoBehaviour
                         paint.transform.rotation = Quaternion.identity;
                         paint.transform.localScale = Vector3.one * brushSize;
                         paint.SetActive(true);
+                        ObjectPooler.instance.sprayAmount--;
                     }
                 }
             }

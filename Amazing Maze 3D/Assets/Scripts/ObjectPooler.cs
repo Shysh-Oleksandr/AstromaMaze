@@ -7,7 +7,7 @@ public class ObjectPooler : MonoBehaviour
     public static ObjectPooler instance;
     public List<GameObject> pooledObjects;
     public GameObject objectToPool;
-    public int amountToPool;
+    public int amountToPool, sprayAmount;
 
     void Awake()
     {
@@ -26,6 +26,8 @@ public class ObjectPooler : MonoBehaviour
             pooledObjects.Add(obj);
             obj.transform.SetParent(this.transform); // set as children of Spawn Manager
         }
+
+        sprayAmount = amountToPool;
     }
 
     public GameObject GetPooledObject()
@@ -39,6 +41,7 @@ public class ObjectPooler : MonoBehaviour
                 return pooledObjects[i];
             }
         }
+
         Debug.Log("There are no objects in the pool.");
         // otherwise, return null   
         return null;
