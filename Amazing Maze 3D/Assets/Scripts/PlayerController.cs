@@ -5,21 +5,18 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float speed = 12f, birdsEyeCamSmooth = 5f, birdsEyeCamMaxY = 30f;
+    [SerializeField] private float speed = 12f;
+    [SerializeField] private float groundDistance = 0.4f;
     private float gravity = -9.81f;
-    private Vector3 target;
-    private CharacterController controller;
-
-    public Text winnerText;
-
-    public Transform groundCheck;
-    public float groundDistance = 0.4f;
-    public LayerMask groundLayer;
-    bool isGrounded;
+    private bool isGrounded;
 
     public Camera birdsEyeCam;
+    public Text winnerText;
+    public Transform groundCheck;
+    public LayerMask groundLayer;
 
-    Vector3 velocity;
+    private Vector3 velocity;
+    private CharacterController controller;
 
     void Start()
     {

@@ -1678,15 +1678,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 12
-  birdsEyeCamSmooth: 80
-  birdsEyeCamMaxY: 30
+  groundDistance: 0
+  birdsEyeCam: {fileID: 1289801866}
   winnerText: {fileID: 2128252085}
   groundCheck: {fileID: 1580363060}
-  groundDistance: 0
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
-  birdsEyeCam: {fileID: 1289801866}
 --- !u!1001 &852269574
 PrefabInstance:
   m_ObjectHideFlags: 0
