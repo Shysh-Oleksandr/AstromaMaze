@@ -18,7 +18,7 @@ public class Paintable : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButton(0) && mainCam.gameObject.activeSelf)
+        if (Input.GetMouseButton(0) && mainCam.gameObject.activeSelf && GameManager.isGameRunning)
         {
             Paint();
         }

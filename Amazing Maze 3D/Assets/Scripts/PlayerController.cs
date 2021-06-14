@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
         controller = GetComponent<CharacterController>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         PlayerMovement();
 
@@ -55,10 +55,17 @@ public class PlayerController : MonoBehaviour
     {
         if (other.tag == "Door")
         {
-            Debug.Log("Win!");
-            winnerText.gameObject.SetActive(true);
-
-            Time.timeScale = 0f;
+            Win();
         }
+    }
+
+    private void Win()
+    {
+        GameManager.isGameRunning = false;
+
+        Debug.Log("Win!");
+        winnerText.gameObject.SetActive(true);
+
+        Time.timeScale = 0f;
     }
 }

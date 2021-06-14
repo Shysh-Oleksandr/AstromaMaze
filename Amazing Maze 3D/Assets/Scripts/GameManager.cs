@@ -5,15 +5,15 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI sprayText, timerText;
-    private float startTime;
-    [SerializeField] float timeLeft = 88;
+    [SerializeField] TextMeshProUGUI sprayText, timerText, loseText;
+    [SerializeField] float timeLeft;
     private float secondsLeft, minutesLeft;
     bool takingAway = false;
+    public static bool isGameRunning = true;
 
     private void Start()
     {
-        startTime = Time.time;
+        isGameRunning = true;
     }
 
     void Update()
@@ -22,7 +22,23 @@ public class GameManager : MonoBehaviour
         {
             StartCoroutine("TimerTake");
         }
+
+        if(timeLeft < 0)
+        {
+            Lose();
+        }
+
+
         sprayText.text = "Spray: " + ObjectPooler.instance.sprayAmount;
+    }
+
+    private void Lose()
+    {
+        isGameRunning = false;
+
+        Debug.Log("Lose!");
+        loseText.gameObject.SetActive(true);
+        Time.timeScale = 0f;
     }
 
     IEnumerator TimerTake()
@@ -40,8 +56,8 @@ public class GameManager : MonoBehaviour
             timerText.text = "Time left: " + minutesLeft + ":" + secondsLeft;
         }
 
-        yield return new WaitForSeconds(1);
         timeLeft--;
+        yield return new WaitForSeconds(1);
 
         takingAway = false;
     }
