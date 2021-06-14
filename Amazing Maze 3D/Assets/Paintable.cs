@@ -39,7 +39,7 @@ public class Paintable : MonoBehaviour
                     localRotationY = playerTransform.eulerAngles.y;
                     localRotationY = Mathf.RoundToInt(localRotationY / 90) * 90;
 
-                    if (hit.collider.gameObject.CompareTag("Wall"))
+                    if (hit.collider.gameObject.CompareTag("Wall") || hit.collider.gameObject.CompareTag("Door"))
                     {
                         if (localRotationY == 0 || localRotationY == 360f)
                         {
