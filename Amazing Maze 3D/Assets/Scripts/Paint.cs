@@ -1,13 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Paintable : MonoBehaviour
+public class Paint : MonoBehaviour
 {
     public LayerMask paintableLayer;
     public Transform playerTransform;
 
-    [SerializeField] private float brushSize = 0.1f, availableDistance= 15f;
+    [SerializeField] private float brushSize = 0.1f, availableDistance = 10f;
     public float distanceToHit, localRotationY;
 
     Camera mainCam;
@@ -20,11 +18,11 @@ public class Paintable : MonoBehaviour
     {
         if (Input.GetMouseButton(0) && mainCam.gameObject.activeSelf && GameManager.isGameRunning)
         {
-            Paint();
+            PaintWall();
         }
     }
 
-    private void Paint()
+    private void PaintWall()
     {
         var Ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
@@ -60,7 +58,7 @@ public class Paintable : MonoBehaviour
                         {
                             paint.transform.rotation = Quaternion.Euler(-90f, 0, -90f);
                             paint.transform.position = hit.point + Vector3.one * 0.1f;
-                        } 
+                        }
                     }
                     else
                     {

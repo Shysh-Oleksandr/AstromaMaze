@@ -7,7 +7,7 @@ public class ObjectPooler : MonoBehaviour
     public static ObjectPooler instance;
     public List<GameObject> pooledObjects;
     public GameObject objectToPool;
-    public int amountToPool, sprayAmount;
+    public int amountToPool, sprayAmount, footprintAmountToPool;
 
     void Awake()
     {
@@ -17,7 +17,7 @@ public class ObjectPooler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Loop through list of pooled objects,deactivating them and adding them to the list 
+        // For paintings. 
         pooledObjects = new List<GameObject>();
         for (int i = 0; i < amountToPool; i++)
         {
@@ -26,6 +26,16 @@ public class ObjectPooler : MonoBehaviour
             pooledObjects.Add(obj);
             obj.transform.SetParent(this.transform); // set as children of Spawn Manager
         }
+
+        /*// For footprints.
+        pooledFootprints = new List<GameObject>();
+        for (int i = 0; i < footprintAmountToPool; i++)
+        {
+            GameObject obj = (GameObject)Instantiate(footprintToPool);
+            obj.SetActive(false);
+            pooledFootprints.Add(obj);
+            obj.transform.SetParent(this.transform); // set as children of Spawn Manager
+        }*/
 
         sprayAmount = amountToPool;
     }
@@ -46,5 +56,23 @@ public class ObjectPooler : MonoBehaviour
         // otherwise, return null   
         return null;
     }
+
+    /*public GameObject GetPooledFootprint()
+    {
+        // For as many objects as are in the pooledObjects list
+        for (int i = 0; i < pooledFootprints.Count; i++)
+        {
+            // if the pooled objects is NOT active, return that object 
+            if (!pooledFootprints[i].activeInHierarchy)
+            {
+                return pooledFootprints[i];
+            }
+        }
+
+        Debug.Log("There are no footprints in the pool.");
+        // otherwise, return null   
+        return null;
+    }*/
+
 
 }
