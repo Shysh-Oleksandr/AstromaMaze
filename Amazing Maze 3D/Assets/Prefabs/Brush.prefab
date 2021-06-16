@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 266223764691624968}
   - component: {fileID: 7549836745860837873}
   - component: {fileID: 616370057715886640}
+  - component: {fileID: 6555401873021523684}
   m_Layer: 0
   m_Name: Brush
   m_TagString: Untagged
@@ -81,3 +82,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6555401873021523684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4545625219983034106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4129f80bc029fbc48af9a6c0d8a514be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startDelay: 15
+  fadeRate: 0.01
+  timeForOneFade: 0.2
+  material: {fileID: 2100000, guid: 358aa8a3a978ef541be0bc758656ee0a, type: 2}

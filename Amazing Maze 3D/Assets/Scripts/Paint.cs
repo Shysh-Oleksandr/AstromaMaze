@@ -19,7 +19,7 @@ public class Paint : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButton(0) && mainCam.gameObject.activeSelf && GameManager.isGameRunning)
+        if (Input.GetMouseButton(0) && mainCam.gameObject.activeSelf && GameManager.isGameRunning && objectPooler.sprayAmount > 0)
         {
             PaintWall();
         }
@@ -76,6 +76,13 @@ public class Paint : MonoBehaviour
 
                     paint.transform.localScale = Vector3.one * brushSize;
                     paint.SetActive(true);
+                    IPooledObject pooledObj = paint.GetComponent<IPooledObject>();
+
+                    if (pooledObj != null)
+                    {
+                        pooledObj.OnObjectSpawn();
+                    }
+
                     objectPooler.sprayAmount--;
                 }
             }

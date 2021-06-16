@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1679137592681873685}
   - component: {fileID: 3878717809444837733}
+  - component: {fileID: 575095366}
   m_Layer: 0
   m_Name: RightShoeprint
   m_TagString: Untagged
@@ -82,3 +83,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &575095366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 182813202251567036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4129f80bc029fbc48af9a6c0d8a514be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startDelay: 10
+  fadeRate: 0.01
+  timeForOneFade: 0.1
+  material: {fileID: 2100000, guid: b0e83465449237b43aed5af8b355da85, type: 2}

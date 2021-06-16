@@ -45,9 +45,21 @@ public class Footprint : MonoBehaviour
             {
                 var leftFootprint = objectPooler.SpawnFromPool("LeftFootprint", position, rotation);
                 leftFootprint.SetActive(true);
+                LaunchOnSpawn(leftFootprint);
+
                 lastFootprint = position;
                 isRightFootprint = false;
             }
+        }
+    }
+
+    private static void LaunchOnSpawn(GameObject footprint)
+    {
+        IPooledObject pooledObj = footprint.GetComponent<IPooledObject>();
+
+        if (pooledObj != null)
+        {
+            pooledObj.OnObjectSpawn();
         }
     }
 
@@ -64,6 +76,7 @@ public class Footprint : MonoBehaviour
             {
                 var rightFootprint = objectPooler.SpawnFromPool("RightFootprint", position, rotation);
                 rightFootprint.SetActive(true);
+                LaunchOnSpawn(rightFootprint);
                 lastFootprint = position;
                 isRightFootprint = true;
             }
