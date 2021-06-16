@@ -12,6 +12,13 @@ public class Footprint : MonoBehaviour
 
     private bool isRightFootprint = false;
     private Vector3 lastFootprint;
+    private ObjectPooler objectPooler;
+
+
+    private void Start()
+    {
+        objectPooler = ObjectPooler.instance;
+    }
 
     private void Update()
     {
@@ -36,7 +43,8 @@ public class Footprint : MonoBehaviour
 
             if (Vector3.Distance(lastFootprint, position) > footprintIntervalDistance)
             {
-                Instantiate(leftFootprint, position, rotation);
+                var leftFootprint = objectPooler.SpawnFromPool("LeftFootprint", position, rotation);
+                leftFootprint.SetActive(true);
                 lastFootprint = position;
                 isRightFootprint = false;
             }
@@ -54,7 +62,8 @@ public class Footprint : MonoBehaviour
 
             if (Vector3.Distance(lastFootprint, position) > footprintIntervalDistance)
             {
-                Instantiate(rightFootprint, position, rotation);
+                var rightFootprint = objectPooler.SpawnFromPool("RightFootprint", position, rotation);
+                rightFootprint.SetActive(true);
                 lastFootprint = position;
                 isRightFootprint = true;
             }

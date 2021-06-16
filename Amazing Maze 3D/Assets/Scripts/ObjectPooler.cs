@@ -1,78 +1,97 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ObjectPooler : MonoBehaviour
 {
-    public static ObjectPooler instance;
-    public List<GameObject> pooledObjects;
-    public GameObject objectToPool;
-    public int amountToPool, sprayAmount, footprintAmountToPool;
+    [System.Serializable]
+    public class Pool
+    {
+        public string tag;
+        public GameObject prefab;
+        public int size;
+        public bool shouldExpand;
+    }
 
-    void Awake()
+    public List<Pool> pools;
+    public Dictionary<string, List<GameObject>> poolDictionary;
+
+    public int sprayAmount;
+
+    #region Singleton
+    public static ObjectPooler instance;
+
+    private void Awake()
     {
         instance = this;
     }
 
-    // Start is called before the first frame update
-    void Start()
+    #endregion
+
+    private void Start()
     {
-        // For paintings. 
-        pooledObjects = new List<GameObject>();
-        for (int i = 0; i < amountToPool; i++)
+        poolDictionary = new Dictionary<string, List<GameObject>>();
+
+        foreach (Pool pool in pools)
         {
-            GameObject obj = (GameObject)Instantiate(objectToPool);
-            obj.SetActive(false);
-            pooledObjects.Add(obj);
-            obj.transform.SetParent(this.transform); // set as children of Spawn Manager
+            List<GameObject> pooledObjects = new List<GameObject>();
+            for (int i = 0; i < pool.size; i++)
+            {
+                GameObject obj = (GameObject)Instantiate(pool.prefab);
+                obj.SetActive(false);
+                pooledObjects.Add(obj);
+                obj.transform.SetParent(this.transform);
+
+                if (pool.tag == "Paint")
+                {
+                    sprayAmount = pool.size;
+                }
+            }
+
+            poolDictionary.Add(pool.tag, pooledObjects);
+
         }
 
-        /*// For footprints.
-        pooledFootprints = new List<GameObject>();
-        for (int i = 0; i < footprintAmountToPool; i++)
-        {
-            GameObject obj = (GameObject)Instantiate(footprintToPool);
-            obj.SetActive(false);
-            pooledFootprints.Add(obj);
-            obj.transform.SetParent(this.transform); // set as children of Spawn Manager
-        }*/
-
-        sprayAmount = amountToPool;
     }
 
-    public GameObject GetPooledObject()
+    public GameObject SpawnFromPool(string tag, Vector3 position, Quaternion rotation)
     {
-        // For as many objects as are in the pooledObjects list
-        for (int i = 0; i < pooledObjects.Count; i++)
+        if (!poolDictionary.ContainsKey(tag))
+        {
+            Debug.LogWarning("Pool with tag " + tag + " doesn't exist.");
+            return null;
+        }
+
+        for (int i = 0; i < poolDictionary[tag].Count; i++)
         {
             // if the pooled objects is NOT active, return that object 
-            if (!pooledObjects[i].activeInHierarchy)
+            if (!poolDictionary[tag][i].activeInHierarchy)
             {
-                return pooledObjects[i];
+                poolDictionary[tag][i].transform.position = position;
+                poolDictionary[tag][i].transform.rotation = rotation;
+                return poolDictionary[tag][i];
             }
         }
+
+        foreach (Pool pool in pools)
+        {
+            if (pool.tag == tag)
+            {
+                if (pool.shouldExpand)
+                {
+                    GameObject obj = (GameObject)Instantiate(pool.prefab);
+                    obj.SetActive(false);
+                    obj.transform.position = position;
+                    obj.transform.rotation = rotation;
+                    poolDictionary[tag].Add(obj);
+                    return obj;
+                }
+            }
+        }
+
 
         Debug.Log("There are no objects in the pool.");
         // otherwise, return null   
         return null;
+
     }
-
-    /*public GameObject GetPooledFootprint()
-    {
-        // For as many objects as are in the pooledObjects list
-        for (int i = 0; i < pooledFootprints.Count; i++)
-        {
-            // if the pooled objects is NOT active, return that object 
-            if (!pooledFootprints[i].activeInHierarchy)
-            {
-                return pooledFootprints[i];
-            }
-        }
-
-        Debug.Log("There are no footprints in the pool.");
-        // otherwise, return null   
-        return null;
-    }*/
-
-
 }

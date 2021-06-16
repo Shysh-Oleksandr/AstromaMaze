@@ -3425,8 +3425,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1690817321}
-  - component: {fileID: 1690817320}
   - component: {fileID: 1690817322}
+  - component: {fileID: 1690817320}
   m_Layer: 0
   m_Name: SpawnManager
   m_TagString: Untagged
@@ -3446,11 +3446,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 213b89ece545f1d4ea5b91c7d68bb841, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pooledObjects: []
-  objectToPool: {fileID: 4545625219983034106, guid: 5b48ffc07f7e5374bb9e1d5b8028550a, type: 3}
-  amountToPool: 5000
+  pools:
+  - tag: Paint
+    prefab: {fileID: 4545625219983034106, guid: 5b48ffc07f7e5374bb9e1d5b8028550a, type: 3}
+    size: 200
+    shouldExpand: 0
+  - tag: LeftFootprint
+    prefab: {fileID: 1038440828052592606, guid: 0f9265e12c2fcbe4ea00ccdde397726a, type: 3}
+    size: 10
+    shouldExpand: 1
+  - tag: RightFootprint
+    prefab: {fileID: 182813202251567036, guid: d4fa1e69f842cc242b1927af8e2747fa, type: 3}
+    size: 10
+    shouldExpand: 1
   sprayAmount: 0
-  footprintAmountToPool: 500
 --- !u!4 &1690817321
 Transform:
   m_ObjectHideFlags: 0
@@ -3482,7 +3491,7 @@ MonoBehaviour:
     m_Bits: 64
   playerTransform: {fileID: 825215973}
   brushSize: 0.15
-  availableDistance: 10
+  availableDistance: 7
   distanceToHit: 0
   localRotationY: 0
 --- !u!1001 &1704564012

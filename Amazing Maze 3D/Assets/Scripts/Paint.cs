@@ -8,9 +8,12 @@ public class Paint : MonoBehaviour
     [SerializeField] private float brushSize = 0.1f, availableDistance = 10f;
     public float distanceToHit, localRotationY;
 
+    private ObjectPooler objectPooler;
+
     Camera mainCam;
     void Start()
     {
+        objectPooler = ObjectPooler.instance;
         mainCam = Camera.main;
     }
 
@@ -31,46 +34,59 @@ public class Paint : MonoBehaviour
             distanceToHit = Vector3.Distance(playerTransform.position, hit.point);
             if (distanceToHit < availableDistance)
             {
-                var paint = ObjectPooler.instance.GetPooledObject();
-                if (paint != null)
-                {
-                    localRotationY = playerTransform.eulerAngles.y;
-                    localRotationY = Mathf.RoundToInt(localRotationY / 90) * 90;
+                var paint = objectPooler.SpawnFromPool("Paint", hit.point + Vector3.one * 0.1f, Quaternion.identity);
 
+                if(paint != null)
+                {
                     if (hit.collider.gameObject.CompareTag("Wall") || hit.collider.gameObject.CompareTag("Door"))
                     {
+                        Vector3 positionOuter = hit.point - Vector3.one * 0.1f;
+                        Vector3 positionInner = hit.point + Vector3.one * 0.1f;
+                        Quaternion rotationOuter = Quaternion.Euler(-90f, 0, 0);
+                        Quaternion rotationInner = Quaternion.Euler(-90f, 0, -90f);
+
+                        localRotationY = FindLocalRotationY();
+
                         if (localRotationY == 0 || localRotationY == 360f)
                         {
-                            paint.transform.rotation = Quaternion.Euler(-90f, 0, 0);
-                            paint.transform.position = hit.point - Vector3.one * 0.1f;
+                            paint = objectPooler.SpawnFromPool("Paint", positionOuter, rotationOuter);
                         }
                         else if (localRotationY == 180f)
                         {
-                            paint.transform.rotation = Quaternion.Euler(-90f, 0, 0);
-                            paint.transform.position = hit.point + Vector3.one * 0.1f;
+                            paint = objectPooler.SpawnFromPool("Paint", positionInner, rotationOuter);
+
                         }
                         else if (localRotationY == 90f)
                         {
-                            paint.transform.rotation = Quaternion.Euler(-90f, 0, -90f);
-                            paint.transform.position = hit.point - Vector3.one * 0.1f;
+
+                            paint = objectPooler.SpawnFromPool("Paint", positionOuter, rotationInner);
+
                         }
                         else if (localRotationY == 270f)
                         {
-                            paint.transform.rotation = Quaternion.Euler(-90f, 0, -90f);
-                            paint.transform.position = hit.point + Vector3.one * 0.1f;
+                            paint = objectPooler.SpawnFromPool("Paint", positionInner, rotationInner);
                         }
                     }
                     else
                     {
-                        paint.transform.rotation = Quaternion.identity;
-                        paint.transform.position = hit.point + Vector3.one * 0.1f;
+                        Vector3 position = hit.point + Vector3.one * 0.1f;
+                        paint = objectPooler.SpawnFromPool("Paint", position, Quaternion.identity);
+
                     }
 
                     paint.transform.localScale = Vector3.one * brushSize;
                     paint.SetActive(true);
-                    ObjectPooler.instance.sprayAmount--;
+                    objectPooler.sprayAmount--;
                 }
             }
         }
+    }
+
+    private float FindLocalRotationY()
+    {
+        localRotationY = playerTransform.eulerAngles.y;
+        localRotationY = Mathf.RoundToInt(localRotationY / 90) * 90;
+
+        return localRotationY;
     }
 }
