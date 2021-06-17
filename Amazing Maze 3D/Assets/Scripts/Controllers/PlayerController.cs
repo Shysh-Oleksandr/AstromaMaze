@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Door")
+        if (other.CompareTag("FinishPoint"))
         {
             Win();
         }

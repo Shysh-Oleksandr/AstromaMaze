@@ -13,30 +13,28 @@ public class Compass : MonoBehaviour
     private Vector3 _mTempVector;
     private float _mTempAngle;
 
-
     private void Update()
     {
         CompassRotation();
 
         if (Input.GetKeyDown(KeyCode.R))
         {
-            Debug.Log("R");
-            // Determine which direction to rotate towards
-            Vector3 targetDirection = Vector3.left - mPlayerTransform.position;
-
-            // The step size is equal to speed times frame time.
-            float singleStep = rotationSpeed * Time.deltaTime;
-
-            // Rotate the forward vector towards the target direction by one step
-            Vector3 newDirection = Vector3.RotateTowards(mPlayerTransform.forward, targetDirection, singleStep, 0.0f);
-
-            // Draw a ray pointing at our target in
-            Debug.DrawRay(mPlayerTransform.position, newDirection, Color.red);
-
-            // Calculate a rotation a step closer to the target and applies rotation to this object
-            mPlayerTransform.rotation = Quaternion.LookRotation(newDirection);
+            StartCoroutine(RotateToNorth());
         }
 
+    }
+
+    IEnumerator RotateToNorth()
+    {
+        Quaternion targetRotation = Quaternion.identity;
+        do
+        {
+            targetRotation = Quaternion.LookRotation(Vector3.left);
+            mPlayerTransform.rotation = Quaternion.RotateTowards(mPlayerTransform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+
+            yield return null;
+
+        } while (Quaternion.Angle(mPlayerTransform.rotation, targetRotation) > 0.01f);
     }
 
     private void CompassRotation()
