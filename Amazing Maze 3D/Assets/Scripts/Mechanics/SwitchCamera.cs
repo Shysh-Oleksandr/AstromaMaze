@@ -7,12 +7,16 @@ public class SwitchCamera : MonoBehaviour
     public Camera mainCam;
     public Camera birdsEyeCam;
 
+    [SerializeField] float birdsEyeViewCooldown;
+    float nextBirdsEyeView;
     bool isMainCam;
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && Time.time > nextBirdsEyeView)
         {
+            nextBirdsEyeView = Time.time + birdsEyeViewCooldown;
+
             ShowBirdsEyeView();
         }
     }

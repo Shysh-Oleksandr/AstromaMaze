@@ -1905,7 +1905,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 683530361}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.737339, y: 27.224953, z: -4.320072}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1925,6 +1925,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCam: {fileID: 963194227}
   birdsEyeCam: {fileID: 1289801866}
+  birdsEyeViewCooldown: 10
 --- !u!4 &691694664 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6609471152590010372, guid: c9a0a5e2e4a19234d97b8540ee176ea5, type: 3}
@@ -4485,7 +4486,7 @@ MonoBehaviour:
     m_Bits: 64
   playerTransform: {fileID: 825215973}
   brushSize: 0.15
-  availableDistance: 7
+  availableDistance: 6
   distanceToHit: 0
   localRotationY: 0
 --- !u!4 &1728947545 stripped

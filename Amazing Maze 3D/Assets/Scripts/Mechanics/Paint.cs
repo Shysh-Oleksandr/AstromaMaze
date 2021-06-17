@@ -38,7 +38,7 @@ public class Paint : MonoBehaviour
 
                 if(paint != null)
                 {
-                    if (!hit.collider.gameObject.CompareTag("Ground"))
+                    if (hit.collider.gameObject.CompareTag("Wall"))
                     {
                         Vector3 positionOuter = hit.point - Vector3.one * 0.1f;
                         Vector3 positionInner = hit.point + Vector3.one * 0.1f;
