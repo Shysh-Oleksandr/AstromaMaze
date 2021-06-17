@@ -57,6 +57,11 @@ public class PlayerController : MonoBehaviour
         {
             Win();
         }
+
+        if (other.CompareTag("SurprisedWall"))
+        {
+            Debug.Log("Surprise!");
+        }
     }
 
     private void Win()
