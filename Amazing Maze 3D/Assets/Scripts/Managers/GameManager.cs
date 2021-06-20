@@ -5,15 +5,16 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI sprayText, timerText, loseText;
+    [SerializeField] TextMeshProUGUI sprayText, timerText, loseText, coinsText;
     [SerializeField] float timeLeft;
-    private float secondsLeft, minutesLeft;
+    private float secondsLeft, minutesLeft, totalCoins;
     bool takingAway = false;
     public static bool isGameRunning = true;
 
     private void Start()
     {
         isGameRunning = true;
+        coinsText.text = "Coins: " + totalCoins;
     }
 
     void Update()
