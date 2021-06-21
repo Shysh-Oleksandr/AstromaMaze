@@ -19,7 +19,10 @@ public class Paint : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButton(0) && mainCam.gameObject.activeSelf && GameManager.isGameRunning && objectPooler.sprayAmount > 0)
+        if (Input.GetMouseButton(0) && 
+            mainCam.gameObject.activeSelf && 
+            GameManager.Instance.isGameRunning && 
+            objectPooler.sprayAmount > 0)
         {
             PaintWall();
         }

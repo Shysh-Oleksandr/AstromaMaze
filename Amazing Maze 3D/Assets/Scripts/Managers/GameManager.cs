@@ -1,15 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class GameManager : GenericSingletonClass<GameManager>
 {
-    [SerializeField] TextMeshProUGUI sprayText, timerText, loseText, coinsText;
-    [SerializeField] float timeLeft;
-    private float secondsLeft, minutesLeft, totalCoins;
-    bool takingAway = false;
-    public static bool isGameRunning = true;
+
+    public TextMeshProUGUI sprayText, timerText, loseText, coinsText, winnerText;
+    public Timer timer;
+
+    [SerializeField] private float totalCoins;
+    public bool isGameRunning = true;
 
     private void Start()
     {
@@ -19,16 +18,10 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if(!takingAway && timeLeft >= 0)
-        {
-            StartCoroutine("TimerTake");
-        }
-
-        if(timeLeft < 0)
+        if (timer.TimeLeft < 0)
         {
             Lose();
         }
-
 
         sprayText.text = "Spray: " + ObjectPooler.instance.sprayAmount;
     }
@@ -37,29 +30,19 @@ public class GameManager : MonoBehaviour
     {
         isGameRunning = false;
 
-        Debug.Log("Lose!");
         loseText.gameObject.SetActive(true);
         Time.timeScale = 0f;
     }
 
-    IEnumerator TimerTake()
+    public void Win()
     {
-        takingAway = true;
-        minutesLeft = (int)timeLeft / 60;
-        secondsLeft = timeLeft % 60;
+        isGameRunning = false;
 
-        if (secondsLeft < 10)
-        {
-            timerText.text = "Time left: " + minutesLeft + ":0" + secondsLeft;
-        }
-        else
-        {
-            timerText.text = "Time left: " + minutesLeft + ":" + secondsLeft;
-        }
+        Debug.Log("Win!");
+        winnerText.gameObject.SetActive(true);
 
-        timeLeft--;
-        yield return new WaitForSeconds(1);
-
-        takingAway = false;
+        Time.timeScale = 0f;
     }
+
+
 }

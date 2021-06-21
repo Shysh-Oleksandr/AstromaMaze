@@ -11,7 +11,6 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded;
 
     public Camera birdsEyeCam;
-    public Text winnerText;
     public Transform groundCheck;
     public LayerMask groundLayer;
 
@@ -55,7 +54,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.CompareTag("FinishPoint"))
         {
-            Win();
+            GameManager.Instance.Win();
         }
 
         if (other.CompareTag("SurprisedWall"))
@@ -64,13 +63,4 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void Win()
-    {
-        GameManager.isGameRunning = false;
-
-        Debug.Log("Win!");
-        winnerText.gameObject.SetActive(true);
-
-        Time.timeScale = 0f;
-    }
 }
