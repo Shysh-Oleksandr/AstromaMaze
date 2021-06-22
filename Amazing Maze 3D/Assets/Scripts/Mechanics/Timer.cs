@@ -13,7 +13,12 @@ public class Timer : MonoBehaviour
     {
         if (!takingAway && TimeLeft >= 0)
         {
-            StartCoroutine("RunTimerCoroutine");
+            StartCoroutine(RunTimerCoroutine());
+        }
+
+        if (TimeLeft < 0)
+        {
+            GameManager.Instance.UpdateGameState(GameState.Lose);
         }
     }
 
@@ -21,7 +26,7 @@ public class Timer : MonoBehaviour
     {
         takingAway = true;
         TimeSpan timeSpan = TimeSpan.FromSeconds(TimeLeft);
-        GameManager.Instance.timerText.text = "Time left: " + timeSpan.ToString("m':'ss");
+        UIManager.Instance.timerText.text = "Time left: " + timeSpan.ToString("m':'ss");
 
         TimeLeft--;
         yield return new WaitForSeconds(1);

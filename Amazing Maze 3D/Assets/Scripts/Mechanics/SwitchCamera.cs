@@ -13,7 +13,7 @@ public class SwitchCamera : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && Time.time > nextBirdsEyeView)
+        if (Input.GetKeyDown(KeyCode.E) && Time.time > nextBirdsEyeView && GameManager.Instance.isGameRunning)
         {
             nextBirdsEyeView = Time.time + birdsEyeViewCooldown;
 

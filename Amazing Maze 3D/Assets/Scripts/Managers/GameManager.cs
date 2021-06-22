@@ -1,48 +1,74 @@
-using TMPro;
+using System;
 using UnityEngine;
 
 public class GameManager : GenericSingletonClass<GameManager>
 {
+    public GameState State;
 
-    public TextMeshProUGUI sprayText, timerText, loseText, coinsText, winnerText;
-    public Timer timer;
+    public static event Action<GameState> OnGameStateChanged;
 
-    [SerializeField] private float totalCoins;
+    public float totalCoins;
     public bool isGameRunning = true;
 
     private void Start()
     {
         isGameRunning = true;
-        coinsText.text = "Coins: " + totalCoins;
+
+        UpdateGameState(State);
     }
 
-    void Update()
+
+    public void UpdateGameState(GameState newState)
     {
-        if (timer.TimeLeft < 0)
+        State = newState;
+
+        switch (newState) // Maybe replace with State?
         {
-            Lose();
+            case GameState.Playing:
+                break;
+            case GameState.Pause:
+                break;
+            case GameState.Victory:
+                HandleWin();
+                break;
+            case GameState.Lose:
+                HandleLose();
+                break;
+            case GameState.MainMenu:
+                Debug.Log("Menu");
+                break;
+            case GameState.LevelSelection:
+                Debug.Log("LevelSelection");
+                break;
         }
 
-        sprayText.text = "Spray: " + ObjectPooler.instance.sprayAmount;
+        OnGameStateChanged?.Invoke(newState);
     }
 
-    private void Lose()
+    private void HandleLose()
     {
         isGameRunning = false;
 
-        loseText.gameObject.SetActive(true);
+        UIManager.Instance.loseText.gameObject.SetActive(true);
         Time.timeScale = 0f;
     }
 
-    public void Win()
+    public void HandleWin()
     {
         isGameRunning = false;
 
-        Debug.Log("Win!");
-        winnerText.gameObject.SetActive(true);
+        UIManager.Instance.winnerText.gameObject.SetActive(true);
 
         Time.timeScale = 0f;
     }
+}
 
-
+public enum GameState
+{
+    MainMenu,
+    LevelSelection,
+    Playing,
+    Pause,
+    Victory,
+    Lose
 }

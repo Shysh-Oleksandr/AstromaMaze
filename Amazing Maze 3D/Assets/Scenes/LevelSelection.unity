@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 47d643f13cae3e34d8f10d6135e5a72e, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -3566,7 +3566,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 4.5904e-41, y: 185604100, z: 4.5904e-41, w: 3.59e-43}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -4162,7 +4162,6 @@ MonoBehaviour:
   speed: 12
   groundDistance: 0
   birdsEyeCam: {fileID: 1289801866}
-  winnerText: {fileID: 0}
   groundCheck: {fileID: 1580363060}
   groundLayer:
     serializedVersion: 2
@@ -5937,6 +5936,52 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9a0a5e2e4a19234d97b8540ee176ea5, type: 3}
+--- !u!1 &1197769004
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1197769006}
+  - component: {fileID: 1197769005}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1197769005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1197769004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeb0ff172014392438fdfbf755bf5f9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  State: 1
+  totalCoins: 0
+  isGameRunning: 1
+--- !u!4 &1197769006
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1197769004}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 557.0206, y: 31.834002, z: 479.80103}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1206985518 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 781375044290545836, guid: a0b33971529b2184b89399a4ca9ce09a, type: 3}
@@ -8690,7 +8735,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1690817321}
-  - component: {fileID: 1690817322}
   - component: {fileID: 1690817320}
   m_Layer: 0
   m_Name: SpawnManager
@@ -8712,10 +8756,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pools:
-  - tag: Paint
-    prefab: {fileID: 4545625219983034106, guid: 5b48ffc07f7e5374bb9e1d5b8028550a, type: 3}
-    size: 800
-    shouldExpand: 0
   - tag: LeftFootprint
     prefab: {fileID: 1038440828052592606, guid: 0f9265e12c2fcbe4ea00ccdde397726a, type: 3}
     size: 20
@@ -8739,26 +8779,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1690817322
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1690817319}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2907fd2c9c3db934989efc2bcb9108ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  paintableLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  playerTransform: {fileID: 825215973}
-  brushSize: 0.15
-  availableDistance: 6
-  distanceToHit: 0
-  localRotationY: 0
 --- !u!4 &1695484871 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 781375044290545836, guid: a0b33971529b2184b89399a4ca9ce09a, type: 3}

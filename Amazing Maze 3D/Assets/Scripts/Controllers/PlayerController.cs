@@ -54,7 +54,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.CompareTag("FinishPoint"))
         {
-            GameManager.Instance.Win();
+            GameManager.Instance.HandleWin();
         }
 
         if (other.CompareTag("SurprisedWall"))
