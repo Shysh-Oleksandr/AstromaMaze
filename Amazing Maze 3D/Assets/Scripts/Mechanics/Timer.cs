@@ -11,14 +11,14 @@ public class Timer : MonoBehaviour
 
     void Update()
     {
-        if (!takingAway && TimeLeft >= 0)
+        if (!takingAway && TimeLeft >= 0 && GameManager.Instance.State == GameState.Playing)
         {
             StartCoroutine(RunTimerCoroutine());
         }
 
         if (TimeLeft < 0)
         {
-            GameManager.Instance.UpdateGameState(GameState.Lose);
+            GameManager.Instance.UpdateGameState("Lose");
         }
     }
 

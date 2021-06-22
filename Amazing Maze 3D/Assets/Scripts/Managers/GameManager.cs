@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : GenericSingletonClass<GameManager>
 {
@@ -14,17 +15,31 @@ public class GameManager : GenericSingletonClass<GameManager>
     {
         isGameRunning = true;
 
-        UpdateGameState(State);
+/*        UpdateGameState(State.ToString());
+*/   }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            UpdateGameState("MainMenu");
+        }
     }
 
-
-    public void UpdateGameState(GameState newState)
+    public GameState SetEnum(string newState)
     {
-        State = newState;
+        State = (GameState)Enum.Parse(typeof(GameState), newState);
+        return State;
+    }
 
-        switch (newState) // Maybe replace with State?
+    public void UpdateGameState(string newState)
+    {
+        State = SetEnum(newState);
+        Debug.Log(State);
+
+        switch (State) 
         {
-            case GameState.Playing:
+            case GameState.Playing: // Lock cursor
                 break;
             case GameState.Pause:
                 break;
@@ -35,14 +50,14 @@ public class GameManager : GenericSingletonClass<GameManager>
                 HandleLose();
                 break;
             case GameState.MainMenu:
-                Debug.Log("Menu");
+                SceneChanger.Instance.FadeToLevel(0);
                 break;
             case GameState.LevelSelection:
-                Debug.Log("LevelSelection");
+                SceneChanger.Instance.FadeToLevel(1);
                 break;
         }
 
-        OnGameStateChanged?.Invoke(newState);
+        OnGameStateChanged?.Invoke(State);
     }
 
     private void HandleLose()
@@ -53,7 +68,7 @@ public class GameManager : GenericSingletonClass<GameManager>
         Time.timeScale = 0f;
     }
 
-    public void HandleWin()
+    private void HandleWin()
     {
         isGameRunning = false;
 

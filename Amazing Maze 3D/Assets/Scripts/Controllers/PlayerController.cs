@@ -10,7 +10,6 @@ public class PlayerController : MonoBehaviour
     private float gravity = -9.81f;
     private bool isGrounded;
 
-    public Camera birdsEyeCam;
     public Transform groundCheck;
     public LayerMask groundLayer;
 
@@ -54,7 +53,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.CompareTag("FinishPoint"))
         {
-            GameManager.Instance.HandleWin();
+            GameManager.Instance.UpdateGameState("Victory");
         }
 
         if (other.CompareTag("SurprisedWall"))

@@ -22,14 +22,6 @@ public class SceneChanger : GenericSingletonClass<SceneChanger>
     {
         levelToLoad = levelIndex;
         animator.SetTrigger("FadeOut");
-
-        switch (levelIndex)
-        {
-            case 0:
-                GameManager.Instance.UpdateGameState(GameState.MainMenu);
-                break;
-            
-        }
     }
 
     public void OnFadeComplete()

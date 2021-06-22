@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MouseLook : MonoBehaviour
@@ -10,8 +8,17 @@ public class MouseLook : MonoBehaviour
 
     public Transform playerBody;
 
+    private void Awake()
+    {
+        GameManager.OnGameStateChanged += GameManagerOnGameStateChanged;
+    }
 
-    void Start()
+    private void OnDestroy()
+    {
+        GameManager.OnGameStateChanged -= GameManagerOnGameStateChanged;
+    }
+
+    private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
     }
@@ -26,5 +33,17 @@ public class MouseLook : MonoBehaviour
 
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         playerBody.Rotate(Vector3.up * mouseX);
+    }
+
+    private void GameManagerOnGameStateChanged(GameState state)
+    {
+        if (state == GameState.Playing || state == GameState.LevelSelection)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
     }
 }
