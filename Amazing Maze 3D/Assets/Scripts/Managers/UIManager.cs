@@ -6,7 +6,7 @@ public class UIManager : MonoBehaviour
 {
     public TextMeshProUGUI sprayText, timerText, loseText, coinsText, winnerText;
 
-    public static event Action OnUIChanged;
+    //public static event Action OnUIChanged;
 
     #region Singleton 
     private static UIManager instance;
@@ -32,11 +32,22 @@ public class UIManager : MonoBehaviour
     {
         coinsText.text = "Coins: " + GameManager.Instance.totalCoins;
         sprayText.text = "Spray: " + ObjectPooler.instance.sprayAmount;
+
+        //OnUIChanged += OnSprayChanged;
     }
 
-    void Update()
+    private void OnDestroy()
+    {
+        //OnUIChanged -= OnSprayChanged;
+    }
+
+    private void Update()
+    {
+        OnSprayChanged();
+    }
+
+    private void OnSprayChanged()
     {
         sprayText.text = "Spray: " + ObjectPooler.instance.sprayAmount;
-
     }
 }

@@ -60,6 +60,13 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("Surprise!");
         }
+
+        if(other.GetComponent<LevelIndex>() != null)
+        {
+            GameManager.Instance.UpdateGameState("Playing");
+            int levelIndex = other.GetComponent<LevelIndex>().levelIndex;
+            SceneChanger.Instance.FadeToLevel(levelIndex);
+        }
     }
 
 }

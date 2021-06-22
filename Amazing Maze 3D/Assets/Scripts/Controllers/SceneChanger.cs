@@ -31,21 +31,29 @@ public class SceneChanger : GenericSingletonClass<SceneChanger>
 
     IEnumerator LoadAsynchronously()
     {
-        AsyncOperation operation = SceneManager.LoadSceneAsync(levelToLoad);
-
-        loadingScreen.SetActive(true);
-
-        while (!operation.isDone)
+        if (levelToLoad <= SceneManager.sceneCountInBuildSettings)
         {
-            float progress = Mathf.Clamp01(operation.progress / .9f);
+            AsyncOperation operation = SceneManager.LoadSceneAsync(levelToLoad);
 
-            slider.value = progress;
-            progressText.text = progress.ToString("0.0%");
+            loadingScreen.SetActive(true);
 
-            yield return null;
+            while (!operation.isDone)
+            {
+                float progress = Mathf.Clamp01(operation.progress / .9f);
+
+                slider.value = progress;
+                progressText.text = progress.ToString("0.0%");
+
+                yield return null;
+            }
+
+            loadingScreen.SetActive(false);
         }
-
-        loadingScreen.SetActive(false);
+        else
+        {
+            GameManager.Instance.UpdateGameState("MainMenu");
+        }
+        
 
     }
 }

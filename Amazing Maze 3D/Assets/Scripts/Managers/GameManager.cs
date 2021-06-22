@@ -39,7 +39,7 @@ public class GameManager : GenericSingletonClass<GameManager>
 
         switch (State) 
         {
-            case GameState.Playing: // Lock cursor
+            case GameState.Playing:
                 break;
             case GameState.Pause:
                 break;

@@ -5,8 +5,8 @@ public class Paint : MonoBehaviour
     public LayerMask paintableLayer;
     public Transform playerTransform;
 
-    [SerializeField] private float brushSize = 0.1f, availableDistance = 10f;
-    public float distanceToHit, localRotationY;
+    [SerializeField] private float brushSize = 0.1f, maxDistance = 10f;
+    [SerializeField] private float localRotationY;
 
     private ObjectPooler objectPooler;
 
@@ -32,62 +32,58 @@ public class Paint : MonoBehaviour
     {
         var Ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-        if (Physics.Raycast(Ray, out hit, paintableLayer))
+        if (Physics.Raycast(Ray, out hit, maxDistance, paintableLayer))
         {
-            distanceToHit = Vector3.Distance(playerTransform.position, hit.point);
-            if (distanceToHit < availableDistance)
+            var paint = objectPooler.SpawnFromPool("Paint", hit.point + Vector3.one * 0.1f, Quaternion.identity);
+
+            if (paint != null)
             {
-                var paint = objectPooler.SpawnFromPool("Paint", hit.point + Vector3.one * 0.1f, Quaternion.identity);
-
-                if(paint != null)
+                if (hit.collider.gameObject.CompareTag("Wall") || hit.collider.gameObject.CompareTag("SurprisedWall"))
                 {
-                    if (hit.collider.gameObject.CompareTag("Wall") || hit.collider.gameObject.CompareTag("SurprisedWall"))
+                    Vector3 positionOuter = hit.point - Vector3.one * 0.1f;
+                    Vector3 positionInner = hit.point + Vector3.one * 0.1f;
+                    Quaternion rotationOuter = Quaternion.Euler(-90f, 0, 0);
+                    Quaternion rotationInner = Quaternion.Euler(-90f, 0, -90f);
+
+                    localRotationY = FindLocalRotationY();
+
+                    if (localRotationY == 0 || localRotationY == 360f)
                     {
-                        Vector3 positionOuter = hit.point - Vector3.one * 0.1f;
-                        Vector3 positionInner = hit.point + Vector3.one * 0.1f;
-                        Quaternion rotationOuter = Quaternion.Euler(-90f, 0, 0);
-                        Quaternion rotationInner = Quaternion.Euler(-90f, 0, -90f);
-
-                        localRotationY = FindLocalRotationY();
-
-                        if (localRotationY == 0 || localRotationY == 360f)
-                        {
-                            paint = objectPooler.SpawnFromPool("Paint", positionOuter, rotationOuter);
-                        }
-                        else if (localRotationY == 180f)
-                        {
-                            paint = objectPooler.SpawnFromPool("Paint", positionInner, rotationOuter);
-
-                        }
-                        else if (localRotationY == 90f)
-                        {
-
-                            paint = objectPooler.SpawnFromPool("Paint", positionOuter, rotationInner);
-
-                        }
-                        else if (localRotationY == 270f)
-                        {
-                            paint = objectPooler.SpawnFromPool("Paint", positionInner, rotationInner);
-                        }
+                        paint = objectPooler.SpawnFromPool("Paint", positionOuter, rotationOuter);
                     }
-                    else
+                    else if (localRotationY == 180f)
                     {
-                        Vector3 position = hit.point + Vector3.one * 0.1f;
-                        paint = objectPooler.SpawnFromPool("Paint", position, Quaternion.identity);
+                        paint = objectPooler.SpawnFromPool("Paint", positionInner, rotationOuter);
 
                     }
-
-                    paint.transform.localScale = Vector3.one * brushSize;
-                    paint.SetActive(true);
-                    IPooledObject pooledObj = paint.GetComponent<IPooledObject>();
-
-                    if (pooledObj != null)
+                    else if (localRotationY == 90f)
                     {
-                        pooledObj.OnObjectSpawn();
-                    }
 
-                    objectPooler.sprayAmount--;
+                        paint = objectPooler.SpawnFromPool("Paint", positionOuter, rotationInner);
+
+                    }
+                    else if (localRotationY == 270f)
+                    {
+                        paint = objectPooler.SpawnFromPool("Paint", positionInner, rotationInner);
+                    }
                 }
+                else
+                {
+                    Vector3 position = hit.point + Vector3.one * 0.1f;
+                    paint = objectPooler.SpawnFromPool("Paint", position, Quaternion.identity);
+
+                }
+
+                paint.transform.localScale = Vector3.one * brushSize;
+                paint.SetActive(true);
+                IPooledObject pooledObj = paint.GetComponent<IPooledObject>();
+
+                if (pooledObj != null)
+                {
+                    pooledObj.OnObjectSpawn();
+                }
+
+                objectPooler.sprayAmount--;
             }
         }
     }
