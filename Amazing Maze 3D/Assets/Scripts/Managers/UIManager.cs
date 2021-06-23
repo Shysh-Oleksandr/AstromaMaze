@@ -1,10 +1,12 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
     public TextMeshProUGUI sprayText, timerText, loseText, coinsText, winnerText;
+    public Image paintingPointer;
 
     //public static event Action OnUIChanged;
 

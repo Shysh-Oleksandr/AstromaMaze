@@ -326,7 +326,6 @@ GameObject:
   - component: {fileID: 781208919218451184}
   - component: {fileID: 781208919218451190}
   - component: {fileID: 781208919218451191}
-  - component: {fileID: 781208919218451185}
   - component: {fileID: 781208919218451186}
   - component: {fileID: 781208919218451187}
   m_Layer: 0
@@ -401,25 +400,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 781208919218451189}
   m_Enabled: 1
---- !u!95 &781208919218451185
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 781208919218451189}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 95fddd9c0088df64fa0871d2d67a6d29, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &781208919218451186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -432,8 +412,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 183a44dbac02788459aca7dd5c9073fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Easing:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   mainCam: {fileID: 781208917264305935}
   birdsEyeCam: {fileID: 781208919218451190}
+  maxHeight: 0
+  coroutineDuration: 0
+  maxHeightDuration: 0
 --- !u!114 &781208919218451187
 MonoBehaviour:
   m_ObjectHideFlags: 0

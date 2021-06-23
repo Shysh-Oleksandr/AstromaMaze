@@ -1,29 +1,54 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BirdsEyeView : MonoBehaviour
 {
+    public AnimationCurve upEasing, downEasing;
+
     public Camera mainCam;
     public Camera birdsEyeCam;
+    public Transform playerTransform;
+    public SwitchCamera switchCamera;
+
+    [SerializeField] [Range(1, 100)] private float maxHeight;
+    [SerializeField] [Range(0, 15)] private float coroutineDuration;
+    [SerializeField] [Range(0, 5)] private float maxHeightDuration;
+    [SerializeField] [Range(0, 5)] private float startOffset;
 
     bool isMainCam;
+    private Vector3 startPosition;
+    private Vector3 targetPosition;
 
-    // It is called in the animation clip.
-    public void ShowBirdsEyeView()
+    private void OnEnable()
     {
-        isMainCam = mainCam.gameObject.activeSelf;
+        startPosition = transform.position;
 
-        if (isMainCam)
+        StartCoroutine(BirdsEyeViewCoroutine());
+    }
+
+
+    IEnumerator BirdsEyeViewCoroutine()
+    {
+        for (float i = 0; i < 1; i += Time.deltaTime / coroutineDuration)
         {
-            mainCam.gameObject.SetActive(false);
-            birdsEyeCam.gameObject.SetActive(true);
-        }
-        else
-        {
-            mainCam.gameObject.SetActive(true);
-            birdsEyeCam.gameObject.SetActive(false);
+            targetPosition = playerTransform.position + Vector3.up * maxHeight;
+            transform.position = Vector3.Lerp(startPosition, targetPosition, upEasing.Evaluate(i));
+            yield return null;
         }
 
+        yield return new WaitForSeconds(maxHeightDuration);
+
+        startPosition = transform.position;
+        targetPosition = playerTransform.position;
+
+        for (float i = 0; i < 1; i += Time.deltaTime / coroutineDuration)
+        {
+            targetPosition = playerTransform.position + Vector3.up * startOffset;
+            transform.position = Vector3.Lerp(startPosition, targetPosition, downEasing.Evaluate(i));
+            yield return null;
+        }
+
+
+        switchCamera.SwitchCameras();
     }
 }

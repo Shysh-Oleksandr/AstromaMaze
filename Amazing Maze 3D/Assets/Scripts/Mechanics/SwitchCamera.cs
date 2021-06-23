@@ -17,12 +17,12 @@ public class SwitchCamera : MonoBehaviour
         {
             nextBirdsEyeView = Time.time + birdsEyeViewCooldown;
 
-            ShowBirdsEyeView();
+            SwitchCameras();
         }
     }
 
 
-    private void ShowBirdsEyeView()
+    public void SwitchCameras()
     {
         isMainCam = mainCam.gameObject.activeSelf;
 
@@ -30,11 +30,15 @@ public class SwitchCamera : MonoBehaviour
         {
             mainCam.gameObject.SetActive(false);
             birdsEyeCam.gameObject.SetActive(true);
+
+            UIManager.Instance.paintingPointer.gameObject.SetActive(false);
         }
         else
         {
             mainCam.gameObject.SetActive(true);
             birdsEyeCam.gameObject.SetActive(false);
+
+            UIManager.Instance.paintingPointer.gameObject.SetActive(true);
         }
 
     }
