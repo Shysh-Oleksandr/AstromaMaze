@@ -67,6 +67,13 @@ public class PlayerController : MonoBehaviour
             int levelIndex = other.GetComponent<LevelIndex>().levelIndex;
             SceneChanger.Instance.FadeToLevel(levelIndex);
         }
+
+        if (other.CompareTag("Coin"))
+        {
+            Destroy(other.gameObject);
+
+            UIManager.Instance.PickupCoin(other.GetComponent<Coin>().coinValue);
+        }
     }
 
 }

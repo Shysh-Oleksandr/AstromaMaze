@@ -4,6 +4,7 @@ public class Paint : MonoBehaviour
 {
     public LayerMask paintableLayer;
     public Transform playerTransform;
+    public SprayItem sprayItem;
 
     [SerializeField] private float brushSize = 0.1f, maxDistance = 10f;
     [SerializeField] private float localRotationY;
@@ -15,6 +16,9 @@ public class Paint : MonoBehaviour
     {
         objectPooler = ObjectPooler.instance;
         mainCam = Camera.main;
+
+        brushSize = sprayItem.brushSize;
+        maxDistance = sprayItem.maxDistance;
     }
 
     void Update()

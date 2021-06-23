@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class ObjectPooler : MonoBehaviour
 {
+
     [System.Serializable]
     public class Pool
     {
@@ -14,6 +15,7 @@ public class ObjectPooler : MonoBehaviour
 
     public List<Pool> pools;
     public Dictionary<string, List<GameObject>> poolDictionary;
+    public SprayItem sprayItem;
 
     public int sprayAmount;
 
@@ -43,6 +45,7 @@ public class ObjectPooler : MonoBehaviour
 
                 if (pool.tag == "Paint")
                 {
+                    pool.size = sprayItem.sprayAmount;
                     sprayAmount = pool.size;
                 }
             }

@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class GameManager : GenericSingletonClass<GameManager>
 {
@@ -15,8 +14,9 @@ public class GameManager : GenericSingletonClass<GameManager>
     {
         isGameRunning = true;
 
-/*        UpdateGameState(State.ToString());
-*/   }
+        /*        UpdateGameState(State.ToString());
+        */
+    }
 
     private void Update()
     {
@@ -37,7 +37,7 @@ public class GameManager : GenericSingletonClass<GameManager>
         State = SetEnum(newState);
         Debug.Log(State);
 
-        switch (State) 
+        switch (State)
         {
             case GameState.Playing:
                 break;

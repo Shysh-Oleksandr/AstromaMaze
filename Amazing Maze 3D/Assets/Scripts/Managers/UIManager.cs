@@ -52,4 +52,11 @@ public class UIManager : MonoBehaviour
     {
         sprayText.text = "Spray: " + ObjectPooler.instance.sprayAmount;
     }
+
+
+    public void PickupCoin(int coinValue)
+    {
+        GameManager.Instance.totalCoins += coinValue;
+        coinsText.text = "Coins: " + GameManager.Instance.totalCoins;
+    }
 }
