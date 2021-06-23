@@ -1747,6 +1747,7 @@ MonoBehaviour:
   mainCam: {fileID: 963194227}
   birdsEyeCam: {fileID: 1289801866}
   birdsEyeViewCooldown: 10
+  nextBirdsEyeView: 0
 --- !u!4 &691694664 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6609471152590010372, guid: c9a0a5e2e4a19234d97b8540ee176ea5, type: 3}
@@ -1845,6 +1846,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &720652219 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8895465092662559121, guid: 079d24d7749a2d449820364aa65e5602, type: 3}
+  m_PrefabInstance: {fileID: 8895465092205971505}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &723718058 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6609471152590010372, guid: c9a0a5e2e4a19234d97b8540ee176ea5, type: 3}
@@ -5626,6 +5632,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7948246380019376529, guid: 3e45e983eddd49e4ebf519753c621d46, type: 3}
+      propertyPath: bootItem
+      value: 
+      objectReference: {fileID: 11400000, guid: 6baed95bd604077499b8fe1e30a4123b, type: 2}
     - target: {fileID: 7948246380019376530, guid: 3e45e983eddd49e4ebf519753c621d46, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -5678,6 +5688,10 @@ PrefabInstance:
       propertyPath: switchCamera
       value: 
       objectReference: {fileID: 683530365}
+    - target: {fileID: 7948246381449837305, guid: 3e45e983eddd49e4ebf519753c621d46, type: 3}
+      propertyPath: birdsEyeViewItem
+      value: 
+      objectReference: {fileID: 11400000, guid: 6d1818afa257e4f4ca668c8afa193c17, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e45e983eddd49e4ebf519753c621d46, type: 3}
 --- !u!1001 &8895465092205971505
@@ -5687,6 +5701,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336872954}
     m_Modifications:
+    - target: {fileID: 8895465092553026421, guid: 079d24d7749a2d449820364aa65e5602, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8895465092553026423, guid: 079d24d7749a2d449820364aa65e5602, type: 3}
+      propertyPath: compassItem
+      value: 
+      objectReference: {fileID: 11400000, guid: 11a2659a9dd00d1489294f068d1d063f, type: 2}
+    - target: {fileID: 8895465092553026423, guid: 079d24d7749a2d449820364aa65e5602, type: 3}
+      propertyPath: compassPanel
+      value: 
+      objectReference: {fileID: 720652219}
     - target: {fileID: 8895465092553026423, guid: 079d24d7749a2d449820364aa65e5602, type: 3}
       propertyPath: mPlayerTransform
       value: 

@@ -3,10 +3,11 @@ using UnityEngine;
 
 public class FadeOut : MonoBehaviour, IPooledObject
 {
-    [SerializeField] float startDelay = 10f, fadeRate = 0.05f, timeForOneFade = 0.5f;
+    private float startDelay = 10f, fadeRate = 0.05f, timeForOneFade = 0.5f;
     private float startAlpha;
     public Material material;
     public SprayItem sprayItem;
+    public BootItem bootItem;
 
     private Material mat;
     private Renderer rend;
@@ -43,6 +44,14 @@ public class FadeOut : MonoBehaviour, IPooledObject
             timeForOneFade = sprayItem.fadeDelay;
             mat.SetColor("_BaseColor", sprayItem.paintColor);
         }
+        else if (gameObject.CompareTag("Footprint"))
+        {
+            startDelay = bootItem.baseLifetime;
+            fadeRate = bootItem.fadeRate;
+            timeForOneFade = bootItem.fadeDelay;
+            mat.SetColor("_BaseColor", bootItem.bootColor);
+        }
+
         rend = GetComponent<Renderer>();
         rend.material = mat;
     }

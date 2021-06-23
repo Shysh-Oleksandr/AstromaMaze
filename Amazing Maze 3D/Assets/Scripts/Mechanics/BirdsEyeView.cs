@@ -9,13 +9,10 @@ public class BirdsEyeView : MonoBehaviour
     public Camera birdsEyeCam;
     public Transform playerTransform;
     public SwitchCamera switchCamera;
+    public BirdsEyeViewItem birdsEyeViewItem;
 
-    [SerializeField] [Range(1, 100)] private float maxHeight;
-    [SerializeField] [Range(0, 15)] private float coroutineDuration;
-    [SerializeField] [Range(0, 5)] private float maxHeightDuration;
     [SerializeField] [Range(0, 5)] private float startOffset;
 
-    bool isMainCam;
     private Vector3 startPosition;
     private Vector3 targetPosition;
 
@@ -29,26 +26,26 @@ public class BirdsEyeView : MonoBehaviour
 
     IEnumerator BirdsEyeViewCoroutine()
     {
-        for (float i = 0; i < 1; i += Time.deltaTime / coroutineDuration)
+        for (float i = 0; i < 1; i += Time.deltaTime / birdsEyeViewItem.coroutineDuration)
         {
-            targetPosition = playerTransform.position + Vector3.up * maxHeight;
+            targetPosition = playerTransform.position + Vector3.up * birdsEyeViewItem.maxHeight;
             transform.position = Vector3.Lerp(startPosition, targetPosition, upEasing.Evaluate(i));
             yield return null;
         }
 
-        yield return new WaitForSeconds(maxHeightDuration);
+        yield return new WaitForSeconds(birdsEyeViewItem.maxHeightDuration);
 
         startPosition = transform.position;
         targetPosition = playerTransform.position;
 
-        for (float i = 0; i < 1; i += Time.deltaTime / coroutineDuration)
+        for (float i = 0; i < 1; i += Time.deltaTime / birdsEyeViewItem.coroutineDuration)
         {
             targetPosition = playerTransform.position + Vector3.up * startOffset;
             transform.position = Vector3.Lerp(startPosition, targetPosition, downEasing.Evaluate(i));
             yield return null;
         }
 
-
+        switchCamera.nextBirdsEyeView = Time.time + birdsEyeViewItem.birdsEyeViewCooldown;
         switchCamera.SwitchCameras();
     }
 }

@@ -5,13 +5,13 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float speed = 12f;
     [SerializeField] private float groundDistance = 0.4f;
     private float gravity = -9.81f;
     private bool isGrounded;
 
     public Transform groundCheck;
     public LayerMask groundLayer;
+    public BootItem bootItem;
 
     private Vector3 velocity;
     private CharacterController controller;
@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
 
         Vector3 move = transform.right * x + transform.forward * z;
 
-        controller.Move(move * speed * Time.deltaTime);
+        controller.Move(move * bootItem.speed * Time.deltaTime);
 
         velocity.y += gravity * Time.deltaTime;
 

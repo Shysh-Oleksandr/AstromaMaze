@@ -1,10 +1,11 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Compass : MonoBehaviour
 {
     public Transform mPlayerTransform;
+    public GameObject compassPanel;
+    public CompassItem compassItem;
     [SerializeField] float rotationSpeed;
 
     [Tooltip("The direction towards which the compass points. Default for North is (0, 0, 1)")]
@@ -12,13 +13,20 @@ public class Compass : MonoBehaviour
 
     private Vector3 _mTempVector;
     private float _mTempAngle;
+    private float nextRotateToNorth;
+
+    private void Start()
+    {
+        compassPanel.SetActive(compassItem.isBought);
+    }
 
     private void Update()
     {
         CompassRotation();
 
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R) && compassItem.canRotateToNorth && Time.time > nextRotateToNorth)
         {
+            nextRotateToNorth = Time.time + compassItem.compassCooldown;
             StartCoroutine(RotateToNorth());
         }
 
