@@ -18,14 +18,6 @@ public class GameManager : GenericSingletonClass<GameManager>
         */
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            UpdateGameState("MainMenu");
-        }
-    }
-
     public GameState SetEnum(string newState)
     {
         State = (GameState)Enum.Parse(typeof(GameState), newState);
@@ -40,8 +32,10 @@ public class GameManager : GenericSingletonClass<GameManager>
         switch (State)
         {
             case GameState.Playing:
+                HandlePlaying();
                 break;
             case GameState.Pause:
+                HandlePause();
                 break;
             case GameState.Victory:
                 HandleWin();
@@ -50,14 +44,37 @@ public class GameManager : GenericSingletonClass<GameManager>
                 HandleLose();
                 break;
             case GameState.MainMenu:
-                SceneChanger.Instance.FadeToLevel(0);
+                HandleMainMenu();
                 break;
             case GameState.LevelSelection:
-                SceneChanger.Instance.FadeToLevel(1);
+                HandleLevelSelection();
                 break;
         }
 
         OnGameStateChanged?.Invoke(State);
+    }
+
+    private void HandleLevelSelection()
+    {
+        SceneChanger.Instance.FadeToLevel(1);
+    }
+
+    private void HandleMainMenu()
+    {
+        Time.timeScale = 1f;
+        SceneChanger.Instance.FadeToLevel(0);
+    }
+
+    private void HandlePause()
+    {
+        Time.timeScale = 0f;
+        isGameRunning = false;
+    }
+
+    private void HandlePlaying()
+    {
+        Time.timeScale = 1f;
+        isGameRunning = true;
     }
 
     private void HandleLose()

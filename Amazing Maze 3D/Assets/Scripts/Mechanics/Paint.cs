@@ -25,7 +25,7 @@ public class Paint : MonoBehaviour
     {
         if (Input.GetMouseButton(0) && 
             mainCam.gameObject.activeSelf && 
-            GameManager.Instance.isGameRunning && 
+            GameManager.Instance.isGameRunning &&
             objectPooler.sprayAmount > 0)
         {
             PaintWall();

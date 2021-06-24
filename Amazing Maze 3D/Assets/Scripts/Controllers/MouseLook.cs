@@ -10,12 +10,12 @@ public class MouseLook : MonoBehaviour
 
     private void Awake()
     {
-        GameManager.OnGameStateChanged += GameManagerOnGameStateChanged;
+        GameManager.OnGameStateChanged += ChangeCursor;
     }
 
     private void OnDestroy()
     {
-        GameManager.OnGameStateChanged -= GameManagerOnGameStateChanged;
+        GameManager.OnGameStateChanged -= ChangeCursor;
     }
 
     private void Start()
@@ -35,7 +35,7 @@ public class MouseLook : MonoBehaviour
         playerBody.Rotate(Vector3.up * mouseX);
     }
 
-    private void GameManagerOnGameStateChanged(GameState state)
+    private void ChangeCursor(GameState state)
     {
         if (state == GameState.Playing || state == GameState.LevelSelection)
         {

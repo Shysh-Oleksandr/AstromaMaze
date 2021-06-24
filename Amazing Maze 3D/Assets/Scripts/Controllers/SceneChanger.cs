@@ -1,8 +1,8 @@
+using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using TMPro;
-using System.Collections;
 
 public class SceneChanger : GenericSingletonClass<SceneChanger>
 {
@@ -10,18 +10,37 @@ public class SceneChanger : GenericSingletonClass<SceneChanger>
     public GameObject loadingScreen;
     public Slider slider;
     public TextMeshProUGUI progressText;
+    public bool isLoading;
 
     private int levelToLoad;
 
     public void FadeToNextLevel()
     {
-        FadeToLevel(SceneManager.GetActiveScene().buildIndex + 1);
+        Instance.FadeToLevel(SceneManager.GetActiveScene().buildIndex + 1);
     }
+
+    public void RestartLevel()
+    {
+        Instance.FadeToLevel(SceneManager.GetActiveScene().buildIndex);
+        GameManager.Instance.UpdateGameState("Playing");
+        isLoading = true;
+    }
+
+    public void OpenMainMenu()
+    {
+        GameManager.Instance.UpdateGameState("MainMenu");
+        isLoading = true;
+    }
+
 
     public void FadeToLevel(int levelIndex)
     {
         levelToLoad = levelIndex;
-        animator.SetTrigger("FadeOut");
+        if (animator != null && animator.runtimeAnimatorController != null)
+        {
+            animator.SetTrigger("FadeOut");
+        }
+        isLoading = true;
     }
 
     public void OnFadeComplete()
@@ -33,6 +52,7 @@ public class SceneChanger : GenericSingletonClass<SceneChanger>
     {
         if (levelToLoad <= SceneManager.sceneCountInBuildSettings)
         {
+            isLoading = true;
             AsyncOperation operation = SceneManager.LoadSceneAsync(levelToLoad);
 
             loadingScreen.SetActive(true);
@@ -46,14 +66,14 @@ public class SceneChanger : GenericSingletonClass<SceneChanger>
 
                 yield return null;
             }
-
+            isLoading = false;
             loadingScreen.SetActive(false);
         }
         else
         {
             GameManager.Instance.UpdateGameState("MainMenu");
         }
-        
+
 
     }
 }
