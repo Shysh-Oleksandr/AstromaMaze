@@ -76,6 +76,11 @@ public class GameManager : GenericSingletonClass<GameManager>
 
         Time.timeScale = 0f;
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }
 
 public enum GameState
