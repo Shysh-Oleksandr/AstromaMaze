@@ -17,6 +17,7 @@ public class SceneChanger : GenericSingletonClass<SceneChanger>
     public void FadeToNextLevel()
     {
         Instance.FadeToLevel(SceneManager.GetActiveScene().buildIndex + 1);
+        GameManager.Instance.UpdateGameState("Playing");
     }
 
     public void RestartLevel()

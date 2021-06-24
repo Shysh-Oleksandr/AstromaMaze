@@ -89,7 +89,7 @@ public class GameManager : GenericSingletonClass<GameManager>
     {
         isGameRunning = false;
 
-        UIManager.Instance.winnerText.gameObject.SetActive(true);
+        UIManager.Instance.victoryMenu.gameObject.SetActive(true);
 
         Time.timeScale = 0f;
     }

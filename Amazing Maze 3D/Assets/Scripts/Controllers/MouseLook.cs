@@ -40,10 +40,12 @@ public class MouseLook : MonoBehaviour
         if (state == GameState.Playing || state == GameState.LevelSelection)
         {
             Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
         else
         {
             Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
     }
 }
