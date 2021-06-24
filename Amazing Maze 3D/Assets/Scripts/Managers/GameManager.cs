@@ -79,19 +79,19 @@ public class GameManager : GenericSingletonClass<GameManager>
 
     private void HandleLose()
     {
-        isGameRunning = false;
-
-        UIManager.Instance.loseText.gameObject.SetActive(true);
-        Time.timeScale = 0f;
+        ShowMenu(UIManager.Instance.replayMenu);
     }
+
 
     private void HandleWin()
     {
+        ShowMenu(UIManager.Instance.victoryMenu);
+    }
+    private void ShowMenu(GameObject menu)
+    {
         isGameRunning = false;
-
-        UIManager.Instance.victoryMenu.gameObject.SetActive(true);
-
         Time.timeScale = 0f;
+        menu.gameObject.SetActive(true);
     }
 
     public void QuitGame()

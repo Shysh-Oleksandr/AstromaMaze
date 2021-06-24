@@ -6,6 +6,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenu;
 
     public static bool isPaused;
+    private bool isMenuShown;
 
     private void Awake()
     {
@@ -24,7 +25,7 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !SceneChanger.Instance.isLoading)
+        if (Input.GetKeyDown(KeyCode.Escape) && !SceneChanger.Instance.isLoading && !isMenuShown)
         {
             if (isPaused)
             {
@@ -54,5 +55,6 @@ public class PauseMenu : MonoBehaviour
     private void OnPausedChanged(GameState state)
     {
         isPaused = (state == GameState.Pause);
+        isMenuShown = (state == GameState.Victory || state == GameState.Lose);
     }
 }
