@@ -1585,6 +1585,7 @@ GameObject:
   - component: {fileID: 316973961}
   - component: {fileID: 316973963}
   - component: {fileID: 316973962}
+  - component: {fileID: 316973964}
   m_Layer: 5
   m_Name: TitleText
   m_TagString: Untagged
@@ -1709,6 +1710,40 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 316973960}
   m_CullTransparentMesh: 1
+--- !u!114 &316973964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 316973960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:5e9af865dbfec42409e55119ebb335ed
+    m_TableEntryReference:
+      m_KeyId: 15282599878656
+      m_Key: 
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 316973962}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &317800747
 GameObject:
   m_ObjectHideFlags: 0
@@ -6988,6 +7023,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   State: 1
   totalCoins: 0
+  difficultyCoefficient: 0
   isGameRunning: 1
 --- !u!4 &1197769006
 Transform:
