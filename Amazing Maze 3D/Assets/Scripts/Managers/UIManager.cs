@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI sprayText, timerText, loseText, coinsText, winnerText;
     public Image paintingPointer;
     public GameObject victoryMenu, replayMenu;
+    public GameObject pauseMenu;
 
     //public static event Action OnUIChanged;
 

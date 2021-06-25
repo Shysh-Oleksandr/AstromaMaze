@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
 {
-    public GameObject pauseMenu;
-
     public static bool isPaused;
+    public Camera mainCam;
+
     private bool isMenuShown;
 
     private void Awake()
@@ -20,7 +20,7 @@ public class PauseMenu : MonoBehaviour
 
     void Start()
     {
-        pauseMenu.SetActive(false);
+        UIManager.Instance.pauseMenu.SetActive(false);
     }
 
     void Update()
@@ -40,16 +40,16 @@ public class PauseMenu : MonoBehaviour
 
     public void PauseGame()
     {
-        pauseMenu.SetActive(true);
         GameManager.Instance.UpdateGameState("Pause");
+        UIManager.Instance.pauseMenu.gameObject.SetActive(true);
         UIManager.Instance.paintingPointer.gameObject.SetActive(false);
     }
 
     public void ResumeGame()
     {
-        pauseMenu.SetActive(false);
         GameManager.Instance.UpdateGameState("Playing");
-        UIManager.Instance.paintingPointer.gameObject.SetActive(true);
+        UIManager.Instance.pauseMenu.gameObject.SetActive(false);
+        UIManager.Instance.paintingPointer.gameObject.SetActive(mainCam.gameObject.activeSelf);
     }
 
     private void OnPausedChanged(GameState state)

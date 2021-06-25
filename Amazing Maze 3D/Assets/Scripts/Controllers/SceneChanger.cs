@@ -24,13 +24,11 @@ public class SceneChanger : GenericSingletonClass<SceneChanger>
     {
         Instance.FadeToLevel(SceneManager.GetActiveScene().buildIndex);
         GameManager.Instance.UpdateGameState("Playing");
-        isLoading = true;
     }
 
     public void OpenMainMenu()
     {
         GameManager.Instance.UpdateGameState("MainMenu");
-        isLoading = true;
     }
 
 
@@ -41,7 +39,7 @@ public class SceneChanger : GenericSingletonClass<SceneChanger>
         {
             animator.SetTrigger("FadeOut");
         }
-        isLoading = true;
+        Instance.isLoading = true;
     }
 
     public void OnFadeComplete()
@@ -53,7 +51,6 @@ public class SceneChanger : GenericSingletonClass<SceneChanger>
     {
         if (levelToLoad <= SceneManager.sceneCountInBuildSettings)
         {
-            isLoading = true;
             AsyncOperation operation = SceneManager.LoadSceneAsync(levelToLoad);
 
             loadingScreen.SetActive(true);
@@ -67,7 +64,7 @@ public class SceneChanger : GenericSingletonClass<SceneChanger>
 
                 yield return null;
             }
-            isLoading = false;
+            Instance.isLoading = false;
             loadingScreen.SetActive(false);
         }
         else
