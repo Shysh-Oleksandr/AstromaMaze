@@ -9,6 +9,11 @@ public class Timer : MonoBehaviour
     [SerializeField] private float timeLeft;
     public float TimeLeft { get => timeLeft; set => timeLeft = value; }
 
+    private void Start()
+    {
+        TimeLeft = (int)TimeLeft * GameManager.Instance.difficultyCoefficient;
+    }
+
     void Update()
     {
         if (!takingAway && TimeLeft > 0 && GameManager.Instance.State == GameState.Playing)
@@ -24,7 +29,7 @@ public class Timer : MonoBehaviour
         UIManager.Instance.timerText.text = "Time left: " + timeSpan.ToString("m':'ss");
 
         TimeLeft--;
-        
+
         yield return new WaitForSeconds(1);
         if (TimeLeft <= 0)
         {

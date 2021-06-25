@@ -8,6 +8,7 @@ public class GameManager : GenericSingletonClass<GameManager>
     public static event Action<GameState> OnGameStateChanged;
 
     public float totalCoins;
+    public float difficultyCoefficient;
     public bool isGameRunning = true;
 
     private void Start()

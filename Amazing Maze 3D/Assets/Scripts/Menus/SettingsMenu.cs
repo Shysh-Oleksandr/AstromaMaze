@@ -1,17 +1,50 @@
 using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.Audio;
 using System.Linq;
+using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class SettingsMenu : MonoBehaviour
 {
     public AudioMixer audioMixer;
     public Dropdown resolutionDropdown;
+    public Dropdown difficultyDropdown;
 
-    Resolution[] resolutions; 
+    Resolution[] resolutions;
 
     private void Start()
+    {
+        SetResolutionDropdownValues();
+
+        difficultyDropdown.onValueChanged.AddListener(delegate { DropdownItemSelected(difficultyDropdown); });
+    }
+
+    private void DropdownItemSelected(Dropdown dropdown)
+    {
+        int index = dropdown.value;
+
+        switch (index)
+        {
+            // Easy
+            case 0:
+                GameManager.Instance.difficultyCoefficient = 1.5f;
+                break;
+            // Medium
+            case 1:
+                GameManager.Instance.difficultyCoefficient = 1f;
+                break;
+            // Hard
+            case 2:
+                GameManager.Instance.difficultyCoefficient = 0.75f;
+                break;
+            // Expert
+            case 3:
+                GameManager.Instance.difficultyCoefficient = 0.5f;
+                break;
+        };
+    }
+
+    private void SetResolutionDropdownValues()
     {
         resolutions = Screen.resolutions.Select(resolution => new Resolution { width = resolution.width, height = resolution.height }).Distinct().ToArray();
 
@@ -25,7 +58,7 @@ public class SettingsMenu : MonoBehaviour
             string option = resolutions[i].width + "x" + resolutions[i].height;
             options.Add(option);
 
-            if(resolutions[i].width == Screen.currentResolution.width &&
+            if (resolutions[i].width == Screen.currentResolution.width &&
                resolutions[i].height == Screen.currentResolution.height)
             {
                 currentResolutionIndex = i;
