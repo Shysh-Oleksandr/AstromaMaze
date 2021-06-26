@@ -42,6 +42,9 @@ public class SettingsMenu : MonoBehaviour
             case 3:
                 GameManager.Instance.difficultyCoefficient = 0.5f;
                 break;
+            default:
+                GameManager.Instance.difficultyCoefficient = 1f;
+                break;
         };
     }
 
