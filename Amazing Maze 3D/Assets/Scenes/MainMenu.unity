@@ -1844,7 +1844,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cceea019bb83aa44ad51f3ff87cc3c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  languageIndex: 2
+  languageIndex: 0
   dropdown: {fileID: 701116574}
 --- !u!4 &704139712
 Transform:
@@ -2655,15 +2655,7 @@ MonoBehaviour:
   m_ItemImage: {fileID: 0}
   m_Value: 0
   m_Options:
-    m_Options:
-    - m_Text: Easy
-      m_Image: {fileID: 0}
-    - m_Text: Medium
-      m_Image: {fileID: 0}
-    - m_Text: Hard
-      m_Image: {fileID: 0}
-    - m_Text: Expert
-      m_Image: {fileID: 0}
+    m_Options: []
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -2680,6 +2672,68 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   m_AlphaFadeSpeed: 0.15
+--- !u!114 &1002255454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1002255449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21f40f998ab445047a37d6bacb176168, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  options:
+  - text:
+      m_TableReference:
+        m_TableCollectionName: GUID:5e9af865dbfec42409e55119ebb335ed
+      m_TableEntryReference:
+        m_KeyId: 5950273478656
+        m_Key: 
+    sprite:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+  - text:
+      m_TableReference:
+        m_TableCollectionName: GUID:5e9af865dbfec42409e55119ebb335ed
+      m_TableEntryReference:
+        m_KeyId: 5363417047040
+        m_Key: 
+    sprite:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+  - text:
+      m_TableReference:
+        m_TableCollectionName: GUID:5e9af865dbfec42409e55119ebb335ed
+      m_TableEntryReference:
+        m_KeyId: 6118850945024
+        m_Key: 
+    sprite:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+  - text:
+      m_TableReference:
+        m_TableCollectionName: GUID:5e9af865dbfec42409e55119ebb335ed
+      m_TableEntryReference:
+        m_KeyId: 6374216949760
+        m_Key: 
+    sprite:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+  selectedOptionIndex: 0
 --- !u!1 &1052608214 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5748405448581407880, guid: 91c4276eaa173fc45bbf51bae92170b6, type: 3}

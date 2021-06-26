@@ -10,11 +10,11 @@ public class LocalizationSetter : MonoBehaviour
     [SerializeField] [Range(0, 3)] private int languageIndex;
 
     public TMP_Dropdown dropdown;
-/*
+
     private void Awake()
     {
         StartCoroutine(SetLanguage(languageIndex));
-    }*/
+    }
 
     IEnumerator Start()
     {
@@ -42,12 +42,12 @@ public class LocalizationSetter : MonoBehaviour
         LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[index];
     }
 
-/*    public IEnumerator SetLanguage(int i)
+    public IEnumerator SetLanguage(int i)
     {
         // Wait for the localization system to initialize, loading Locales, preloading, etc.
         yield return LocalizationSettings.InitializationOperation;
 
         // This part changes the language
         LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[i];
-    }*/
+    }
 }
