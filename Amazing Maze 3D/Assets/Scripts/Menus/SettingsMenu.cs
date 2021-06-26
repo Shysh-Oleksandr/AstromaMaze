@@ -3,12 +3,13 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using TMPro;
 
 public class SettingsMenu : MonoBehaviour
 {
     public AudioMixer audioMixer;
-    public Dropdown resolutionDropdown;
-    public Dropdown difficultyDropdown;
+    public TMP_Dropdown resolutionDropdown;
+    public TMP_Dropdown difficultyDropdown;
 
     Resolution[] resolutions;
 
@@ -19,7 +20,7 @@ public class SettingsMenu : MonoBehaviour
         difficultyDropdown.onValueChanged.AddListener(delegate { DropdownItemSelected(difficultyDropdown); });
     }
 
-    private void DropdownItemSelected(Dropdown dropdown)
+    private void DropdownItemSelected(TMP_Dropdown dropdown)
     {
         int index = dropdown.value;
 
