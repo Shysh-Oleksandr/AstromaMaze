@@ -1,12 +1,14 @@
 using System.Collections;
 using UnityEngine;
+using TMPro;
 
 public class Compass : MonoBehaviour
 {
-    public Transform mPlayerTransform;
+    public Transform mPlayerTransform, exitTransform;
     public GameObject compassPanel;
     public CompassItem compassItem;
-    [SerializeField] float rotationSpeed;
+    public TextMeshProUGUI distanceText;
+    [SerializeField] float rotationSpeed, distanceToExit;
 
     [Tooltip("The direction towards which the compass points. Default for North is (0, 0, 1)")]
     public Vector3 kReferenceVector = new Vector3(0, 0, 1);
@@ -18,6 +20,7 @@ public class Compass : MonoBehaviour
     private void Start()
     {
         compassPanel.SetActive(compassItem.isBought);
+        distanceText.gameObject.SetActive(compassItem.canShowDistance);
     }
 
     private void Update()
@@ -28,6 +31,12 @@ public class Compass : MonoBehaviour
         {
             nextRotateToNorth = Time.time + compassItem.compassCooldown;
             StartCoroutine(RotateToNorth());
+        }
+
+        if (compassItem.canShowDistance)
+        {
+            distanceToExit = Vector3.Distance(mPlayerTransform.position, exitTransform.position);
+            distanceText.text = (int)distanceToExit + " m to exit";
         }
 
     }
