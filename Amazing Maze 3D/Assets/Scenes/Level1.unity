@@ -1320,7 +1320,7 @@ RectTransform:
   - {fileID: 2053738379}
   - {fileID: 618203553}
   m_Father: {fileID: 1336872954}
-  m_RootOrder: 8
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -1898,31 +1898,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &720652219 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8895465092662559121, guid: 079d24d7749a2d449820364aa65e5602, type: 3}
-  m_PrefabInstance: {fileID: 8895465092205971505}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &720652220
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 720652219}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37bbd9c9762aa8346bc18f069ddeb2d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mPlayerTransform: {fileID: 825215973}
-  exitTransform: {fileID: 685769937}
-  compassPanel: {fileID: 720652219}
-  compassItem: {fileID: 11400000, guid: 11a2659a9dd00d1489294f068d1d063f, type: 2}
-  distanceText: {fileID: 2053738380}
-  rotationSpeed: 500
-  distanceToExit: 0
-  kReferenceVector: {x: 0, y: 0, z: 1}
 --- !u!4 &723718058 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6609471152590010372, guid: c9a0a5e2e4a19234d97b8540ee176ea5, type: 3}
@@ -3556,11 +3531,11 @@ RectTransform:
   - {fileID: 99342756}
   - {fileID: 904054401}
   - {fileID: 1645799555}
+  - {fileID: 393929828}
   - {fileID: 1071809425}
   - {fileID: 766648449}
   - {fileID: 1842907174}
   - {fileID: 321844636}
-  - {fileID: 393929828}
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4759,7 +4734,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 78, y: 12}
+  m_AnchoredPosition: {x: 113, y: 12}
   m_SizeDelta: {x: 52, y: 5.16527}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2053738380
@@ -4782,10 +4757,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 999 m to exit
+  m_text: m
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 43d2e27c6c9058c449beb2f37c78db09, type: 2}
-  m_sharedMaterial: {fileID: 6564884946960828347, guid: 43d2e27c6c9058c449beb2f37c78db09, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: add028e2aed4f444aa3abce76e40ac95, type: 2}
+  m_sharedMaterial: {fileID: -6218823770205418890, guid: add028e2aed4f444aa3abce76e40ac95, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4809,7 +4784,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 3.55
+  m_fontSize: 4.2
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -4845,7 +4820,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 4.522705, y: 0, z: 13.996836, w: 0}
+  m_margin: {x: 9.030543, y: 0, z: 25.79542, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -5526,7 +5501,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3220309749405780528, guid: a8cf30663b3601a42a10eec95ff4cfda, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3220309749405780528, guid: a8cf30663b3601a42a10eec95ff4cfda, type: 3}
       propertyPath: m_AnchorMax.x
@@ -5651,7 +5626,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4345091152344988959, guid: 51ee7a0314947744dae45be41bd2510b, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4345091152344988959, guid: 51ee7a0314947744dae45be41bd2510b, type: 3}
       propertyPath: m_AnchorMax.x
@@ -5748,7 +5723,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4551466439967699926, guid: c757d0936624fbc43bd6d96b2bb7af62, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4551466439967699926, guid: c757d0936624fbc43bd6d96b2bb7af62, type: 3}
       propertyPath: m_AnchorMax.x
@@ -5914,7 +5889,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6522853668438374058, guid: 95e4eceb38fe1ed4aa5dac3a0620c911, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6522853668438374058, guid: 95e4eceb38fe1ed4aa5dac3a0620c911, type: 3}
       propertyPath: m_AnchorMax.x
@@ -6083,10 +6058,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7948246380019376529, guid: 3e45e983eddd49e4ebf519753c621d46, type: 3}
-      propertyPath: bootItem
-      value: 
-      objectReference: {fileID: 11400000, guid: 6baed95bd604077499b8fe1e30a4123b, type: 2}
     - target: {fileID: 7948246380019376530, guid: 3e45e983eddd49e4ebf519753c621d46, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -6139,10 +6110,6 @@ PrefabInstance:
       propertyPath: switchCamera
       value: 
       objectReference: {fileID: 683530365}
-    - target: {fileID: 7948246381449837305, guid: 3e45e983eddd49e4ebf519753c621d46, type: 3}
-      propertyPath: birdsEyeViewItem
-      value: 
-      objectReference: {fileID: 11400000, guid: 6d1818afa257e4f4ca668c8afa193c17, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e45e983eddd49e4ebf519753c621d46, type: 3}
 --- !u!1001 &8895465092205971505
@@ -6152,19 +6119,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 393929828}
     m_Modifications:
-    - target: {fileID: 8895465092553026421, guid: 079d24d7749a2d449820364aa65e5602, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8895465092553026423, guid: 079d24d7749a2d449820364aa65e5602, type: 3}
-      propertyPath: compassItem
+    - target: {fileID: 720652220, guid: 079d24d7749a2d449820364aa65e5602, type: 3}
+      propertyPath: distanceText
       value: 
-      objectReference: {fileID: 11400000, guid: 11a2659a9dd00d1489294f068d1d063f, type: 2}
-    - target: {fileID: 8895465092553026423, guid: 079d24d7749a2d449820364aa65e5602, type: 3}
-      propertyPath: compassPanel
+      objectReference: {fileID: 2053738380}
+    - target: {fileID: 720652220, guid: 079d24d7749a2d449820364aa65e5602, type: 3}
+      propertyPath: exitTransform
       value: 
-      objectReference: {fileID: 720652219}
-    - target: {fileID: 8895465092553026423, guid: 079d24d7749a2d449820364aa65e5602, type: 3}
+      objectReference: {fileID: 685769937}
+    - target: {fileID: 720652220, guid: 079d24d7749a2d449820364aa65e5602, type: 3}
       propertyPath: mPlayerTransform
       value: 
       objectReference: {fileID: 825215973}
@@ -6178,7 +6141,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8895465092662559120, guid: 079d24d7749a2d449820364aa65e5602, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8895465092662559120, guid: 079d24d7749a2d449820364aa65e5602, type: 3}
       propertyPath: m_AnchorMax.x
@@ -6256,6 +6219,5 @@ PrefabInstance:
       propertyPath: m_Name
       value: CompassPanel
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8895465092553026423, guid: 079d24d7749a2d449820364aa65e5602, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 079d24d7749a2d449820364aa65e5602, type: 3}

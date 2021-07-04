@@ -69,12 +69,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6b3009fd9a15bf4887b0ecd5ceb8a7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 12
   groundDistance: 0
   groundCheck: {fileID: 7948246381746669379}
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  bootItem: {fileID: 11400000, guid: 6baed95bd604077499b8fe1e30a4123b, type: 2}
 --- !u!114 &7948246380019376528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -500,9 +500,7 @@ MonoBehaviour:
   birdsEyeCam: {fileID: 7948246381449837309}
   playerTransform: {fileID: 7948246380019376530}
   switchCamera: {fileID: 0}
-  maxHeight: 35
-  coroutineDuration: 1.5
-  maxHeightDuration: 0.5
+  birdsEyeViewItem: {fileID: 11400000, guid: 6d1818afa257e4f4ca668c8afa193c17, type: 2}
   startOffset: 3
 --- !u!114 &7948246381449837304
 MonoBehaviour:

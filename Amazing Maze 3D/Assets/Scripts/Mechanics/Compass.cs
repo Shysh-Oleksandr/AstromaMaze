@@ -35,8 +35,8 @@ public class Compass : MonoBehaviour
 
         if (compassItem.canShowDistance)
         {
-            distanceToExit = Vector3.Distance(mPlayerTransform.position, exitTransform.position);
-            distanceText.text = (int)distanceToExit + " m to exit";
+            distanceToExit = (int)Vector3.Distance(mPlayerTransform.position, exitTransform.position);
+            distanceText.text = distanceToExit.ToString() + " m";
         }
 
     }
