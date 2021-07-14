@@ -1586,6 +1586,7 @@ GameObject:
   - component: {fileID: 316973963}
   - component: {fileID: 316973962}
   - component: {fileID: 316973964}
+  - component: {fileID: 316973965}
   m_Layer: 5
   m_Name: TitleText
   m_TagString: Untagged
@@ -1610,8 +1611,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -57}
-  m_SizeDelta: {x: 507.839, y: 57.661896}
+  m_AnchoredPosition: {x: 0, y: -62.150772}
+  m_SizeDelta: {x: 727.6046, y: 74.831}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &316973962
 MonoBehaviour:
@@ -1660,10 +1661,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 48
+  m_fontSize: 51.8
   m_fontSizeBase: 48
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -1744,6 +1745,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &316973965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 316973960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19ec293ac8a21dd459790259a3edadce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tweenDuration: 0.5
+  tweenDelay: 0.1
 --- !u!1 &317800747
 GameObject:
   m_ObjectHideFlags: 0
@@ -3874,6 +3889,18 @@ PrefabInstance:
     - target: {fileID: 4873480007113020621, guid: 6e8a4d4129fdc6b4abe62d86a475c43d, type: 3}
       propertyPath: m_Name
       value: SceneChangerCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4873480007113020621, guid: 6e8a4d4129fdc6b4abe62d86a475c43d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4873480007233897875, guid: 6e8a4d4129fdc6b4abe62d86a475c43d, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.558
+      objectReference: {fileID: 0}
+    - target: {fileID: 4873480007233897875, guid: 6e8a4d4129fdc6b4abe62d86a475c43d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e8a4d4129fdc6b4abe62d86a475c43d, type: 3}

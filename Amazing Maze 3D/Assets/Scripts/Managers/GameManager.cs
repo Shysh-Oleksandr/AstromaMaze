@@ -70,6 +70,7 @@ public class GameManager : GenericSingletonClass<GameManager>
     {
         Time.timeScale = 0f;
         isGameRunning = false;
+        UIManager.Instance.TweenPauseMenu();
     }
 
     private void HandlePlaying()

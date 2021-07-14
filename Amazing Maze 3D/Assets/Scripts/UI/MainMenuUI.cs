@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TweeningUI : MonoBehaviour
+public class MainMenuUI : MonoBehaviour
 {
     private const float menuY = 132f;
     /*private const float ButtonStartX = 207f;
@@ -9,7 +9,7 @@ public class TweeningUI : MonoBehaviour
 
     [SerializeField] private Transform optionsMenu, shopMenu;
     [SerializeField] private GameObject[] mainMenuElements, videoElements, audioElements, gameElements, languageElements;
-    [SerializeField] private float screenCenterX, tweetDuration, tweetDelay;
+    [SerializeField] private float screenCenterX, tweenDuration, tweenDelay;
     [SerializeField] private Image videoArrow, audioArrow, gameArrow, languageArrow;
 
     private Vector2 optionsMenuStartPos, shopMenuStartPos;
@@ -19,7 +19,7 @@ public class TweeningUI : MonoBehaviour
         optionsMenuStartPos = new Vector2(Screen.width, menuY);
         shopMenuStartPos = new Vector2(-Screen.width, menuY);
 
-        TweenDiagonally(mainMenuElements);
+        Tweening.Instance.TweenArray(mainMenuElements, tweenDuration, tweenDelay, true);
     }
 
     /*private void TweenMainMenu()
@@ -34,23 +34,12 @@ public class TweeningUI : MonoBehaviour
         }
     }*/
 
-    private void TweenDiagonally(GameObject[] optionElements)
-    {
-        for (int i = 0; i < optionElements.Length; i++)
-        {
-            GameObject element = optionElements[i];
-            Vector2 elementStartPos = element.transform.position;
-            element.transform.localPosition = new Vector2(elementStartPos.x, -Screen.height);
-
-            LeanTween.move(element, elementStartPos, tweetDuration).setEaseOutExpo().delay = tweetDelay * (i + 1);
-        }
-    }
 
     public void TweenVideo()
     {
         if (!videoArrow.IsActive())
         {
-            TweenDiagonally(videoElements);
+            Tweening.Instance.TweenArray(videoElements, tweenDuration, tweenDelay, false);
         }
     }
 
@@ -58,7 +47,8 @@ public class TweeningUI : MonoBehaviour
     {
         if (!audioArrow.IsActive())
         {
-            TweenDiagonally(audioElements);
+            Tweening.Instance.TweenArray(audioElements, tweenDuration, tweenDelay, false);
+
         }
     }
 
@@ -66,7 +56,8 @@ public class TweeningUI : MonoBehaviour
     {
         if (!gameArrow.IsActive())
         {
-            TweenDiagonally(gameElements);
+            Tweening.Instance.TweenArray(gameElements, tweenDuration, tweenDelay, false);
+
         }
 
     }
@@ -75,18 +66,18 @@ public class TweeningUI : MonoBehaviour
     {
         if (!languageArrow.IsActive())
         {
-            TweenDiagonally(languageElements);
+            Tweening.Instance.TweenArray(languageElements, tweenDuration, tweenDelay, false);
+
         }
 
     }
-
 
     public void EnableOptionsMenu()
     {
         optionsMenu.gameObject.SetActive(true);
 
         optionsMenu.localPosition = optionsMenuStartPos;
-        optionsMenu.LeanMoveLocalX(screenCenterX, tweetDuration).setEaseOutExpo();
+        optionsMenu.LeanMoveLocalX(screenCenterX, tweenDuration).setEaseOutExpo();
     }
 
     public void EnableShopMenu()
@@ -94,17 +85,21 @@ public class TweeningUI : MonoBehaviour
         shopMenu.gameObject.SetActive(true);
 
         shopMenu.localPosition = shopMenuStartPos;
-        shopMenu.LeanMoveLocalX(screenCenterX, tweetDuration).setEaseOutExpo();
+        shopMenu.LeanMoveLocalX(screenCenterX, tweenDuration).setEaseOutExpo();
     }
 
     public void DisableOptionsMenu()
     {
-        optionsMenu.LeanMoveLocalX(optionsMenuStartPos.x, tweetDuration).setEaseInExpo().setOnComplete(OnOptionsMenuComplete);
+        optionsMenu.LeanMoveLocalX(optionsMenuStartPos.x, tweenDuration).setEaseInExpo().setOnComplete(OnOptionsMenuComplete);
+        Tweening.Instance.TweenArray(mainMenuElements, tweenDuration, tweenDelay, true);
+
     }
 
     public void DisableShopMenu()
     {
-        shopMenu.LeanMoveLocalX(shopMenuStartPos.x, tweetDuration).setEaseInExpo().setOnComplete(OnShopMenuComplete);
+        shopMenu.LeanMoveLocalX(shopMenuStartPos.x, tweenDuration).setEaseInExpo().setOnComplete(OnShopMenuComplete);
+        Tweening.Instance.TweenArray(mainMenuElements, tweenDuration, tweenDelay, true);
+
     }
 
     private void OnOptionsMenuComplete()

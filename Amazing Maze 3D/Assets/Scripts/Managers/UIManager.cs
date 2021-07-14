@@ -9,7 +9,8 @@ public class UIManager : MonoBehaviour
     public Image paintingPointer;
     public GameObject victoryMenu, replayMenu;
     public GameObject pauseMenu;
-
+    public GameObject[] pauseMenuElements, victoryMenuElements, replayMenuElements;
+    
     //public static event Action OnUIChanged;
 
     #region Singleton 
@@ -33,8 +34,8 @@ public class UIManager : MonoBehaviour
 
     void Start()
     {
-        coinsText.text = "Coins: " + GameManager.Instance.totalCoins;
-        sprayText.text = "Spray: " + ObjectPooler.instance.sprayAmount;
+        coinsText.text = GameManager.Instance.totalCoins.ToString();
+        sprayText.text = ObjectPooler.instance.sprayAmount.ToString();
 
         //OnUIChanged += OnSprayChanged;
     }
@@ -51,13 +52,18 @@ public class UIManager : MonoBehaviour
 
     private void OnSprayChanged()
     {
-        sprayText.text = "Spray: " + ObjectPooler.instance.sprayAmount;
+        sprayText.text = ObjectPooler.instance.sprayAmount.ToString();
     }
 
 
     public void PickupCoin(int coinValue)
     {
         GameManager.Instance.totalCoins += coinValue;
-        coinsText.text = "Coins: " + GameManager.Instance.totalCoins;
+        coinsText.text = GameManager.Instance.totalCoins.ToString();
+    }
+
+    public void TweenPauseMenu()
+    {
+        Tweening.Instance.TweenScale(pauseMenu, 0.4f, true);
     }
 }

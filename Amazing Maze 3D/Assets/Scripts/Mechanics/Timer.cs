@@ -26,7 +26,7 @@ public class Timer : MonoBehaviour
     {
         takingAway = true;
         TimeSpan timeSpan = TimeSpan.FromSeconds(TimeLeft);
-        UIManager.Instance.timerText.text = "Time left: " + timeSpan.ToString("m':'ss");
+        UIManager.Instance.timerText.text = timeSpan.ToString("m':'ss");
 
         TimeLeft--;
 
