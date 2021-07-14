@@ -5,12 +5,13 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    public TextMeshProUGUI sprayText, timerText, loseText, coinsText, winnerText;
+    public TextMeshProUGUI sprayText, timerText, coinsText;
     public Image paintingPointer;
     public GameObject victoryMenu, replayMenu;
     public GameObject pauseMenu;
     public GameObject[] pauseMenuElements, victoryMenuElements, replayMenuElements;
-    
+    public CanvasGroup victoryMenuBg, loseMenuBg;
+
     //public static event Action OnUIChanged;
 
     #region Singleton 

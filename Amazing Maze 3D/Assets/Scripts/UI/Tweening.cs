@@ -6,7 +6,6 @@ public class Tweening : MonoBehaviour
     [SerializeField] private bool tweenOnStart = false;
     public Vector3[] menuElementsStartPos;
     private bool isArrayInited;
-    public CanvasGroup victoryMenuBg;
 
     #region Singleton 
     private static Tweening instance;
@@ -129,19 +128,19 @@ public class Tweening : MonoBehaviour
         TweenArray(UIManager.Instance.pauseMenuElements, 0.15f, 0.15f, true);
     }
 
-    public void TweenVictoryMenu()
+    public void TweenVictoryLoseMenu(GameObject menu, CanvasGroup bg, GameObject[] menuElements)
     {
-        victoryMenuBg.alpha = 0;
-        victoryMenuBg.gameObject.SetActive(true);
-        victoryMenuBg.LeanAlpha(1f, 1f).setIgnoreTimeScale(true);
+        bg.alpha = 0;
+        bg.gameObject.SetActive(true);
+        bg.LeanAlpha(1f, 1f).setIgnoreTimeScale(true);
 
-        UIManager.Instance.victoryMenu.gameObject.SetActive(true);
-        UIManager.Instance.victoryMenu.transform.localPosition = new Vector2(0, -Screen.height);
-        UIManager.Instance.victoryMenu.LeanMoveLocalY(0, 1f).setEaseOutBack()
+        menu.gameObject.SetActive(true);
+        menu.transform.localPosition = new Vector2(0, -Screen.height);
+        menu.LeanMoveLocalY(0, 1f).setEaseOutBack()
             .setIgnoreTimeScale(true)
             .setOnComplete(() =>
             {
-                TweenArray(UIManager.Instance.victoryMenuElements, 0.5f, 0.2f, true);
+                TweenArray(menuElements, 0.5f, 0.2f, true);
             })
             .delay = 0.7f;
     }

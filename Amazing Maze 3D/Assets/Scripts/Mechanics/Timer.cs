@@ -16,7 +16,7 @@ public class Timer : MonoBehaviour
 
     void Update()
     {
-        if (!takingAway && TimeLeft > 0 && GameManager.Instance.State == GameState.Playing)
+        if (!takingAway && TimeLeft >= 0 && GameManager.Instance.State == GameState.Playing)
         {
             StartCoroutine(RunTimerCoroutine());
         }
@@ -30,11 +30,12 @@ public class Timer : MonoBehaviour
 
         TimeLeft--;
 
-        yield return new WaitForSeconds(1);
-        if (TimeLeft <= 0)
+        if (TimeLeft < 0)
         {
             GameManager.Instance.UpdateGameState("Lose");
         }
+        yield return new WaitForSeconds(1);
+        
         takingAway = false;
     }
 }

@@ -81,19 +81,17 @@ public class GameManager : GenericSingletonClass<GameManager>
 
     private void HandleLose()
     {
-        ShowMenu(UIManager.Instance.replayMenu);
+        isGameRunning = false;
+        Time.timeScale = 0f;
+        Tweening.Instance.TweenVictoryLoseMenu(UIManager.Instance.replayMenu, UIManager.Instance.loseMenuBg, UIManager.Instance.replayMenuElements);
     }
 
 
     private void HandleWin()
     {
-        ShowMenu(UIManager.Instance.victoryMenu);
-    }
-    private void ShowMenu(GameObject menu)
-    {
         isGameRunning = false;
         Time.timeScale = 0f;
-        Tweening.Instance.TweenVictoryMenu();
+        Tweening.Instance.TweenVictoryLoseMenu(UIManager.Instance.victoryMenu, UIManager.Instance.victoryMenuBg, UIManager.Instance.victoryMenuElements);
     }
 
     public void QuitGame()
