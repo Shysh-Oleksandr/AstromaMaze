@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class Tweening : MonoBehaviour
@@ -143,5 +144,19 @@ public class Tweening : MonoBehaviour
                 TweenArray(menuElements, 0.5f, 0.2f, true);
             })
             .delay = 0.7f;
+    }
+
+    public void TweenText(TextMeshProUGUI text)
+    {
+        text.gameObject.SetActive(true);
+
+        text.gameObject.transform.localPosition = new Vector2(0, -Screen.height);
+        text.gameObject.LeanMoveLocalY(0, 2f).setEaseOutCubic()
+            .setIgnoreTimeScale(true)
+            .setOnComplete(() =>
+            {
+                text.gameObject.LeanMoveLocalY(Screen.height, 2f).setEaseInBack().setOnComplete(() => text.gameObject.SetActive(false));
+            });
+
     }
 }

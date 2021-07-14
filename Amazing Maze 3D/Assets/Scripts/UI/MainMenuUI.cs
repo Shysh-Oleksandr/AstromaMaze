@@ -45,7 +45,6 @@ public class MainMenuUI : MonoBehaviour
         if (!audioArrow.IsActive())
         {
             TweenDiagonally(audioElements);
-
         }
     }
 
@@ -54,9 +53,7 @@ public class MainMenuUI : MonoBehaviour
         if (!gameArrow.IsActive())
         {
             TweenDiagonally(gameElements);
-
         }
-
     }
 
     public void TweenLanguage()
@@ -64,7 +61,6 @@ public class MainMenuUI : MonoBehaviour
         if (!languageArrow.IsActive())
         {
             TweenDiagonally(languageElements);
-
         }
     }
 
@@ -74,6 +70,24 @@ public class MainMenuUI : MonoBehaviour
 
         optionsMenu.localPosition = optionsMenuStartPos;
         optionsMenu.LeanMoveLocalX(screenCenterX, tweenDuration).setEaseOutExpo();
+
+        if (videoArrow.IsActive())
+        {
+            TweenVideo();
+        }
+        else if (audioArrow.IsActive())
+        {
+            TweenAudio();
+        }
+        else if (gameArrow.IsActive())
+        {
+            TweenGameOption();
+        }
+        else if (languageArrow.IsActive())
+        {
+            TweenLanguage();
+        }
+
     }
 
     public void EnableShopMenu()
