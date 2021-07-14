@@ -4,8 +4,6 @@ using UnityEngine.UI;
 public class MainMenuUI : MonoBehaviour
 {
     private const float menuY = 132f;
-    /*private const float ButtonStartX = 207f;
-    private const float ButtonDeltaY = 781f;*/
 
     [SerializeField] private Transform optionsMenu, shopMenu;
     [SerializeField] private GameObject[] mainMenuElements, videoElements, audioElements, gameElements, languageElements;
@@ -22,11 +20,23 @@ public class MainMenuUI : MonoBehaviour
         Tweening.Instance.TweenArray(mainMenuElements, tweenDuration, tweenDelay, true);
     }
 
+    private void TweenDiagonally(GameObject[] optionElements)
+    {
+        for (int i = 0; i < optionElements.Length; i++)
+        {
+            GameObject element = optionElements[i];
+            Vector2 elementStartPos = element.transform.position;
+            element.transform.localPosition = new Vector2(elementStartPos.x, -Screen.height);
+
+            LeanTween.move(element, elementStartPos, tweenDuration).setEaseOutExpo().delay = tweenDelay * (i + 1);
+        }
+    }
+
     public void TweenVideo()
     {
         if (!videoArrow.IsActive())
         {
-            Tweening.Instance.TweenArray(videoElements, tweenDuration, tweenDelay, false);
+            TweenDiagonally(videoElements);
         }
     }
 
@@ -34,7 +44,7 @@ public class MainMenuUI : MonoBehaviour
     {
         if (!audioArrow.IsActive())
         {
-            Tweening.Instance.TweenArray(audioElements, tweenDuration, tweenDelay, false);
+            TweenDiagonally(audioElements);
 
         }
     }
@@ -43,7 +53,7 @@ public class MainMenuUI : MonoBehaviour
     {
         if (!gameArrow.IsActive())
         {
-            Tweening.Instance.TweenArray(gameElements, tweenDuration, tweenDelay, false);
+            TweenDiagonally(gameElements);
 
         }
 
@@ -53,10 +63,9 @@ public class MainMenuUI : MonoBehaviour
     {
         if (!languageArrow.IsActive())
         {
-            Tweening.Instance.TweenArray(languageElements, tweenDuration, tweenDelay, false);
+            TweenDiagonally(languageElements);
 
         }
-
     }
 
     public void EnableOptionsMenu()

@@ -6,6 +6,7 @@ public class Tweening : MonoBehaviour
     [SerializeField] private bool tweenOnStart = false;
     public Vector3[] menuElementsStartPos;
     private bool isArrayInited;
+    public CanvasGroup victoryMenuBg;
 
     #region Singleton 
     private static Tweening instance;
@@ -30,14 +31,14 @@ public class Tweening : MonoBehaviour
     {
         if (tweenOnStart)
         {
-            Tween(tweenDuration, tweenDelay);
+            Tween(gameObject, tweenDuration, tweenDelay);
         }
     }
 
-    public void Tween(float tweenDuration, float tweenDelay)
+    public void Tween(GameObject optionElements, float tweenDuration, float tweenDelay)
     {
-        Vector2 elementStartPos = transform.position;
-        transform.localPosition = new Vector2(Screen.width * 1.2f, -Screen.height / 2);
+        Vector2 elementStartPos = optionElements.transform.position;
+        optionElements.transform.localPosition = new Vector2(Screen.width * 1.2f, -Screen.height / 2);
 
         LeanTween.move(gameObject, elementStartPos, tweenDuration).setEaseOutExpo().setIgnoreTimeScale(true).delay = tweenDelay;
     }
@@ -47,7 +48,6 @@ public class Tweening : MonoBehaviour
         for (int i = 0; i < optionElements.Length; i++)
         {
             GameObject element = optionElements[i];
-            element.SetActive(true);
             if (!isArrayInited)
             {
                 menuElementsStartPos = new Vector3[optionElements.Length];
@@ -59,6 +59,7 @@ public class Tweening : MonoBehaviour
             }
 
             element.transform.localPosition = new Vector2(Screen.width, -Screen.height / 2);
+            element.SetActive(true);
 
             if (startDelay)
             {
@@ -126,5 +127,22 @@ public class Tweening : MonoBehaviour
     private void TweenPauseMenu()
     {
         TweenArray(UIManager.Instance.pauseMenuElements, 0.15f, 0.15f, true);
+    }
+
+    public void TweenVictoryMenu()
+    {
+        victoryMenuBg.alpha = 0;
+        victoryMenuBg.gameObject.SetActive(true);
+        victoryMenuBg.LeanAlpha(1f, 1f).setIgnoreTimeScale(true);
+
+        UIManager.Instance.victoryMenu.gameObject.SetActive(true);
+        UIManager.Instance.victoryMenu.transform.localPosition = new Vector2(0, -Screen.height);
+        UIManager.Instance.victoryMenu.LeanMoveLocalY(0, 1f).setEaseOutBack()
+            .setIgnoreTimeScale(true)
+            .setOnComplete(() =>
+            {
+                TweenArray(UIManager.Instance.victoryMenuElements, 0.5f, 0.2f, true);
+            })
+            .delay = 0.7f;
     }
 }

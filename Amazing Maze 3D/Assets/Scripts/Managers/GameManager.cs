@@ -93,7 +93,7 @@ public class GameManager : GenericSingletonClass<GameManager>
     {
         isGameRunning = false;
         Time.timeScale = 0f;
-        menu.gameObject.SetActive(true);
+        Tweening.Instance.TweenVictoryMenu();
     }
 
     public void QuitGame()
