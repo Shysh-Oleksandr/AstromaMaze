@@ -4,7 +4,8 @@ public class Tweening : MonoBehaviour
 {
     [SerializeField] private float tweenDuration, tweenDelay;
     [SerializeField] private bool tweenOnStart = false;
-    public float startX;
+    public Vector3[] menuElementsStartPos;
+    private bool isArrayInited;
 
     #region Singleton 
     private static Tweening instance;
@@ -36,7 +37,7 @@ public class Tweening : MonoBehaviour
     public void Tween(float tweenDuration, float tweenDelay)
     {
         Vector2 elementStartPos = transform.position;
-        transform.localPosition = new Vector2(elementStartPos.x, -Screen.height / 2);
+        transform.localPosition = new Vector2(Screen.width * 1.2f, -Screen.height / 2);
 
         LeanTween.move(gameObject, elementStartPos, tweenDuration).setEaseOutExpo().setIgnoreTimeScale(true).delay = tweenDelay;
     }
@@ -47,21 +48,25 @@ public class Tweening : MonoBehaviour
         {
             GameObject element = optionElements[i];
             element.SetActive(true);
-            Vector2 elementStartPos = element.transform.position;
-            if (startX == 0)
+            if (!isArrayInited)
             {
-                startX = elementStartPos.x;
+                menuElementsStartPos = new Vector3[optionElements.Length];
+                isArrayInited = true;
+            }
+            if (menuElementsStartPos[i] == Vector3.zero)
+            {
+                menuElementsStartPos[i] = element.transform.position;
             }
 
-            element.transform.localPosition = new Vector2(Screen.width, -Screen.height);
+            element.transform.localPosition = new Vector2(Screen.width, -Screen.height / 2);
 
             if (startDelay)
             {
-                LeanTween.move(element, elementStartPos, tweenDuration).setEaseOutExpo().setIgnoreTimeScale(true).delay = tweenDelay * (i + 1);
+                LeanTween.move(element, menuElementsStartPos[i], tweenDuration).setEaseOutExpo().setIgnoreTimeScale(true).delay = tweenDelay * (i + 1);
             }
             else
             {
-                LeanTween.move(element, elementStartPos, tweenDuration).setEaseOutExpo().setIgnoreTimeScale(true).delay = tweenDelay * i;
+                LeanTween.move(element, menuElementsStartPos[i], tweenDuration).setEaseOutExpo().setIgnoreTimeScale(true).delay = tweenDelay * i;
             }
         }
     }
@@ -72,7 +77,7 @@ public class Tweening : MonoBehaviour
         {
             GameObject element = optionElements[i - 1];
 
-            Vector2 elementPosTo = new Vector2(startX, -Screen.height / 2);
+            Vector2 elementPosTo = new Vector2(Screen.width, -Screen.height / 2);
 
             if (startDelay)
             {
@@ -99,17 +104,17 @@ public class Tweening : MonoBehaviour
         }
     }
 
-    public void TweenScale(GameObject gameObject, float tweenDuration, bool scaleIn)
+    public void TweenScale(GameObject gameObject, float tweenDuration, bool scaleIn, float delay)
     {
         if (scaleIn)
         {
             gameObject.transform.localScale = Vector2.zero;
-            gameObject.transform.LeanScale(Vector2.one, tweenDuration).setEaseOutExpo().setIgnoreTimeScale(true).setOnComplete(TweenPauseMenu);
+            gameObject.transform.LeanScale(Vector2.one, tweenDuration).setEaseOutExpo().setIgnoreTimeScale(true).setOnComplete(TweenPauseMenu).delay = delay;
         }
         else
         {
             gameObject.transform.localScale = Vector2.one;
-            gameObject.transform.LeanScale(Vector2.zero, tweenDuration).setEaseOutExpo().setIgnoreTimeScale(true).setOnComplete(DisablePauseMenu);
+            gameObject.transform.LeanScale(Vector2.zero, tweenDuration).setEaseOutExpo().setIgnoreTimeScale(true).setOnComplete(DisablePauseMenu).delay = delay;
         }
     }
 
@@ -120,6 +125,6 @@ public class Tweening : MonoBehaviour
 
     private void TweenPauseMenu()
     {
-        TweenArray(UIManager.Instance.pauseMenuElements, 0.3f, 0.2f, true);
+        TweenArray(UIManager.Instance.pauseMenuElements, 0.15f, 0.15f, true);
     }
 }

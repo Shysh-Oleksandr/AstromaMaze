@@ -50,8 +50,8 @@ public class PauseMenu : MonoBehaviour
     public void ResumeGame()
     {
         GameManager.Instance.UpdateGameState("Playing");
-/*        Tweening.Instance.TweenScale(UIManager.Instance.pauseMenu, 0.4f, false);
-*/        Tweening.Instance.TweenArrayOut(UIManager.Instance.pauseMenuElements, 0.4f, 0.2f, false);
+        Tweening.Instance.TweenScale(UIManager.Instance.pauseMenu, 0.4f, false, 0.4f);
+        Tweening.Instance.TweenArrayOut(UIManager.Instance.pauseMenuElements, 0.15f, 0.15f, false);
         UIManager.Instance.paintingPointer.gameObject.SetActive(mainCam.gameObject.activeSelf);
     }
 

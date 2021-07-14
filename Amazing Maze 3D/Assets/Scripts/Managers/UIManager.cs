@@ -64,6 +64,6 @@ public class UIManager : MonoBehaviour
 
     public void TweenPauseMenu()
     {
-        Tweening.Instance.TweenScale(pauseMenu, 0.4f, true);
+        Tweening.Instance.TweenScale(pauseMenu, 0.15f, true, 0f);
     }
 }

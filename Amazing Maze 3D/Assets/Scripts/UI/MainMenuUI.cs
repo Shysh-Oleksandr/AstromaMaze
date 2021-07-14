@@ -22,19 +22,6 @@ public class MainMenuUI : MonoBehaviour
         Tweening.Instance.TweenArray(mainMenuElements, tweenDuration, tweenDelay, true);
     }
 
-    /*private void TweenMainMenu()
-    {
-        for (int i = 0; i < mainMenuElements.Length; i++)
-        {
-            GameObject element = mainMenuElements[i];
-            Vector2 elementStartPos = new Vector2(ButtonStartX, element.transform.position.y - ButtonDeltaY);
-            element.transform.localPosition = new Vector2(elementStartPos.x, -Screen.height);
-
-            element.LeanMoveLocalY(elementStartPos.y, tweetDuration).setEaseOutExpo().delay = tweetDelay * (i+1);
-        }
-    }*/
-
-
     public void TweenVideo()
     {
         if (!videoArrow.IsActive())
