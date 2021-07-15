@@ -5,7 +5,7 @@ public class Tweening : MonoBehaviour
 {
     [SerializeField] private float tweenDuration, tweenDelay;
     [SerializeField] private bool tweenOnStart = false;
-    public Vector3[] menuElementsStartPos;
+    public Vector3[] pauseMenuElementsStartPos, menuElementsStartPos;
     private bool isArrayInited;
 
     #region Singleton 
@@ -48,11 +48,8 @@ public class Tweening : MonoBehaviour
         for (int i = 0; i < optionElements.Length; i++)
         {
             GameObject element = optionElements[i];
-            if (!isArrayInited)
-            {
-                menuElementsStartPos = new Vector3[optionElements.Length];
-                isArrayInited = true;
-            }
+            menuElementsStartPos = new Vector3[optionElements.Length];
+
             if (menuElementsStartPos[i] == Vector3.zero)
             {
                 menuElementsStartPos[i] = element.transform.position;
@@ -68,6 +65,35 @@ public class Tweening : MonoBehaviour
             else
             {
                 LeanTween.move(element, menuElementsStartPos[i], tweenDuration).setEaseOutExpo().setIgnoreTimeScale(true).delay = tweenDelay * i;
+            }
+        }
+    }
+
+    public void TweenPauseMenuElements(GameObject[] optionElements, float tweenDuration, float tweenDelay, bool startDelay)
+    {
+        for (int i = 0; i < optionElements.Length; i++)
+        {
+            GameObject element = optionElements[i];
+            if (!isArrayInited)
+            {
+                pauseMenuElementsStartPos = new Vector3[optionElements.Length];
+                isArrayInited = true;
+            }
+            if (pauseMenuElementsStartPos[i] == Vector3.zero)
+            {
+                pauseMenuElementsStartPos[i] = element.transform.position;
+            }
+
+            element.transform.localPosition = new Vector2(Screen.width, -Screen.height / 2);
+            element.SetActive(true);
+
+            if (startDelay)
+            {
+                LeanTween.move(element, pauseMenuElementsStartPos[i], tweenDuration).setEaseOutExpo().setIgnoreTimeScale(true).delay = tweenDelay * (i + 1);
+            }
+            else
+            {
+                LeanTween.move(element, pauseMenuElementsStartPos[i], tweenDuration).setEaseOutExpo().setIgnoreTimeScale(true).delay = tweenDelay * i;
             }
         }
     }
@@ -110,23 +136,17 @@ public class Tweening : MonoBehaviour
         if (scaleIn)
         {
             gameObject.transform.localScale = Vector2.zero;
-            gameObject.transform.LeanScale(Vector2.one, tweenDuration).setEaseOutExpo().setIgnoreTimeScale(true).setOnComplete(TweenPauseMenu).delay = delay;
+            gameObject.transform.LeanScale(Vector2.one, tweenDuration).setEaseOutExpo().setIgnoreTimeScale(true)
+                .setOnComplete(() => TweenPauseMenuElements(UIManager.Instance.pauseMenuElements, 0.15f, 0.15f, true))
+                .delay = delay;
         }
         else
         {
             gameObject.transform.localScale = Vector2.one;
-            gameObject.transform.LeanScale(Vector2.zero, tweenDuration).setEaseOutExpo().setIgnoreTimeScale(true).setOnComplete(DisablePauseMenu).delay = delay;
+            gameObject.transform.LeanScale(Vector2.zero, tweenDuration).setEaseOutExpo().setIgnoreTimeScale(true)
+                .setOnComplete(() => UIManager.Instance.pauseMenu.SetActive(false))
+                .delay = delay;
         }
-    }
-
-    private void DisablePauseMenu()
-    {
-        UIManager.Instance.pauseMenu.SetActive(false);
-    }
-
-    private void TweenPauseMenu()
-    {
-        TweenArray(UIManager.Instance.pauseMenuElements, 0.15f, 0.15f, true);
     }
 
     public void TweenVictoryLoseMenu(GameObject menu, CanvasGroup bg, GameObject[] menuElements)
@@ -151,11 +171,11 @@ public class Tweening : MonoBehaviour
         text.gameObject.SetActive(true);
 
         text.gameObject.transform.localPosition = new Vector2(0, -Screen.height);
-        text.gameObject.LeanMoveLocalY(0, 2f).setEaseOutCubic()
+        text.gameObject.LeanMoveLocalY(0, 0.6f).setEaseOutCubic()
             .setIgnoreTimeScale(true)
             .setOnComplete(() =>
             {
-                text.gameObject.LeanMoveLocalY(Screen.height, 2f).setEaseInBack().setOnComplete(() => text.gameObject.SetActive(false));
+                text.gameObject.LeanMoveLocalY(Screen.height, 0.6f).setEaseInBack().setOnComplete(() => text.gameObject.SetActive(false));
             });
 
     }

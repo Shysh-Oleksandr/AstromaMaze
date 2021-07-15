@@ -17,7 +17,7 @@ public class MainMenuUI : MonoBehaviour
         optionsMenuStartPos = new Vector2(Screen.width, menuY);
         shopMenuStartPos = new Vector2(-Screen.width, menuY);
 
-        Tweening.Instance.TweenArray(mainMenuElements, tweenDuration, tweenDelay, true);
+        Tweening.Instance.TweenArray(mainMenuElements, tweenDuration, 0.35f, true);
     }
 
     private void TweenDiagonally(GameObject[] optionElements)
