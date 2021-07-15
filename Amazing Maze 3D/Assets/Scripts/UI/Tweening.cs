@@ -31,16 +31,8 @@ public class Tweening : MonoBehaviour
     {
         if (tweenOnStart)
         {
-            Tween(gameObject, tweenDuration, tweenDelay);
+            TweenVertically(gameObject, tweenDuration, tweenDelay, false, false);
         }
-    }
-
-    public void Tween(GameObject optionElements, float tweenDuration, float tweenDelay)
-    {
-        Vector2 elementStartPos = optionElements.transform.position;
-        optionElements.transform.localPosition = new Vector2(Screen.width * 1.2f, -Screen.height / 2);
-
-        LeanTween.move(gameObject, elementStartPos, tweenDuration).setEaseOutExpo().setIgnoreTimeScale(true).delay = tweenDelay;
     }
 
     public void TweenArray(GameObject[] optionElements, float tweenDuration, float tweenDelay, bool startDelay)
@@ -166,17 +158,28 @@ public class Tweening : MonoBehaviour
             .delay = 0.7f;
     }
 
-    public void TweenText(TextMeshProUGUI text)
+    public void TweenVertically(GameObject go, float duration, float delay, bool tweenBack, bool tweenUp)
     {
-        text.gameObject.SetActive(true);
+        go.gameObject.SetActive(true);
 
-        text.gameObject.transform.localPosition = new Vector2(0, -Screen.height);
-        text.gameObject.LeanMoveLocalY(0, 0.6f).setEaseOutCubic()
+        go.gameObject.transform.localPosition = new Vector2(0, -Screen.height / 2);
+        go.gameObject.LeanMoveLocalY(0, duration).setEaseOutCubic()
             .setIgnoreTimeScale(true)
             .setOnComplete(() =>
             {
-                text.gameObject.LeanMoveLocalY(Screen.height, 0.6f).setEaseInBack().setOnComplete(() => text.gameObject.SetActive(false));
-            });
+                if (tweenBack)
+                {
+                    if (tweenUp)
+                    {
+                        go.gameObject.LeanMoveLocalY(Screen.height, duration).setEaseInBack().setOnComplete(() => go.gameObject.SetActive(false));
+                    }
+                    else
+                    {
+                        go.gameObject.LeanMoveLocalY(-Screen.height, duration).setEaseInBack().setOnComplete(() => go.gameObject.SetActive(false));
+                    }
+                }
+            })
+            .delay = delay;
 
     }
 }

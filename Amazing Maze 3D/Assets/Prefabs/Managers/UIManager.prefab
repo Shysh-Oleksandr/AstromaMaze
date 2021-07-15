@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 196314250963780435}
   - component: {fileID: 196314250963780432}
+  - component: {fileID: 502897644}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -45,6 +46,48 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprayText: {fileID: 0}
   timerText: {fileID: 0}
-  loseText: {fileID: 0}
   coinsText: {fileID: 0}
-  winnerText: {fileID: 0}
+  levelText: {fileID: 0}
+  paintingPointer: {fileID: 0}
+  victoryMenu: {fileID: 0}
+  replayMenu: {fileID: 0}
+  pauseMenu: {fileID: 0}
+  pauseMenuElements:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  victoryMenuElements:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  replayMenuElements:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  victoryMenuBg: {fileID: 0}
+  loseMenuBg: {fileID: 0}
+  playerController: {fileID: 0}
+  paint: {fileID: 0}
+--- !u!114 &502897644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196314250963780433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19ec293ac8a21dd459790259a3edadce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tweenDuration: 0
+  tweenDelay: 0
+  tweenOnStart: 0
+  pauseMenuElementsStartPos: []
+  menuElementsStartPos: []

@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3059632426325312214}
-  - component: {fileID: 3059632426325312213}
   - component: {fileID: 3059632426325312215}
   m_Layer: 0
   m_Name: SpawnManager
@@ -32,26 +31,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3059632426325312213
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3059632426325312216}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2907fd2c9c3db934989efc2bcb9108ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  paintableLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  playerTransform: {fileID: 0}
-  brushSize: 0.15
-  availableDistance: 6
-  distanceToHit: 0
-  localRotationY: 0
 --- !u!114 &3059632426325312215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77,4 +56,5 @@ MonoBehaviour:
     prefab: {fileID: 182813202251567036, guid: d4fa1e69f842cc242b1927af8e2747fa, type: 3}
     size: 20
     shouldExpand: 1
+  sprayItem: {fileID: 11400000, guid: e9855cf2e7a9d7147bc14e9ecf45170a, type: 2}
   sprayAmount: 0

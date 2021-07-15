@@ -9,6 +9,10 @@ public class Paint : MonoBehaviour
     [SerializeField] private float brushSize = 0.1f, maxDistance = 10f;
     [SerializeField] private float localRotationY;
 
+    public delegate void OnSprayChanged();
+
+    public event OnSprayChanged OnSprayChangedEvent;
+
     private ObjectPooler objectPooler;
 
     Camera mainCam;
@@ -88,6 +92,7 @@ public class Paint : MonoBehaviour
                 }
 
                 objectPooler.sprayAmount--;
+                OnSprayChangedEvent?.Invoke();
             }
         }
     }

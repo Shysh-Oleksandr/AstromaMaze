@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -12,6 +9,12 @@ public class PlayerController : MonoBehaviour
     public Transform groundCheck;
     public LayerMask groundLayer;
     public BootItem bootItem;
+
+    public delegate void OnCoinTake(int coins);
+    public event OnCoinTake OnCoinTakeEvent;
+    
+    public delegate void OnMovementChanged();
+    public event OnMovementChanged OnMovementChangedEvent;
 
     private Vector3 velocity;
     private CharacterController controller;
@@ -24,7 +27,6 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         PlayerMovement();
-
     }
 
     private void PlayerMovement()
@@ -46,6 +48,7 @@ public class PlayerController : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
+        OnMovementChangedEvent?.Invoke();
     }
 
 
@@ -58,10 +61,10 @@ public class PlayerController : MonoBehaviour
 
         if (other.CompareTag("SurprisedWall"))
         {
-            Debug.Log("Surprise!");
+            Tweening.Instance.TweenVertically(UIManager.Instance.surpiseText.gameObject, 0.6f, 0, true, false);
         }
 
-        if(other.GetComponent<LevelIndex>() != null)
+        if (other.GetComponent<LevelIndex>() != null)
         {
             GameManager.Instance.UpdateGameState("Playing");
             int levelIndex = other.GetComponent<LevelIndex>().levelIndex;
@@ -72,7 +75,7 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(other.gameObject);
 
-            UIManager.Instance.PickupCoin(other.GetComponent<Coin>().coinValue);
+            OnCoinTakeEvent?.Invoke(other.GetComponent<Coin>().coinValue);
         }
     }
 

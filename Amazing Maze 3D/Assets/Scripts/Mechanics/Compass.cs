@@ -8,6 +8,7 @@ public class Compass : MonoBehaviour
     public GameObject compassPanel;
     public CompassItem compassItem;
     public TextMeshProUGUI distanceText;
+    public PlayerController player;
     [SerializeField] float rotationSpeed, distanceToExit;
 
     [Tooltip("The direction towards which the compass points. Default for North is (0, 0, 1)")]
@@ -21,24 +22,37 @@ public class Compass : MonoBehaviour
     {
         compassPanel.SetActive(compassItem.isBought);
         distanceText.gameObject.SetActive(compassItem.canShowDistance);
+
+        player.OnMovementChangedEvent += ShowDistance;
+    }
+
+    private void OnDestroy()
+    {
+        player.OnMovementChangedEvent -= ShowDistance;
     }
 
     private void Update()
     {
         CompassRotation();
+        RotateToFinish();
+    }
 
+    private void RotateToFinish()
+    {
         if (Input.GetKeyDown(KeyCode.R) && compassItem.canRotateToNorth && Time.time > nextRotateToNorth)
         {
             nextRotateToNorth = Time.time + compassItem.compassCooldown;
             StartCoroutine(RotateToNorth());
         }
+    }
 
+    private void ShowDistance()
+    {
         if (compassItem.canShowDistance)
         {
             distanceToExit = (int)Vector3.Distance(mPlayerTransform.position, exitTransform.position);
             distanceText.text = distanceToExit.ToString() + " m";
         }
-
     }
 
     IEnumerator RotateToNorth()

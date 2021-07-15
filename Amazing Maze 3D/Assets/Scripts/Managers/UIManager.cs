@@ -5,14 +5,14 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    public TextMeshProUGUI sprayText, timerText, coinsText, levelText;
+    public TextMeshProUGUI sprayText, timerText, coinsText, levelText, surpiseText;
     public Image paintingPointer;
     public GameObject victoryMenu, replayMenu;
     public GameObject pauseMenu;
     public GameObject[] pauseMenuElements, victoryMenuElements, replayMenuElements;
     public CanvasGroup victoryMenuBg, loseMenuBg;
-
-    //public static event Action OnUIChanged;
+    public PlayerController playerController;
+    public Paint paint;
 
     #region Singleton 
     private static UIManager instance;
@@ -35,23 +35,20 @@ public class UIManager : MonoBehaviour
 
     void Start()
     {
+        playerController.OnCoinTakeEvent += OnCoinChanged;
+        paint.OnSprayChangedEvent += OnSprayChanged;
+
         coinsText.text = GameManager.Instance.totalCoins.ToString();
         sprayText.text = ObjectPooler.instance.sprayAmount.ToString();
         levelText.text = "Level 1"; // TODO: + level variable.
 
-        Tweening.Instance.TweenText(levelText);
-
-        //OnUIChanged += OnSprayChanged;
+        Tweening.Instance.TweenVertically(levelText.gameObject, 0.6f, 0, true, true);
     }
 
     private void OnDestroy()
     {
-        //OnUIChanged -= OnSprayChanged;
-    }
-
-    private void Update()
-    {
-        OnSprayChanged();
+        playerController.OnCoinTakeEvent -= OnCoinChanged;
+        paint.OnSprayChangedEvent -= OnSprayChanged;
     }
 
     private void OnSprayChanged()
@@ -59,8 +56,7 @@ public class UIManager : MonoBehaviour
         sprayText.text = ObjectPooler.instance.sprayAmount.ToString();
     }
 
-
-    public void PickupCoin(int coinValue)
+    public void OnCoinChanged(int coinValue)
     {
         GameManager.Instance.totalCoins += coinValue;
         coinsText.text = GameManager.Instance.totalCoins.ToString();
