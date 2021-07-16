@@ -1757,8 +1757,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19ec293ac8a21dd459790259a3edadce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tweenDuration: 0.5
-  tweenDelay: 0.1
+  tweenDuration: 2
+  tweenDelay: 0.5
+  tweenOnStart: 1
+  pauseMenuElementsStartPos: []
+  menuElementsStartPos: []
 --- !u!1 &317800747
 GameObject:
   m_ObjectHideFlags: 0

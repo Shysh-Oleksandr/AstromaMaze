@@ -5,7 +5,7 @@ public class Tweening : MonoBehaviour
 {
     [SerializeField] private float tweenDuration, tweenDelay;
     [SerializeField] private bool tweenOnStart = false;
-    public Vector3[] pauseMenuElementsStartPos, menuElementsStartPos;
+    private Vector3[] pauseMenuElementsStartPos, menuElementsStartPos;
     private bool isArrayInited;
 
     #region Singleton 
@@ -31,8 +31,16 @@ public class Tweening : MonoBehaviour
     {
         if (tweenOnStart)
         {
-            TweenVertically(gameObject, tweenDuration, tweenDelay, false, false);
+            Tween(gameObject, tweenDuration, tweenDelay);
         }
+    }
+
+    public void Tween(GameObject optionElements, float tweenDuration, float tweenDelay)
+    {
+        Vector2 elementStartPos = optionElements.transform.position;
+        optionElements.transform.localPosition = new Vector2(0, -Screen.height);
+
+        LeanTween.move(gameObject, elementStartPos, tweenDuration).setEaseOutExpo().setIgnoreTimeScale(true).delay = tweenDelay;
     }
 
     public void TweenArray(GameObject[] optionElements, float tweenDuration, float tweenDelay, bool startDelay)
