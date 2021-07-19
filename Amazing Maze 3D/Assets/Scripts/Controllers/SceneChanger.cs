@@ -60,7 +60,7 @@ public class SceneChanger : GenericSingletonClass<SceneChanger>
                 float progress = Mathf.Clamp01(operation.progress / .9f);
 
                 slider.value = progress;
-                progressText.text = progress.ToString("0.0%");
+                progressText.text = progress.ToString("0%");
 
                 yield return null;
             }
