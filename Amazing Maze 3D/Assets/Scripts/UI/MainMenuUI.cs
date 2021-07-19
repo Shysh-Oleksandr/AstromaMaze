@@ -1,22 +1,90 @@
+using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+
+[Serializable]
+public struct UpgradeTexts
+{
+    public Item item;
+    public TextMeshProUGUI text;
+}
+
+[Serializable]
+public struct UpgradeButtons
+{
+    public Item item;
+    public Button button;
+    public TextMeshProUGUI maxLevelText;
+}
 
 public class MainMenuUI : MonoBehaviour
 {
     private const float menuY = 132f;
 
-    [SerializeField] private Transform optionsMenu, shopMenu;
-    [SerializeField]
-    private GameObject[] mainMenuElements, videoElements, audioElements, gameElements, languageElements,
-                                        sprayElements, bootsElements, birdsElements, compassElements;
-    [SerializeField] private GameObject videoTab, audioTab, gameTab, languageTab, sprayTab, bootsTab, birdsTab, compassTab;
-    [SerializeField] private float screenCenterX, tweenDuration, tweenDelay;
+    #region Variables declaration
+    [Header("Menus")]
+    [SerializeField] private Transform optionsMenu;
+    [SerializeField] private Transform shopMenu;
+
+    [Header("Tab Elements")]
+    [SerializeField] private GameObject[] mainMenuElements;
+    [SerializeField] private GameObject[] videoElements;
+    [SerializeField] private GameObject[] audioElements;
+    [SerializeField] private GameObject[] gameElements;
+    [SerializeField] private GameObject[] languageElements;
+    [SerializeField] private GameObject[] sprayElements;
+    [SerializeField] private GameObject[] bootsElements;
+    [SerializeField] private GameObject[] birdsElements;
+    [SerializeField] private GameObject[] compassElements;
+
+    [Header("Tabs")]
+    [SerializeField] private GameObject videoTab;
+    [SerializeField] private GameObject audioTab;
+    [SerializeField] private GameObject gameTab;
+    [SerializeField] private GameObject languageTab;
+    [SerializeField] private GameObject sprayTab;
+    [SerializeField] private GameObject bootsTab;
+    [SerializeField] private GameObject birdsTab;
+    [SerializeField] private GameObject compassTab;
+
+    [Header("Tween variables")]
+    [SerializeField] private float screenCenterX;
+    [SerializeField] private float tweenDuration = 0.4f;
+    [SerializeField] private float tweenDelay = 0.2f;
+
+    [Header("Upgrade dictionaries")]
+    public UpgradeButtons[] priceTexts;
+    public UpgradeTexts[] levelTexts;
+    [Header("Texts")]
+    public TextMeshProUGUI maxLevelUpgradedText;
+
 
     private int id;
-    public bool isTweening;
+    private bool isTweening;
     private Vector2 optionsMenuStartPos, shopMenuStartPos;
     private LTDescr d;
 
+    #endregion
+
+    #region Singleton 
+    private static MainMenuUI instance;
+
+    public static MainMenuUI Instance { get { return instance; } }
+
+
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            instance = this;
+        }
+    }
+    #endregion
     private void Start()
     {
         optionsMenuStartPos = new Vector2(Screen.width, menuY);
