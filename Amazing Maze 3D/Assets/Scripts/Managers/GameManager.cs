@@ -14,9 +14,6 @@ public class GameManager : GenericSingletonClass<GameManager>
     private void Start()
     {
         isGameRunning = true;
-
-        /*        UpdateGameState(State.ToString());
-        */
     }
 
     public GameState SetEnum(string newState)
@@ -98,14 +95,4 @@ public class GameManager : GenericSingletonClass<GameManager>
     {
         Application.Quit();
     }
-}
-
-public enum GameState
-{
-    MainMenu,
-    LevelSelection,
-    Playing,
-    Pause,
-    Victory,
-    Lose
 }

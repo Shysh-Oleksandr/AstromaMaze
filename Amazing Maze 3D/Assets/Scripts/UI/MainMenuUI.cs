@@ -58,6 +58,10 @@ public class MainMenuUI : MonoBehaviour
     public UpgradeTexts[] levelTexts;
     [Header("Texts")]
     public TextMeshProUGUI maxLevelUpgradedText;
+    public TextMeshProUGUI totalCoinsText;
+    public TextMeshProUGUI noMoneyText;
+    [Header("References")]
+    [SerializeField] private UpgradeManager upgradeManager;
 
 
     private int id;
@@ -85,12 +89,23 @@ public class MainMenuUI : MonoBehaviour
         }
     }
     #endregion
+
+    private void OnEnable()
+    {
+        upgradeManager.OnCoinChangedEvent += ChangeCoinsText;
+    }
+    private void OnDisable()
+    {
+        upgradeManager.OnCoinChangedEvent -= ChangeCoinsText;
+    }
     private void Start()
     {
         optionsMenuStartPos = new Vector2(Screen.width, menuY);
         shopMenuStartPos = new Vector2(-Screen.width, menuY);
 
         Tweening.Instance.TweenArray(mainMenuElements, tweenDuration, 0.35f, true);
+
+        totalCoinsText.text = GameManager.Instance.totalCoins.ToString();
 
         #region Adding listeners to the tabs.
         videoTab.GetComponent<Button>().onClick.AddListener(() => TweenTab(videoTab, videoElements, tweenDuration, tweenDelay));
@@ -169,5 +184,10 @@ public class MainMenuUI : MonoBehaviour
         shopMenu.LeanMoveLocalX(shopMenuStartPos.x, tweenDuration).setEaseInExpo().setOnComplete(() => shopMenu.gameObject.SetActive(false));
         Tweening.Instance.TweenArray(mainMenuElements, tweenDuration, tweenDelay, true);
 
+    }
+
+    private void ChangeCoinsText()
+    {
+        totalCoinsText.text = GameManager.Instance.totalCoins.ToString();
     }
 }
