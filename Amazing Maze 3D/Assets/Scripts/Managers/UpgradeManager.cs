@@ -30,7 +30,6 @@ public class UpgradeManager : MonoBehaviour
                 {
                     GameManager.Instance.totalCoins -= itemPrice;
                     OnCoinChangedEvent?.Invoke();
-                    print(GameManager.Instance.totalCoins);
                     UpdateItemLevel(MainMenuUI.Instance.priceTexts[i].item);
                     DefineItemLevel();
                     DefineItemPrice();
@@ -83,7 +82,6 @@ public class UpgradeManager : MonoBehaviour
     {
         for (int i = 0; i < MainMenuUI.Instance.priceTexts.Length; i++)
         {
-            //MainMenuUI.Instance.priceTexts[i].button.onClick.AddListener(() => SubtractCoins(MainMenuUI.Instance.priceTexts[i].button));
             if (MainMenuUI.Instance.priceTexts[i].item.upgradingLevel == 0)
             {
                 MainMenuUI.Instance.priceTexts[i].button.GetComponentInChildren<TextMeshProUGUI>().text = MainMenuUI.Instance.priceTexts[i].item.price1.ToString();
