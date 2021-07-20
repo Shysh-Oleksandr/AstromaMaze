@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -24,11 +25,11 @@ public class MainMenuUI : MonoBehaviour
 
     #region Variables declaration
     [Header("Menus")]
-    [SerializeField] private Transform optionsMenu;
-    [SerializeField] private Transform shopMenu;
+    public Transform optionsMenu;
+    public Transform shopMenu;
 
     [Header("Tab Elements")]
-    [SerializeField] private GameObject[] mainMenuElements;
+    public GameObject[] mainMenuElements;
     [SerializeField] private GameObject[] videoElements;
     [SerializeField] private GameObject[] audioElements;
     [SerializeField] private GameObject[] gameElements;
@@ -62,12 +63,8 @@ public class MainMenuUI : MonoBehaviour
     public TextMeshProUGUI noMoneyText;
     [Header("References")]
     [SerializeField] private UpgradeManager upgradeManager;
-
-
-    private int id;
-    private bool isTweening;
-    private Vector2 optionsMenuStartPos, shopMenuStartPos;
-    private LTDescr d;
+    public Vector2 optionsMenuStartPos, shopMenuStartPos;
+    public Button backButtonOption, backButtonShop;
 
     #endregion
 
@@ -119,47 +116,48 @@ public class MainMenuUI : MonoBehaviour
         #endregion
     }
 
-    private void Update()
+    public void TweenTab(GameObject tab, GameObject[] elements, float duration, float delay)
     {
-        d = LeanTween.descr(id);
-
-        if (d != null)
+        if (!tab.GetComponent<DevionGames.UIWidgets.Tab>().isOn)
         {
-            isTweening = true;
+            tab.GetComponent<DevionGames.UIWidgets.Tab>().isOn = true;
+            Tweening.Instance.TweenArray(elements, duration, delay, false);
+        }
+    }
+
+    private IEnumerator BackButtonTweenCoroutine(bool isOptionsMenu)
+    {
+        while (Tweening.Instance.isTweening)
+        {
+            yield return null;
+        }
+        if (isOptionsMenu)
+        {
+            DisableOptionsMenu();
         }
         else
         {
-            isTweening = false;
+            DisableShopMenu();
         }
     }
 
-    private void TweenDiagonally(GameObject[] optionElements, float duration, float delay)
+    public void BackButtonTween(bool isOptionsMenu)
     {
-        for (int i = 0; i < optionElements.Length; i++)
+        if (isOptionsMenu)
         {
-            GameObject element = optionElements[i];
-            Vector2 elementStartPos = element.transform.position;
-            element.transform.localPosition = new Vector2(elementStartPos.x, -Screen.height);
-
-            id = LeanTween.move(element, elementStartPos, duration).setEaseOutExpo().id;
-
-            LTDescr descr = LeanTween.descr(id);
-            descr.delay = delay * i;
+            backButtonOption.interactable = false;
         }
-    }
-
-    public void TweenTab(GameObject tab, GameObject[] elements, float duration, float delay)
-    {
-        if (!tab.GetComponent<DevionGames.UIWidgets.Tab>().isOn && !isTweening)
+        else
         {
-            tab.GetComponent<DevionGames.UIWidgets.Tab>().isOn = true;
-            TweenDiagonally(elements, duration, delay);
+            backButtonShop.interactable = false;
         }
+        StartCoroutine(BackButtonTweenCoroutine(isOptionsMenu));
     }
 
     public void EnableOptionsMenu()
     {
         optionsMenu.gameObject.SetActive(true);
+        backButtonOption.interactable = true;
 
         optionsMenu.localPosition = optionsMenuStartPos;
         optionsMenu.LeanMoveLocalX(screenCenterX, tweenDuration).setEaseOutExpo();
@@ -168,22 +166,38 @@ public class MainMenuUI : MonoBehaviour
     public void EnableShopMenu()
     {
         shopMenu.gameObject.SetActive(true);
+        backButtonShop.interactable = true;
 
         shopMenu.localPosition = shopMenuStartPos;
         shopMenu.LeanMoveLocalX(screenCenterX, tweenDuration).setEaseOutExpo();
     }
 
-    public void DisableOptionsMenu()
+    private void DisableOptionsMenu()
     {
-        optionsMenu.LeanMoveLocalX(optionsMenuStartPos.x, tweenDuration).setEaseInExpo().setOnComplete(() => optionsMenu.gameObject.SetActive(false));
-        Tweening.Instance.TweenArray(mainMenuElements, tweenDuration, tweenDelay, true);
+        for (int i = 0; i < mainMenuElements.Length; i++)
+        {
+            mainMenuElements[i].SetActive(false);
+        }
+        optionsMenu.LeanMoveLocalX(optionsMenuStartPos.x, tweenDuration).setEaseInExpo()
+        .setOnComplete(() =>
+        {
+            optionsMenu.gameObject.SetActive(false);
+            Tweening.Instance.TweenArray(mainMenuElements, tweenDuration, tweenDelay, false);
+        });
     }
 
-    public void DisableShopMenu()
+    private void DisableShopMenu()
     {
-        shopMenu.LeanMoveLocalX(shopMenuStartPos.x, tweenDuration).setEaseInExpo().setOnComplete(() => shopMenu.gameObject.SetActive(false));
-        Tweening.Instance.TweenArray(mainMenuElements, tweenDuration, tweenDelay, true);
-
+        for (int i = 0; i < mainMenuElements.Length; i++)
+        {
+            mainMenuElements[i].SetActive(false);
+        }
+        shopMenu.LeanMoveLocalX(shopMenuStartPos.x, tweenDuration).setEaseInExpo()
+        .setOnComplete(() =>
+        {
+            shopMenu.gameObject.SetActive(false);
+            Tweening.Instance.TweenArray(mainMenuElements, tweenDuration, tweenDelay, false);
+        });
     }
 
     private void ChangeCoinsText()

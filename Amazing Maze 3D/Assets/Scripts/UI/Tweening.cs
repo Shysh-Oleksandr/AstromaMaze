@@ -1,12 +1,16 @@
-using TMPro;
 using UnityEngine;
 
 public class Tweening : MonoBehaviour
 {
     [SerializeField] private float tweenDuration, tweenDelay;
     [SerializeField] private bool tweenOnStart = false;
-    private Vector3[] pauseMenuElementsStartPos, menuElementsStartPos;
+    public bool isTweening;
+
     private bool isArrayInited;
+    private int id;
+    private LTDescr d;
+    private GameObject[] pastTweeningElements;
+    private Vector3[] pauseMenuElementsStartPos, menuElementsStartPos;
 
     #region Singleton 
     private static Tweening instance;
@@ -35,6 +39,20 @@ public class Tweening : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        d = LeanTween.descr(id);
+
+        if (d != null)
+        {
+            isTweening = true;
+        }
+        else
+        {
+            isTweening = false;
+        }
+    }
+
     public void Tween(GameObject optionElements, float tweenDuration, float tweenDelay)
     {
         Vector2 elementStartPos = optionElements.transform.position;
@@ -45,26 +63,42 @@ public class Tweening : MonoBehaviour
 
     public void TweenArray(GameObject[] optionElements, float tweenDuration, float tweenDelay, bool startDelay)
     {
+        if (isTweening)
+        {
+            LeanTween.cancel(id);
+            for (int i = 0; i < pastTweeningElements.Length; i++)
+            {
+                pastTweeningElements[i].transform.position = menuElementsStartPos[i];
+            }
+            print("past0");
+        }
+
+        menuElementsStartPos = new Vector3[optionElements.Length];
+        pastTweeningElements = optionElements;
+
         for (int i = 0; i < optionElements.Length; i++)
         {
             GameObject element = optionElements[i];
-            menuElementsStartPos = new Vector3[optionElements.Length];
 
             if (menuElementsStartPos[i] == Vector3.zero)
             {
                 menuElementsStartPos[i] = element.transform.position;
             }
 
-            element.transform.localPosition = new Vector2(Screen.width, -Screen.height / 2);
+            element.transform.position = new Vector2(Screen.width, -Screen.height / 2);
             element.SetActive(true);
 
             if (startDelay)
             {
-                LeanTween.move(element, menuElementsStartPos[i], tweenDuration).setEaseOutExpo().setIgnoreTimeScale(true).delay = tweenDelay * (i + 1);
+                id = LeanTween.move(element, menuElementsStartPos[i], tweenDuration).setEaseOutExpo().setIgnoreTimeScale(true).id;
+                LTDescr descr = LeanTween.descr(id);
+                descr.delay = tweenDelay * (i + 1);
             }
             else
             {
-                LeanTween.move(element, menuElementsStartPos[i], tweenDuration).setEaseOutExpo().setIgnoreTimeScale(true).delay = tweenDelay * i;
+                id = LeanTween.move(element, menuElementsStartPos[i], tweenDuration).setEaseOutExpo().setIgnoreTimeScale(true).id;
+                LTDescr descr = LeanTween.descr(id);
+                descr.delay = tweenDelay * i;
             }
         }
     }
