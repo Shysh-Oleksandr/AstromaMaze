@@ -1,3 +1,5 @@
+using System.Text.RegularExpressions;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,6 +19,7 @@ public class UpgradeManager : MonoBehaviour
     {
         DefineItemPrice();
         DefineItemLevel();
+        DefineItemStats();
     }
 
     public void SubtractCoins(Button button)
@@ -32,6 +35,7 @@ public class UpgradeManager : MonoBehaviour
                     OnCoinChangedEvent?.Invoke();
                     UpdateItemLevel(MainMenuUI.Instance.upgradeElements[i].item);
                     DefineItemLevel();
+                    DefineItemStats();
                     DefineItemPrice();
                 }
                 else
@@ -78,32 +82,76 @@ public class UpgradeManager : MonoBehaviour
         }
     }
 
+    private void DefineItemStats()
+    {
+        //300/450/700/1000
+        //<color=#E9BD31><b>300</b></color>
+
+        for (int i = 0; i < MainMenuUI.Instance.upgradeElements.Length; i++)
+        {
+            if(MainMenuUI.Instance.upgradeElements[i].item == compass)
+            {
+                // Do special for compass
+            }
+            else
+            {
+                string pattern;
+                pattern = @"\/?\w+";
+
+                for (int stat = 0; stat < MainMenuUI.Instance.upgradeElements[i].statsTexts.Length; stat++)
+                {
+                    string statText = MainMenuUI.Instance.upgradeElements[i].statsTexts[stat].text;
+                    statText = statText.Replace("<color=#E9BD31><b>", "");
+                    statText = statText.Replace("</b></color>", "");
+                    print("Stat text: " + statText);
+                    Regex rg = new Regex(pattern);
+                    MatchCollection matchedStats = rg.Matches(statText);
+                    print("Matches count: " + matchedStats.Count);
+                    var matchesArray = (from Match match in matchedStats select match.Value).ToArray();
+                    for (int count = 0; count < matchesArray.Length; count++)
+                    {
+                        if(count < MainMenuUI.Instance.upgradeElements[i].item.upgradingLevel)
+                        {
+                            matchesArray[count] = matchesArray[count].Insert(0, "<color=#E9BD31><b>");
+                            matchesArray[count] = matchesArray[count].Insert(matchesArray[count].Length, "</b></color>");
+                            print("New match: " + matchesArray[count]);
+                        }
+                    }
+                    print("Before join: " + MainMenuUI.Instance.upgradeElements[i].statsTexts[stat].text);
+                    MainMenuUI.Instance.upgradeElements[i].statsTexts[stat].text = string.Join("", matchesArray);
+                    print("After join: " + MainMenuUI.Instance.upgradeElements[i].statsTexts[stat].text);
+
+                }
+            }
+        }
+
+
+    }
+
     private void DefineItemPrice()
     {
         for (int i = 0; i < MainMenuUI.Instance.upgradeElements.Length; i++)
         {
-            if (MainMenuUI.Instance.upgradeElements[i].item.upgradingLevel == 0)
+            switch (MainMenuUI.Instance.upgradeElements[i].item.upgradingLevel)
             {
-                MainMenuUI.Instance.upgradeElements[i].upgradeButton.GetComponentInChildren<TextMeshProUGUI>().text = MainMenuUI.Instance.upgradeElements[i].item.price1.ToString();
-            }
-            else if (MainMenuUI.Instance.upgradeElements[i].item.upgradingLevel == 1)
-            {
-                MainMenuUI.Instance.upgradeElements[i].upgradeButton.GetComponentInChildren<TextMeshProUGUI>().text = MainMenuUI.Instance.upgradeElements[i].item.price2.ToString();
-            }
-            else if (MainMenuUI.Instance.upgradeElements[i].item.upgradingLevel == 2)
-            {
-                MainMenuUI.Instance.upgradeElements[i].upgradeButton.GetComponentInChildren<TextMeshProUGUI>().text = MainMenuUI.Instance.upgradeElements[i].item.price3.ToString();
-            }
-            else if (MainMenuUI.Instance.upgradeElements[i].item.upgradingLevel == 3)
-            {
-                MainMenuUI.Instance.upgradeElements[i].upgradeButton.GetComponentInChildren<TextMeshProUGUI>().text = MainMenuUI.Instance.upgradeElements[i].item.price4.ToString();
-            }
-            else if (MainMenuUI.Instance.upgradeElements[i].item.upgradingLevel == 4)
-            {
-                MainMenuUI.Instance.upgradeElements[i].upgradeButton.interactable = false;
-                MainMenuUI.Instance.upgradeElements[i].upgradeButton.GetComponentInChildren<TextMeshProUGUI>().GetComponentInChildren<Image>().enabled = false;
-                MainMenuUI.Instance.upgradeElements[i].upgradeButton.GetComponentInChildren<TextMeshProUGUI>().enabled = false;
-                MainMenuUI.Instance.upgradeElements[i].maxLevelText.enabled = true;
+                case 0:
+                    MainMenuUI.Instance.upgradeElements[i].upgradeButton.GetComponentInChildren<TextMeshProUGUI>().text = MainMenuUI.Instance.upgradeElements[i].item.price1.ToString();
+                    break;
+                case 1:
+                    MainMenuUI.Instance.upgradeElements[i].upgradeButton.GetComponentInChildren<TextMeshProUGUI>().text = MainMenuUI.Instance.upgradeElements[i].item.price2.ToString();
+                    break;
+                case 2:
+                    MainMenuUI.Instance.upgradeElements[i].upgradeButton.GetComponentInChildren<TextMeshProUGUI>().text = MainMenuUI.Instance.upgradeElements[i].item.price3.ToString();
+                    break;
+                case 3:
+                    MainMenuUI.Instance.upgradeElements[i].upgradeButton.GetComponentInChildren<TextMeshProUGUI>().text = MainMenuUI.Instance.upgradeElements[i].item.price4.ToString();
+                    break;
+                case 4:
+                    MainMenuUI.Instance.upgradeElements[i].upgradeButton.interactable = false;
+                    MainMenuUI.Instance.upgradeElements[i].upgradeButton.GetComponentInChildren<TextMeshProUGUI>().GetComponentInChildren<Image>().enabled = false;
+                    MainMenuUI.Instance.upgradeElements[i].upgradeButton.GetComponentInChildren<TextMeshProUGUI>().enabled = false;
+                    MainMenuUI.Instance.upgradeElements[i].maxLevelText.enabled = true;
+                    break;
             }
         }
     }

@@ -12,6 +12,7 @@ public struct UpgradeElements
     public Button upgradeButton;
     public TextMeshProUGUI maxLevelText;
     public TextMeshProUGUI levelText;
+    public TextMeshProUGUI[] statsTexts;
 }
 
 public class MainMenuUI : MonoBehaviour
