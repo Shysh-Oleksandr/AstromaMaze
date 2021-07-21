@@ -21,16 +21,16 @@ public class UpgradeManager : MonoBehaviour
 
     public void SubtractCoins(Button button)
     {
-        for (int i = 0; i < MainMenuUI.Instance.priceTexts.Length; i++)
+        for (int i = 0; i < MainMenuUI.Instance.upgradeElements.Length; i++)
         {
-            if (MainMenuUI.Instance.priceTexts[i].button == button)
+            if (MainMenuUI.Instance.upgradeElements[i].upgradeButton == button)
             {
-                int itemPrice = GetItemPrice(MainMenuUI.Instance.priceTexts[i].item);
+                int itemPrice = GetItemPrice(MainMenuUI.Instance.upgradeElements[i].item);
                 if (GameManager.Instance.totalCoins >= itemPrice)
                 {
                     GameManager.Instance.totalCoins -= itemPrice;
                     OnCoinChangedEvent?.Invoke();
-                    UpdateItemLevel(MainMenuUI.Instance.priceTexts[i].item);
+                    UpdateItemLevel(MainMenuUI.Instance.upgradeElements[i].item);
                     DefineItemLevel();
                     DefineItemPrice();
                 }
@@ -72,38 +72,38 @@ public class UpgradeManager : MonoBehaviour
 
     private void DefineItemLevel()
     {
-        for (int i = 0; i < MainMenuUI.Instance.levelTexts.Length; i++)
+        for (int i = 0; i < MainMenuUI.Instance.upgradeElements.Length; i++)
         {
-            MainMenuUI.Instance.levelTexts[i].text.text = MainMenuUI.Instance.levelTexts[i].item.upgradingLevel.ToString() + "/4";
+            MainMenuUI.Instance.upgradeElements[i].levelText.text = MainMenuUI.Instance.upgradeElements[i].item.upgradingLevel.ToString() + "/4";
         }
     }
 
     private void DefineItemPrice()
     {
-        for (int i = 0; i < MainMenuUI.Instance.priceTexts.Length; i++)
+        for (int i = 0; i < MainMenuUI.Instance.upgradeElements.Length; i++)
         {
-            if (MainMenuUI.Instance.priceTexts[i].item.upgradingLevel == 0)
+            if (MainMenuUI.Instance.upgradeElements[i].item.upgradingLevel == 0)
             {
-                MainMenuUI.Instance.priceTexts[i].button.GetComponentInChildren<TextMeshProUGUI>().text = MainMenuUI.Instance.priceTexts[i].item.price1.ToString();
+                MainMenuUI.Instance.upgradeElements[i].upgradeButton.GetComponentInChildren<TextMeshProUGUI>().text = MainMenuUI.Instance.upgradeElements[i].item.price1.ToString();
             }
-            else if (MainMenuUI.Instance.priceTexts[i].item.upgradingLevel == 1)
+            else if (MainMenuUI.Instance.upgradeElements[i].item.upgradingLevel == 1)
             {
-                MainMenuUI.Instance.priceTexts[i].button.GetComponentInChildren<TextMeshProUGUI>().text = MainMenuUI.Instance.priceTexts[i].item.price2.ToString();
+                MainMenuUI.Instance.upgradeElements[i].upgradeButton.GetComponentInChildren<TextMeshProUGUI>().text = MainMenuUI.Instance.upgradeElements[i].item.price2.ToString();
             }
-            else if (MainMenuUI.Instance.priceTexts[i].item.upgradingLevel == 2)
+            else if (MainMenuUI.Instance.upgradeElements[i].item.upgradingLevel == 2)
             {
-                MainMenuUI.Instance.priceTexts[i].button.GetComponentInChildren<TextMeshProUGUI>().text = MainMenuUI.Instance.priceTexts[i].item.price3.ToString();
+                MainMenuUI.Instance.upgradeElements[i].upgradeButton.GetComponentInChildren<TextMeshProUGUI>().text = MainMenuUI.Instance.upgradeElements[i].item.price3.ToString();
             }
-            else if (MainMenuUI.Instance.priceTexts[i].item.upgradingLevel == 3)
+            else if (MainMenuUI.Instance.upgradeElements[i].item.upgradingLevel == 3)
             {
-                MainMenuUI.Instance.priceTexts[i].button.GetComponentInChildren<TextMeshProUGUI>().text = MainMenuUI.Instance.priceTexts[i].item.price4.ToString();
+                MainMenuUI.Instance.upgradeElements[i].upgradeButton.GetComponentInChildren<TextMeshProUGUI>().text = MainMenuUI.Instance.upgradeElements[i].item.price4.ToString();
             }
-            else if (MainMenuUI.Instance.priceTexts[i].item.upgradingLevel == 4)
+            else if (MainMenuUI.Instance.upgradeElements[i].item.upgradingLevel == 4)
             {
-                MainMenuUI.Instance.priceTexts[i].button.interactable = false;
-                MainMenuUI.Instance.priceTexts[i].button.GetComponentInChildren<TextMeshProUGUI>().GetComponentInChildren<Image>().enabled = false;
-                MainMenuUI.Instance.priceTexts[i].button.GetComponentInChildren<TextMeshProUGUI>().enabled = false;
-                MainMenuUI.Instance.priceTexts[i].maxLevelText.enabled = true;
+                MainMenuUI.Instance.upgradeElements[i].upgradeButton.interactable = false;
+                MainMenuUI.Instance.upgradeElements[i].upgradeButton.GetComponentInChildren<TextMeshProUGUI>().GetComponentInChildren<Image>().enabled = false;
+                MainMenuUI.Instance.upgradeElements[i].upgradeButton.GetComponentInChildren<TextMeshProUGUI>().enabled = false;
+                MainMenuUI.Instance.upgradeElements[i].maxLevelText.enabled = true;
             }
         }
     }

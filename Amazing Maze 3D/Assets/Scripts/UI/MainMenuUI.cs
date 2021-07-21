@@ -4,19 +4,14 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-[Serializable]
-public struct UpgradeTexts
-{
-    public Item item;
-    public TextMeshProUGUI text;
-}
 
 [Serializable]
-public struct UpgradeButtons
+public struct UpgradeElements
 {
     public Item item;
-    public Button button;
+    public Button upgradeButton;
     public TextMeshProUGUI maxLevelText;
+    public TextMeshProUGUI levelText;
 }
 
 public class MainMenuUI : MonoBehaviour
@@ -55,8 +50,7 @@ public class MainMenuUI : MonoBehaviour
     [SerializeField] private float tweenDelay = 0.2f;
 
     [Header("Upgrade dictionaries")]
-    public UpgradeButtons[] priceTexts;
-    public UpgradeTexts[] levelTexts;
+    public UpgradeElements[] upgradeElements;
     [Header("Texts")]
     public TextMeshProUGUI maxLevelUpgradedText;
     public TextMeshProUGUI totalCoinsText;
