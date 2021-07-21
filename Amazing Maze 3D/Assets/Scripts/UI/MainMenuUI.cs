@@ -13,6 +13,7 @@ public struct UpgradeElements
     public TextMeshProUGUI maxLevelText;
     public TextMeshProUGUI levelText;
     public TextMeshProUGUI[] statsTexts;
+    public ItemStats[] itemStats;
 }
 
 [Serializable]
@@ -22,7 +23,12 @@ public struct CompassStats
     public TextMeshProUGUI statText;
 }
 
-
+[System.Serializable]
+public class ItemStats
+{
+    public string statName;
+    public int[] stat;
+}
 
 public class MainMenuUI : MonoBehaviour
 {

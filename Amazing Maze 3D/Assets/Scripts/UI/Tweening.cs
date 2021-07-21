@@ -70,7 +70,6 @@ public class Tweening : MonoBehaviour
             {
                 pastTweeningElements[i].transform.position = menuElementsStartPos[i];
             }
-            print("past0");
         }
 
         menuElementsStartPos = new Vector3[optionElements.Length];
