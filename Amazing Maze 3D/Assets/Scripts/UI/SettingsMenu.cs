@@ -24,27 +24,17 @@ public class SettingsMenu : MonoBehaviour
     {
         int index = dropdown.value;
 
-        switch (index)
+        GameManager.Instance.difficultyCoefficient = index switch
         {
             // Easy
-            case 0:
-                GameManager.Instance.difficultyCoefficient = 1.5f;
-                break;
+            0 => 1.5f,
             // Medium
-            case 1:
-                GameManager.Instance.difficultyCoefficient = 1f;
-                break;
+            1 => 1f,
             // Hard
-            case 2:
-                GameManager.Instance.difficultyCoefficient = 0.75f;
-                break;
+            2 => 0.75f,
             // Expert
-            case 3:
-                GameManager.Instance.difficultyCoefficient = 0.5f;
-                break;
-            default:
-                GameManager.Instance.difficultyCoefficient = 1f;
-                break;
+            3 => 0.5f,
+            _ => 1f,
         };
     }
 

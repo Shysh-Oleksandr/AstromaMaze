@@ -42,7 +42,6 @@ public class Timer : MonoBehaviour
             GameManager.Instance.UpdateGameState("Lose");
         }
         yield return new WaitForSeconds(1);
-        
         takingAway = false;
     }
 }
