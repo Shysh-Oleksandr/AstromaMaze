@@ -84,14 +84,20 @@ public class UpgradeManager : MonoBehaviour
 
     private void DefineItemStats()
     {
-        //300/450/700/1000
-        //<color=#E9BD31><b>300</b></color>
-
         for (int i = 0; i < MainMenuUI.Instance.upgradeElements.Length; i++)
         {
             if(MainMenuUI.Instance.upgradeElements[i].item == compass)
             {
-                // Do special for compass
+                for (int level = 0; level < MainMenuUI.Instance.compassStats.Length; level++)
+                {
+                    if(level < MainMenuUI.Instance.upgradeElements[i].item.upgradingLevel)
+                    {
+                        MainMenuUI.Instance.compassStats[level].levelText.color = new Color32(233, 189, 49, 255);
+                        MainMenuUI.Instance.compassStats[level].levelText.fontStyle = FontStyles.Bold;
+                        MainMenuUI.Instance.compassStats[level].statText.color = new Color32(233, 189, 49, 255);
+                        MainMenuUI.Instance.compassStats[level].statText.fontStyle = FontStyles.Bold;
+                    }
+                }
             }
             else
             {

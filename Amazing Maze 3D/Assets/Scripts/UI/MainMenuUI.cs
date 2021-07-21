@@ -15,6 +15,15 @@ public struct UpgradeElements
     public TextMeshProUGUI[] statsTexts;
 }
 
+[Serializable]
+public struct CompassStats
+{
+    public TextMeshProUGUI levelText;
+    public TextMeshProUGUI statText;
+}
+
+
+
 public class MainMenuUI : MonoBehaviour
 {
     private const float menuY = 132f;
@@ -52,6 +61,7 @@ public class MainMenuUI : MonoBehaviour
 
     [Header("Upgrade dictionaries")]
     public UpgradeElements[] upgradeElements;
+    public CompassStats[] compassStats;
     [Header("Texts")]
     public TextMeshProUGUI maxLevelUpgradedText;
     public TextMeshProUGUI totalCoinsText;
