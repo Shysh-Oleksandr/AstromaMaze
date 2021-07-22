@@ -17,6 +17,8 @@ public class UpgradeManager : MonoBehaviour
 
     void Start()
     {
+        LoadItemsData();
+
         DefineItemsPrices();
         DefineItemsLevels();
         DefineItemsStats();
@@ -181,5 +183,25 @@ public class UpgradeManager : MonoBehaviour
         }
 
         return price;
+    }
+
+    private void LoadItemsData()
+    {
+        ItemData data = SaveSystem.LoadItems();
+
+        spray.upgradingLevel = data.sprayItemLevel;
+        boots.upgradingLevel = data.bootsItemLevel;
+        birdsEyeView.upgradingLevel = data.birdsItemLevel;
+        compass.upgradingLevel = data.compassItemLevel;
+    }
+
+    private void OnApplicationQuit()
+    {
+        SaveSystem.SaveItems(this);
+    }
+
+    private void OnDisable()
+    {
+        SaveSystem.SaveItems(this);
     }
 }

@@ -173,7 +173,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4290368469
   m_fontColor: {r: 0.8352941, g: 0.827451, b: 0.7254902, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -358,7 +358,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4290368469
   m_fontColor: {r: 0.8352941, g: 0.827451, b: 0.7254902, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -543,7 +543,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4290368469
   m_fontColor: {r: 0.8352941, g: 0.827451, b: 0.7254902, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -728,7 +728,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4290368469
   m_fontColor: {r: 0.8352941, g: 0.827451, b: 0.7254902, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -914,7 +914,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4290368469
   m_fontColor: {r: 0.8352941, g: 0.827451, b: 0.7254902, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -1497,7 +1497,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 934294870}
         m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
         m_MethodName: SetResolution
         m_Mode: 0
@@ -2151,7 +2151,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 934294870}
         m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
         m_MethodName: SetFullscreen
         m_Mode: 0
@@ -2198,8 +2198,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 6.6915}
-  m_SizeDelta: {x: 291.7412, y: 322.028}
+  m_AnchoredPosition: {x: 0, y: 43.372963}
+  m_SizeDelta: {x: 291.7412, y: 395.3909}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5748405448839984044
 CanvasRenderer:
@@ -2222,7 +2222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.32941177}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.19607843}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2462,10 +2462,10 @@ RectTransform:
   m_Father: {fileID: 5748405449381218812}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 93.656075, y: -85.47645}
-  m_SizeDelta: {x: 187.31215, y: 54.9843}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 54.9843}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5748405448858284294
 CanvasRenderer:
@@ -3452,7 +3452,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4290368469
   m_fontColor: {r: 0.8352941, g: 0.827451, b: 0.7254902, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -4197,7 +4197,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5748405449289733396
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4658,10 +4658,10 @@ RectTransform:
   m_Father: {fileID: 5748405449381218812}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 93.656075, y: -141.46075}
-  m_SizeDelta: {x: 187.31215, y: 54.9843}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 54.9843}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5748405449513668350
 CanvasRenderer:
@@ -4908,7 +4908,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 934294870}
         m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
         m_MethodName: SetQuality
         m_Mode: 0
@@ -5033,10 +5033,10 @@ RectTransform:
   m_Father: {fileID: 5748405449381218812}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 93.656075, y: -197.44504}
-  m_SizeDelta: {x: 187.31215, y: 54.9843}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 54.9843}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5748405449627616279
 CanvasRenderer:
@@ -5523,10 +5523,10 @@ RectTransform:
   m_Father: {fileID: 5748405449381218812}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 93.656075, y: -29.49215}
-  m_SizeDelta: {x: 187.31215, y: 54.9843}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 54.9843}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5748405449836335412
 CanvasRenderer:
@@ -5789,7 +5789,7 @@ RectTransform:
   - {fileID: 5748405449381218812}
   - {fileID: 5748405450051910669}
   m_Father: {fileID: 7104896116745699068}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -6569,11 +6569,11 @@ MonoBehaviour:
   m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.683
+  m_Value: 0.456
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 934294870}
         m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
         m_MethodName: SetVolume
         m_Mode: 0
@@ -7461,7 +7461,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5748405450323998658
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7793,15 +7793,15 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MainMenuUI, Assembly-CSharp
-        m_MethodName: DisableOptionsMenu
-        m_Mode: 1
+        m_MethodName: BackButtonTween
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!1 &7104896114868674237
 GameObject:
@@ -7934,14 +7934,20 @@ MonoBehaviour:
   m_Value: 1
   m_Options:
     m_Options:
+    - m_Text: Easy
+      m_Image: {fileID: 0}
     - m_Text: Medium
+      m_Image: {fileID: 0}
+    - m_Text: Hard
+      m_Image: {fileID: 0}
+    - m_Text: Expert
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 934294870}
         m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
-        m_MethodName: SetResolution
+        m_MethodName: SetDifficulties
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8972,7 +8978,7 @@ RectTransform:
   m_Children:
   - {fileID: 1084138328140286254}
   m_Father: {fileID: 7104896116745699068}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -9235,7 +9241,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4290368469
   m_fontColor: {r: 0.8352941, g: 0.827451, b: 0.7254902, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -9495,7 +9501,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4290368469
   m_fontColor: {r: 0.8352941, g: 0.827451, b: 0.7254902, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -9972,19 +9978,7 @@ MonoBehaviour:
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
-        m_MethodName: SetResolution
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_AlphaFadeSpeed: 0.15
 --- !u!1 &7104896116124946702
 GameObject:
@@ -9995,13 +9989,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7104896116124946701}
+  - component: {fileID: 934294870}
   m_Layer: 0
   m_Name: OptionsMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7104896116124946701
 Transform:
   m_ObjectHideFlags: 0
@@ -10017,6 +10012,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &934294870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7104896116124946702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d74fad07c23942a458f2244698be96f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24100000, guid: 2aa1accbb7c3d124cb716fecc5af67c8, type: 2}
+  resolutionDropdown: {fileID: 1052608218}
+  difficultyDropdown: {fileID: 1002255453}
+  qualitySlider: {fileID: 5748405449542350252}
+  volumeSlider: {fileID: 5748405449948358068}
+  fullScreenToggle: {fileID: 5748405448837903801}
+  quality: 1
+  startResolutionIndex: 0
+  difficultyIndex: 1
+  startVolume: 0
+  isFullScreen: 0
 --- !u!1 &7104896116158070817
 GameObject:
   m_ObjectHideFlags: 0
@@ -10547,8 +10565,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 97.55728}
   m_LocalScale: {x: 1.8371173, y: 1.8371173, z: 1.8371173}
   m_Children:
-  - {fileID: 7104896115245765594}
   - {fileID: 5748405449844176318}
+  - {fileID: 7104896115245765594}
   - {fileID: 7104896114867094342}
   m_Father: {fileID: 7104896116124946701}
   m_RootOrder: 0
@@ -10757,7 +10775,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4290368469
   m_fontColor: {r: 0.8352941, g: 0.827451, b: 0.7254902, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -11033,7 +11051,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4290368469
   m_fontColor: {r: 0.8352941, g: 0.827451, b: 0.7254902, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3

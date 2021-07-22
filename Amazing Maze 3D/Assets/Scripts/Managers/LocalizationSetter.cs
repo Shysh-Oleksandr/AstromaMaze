@@ -7,12 +7,14 @@ using UnityEngine.Localization.Settings;
 public class LocalizationSetter : MonoBehaviour
 {
     // 0 - English, 1 - Russian, 2 - Spanish, 3 - Ukrainian.
-    [SerializeField] [Range(0, 3)] private int languageIndex;
+    public int languageIndex;
 
-    public TMP_Dropdown dropdown;
+    public TMP_Dropdown languageDropdown;
 
     private void Awake()
     {
+        LoadLanguageData();
+        languageDropdown.value = languageIndex;
         StartCoroutine(SetLanguage(languageIndex));
     }
 
@@ -31,14 +33,15 @@ public class LocalizationSetter : MonoBehaviour
                 selected = i;
             options.Add(new TMP_Dropdown.OptionData(locale.name));
         }
-        dropdown.options = options;
+        languageDropdown.options = options;
 
-        dropdown.value = selected;
-        dropdown.onValueChanged.AddListener(LocaleSelected);
+        languageDropdown.value = languageIndex;
+        languageDropdown.onValueChanged.AddListener(LocaleSelected);
     }
 
-    static void LocaleSelected(int index)
+    public void LocaleSelected(int index)
     {
+        languageIndex = index;
         LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[index];
     }
 
@@ -49,5 +52,22 @@ public class LocalizationSetter : MonoBehaviour
 
         // This part changes the language
         LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[i];
+    }
+
+    private void LoadLanguageData()
+    {
+        LanguageData data = SaveSystem.LoadLanguage();
+
+        languageIndex = data.languageIndex;
+    }
+
+    private void OnDestroy()
+    {
+        SaveSystem.SaveLanguage(this);
+    }
+
+    private void OnApplicationQuit()
+    {
+        SaveSystem.SaveLanguage(this);
     }
 }

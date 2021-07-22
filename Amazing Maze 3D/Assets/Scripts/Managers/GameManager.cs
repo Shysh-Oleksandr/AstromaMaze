@@ -7,13 +7,15 @@ public class GameManager : GenericSingletonClass<GameManager>
 
     public static event Action<GameState> OnGameStateChanged;
 
-    public float totalCoins;
-    public float difficultyCoefficient = 1f;
+    public int totalCoins;
+    public float difficultyCoefficient = 1f;    
+    public int maxLevelReached;
     public bool isGameRunning = true;
 
     private void Start()
     {
         isGameRunning = true;
+        LoadGameData();
     }
 
     public GameState SetEnum(string newState)
@@ -54,11 +56,17 @@ public class GameManager : GenericSingletonClass<GameManager>
 
     private void HandleLevelSelection()
     {
+        SaveSystem.SaveGame(this);
+        LoadGameData();
+
         SceneChanger.Instance.FadeToLevel(1);
     }
 
     private void HandleMainMenu()
     {
+        SaveSystem.SaveGame(this);
+        LoadGameData();
+
         Time.timeScale = 1f;
         SceneChanger.Instance.FadeToLevel(0);
     }
@@ -78,6 +86,7 @@ public class GameManager : GenericSingletonClass<GameManager>
 
     private void HandleLose()
     {
+        SaveSystem.SaveGame(this);
         isGameRunning = false;
         Time.timeScale = 0f;
         Tweening.Instance.TweenVictoryLoseMenu(UIManager.Instance.replayMenu, UIManager.Instance.loseMenuBg, UIManager.Instance.replayMenuElements);
@@ -86,6 +95,7 @@ public class GameManager : GenericSingletonClass<GameManager>
 
     private void HandleWin()
     {
+        SaveSystem.SaveGame(this);
         isGameRunning = false;
         Time.timeScale = 0f;
         Tweening.Instance.TweenVictoryLoseMenu(UIManager.Instance.victoryMenu, UIManager.Instance.victoryMenuBg, UIManager.Instance.victoryMenuElements);
@@ -94,5 +104,19 @@ public class GameManager : GenericSingletonClass<GameManager>
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    private void LoadGameData()
+    {
+        GameData data = SaveSystem.LoadGame();
+
+        totalCoins = data.totalCoins;
+        difficultyCoefficient = data.difficultyCoefficient;
+        maxLevelReached = data.maxLevelReached;
+    }
+
+    private void OnApplicationQuit()
+    {
+        SaveSystem.SaveGame(this);
     }
 }
