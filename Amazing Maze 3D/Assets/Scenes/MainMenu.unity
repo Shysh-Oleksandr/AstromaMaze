@@ -1934,7 +1934,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705687055
 GameObject:
@@ -2277,7 +2277,7 @@ RectTransform:
   - {fileID: 1503657906}
   - {fileID: 566966505}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2615,6 +2615,154 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3109676573643963607, guid: 8d07496cbc8ca67458817f43b7d56951, type: 3}
   m_PrefabInstance: {fileID: 3109676574650350876}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1556583255
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1556583257}
+  - component: {fileID: 1556583256}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1556583256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1556583255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7845d9a6fe1aaa1468bcc04f932f123a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Click
+    clip: {fileID: 8300000, guid: 32d4b1811dda14a6cb9e059ee8ad17d2, type: 3}
+    volume: 1
+    pitch: 1
+    randomVolume: 0.2
+    randomPitch: 0.2
+    loop: 0
+    source: {fileID: 0}
+  - name: Swap
+    clip: {fileID: 8300000, guid: d46323e22e74e46baa241cbf48c85671, type: 3}
+    volume: 1
+    pitch: 1
+    randomVolume: 0.2
+    randomPitch: 0.2
+    loop: 0
+    source: {fileID: 0}
+  - name: Fading
+    clip: {fileID: 8300000, guid: 3790fb437bad0d84f81e490c59d0cd38, type: 3}
+    volume: 1
+    pitch: 1
+    randomVolume: 0.2
+    randomPitch: 0.2
+    loop: 0
+    source: {fileID: 0}
+  - name: Buy
+    clip: {fileID: 8300000, guid: 353a3563bac11b1408bdf65a8280190c, type: 3}
+    volume: 1
+    pitch: 1
+    randomVolume: 0.2
+    randomPitch: 0.4
+    loop: 0
+    source: {fileID: 0}
+  - name: Spray
+    clip: {fileID: 8300000, guid: 4655dda4b8239754a97439c157390309, type: 3}
+    volume: 1
+    pitch: 1
+    randomVolume: 0.2
+    randomPitch: 0.2
+    loop: 0
+    source: {fileID: 0}
+  - name: BirdsUp
+    clip: {fileID: 8300000, guid: 910842d42febfe2468c1d57fe84853b5, type: 3}
+    volume: 1
+    pitch: 1
+    randomVolume: 0.2
+    randomPitch: 0.2
+    loop: 0
+    source: {fileID: 0}
+  - name: BirdsDown
+    clip: {fileID: 8300000, guid: 40283de9b6a187945913efbfdddf229f, type: 3}
+    volume: 1
+    pitch: 1
+    randomVolume: 0.2
+    randomPitch: 0.2
+    loop: 0
+    source: {fileID: 0}
+  - name: Coin
+    clip: {fileID: 8300000, guid: 64121409ae24b364c9fcf0c4e36a083d, type: 3}
+    volume: 1
+    pitch: 1
+    randomVolume: 0.2
+    randomPitch: 0.5
+    loop: 0
+    source: {fileID: 0}
+  - name: Whoosh
+    clip: {fileID: 8300000, guid: b55ff3978dea3744db2b19cd4470d552, type: 3}
+    volume: 1
+    pitch: 1
+    randomVolume: 0.2
+    randomPitch: 0.2
+    loop: 0
+    source: {fileID: 0}
+  - name: Heartbeat
+    clip: {fileID: 8300000, guid: 73821229b775bb544abecdd0ec731e2b, type: 3}
+    volume: 1
+    pitch: 1
+    randomVolume: 0.4
+    randomPitch: 0.3
+    loop: 0
+    source: {fileID: 0}
+  - name: Win
+    clip: {fileID: 8300000, guid: ca994dc0ade6560438d429890e35b4de, type: 3}
+    volume: 1
+    pitch: 1
+    randomVolume: 0
+    randomPitch: 0.086
+    loop: 0
+    source: {fileID: 0}
+  - name: Lose
+    clip: {fileID: 8300000, guid: 7203b9191c5112049926fffccbee453d, type: 3}
+    volume: 1
+    pitch: 1
+    randomVolume: 0
+    randomPitch: 0.128
+    loop: 0
+    source: {fileID: 0}
+  - name: Footstep
+    clip: {fileID: 8300000, guid: e85ebefcaa228bc42adb2554e5a428d4, type: 3}
+    volume: 1
+    pitch: 1
+    randomVolume: 0.4
+    randomPitch: 0.404
+    loop: 0
+    source: {fileID: 0}
+--- !u!4 &1556583257
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1556583255}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 839.9731, y: 641.4312, z: -62.426098}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1571803187 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3109676573667421487, guid: 8d07496cbc8ca67458817f43b7d56951, type: 3}
@@ -2710,7 +2858,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1714594425 stripped
 GameObject:
@@ -2970,7 +3118,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1176769217852819785, guid: 51db92235ffa60942820a4a24e31c749, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1176769217852819785, guid: 51db92235ffa60942820a4a24e31c749, type: 3}
       propertyPath: m_LocalPosition.x

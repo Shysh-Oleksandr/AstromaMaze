@@ -37,6 +37,7 @@ public class SettingsMenu : MonoBehaviour
 
     public void SetDifficulties(int index)
     {
+        AudioManager.Instance.Play("Click");
         difficultyIndex = index;
         GameManager.Instance.difficultyCoefficient = index switch
         {
@@ -81,6 +82,7 @@ public class SettingsMenu : MonoBehaviour
 
     public void SetResolution(int resolutionIndex)
     {
+        AudioManager.Instance.Play("Click");
         startResolutionIndex = resolutionIndex;
         Resolution resolution = resolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
@@ -88,6 +90,7 @@ public class SettingsMenu : MonoBehaviour
 
     public void SetVolume(float volume)
     {
+        AudioManager.Instance.Play("Click");
         startVolume = Mathf.Log10(volume) * 20;
         print(startVolume);
         audioMixer.SetFloat("volume", Mathf.Log10(volume) * 20);
@@ -95,12 +98,14 @@ public class SettingsMenu : MonoBehaviour
 
     public void SetQuality(float qualityIndex)
     {
+        AudioManager.Instance.Play("Click");
         quality = (int)qualityIndex;
         QualitySettings.SetQualityLevel((int)qualityIndex);
     }
 
     public void SetFullscreen(bool isFullscreen)
     {
+        AudioManager.Instance.Play("Click");
         isFullScreen = isFullscreen;
         Screen.fullScreen = isFullscreen;
     }

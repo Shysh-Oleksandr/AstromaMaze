@@ -81,7 +81,7 @@ public class Paint : MonoBehaviour
                     paint = objectPooler.SpawnFromPool("Paint", position, Quaternion.identity);
 
                 }
-
+                AudioManager.Instance.Play("Spray");
                 paint.transform.localScale = Vector3.one * brushSize;
                 paint.SetActive(true);
                 IPooledObject pooledObj = paint.GetComponent<IPooledObject>();

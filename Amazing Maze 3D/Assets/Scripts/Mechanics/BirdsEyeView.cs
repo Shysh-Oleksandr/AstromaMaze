@@ -26,6 +26,8 @@ public class BirdsEyeView : MonoBehaviour
 
     IEnumerator BirdsEyeViewCoroutine()
     {
+        AudioManager.Instance.Play("BirdsUp");
+
         for (float i = 0; i < 1; i += Time.deltaTime / birdsEyeViewItem.coroutineDuration)
         {
             targetPosition = playerTransform.position + Vector3.up * birdsEyeViewItem.maxHeight;
@@ -34,6 +36,7 @@ public class BirdsEyeView : MonoBehaviour
         }
 
         yield return new WaitForSeconds(birdsEyeViewItem.maxHeightDuration);
+        AudioManager.Instance.Play("BirdsDown");
 
         startPosition = transform.position;
         targetPosition = playerTransform.position;

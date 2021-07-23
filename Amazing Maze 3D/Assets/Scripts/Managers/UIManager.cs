@@ -69,6 +69,7 @@ public class UIManager : MonoBehaviour
 
     public void TweenTimerText()
     {
+        AudioManager.Instance.Play("Heartbeat");
         timerText.fontStyle = FontStyles.Bold;
         timerText.color = new Color32(178, 24, 24, 255);
         timerText.gameObject.LeanScale(new Vector2(1.4f, 1.4f), 0.5f)

@@ -86,6 +86,7 @@ public class GameManager : GenericSingletonClass<GameManager>
 
     private void HandleLose()
     {
+        AudioManager.Instance.Play("Lose");
         SaveSystem.SaveGame(this);
         isGameRunning = false;
         Time.timeScale = 0f;
@@ -95,6 +96,7 @@ public class GameManager : GenericSingletonClass<GameManager>
 
     private void HandleWin()
     {
+        AudioManager.Instance.Play("Win");
         SaveSystem.SaveGame(this);
         isGameRunning = false;
         Time.timeScale = 0f;
@@ -103,6 +105,7 @@ public class GameManager : GenericSingletonClass<GameManager>
 
     public void QuitGame()
     {
+        AudioManager.Instance.Play("Click");
         Application.Quit();
     }
 

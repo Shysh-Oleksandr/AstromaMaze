@@ -58,6 +58,7 @@ public class Tweening : MonoBehaviour
         Vector2 elementStartPos = optionElements.transform.position;
         optionElements.transform.localPosition = new Vector2(0, -Screen.height);
 
+        AudioManager.Instance.Play("TweenWhoosh");
         LeanTween.move(gameObject, elementStartPos, tweenDuration).setEaseOutExpo().setIgnoreTimeScale(true).delay = tweenDelay;
     }
 
@@ -87,6 +88,7 @@ public class Tweening : MonoBehaviour
             element.transform.position = new Vector2(Screen.width, -Screen.height / 2);
             element.SetActive(true);
 
+            AudioManager.Instance.Play("TweenWhoosh");
             if (startDelay)
             {
                 id = LeanTween.move(element, menuElementsStartPos[i], tweenDuration).setEaseOutExpo().setIgnoreTimeScale(true).id;
@@ -120,6 +122,7 @@ public class Tweening : MonoBehaviour
             element.transform.localPosition = new Vector2(Screen.width, -Screen.height / 2);
             element.SetActive(true);
 
+            AudioManager.Instance.Play("TweenWhoosh");
             if (startDelay)
             {
                 LeanTween.move(element, pauseMenuElementsStartPos[i], tweenDuration).setEaseOutExpo().setIgnoreTimeScale(true).delay = tweenDelay * (i + 1);
@@ -139,6 +142,7 @@ public class Tweening : MonoBehaviour
 
             Vector2 elementPosTo = new Vector2(Screen.width, -Screen.height / 2);
 
+            AudioManager.Instance.Play("TweenWhoosh");
             if (startDelay)
             {
                 LeanTween.move(element, elementPosTo, tweenDuration)
@@ -166,6 +170,7 @@ public class Tweening : MonoBehaviour
 
     public void TweenScale(GameObject gameObject, float tweenDuration, bool scaleIn, float delay)
     {
+        AudioManager.Instance.Play("Whoosh");
         if (scaleIn)
         {
             gameObject.transform.localScale = Vector2.zero;
@@ -190,6 +195,7 @@ public class Tweening : MonoBehaviour
 
         menu.gameObject.SetActive(true);
         menu.transform.localPosition = new Vector2(0, -Screen.height);
+        AudioManager.Instance.Play("Whoosh");
         menu.LeanMoveLocalY(0, 1f).setEaseOutBack()
             .setIgnoreTimeScale(true)
             .setOnComplete(() =>
@@ -204,6 +210,7 @@ public class Tweening : MonoBehaviour
         go.gameObject.SetActive(true);
 
         go.gameObject.transform.localPosition = new Vector2(0, -Screen.height / 2);
+        AudioManager.Instance.Play("TweenWhoosh");
         go.gameObject.LeanMoveLocalY(0, duration).setEaseOutCubic()
             .setIgnoreTimeScale(true)
             .setOnComplete(() =>

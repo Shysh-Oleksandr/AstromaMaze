@@ -41,6 +41,7 @@ public class Compass : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R) && compassItem.canRotateToNorth && Time.time > nextRotateToNorth)
         {
+            AudioManager.Instance.Play("Whoosh");
             nextRotateToNorth = Time.time + compassItem.compassCooldown;
             StartCoroutine(RotateToNorth());
         }

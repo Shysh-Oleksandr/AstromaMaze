@@ -74,6 +74,7 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("Coin"))
         {
             Destroy(other.gameObject);
+            AudioManager.Instance.Play("Coin");
 
             OnCoinTakeEvent?.Invoke(other.GetComponent<Coin>().coinValue);
         }

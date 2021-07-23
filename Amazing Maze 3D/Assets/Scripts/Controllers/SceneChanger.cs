@@ -34,6 +34,7 @@ public class SceneChanger : GenericSingletonClass<SceneChanger>
 
     public void FadeToLevel(int levelIndex)
     {
+        AudioManager.Instance.Play("Fading");
         levelToLoad = levelIndex;
         if (animator != null && animator.runtimeAnimatorController != null)
         {

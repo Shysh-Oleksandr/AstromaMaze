@@ -43,6 +43,7 @@ public class Footprint : MonoBehaviour
 
             if (Vector3.Distance(lastFootprint, position) > footprintIntervalDistance)
             {
+                AudioManager.Instance.Play("Footstep");
                 var leftFootprint = objectPooler.SpawnFromPool("LeftFootprint", position, rotation);
                 leftFootprint.SetActive(true);
                 LaunchOnSpawn(leftFootprint);
@@ -50,16 +51,6 @@ public class Footprint : MonoBehaviour
                 lastFootprint = position;
                 isRightFootprint = false;
             }
-        }
-    }
-
-    private static void LaunchOnSpawn(GameObject footprint)
-    {
-        IPooledObject pooledObj = footprint.GetComponent<IPooledObject>();
-
-        if (pooledObj != null)
-        {
-            pooledObj.OnObjectSpawn();
         }
     }
 
@@ -74,6 +65,8 @@ public class Footprint : MonoBehaviour
 
             if (Vector3.Distance(lastFootprint, position) > footprintIntervalDistance)
             {
+                AudioManager.Instance.Play("Footstep");
+
                 var rightFootprint = objectPooler.SpawnFromPool("RightFootprint", position, rotation);
                 rightFootprint.SetActive(true);
                 LaunchOnSpawn(rightFootprint);
@@ -83,5 +76,13 @@ public class Footprint : MonoBehaviour
         }
     }
 
+    private static void LaunchOnSpawn(GameObject footprint)
+    {
+        IPooledObject pooledObj = footprint.GetComponent<IPooledObject>();
 
+        if (pooledObj != null)
+        {
+            pooledObj.OnObjectSpawn();
+        }
+    }
 }

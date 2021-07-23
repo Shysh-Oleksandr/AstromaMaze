@@ -167,6 +167,8 @@ public class MainMenuUI : MonoBehaviour
 
     public void EnableOptionsMenu()
     {
+        AudioManager.Instance.Play("Swap");
+
         optionsMenu.gameObject.SetActive(true);
         backButtonOption.interactable = true;
 
@@ -176,6 +178,8 @@ public class MainMenuUI : MonoBehaviour
 
     public void EnableShopMenu()
     {
+        AudioManager.Instance.Play("Swap");
+
         shopMenu.gameObject.SetActive(true);
         backButtonShop.interactable = true;
 
@@ -185,6 +189,7 @@ public class MainMenuUI : MonoBehaviour
 
     private void DisableOptionsMenu()
     {
+        AudioManager.Instance.Play("Swap");
         for (int i = 0; i < mainMenuElements.Length; i++)
         {
             mainMenuElements[i].SetActive(false);
@@ -199,6 +204,7 @@ public class MainMenuUI : MonoBehaviour
 
     private void DisableShopMenu()
     {
+        AudioManager.Instance.Play("Swap");
         for (int i = 0; i < mainMenuElements.Length; i++)
         {
             mainMenuElements[i].SetActive(false);
