@@ -108,6 +108,16 @@ public class MainMenuUI : MonoBehaviour
     }
     private void Start()
     {
+        #region Tab click sounds
+        videoTab.GetComponent<Button>().onClick.AddListener(() => AudioManager.Instance.Play("Click"));
+        audioTab.GetComponent<Button>().onClick.AddListener(() => AudioManager.Instance.Play("Click"));
+        gameTab.GetComponent<Button>().onClick.AddListener(() => AudioManager.Instance.Play("Click"));
+        languageTab.GetComponent<Button>().onClick.AddListener(() => AudioManager.Instance.Play("Click"));
+        sprayTab.GetComponent<Button>().onClick.AddListener(() => AudioManager.Instance.Play("Click"));
+        bootsTab.GetComponent<Button>().onClick.AddListener(() => AudioManager.Instance.Play("Click"));
+        birdsTab.GetComponent<Button>().onClick.AddListener(() => AudioManager.Instance.Play("Click"));
+        compassTab.GetComponent<Button>().onClick.AddListener(() => AudioManager.Instance.Play("Click"));
+        #endregion
         optionsMenuStartPos = new Vector2(Screen.width, menuY);
         shopMenuStartPos = new Vector2(-Screen.width, menuY);
 
@@ -120,10 +130,10 @@ public class MainMenuUI : MonoBehaviour
         audioTab.GetComponent<Button>().onClick.AddListener(() => TweenTab(audioTab, audioElements, tweenDuration, tweenDelay));
         gameTab.GetComponent<Button>().onClick.AddListener(() => TweenTab(gameTab, gameElements, tweenDuration, tweenDelay));
         languageTab.GetComponent<Button>().onClick.AddListener(() => TweenTab(languageTab, languageElements, tweenDuration, tweenDelay));
-        sprayTab.GetComponent<Button>().onClick.AddListener(() => TweenTab(sprayTab, sprayElements, 0.25f, 0.1f));
-        bootsTab.GetComponent<Button>().onClick.AddListener(() => TweenTab(bootsTab, bootsElements, 0.25f, 0.1f));
-        birdsTab.GetComponent<Button>().onClick.AddListener(() => TweenTab(birdsTab, birdsElements, 0.25f, 0.1f));
-        compassTab.GetComponent<Button>().onClick.AddListener(() => TweenTab(compassTab, compassElements, 0.25f, 0.1f));
+        sprayTab.GetComponent<Button>().onClick.AddListener(() => TweenTab(sprayTab, sprayElements, 0.15f, 0.2f));
+        bootsTab.GetComponent<Button>().onClick.AddListener(() => TweenTab(bootsTab, bootsElements, 0.15f, 0.2f));
+        birdsTab.GetComponent<Button>().onClick.AddListener(() => TweenTab(birdsTab, birdsElements, 0.15f, 0.2f));
+        compassTab.GetComponent<Button>().onClick.AddListener(() => TweenTab(compassTab, compassElements, 0.15f, 0.2f));
         #endregion
     }
 
@@ -157,10 +167,18 @@ public class MainMenuUI : MonoBehaviour
         if (isOptionsMenu)
         {
             backButtonOption.interactable = false;
+            videoTab.GetComponent<Button>().interactable = false;
+            audioTab.GetComponent<Button>().interactable = false;
+            gameTab.GetComponent<Button>().interactable = false;
+            languageTab.GetComponent<Button>().interactable = false;
         }
         else
         {
             backButtonShop.interactable = false;
+            sprayTab.GetComponent<Button>().interactable = false;
+            bootsTab.GetComponent<Button>().interactable = false;
+            birdsTab.GetComponent<Button>().interactable = false;
+            compassTab.GetComponent<Button>().interactable = false;
         }
         StartCoroutine(BackButtonTweenCoroutine(isOptionsMenu));
     }
@@ -171,6 +189,10 @@ public class MainMenuUI : MonoBehaviour
 
         optionsMenu.gameObject.SetActive(true);
         backButtonOption.interactable = true;
+        videoTab.GetComponent<Button>().interactable = true;
+        audioTab.GetComponent<Button>().interactable = true;
+        gameTab.GetComponent<Button>().interactable = true;
+        languageTab.GetComponent<Button>().interactable = true;
 
         optionsMenu.localPosition = optionsMenuStartPos;
         optionsMenu.LeanMoveLocalX(screenCenterX, tweenDuration).setEaseOutExpo();
@@ -182,6 +204,10 @@ public class MainMenuUI : MonoBehaviour
 
         shopMenu.gameObject.SetActive(true);
         backButtonShop.interactable = true;
+        sprayTab.GetComponent<Button>().interactable = true;
+        bootsTab.GetComponent<Button>().interactable = true;
+        birdsTab.GetComponent<Button>().interactable = true;
+        compassTab.GetComponent<Button>().interactable = true;
 
         shopMenu.localPosition = shopMenuStartPos;
         shopMenu.LeanMoveLocalX(screenCenterX, tweenDuration).setEaseOutExpo();

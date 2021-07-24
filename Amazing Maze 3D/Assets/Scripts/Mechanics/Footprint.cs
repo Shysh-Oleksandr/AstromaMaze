@@ -43,7 +43,6 @@ public class Footprint : MonoBehaviour
 
             if (Vector3.Distance(lastFootprint, position) > footprintIntervalDistance)
             {
-                AudioManager.Instance.Play("Footstep");
                 var leftFootprint = objectPooler.SpawnFromPool("LeftFootprint", position, rotation);
                 leftFootprint.SetActive(true);
                 LaunchOnSpawn(leftFootprint);
@@ -65,8 +64,6 @@ public class Footprint : MonoBehaviour
 
             if (Vector3.Distance(lastFootprint, position) > footprintIntervalDistance)
             {
-                AudioManager.Instance.Play("Footstep");
-
                 var rightFootprint = objectPooler.SpawnFromPool("RightFootprint", position, rotation);
                 rightFootprint.SetActive(true);
                 LaunchOnSpawn(rightFootprint);

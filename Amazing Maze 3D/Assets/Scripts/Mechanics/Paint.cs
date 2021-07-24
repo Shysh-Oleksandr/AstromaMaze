@@ -14,10 +14,19 @@ public class Paint : MonoBehaviour
     public event OnSprayChanged OnSprayChangedEvent;
 
     private ObjectPooler objectPooler;
+    private AudioSource spraySource;
 
     Camera mainCam;
     void Start()
     {
+        foreach (Sound s in AudioManager.Instance.sounds)
+        {
+            if (s.name == "Spray")
+            {
+                spraySource = s.source;
+            }
+        }
+
         objectPooler = ObjectPooler.instance;
         mainCam = Camera.main;
 
@@ -33,6 +42,10 @@ public class Paint : MonoBehaviour
             objectPooler.sprayAmount > 0)
         {
             PaintWall();
+        }
+        else
+        {
+            spraySource.Stop();
         }
     }
 
@@ -81,7 +94,10 @@ public class Paint : MonoBehaviour
                     paint = objectPooler.SpawnFromPool("Paint", position, Quaternion.identity);
 
                 }
-                AudioManager.Instance.Play("Spray");
+                if (!spraySource.isPlaying)
+                {
+                    AudioManager.Instance.Play("Spray");
+                }
                 paint.transform.localScale = Vector3.one * brushSize;
                 paint.SetActive(true);
                 IPooledObject pooledObj = paint.GetComponent<IPooledObject>();
@@ -94,6 +110,10 @@ public class Paint : MonoBehaviour
                 objectPooler.sprayAmount--;
                 OnSprayChangedEvent?.Invoke();
             }
+        }
+        else
+        {
+            spraySource.Stop();
         }
     }
 

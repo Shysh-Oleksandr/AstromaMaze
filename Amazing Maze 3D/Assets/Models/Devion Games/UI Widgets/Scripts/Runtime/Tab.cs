@@ -23,7 +23,6 @@ namespace DevionGames.UIWidgets
             m_Image = GetComponent<Image>();
             m_DefaultColor = m_Image.color;
             m_Button.onClick.AddListener(Select);
-
         }
 
         private void Start()

@@ -27,7 +27,6 @@ public class UpgradeManager : MonoBehaviour
 
     public void SubtractCoins(Button button)
     {
-        AudioManager.Instance.Play("Buy");
         for (int i = 0; i < MainMenuUI.Instance.upgradeElements.Length; i++)
         {
             if (MainMenuUI.Instance.upgradeElements[i].upgradeButton == button)
@@ -35,6 +34,7 @@ public class UpgradeManager : MonoBehaviour
                 int itemPrice = GetItemPrice(MainMenuUI.Instance.upgradeElements[i].item);
                 if (GameManager.Instance.totalCoins >= itemPrice)
                 {
+                    AudioManager.Instance.Play("Buy");
                     GameManager.Instance.totalCoins -= itemPrice;
                     OnCoinChangedEvent?.Invoke();
                     UpdateItemLevel(MainMenuUI.Instance.upgradeElements[i].item);

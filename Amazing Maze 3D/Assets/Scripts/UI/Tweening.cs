@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class Tweening : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class Tweening : MonoBehaviour
     private LTDescr d;
     private GameObject[] pastTweeningElements;
     private Vector3[] pauseMenuElementsStartPos, menuElementsStartPos;
+    private AudioSource tweenSource;
 
     #region Singleton 
     private static Tweening instance;
@@ -58,8 +60,8 @@ public class Tweening : MonoBehaviour
         Vector2 elementStartPos = optionElements.transform.position;
         optionElements.transform.localPosition = new Vector2(0, -Screen.height);
 
-        AudioManager.Instance.Play("TweenWhoosh");
-        LeanTween.move(gameObject, elementStartPos, tweenDuration).setEaseOutExpo().setIgnoreTimeScale(true).delay = tweenDelay;
+        LeanTween.move(gameObject, elementStartPos, tweenDuration).setEaseOutExpo().setIgnoreTimeScale(true)
+            .setOnStart(() => AudioManager.Instance.Play("TweenWhoosh")).delay = tweenDelay;
     }
 
     public void TweenArray(GameObject[] optionElements, float tweenDuration, float tweenDelay, bool startDelay)
@@ -88,17 +90,16 @@ public class Tweening : MonoBehaviour
             element.transform.position = new Vector2(Screen.width, -Screen.height / 2);
             element.SetActive(true);
 
-            AudioManager.Instance.Play("TweenWhoosh");
+            id = LeanTween.move(element, menuElementsStartPos[i], tweenDuration).setEaseOutExpo().setIgnoreTimeScale(true)
+                    .setOnStart(() => AudioManager.Instance.Play("TweenWhoosh")).id;
+            LTDescr descr = LeanTween.descr(id);
+
             if (startDelay)
             {
-                id = LeanTween.move(element, menuElementsStartPos[i], tweenDuration).setEaseOutExpo().setIgnoreTimeScale(true).id;
-                LTDescr descr = LeanTween.descr(id);
                 descr.delay = tweenDelay * (i + 1);
             }
             else
             {
-                id = LeanTween.move(element, menuElementsStartPos[i], tweenDuration).setEaseOutExpo().setIgnoreTimeScale(true).id;
-                LTDescr descr = LeanTween.descr(id);
                 descr.delay = tweenDelay * i;
             }
         }
@@ -122,14 +123,15 @@ public class Tweening : MonoBehaviour
             element.transform.localPosition = new Vector2(Screen.width, -Screen.height / 2);
             element.SetActive(true);
 
-            AudioManager.Instance.Play("TweenWhoosh");
             if (startDelay)
             {
-                LeanTween.move(element, pauseMenuElementsStartPos[i], tweenDuration).setEaseOutExpo().setIgnoreTimeScale(true).delay = tweenDelay * (i + 1);
+                LeanTween.move(element, pauseMenuElementsStartPos[i], tweenDuration).setEaseOutExpo().setIgnoreTimeScale(true)
+                    .setOnStart(() => AudioManager.Instance.Play("TweenWhoosh")).delay = tweenDelay * (i + 1);
             }
             else
             {
-                LeanTween.move(element, pauseMenuElementsStartPos[i], tweenDuration).setEaseOutExpo().setIgnoreTimeScale(true).delay = tweenDelay * i;
+                LeanTween.move(element, pauseMenuElementsStartPos[i], tweenDuration).setEaseOutExpo().setIgnoreTimeScale(true)
+                    .setOnStart(() => AudioManager.Instance.Play("TweenWhoosh")).delay = tweenDelay * i;
             }
         }
     }
@@ -142,12 +144,12 @@ public class Tweening : MonoBehaviour
 
             Vector2 elementPosTo = new Vector2(Screen.width, -Screen.height / 2);
 
-            AudioManager.Instance.Play("TweenWhoosh");
             if (startDelay)
             {
                 LeanTween.move(element, elementPosTo, tweenDuration)
                     .setEaseOutExpo()
                     .setIgnoreTimeScale(true)
+                    .setOnStart(() => AudioManager.Instance.Play("BackTweenWoosh"))
                     .setOnComplete(() =>
                     {
                         element.SetActive(false);
@@ -159,6 +161,7 @@ public class Tweening : MonoBehaviour
                 LeanTween.move(element, elementPosTo, tweenDuration)
                     .setEaseOutExpo()
                     .setIgnoreTimeScale(true)
+                    .setOnStart(() => AudioManager.Instance.Play("BackTweenWoosh"))
                     .setOnComplete(() =>
                     {
                         element.SetActive(false);
@@ -210,7 +213,6 @@ public class Tweening : MonoBehaviour
         go.gameObject.SetActive(true);
 
         go.gameObject.transform.localPosition = new Vector2(0, -Screen.height / 2);
-        AudioManager.Instance.Play("TweenWhoosh");
         go.gameObject.LeanMoveLocalY(0, duration).setEaseOutCubic()
             .setIgnoreTimeScale(true)
             .setOnComplete(() =>
@@ -219,11 +221,15 @@ public class Tweening : MonoBehaviour
                 {
                     if (tweenUp)
                     {
-                        go.gameObject.LeanMoveLocalY(Screen.height, duration).setEaseInBack().setOnComplete(() => go.gameObject.SetActive(false));
+                        go.gameObject.LeanMoveLocalY(Screen.height, duration).setEaseInBack()
+                                            .setOnStart(() => AudioManager.Instance.Play("Whoosh"))
+                                            .setOnComplete(() => go.gameObject.SetActive(false));
                     }
                     else
                     {
-                        go.gameObject.LeanMoveLocalY(-Screen.height, duration).setEaseInBack().setOnComplete(() => go.gameObject.SetActive(false));
+                        go.gameObject.LeanMoveLocalY(-Screen.height, duration).setEaseInBack()
+                                            .setOnStart(() => AudioManager.Instance.Play("Whoosh"))
+                                            .setOnComplete(() => go.gameObject.SetActive(false));
                     }
                 }
             })

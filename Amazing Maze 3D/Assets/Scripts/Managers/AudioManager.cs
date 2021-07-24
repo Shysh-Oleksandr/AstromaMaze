@@ -2,13 +2,47 @@ using UnityEngine;
 using UnityEngine.Audio;
 using System;
 
-public class AudioManager : GenericSingletonClass<AudioManager>
+public class AudioManager : MonoBehaviour
 {
     public Sound[] sounds;
 
-    private new void Awake()
+    #region Singleton
+    private static AudioManager instance;
+    public static AudioManager Instance
     {
-        foreach(Sound s in sounds)
+        get
+        {
+            if (instance == null)
+            {
+                instance = FindObjectOfType<AudioManager>();
+                if (instance == null)
+                {
+                    GameObject obj = new GameObject();
+                    obj.name = typeof(AudioManager).Name;
+                    instance = obj.AddComponent<AudioManager>();
+                }
+            }
+            return instance;
+        }
+    }
+
+    #endregion
+
+    private void Awake()
+    {
+        #region Singleton
+        if (instance == null)
+        {
+            instance = this as AudioManager;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        #endregion
+
+        foreach (Sound s in sounds)
         {
             s.source = gameObject.AddComponent<AudioSource>();
             s.source.clip = s.clip;
@@ -30,6 +64,5 @@ public class AudioManager : GenericSingletonClass<AudioManager>
         }
 
         s.source.Play();
-        print(name + " played.");
     }
 }

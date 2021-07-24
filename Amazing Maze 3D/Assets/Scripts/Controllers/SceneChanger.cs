@@ -13,7 +13,18 @@ public class SceneChanger : GenericSingletonClass<SceneChanger>
     public bool isLoading;
 
     private int levelToLoad;
+    private AudioSource fadingSource;
 
+    private void Start()
+    {
+        foreach (Sound s in AudioManager.Instance.sounds)
+        {
+            if (s.name == "Fading")
+            {
+                fadingSource = s.source;
+            }
+        }
+    }
     public void FadeToNextLevel()
     {
         Instance.FadeToLevel(SceneManager.GetActiveScene().buildIndex + 1);
@@ -65,6 +76,7 @@ public class SceneChanger : GenericSingletonClass<SceneChanger>
 
                 yield return null;
             }
+            fadingSource.Stop();
             Instance.isLoading = false;
             loadingScreen.SetActive(false);
         }

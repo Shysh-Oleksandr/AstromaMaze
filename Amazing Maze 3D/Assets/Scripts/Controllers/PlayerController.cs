@@ -4,7 +4,8 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float groundDistance = 0.4f;
     private float gravity = -9.81f;
-    private bool isGrounded;
+    private bool isGrounded, isMoving;
+    private Vector3 lastPosition;
 
     public Transform groundCheck;
     public LayerMask groundLayer;
@@ -18,9 +19,18 @@ public class PlayerController : MonoBehaviour
 
     private Vector3 velocity;
     private CharacterController controller;
+    private AudioSource footstepSource;
 
     void Start()
     {
+        foreach (Sound s in AudioManager.Instance.sounds)
+        {
+            if (s.name == "Footstep")
+            {
+                footstepSource = s.source;
+            }
+        }
+
         controller = GetComponent<CharacterController>();
     }
 
@@ -37,6 +47,29 @@ public class PlayerController : MonoBehaviour
         {
             velocity.y = -2f;
         }
+
+        if(lastPosition != gameObject.transform.position)
+        {
+            isMoving = true;
+        }
+        else
+        {
+            isMoving = false;
+        }
+
+        if(isMoving)
+        {
+            if (!footstepSource.isPlaying)
+            {
+                AudioManager.Instance.Play("Footstep");
+            }
+        }
+        else
+        {
+            footstepSource.Stop();
+        }
+
+        lastPosition = gameObject.transform.position;
 
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");

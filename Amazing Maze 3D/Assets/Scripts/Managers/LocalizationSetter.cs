@@ -41,6 +41,7 @@ public class LocalizationSetter : MonoBehaviour
 
     public void LocaleSelected(int index)
     {
+        AudioManager.Instance.Play("Click");
         languageIndex = index;
         LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[index];
     }
