@@ -14,6 +14,8 @@ public class UIManager : MonoBehaviour
     public PlayerController playerController;
     public Paint paint;
 
+    private int levelCoins = 0;
+
     #region Singleton 
     private static UIManager instance;
 
@@ -38,7 +40,9 @@ public class UIManager : MonoBehaviour
         playerController.OnCoinTakeEvent += OnCoinChanged;
         paint.OnSprayChangedEvent += OnSprayChanged;
 
-        coinsText.text = GameManager.Instance.totalCoins.ToString();
+        levelCoins = 0;
+
+        coinsText.text = "0";
         sprayText.text = ObjectPooler.instance.sprayAmount.ToString();
         levelText.text = "Level 1"; // TODO: + level variable.
 
@@ -59,7 +63,8 @@ public class UIManager : MonoBehaviour
     public void OnCoinChanged(int coinValue)
     {
         GameManager.Instance.totalCoins += coinValue;
-        coinsText.text = GameManager.Instance.totalCoins.ToString();
+        levelCoins += coinValue;
+        coinsText.text = levelCoins.ToString();
     }
 
     public void TweenPauseMenu()

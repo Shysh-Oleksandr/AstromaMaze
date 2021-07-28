@@ -34,13 +34,16 @@ public class PlayerController : MonoBehaviour
         controller = GetComponent<CharacterController>();
     }
 
-    void FixedUpdate()
+    void Update()
     {
         PlayerMovement();
     }
 
     private void PlayerMovement()
     {
+        PlayFootstepSound();
+
+        #region IsGrounded
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundLayer);
 
         if (isGrounded && velocity.y < 0)
@@ -48,7 +51,27 @@ public class PlayerController : MonoBehaviour
             velocity.y = -2f;
         }
 
-        if(lastPosition != gameObject.transform.position)
+        #endregion
+
+        #region Moving
+        float x = Input.GetAxis("Horizontal");
+        float z = Input.GetAxis("Vertical");
+
+        Vector3 move = transform.right * x + transform.forward * z;
+
+        controller.Move(move * bootItem.speed * Time.deltaTime);
+
+        velocity.y += gravity * Time.deltaTime;
+
+        controller.Move(velocity * Time.deltaTime);
+        #endregion
+
+        OnMovementChangedEvent?.Invoke();
+    }
+
+    private void PlayFootstepSound()
+    {
+        if (lastPosition != gameObject.transform.position)
         {
             isMoving = true;
         }
@@ -57,7 +80,7 @@ public class PlayerController : MonoBehaviour
             isMoving = false;
         }
 
-        if(isMoving)
+        if (isMoving && (GameManager.Instance.State == GameState.Playing || GameManager.Instance.State == GameState.LevelSelection))
         {
             if (!footstepSource.isPlaying)
             {
@@ -70,20 +93,7 @@ public class PlayerController : MonoBehaviour
         }
 
         lastPosition = gameObject.transform.position;
-
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
-
-        Vector3 move = transform.right * x + transform.forward * z;
-
-        controller.Move(move * bootItem.speed * Time.deltaTime);
-
-        velocity.y += gravity * Time.deltaTime;
-
-        controller.Move(velocity * Time.deltaTime);
-        OnMovementChangedEvent?.Invoke();
     }
-
 
     private void OnTriggerEnter(Collider other)
     {
@@ -112,5 +122,4 @@ public class PlayerController : MonoBehaviour
             OnCoinTakeEvent?.Invoke(other.GetComponent<Coin>().coinValue);
         }
     }
-
 }

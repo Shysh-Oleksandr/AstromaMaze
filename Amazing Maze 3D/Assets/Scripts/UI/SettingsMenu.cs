@@ -25,12 +25,10 @@ public class SettingsMenu : MonoBehaviour
 
         SetResolution(startResolutionIndex); // Maybe not the best idea?
         SetFullscreen(isFullScreen);
-        SetVolume(startVolume);
         SetQuality(quality);
         SetDifficulties(difficultyIndex);
 
         fullScreenToggle.isOn = isFullScreen;
-        volumeSlider.value = startVolume;
         qualitySlider.value = quality;
         difficultyDropdown.value = difficultyIndex;
     }
@@ -90,8 +88,7 @@ public class SettingsMenu : MonoBehaviour
 
     public void SetVolume(float volume)
     {
-        startVolume = Mathf.Log10(volume) * 20;
-        print(startVolume);
+        startVolume = Mathf.Log10(volume) * 20; 
         audioMixer.SetFloat("volume", Mathf.Log10(volume) * 20);
     }
 

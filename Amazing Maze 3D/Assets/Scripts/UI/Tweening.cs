@@ -149,7 +149,7 @@ public class Tweening : MonoBehaviour
                 LeanTween.move(element, elementPosTo, tweenDuration)
                     .setEaseOutExpo()
                     .setIgnoreTimeScale(true)
-                    .setOnStart(() => AudioManager.Instance.Play("BackTweenWoosh"))
+                    .setOnStart(() => AudioManager.Instance.Play("BackTweenWhoosh"))
                     .setOnComplete(() =>
                     {
                         element.SetActive(false);
@@ -161,7 +161,7 @@ public class Tweening : MonoBehaviour
                 LeanTween.move(element, elementPosTo, tweenDuration)
                     .setEaseOutExpo()
                     .setIgnoreTimeScale(true)
-                    .setOnStart(() => AudioManager.Instance.Play("BackTweenWoosh"))
+                    .setOnStart(() => AudioManager.Instance.Play("BackTweenWhoosh"))
                     .setOnComplete(() =>
                     {
                         element.SetActive(false);

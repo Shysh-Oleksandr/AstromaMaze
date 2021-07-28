@@ -18,18 +18,18 @@ public class GameManager : GenericSingletonClass<GameManager>
         LoadGameData();
     }
 
-    public GameState SetEnum(string newState)
+    public GameState SetEnum(string newStateName)
     {
-        State = (GameState)Enum.Parse(typeof(GameState), newState);
-        return State;
+        GameState newGameState = (GameState)Enum.Parse(typeof(GameState), newStateName);
+        return newGameState;
     }
 
     public void UpdateGameState(string newState)
     {
-        State = SetEnum(newState);
-        Debug.Log(State);
+        Instance.State = SetEnum(newState);
+        Debug.Log(Instance.State);
 
-        switch (State)
+        switch (Instance.State)
         {
             case GameState.Playing:
                 HandlePlaying();
@@ -51,7 +51,7 @@ public class GameManager : GenericSingletonClass<GameManager>
                 break;
         }
 
-        OnGameStateChanged?.Invoke(State);
+        OnGameStateChanged?.Invoke(Instance.State);
     }
 
     private void HandleLevelSelection()
