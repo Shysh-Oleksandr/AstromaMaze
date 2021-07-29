@@ -1,11 +1,23 @@
 using UnityEngine;
 using TMPro;
+using System;
+
+[Serializable]
+public struct SpawnPositions
+{
+    public Transform spawnPosition;
+    public int[] suitableLevels;
+}
 
 public class LevelManager : MonoBehaviour
 {
     public GameObject[] levels;
+    public SpawnPositions[] spawnPositions;
 
     public TextMeshProUGUI lockLevelText;
+    public Transform playerPosition;
+
+    public int maxLevelReached;
 
     private Color passedColor = new Color32(52, 217, 63, 155);
     private Color reachedColor = new Color32(212, 236, 45, 155);
@@ -13,7 +25,26 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
+        maxLevelReached = GameManager.Instance.maxLevelReached;
         ChangeLevelTextColor();
+        SpawnPlayer();
+    }
+
+    private void SpawnPlayer()
+    {
+        for (int pos = 0; pos < spawnPositions.Length; pos++)
+        {
+            for (int level = 0; level < spawnPositions[pos].suitableLevels.Length; level++)
+            {
+                if(spawnPositions[pos].suitableLevels[level] == maxLevelReached)
+                {
+                    playerPosition.position = spawnPositions[pos].spawnPosition.position;
+                    print(pos + " " + level);
+                    break;
+                }
+            }
+        }
+
     }
 
     private void ChangeLevelTextColor()

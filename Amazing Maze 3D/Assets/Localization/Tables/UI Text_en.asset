@@ -194,15 +194,15 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 6877449448153088
-    m_Localized: Earned {totalCoins}
+    m_Localized: Earned {levelCoins}
     m_Metadata:
       m_Items:
-      - id: 0
+      - id: 2
   - m_Id: 6877797361475584
     m_Localized: Total {totalCoins}
     m_Metadata:
       m_Items:
-      - id: 1
+      - id: 0
   - m_Id: 7230183334567936
     m_Localized: Surprise!
     m_Metadata:
@@ -300,7 +300,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 8741928968478720
-    m_Localized: Max level
+    m_Localized: The maximum level
     m_Metadata:
       m_Items: []
   - m_Id: 11958646377373696
@@ -308,21 +308,21 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 11960068703608832
-    m_Localized: You are on the level {maxLevelReached}
+    m_Localized: The maximum unlock level is the level {maxLevelReached}
     m_Metadata:
       m_Items:
-      - id: 2
+      - id: 1
   references:
     version: 1
     00000000:
       type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
-        m_Entries: 006051fb006f1800
+        m_Entries: 006091fc516f1800
     00000001:
       type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
-        m_Entries: 006091fc516f1800
+        m_Entries: 0060917e9e7d2a00
     00000002:
       type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
-        m_Entries: 0060917e9e7d2a00
+        m_Entries: 006051fb006f1800

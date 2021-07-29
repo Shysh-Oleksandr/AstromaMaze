@@ -15,7 +15,7 @@ public class UIManager : MonoBehaviour
     public PlayerController playerController;
     public Paint paint;
 
-    private int levelCoins = 0;
+    public int levelCoins = 0, totalCoins;
 
     #region Singleton 
     private static UIManager instance;
@@ -44,6 +44,8 @@ public class UIManager : MonoBehaviour
         paint.OnSprayChangedEvent += OnSprayChanged;
 
         levelCoins = 0;
+        totalCoins = GameManager.Instance.totalCoins;
+
 
         coinsText.text = "0";
         sprayText.text = ObjectPooler.instance.sprayAmount.ToString();
@@ -66,6 +68,7 @@ public class UIManager : MonoBehaviour
     public void OnCoinChanged(int coinValue)
     {
         GameManager.Instance.totalCoins += coinValue;
+        totalCoins = GameManager.Instance.totalCoins;
         levelCoins += coinValue;
         coinsText.text = levelCoins.ToString();
     }
