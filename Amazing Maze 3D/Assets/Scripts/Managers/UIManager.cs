@@ -1,6 +1,7 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
@@ -37,6 +38,8 @@ public class UIManager : MonoBehaviour
 
     void Start()
     {
+        GameManager.Instance.currentLevel = SceneManager.GetActiveScene().buildIndex - 1;
+
         playerController.OnCoinTakeEvent += OnCoinChanged;
         paint.OnSprayChangedEvent += OnSprayChanged;
 
@@ -44,7 +47,7 @@ public class UIManager : MonoBehaviour
 
         coinsText.text = "0";
         sprayText.text = ObjectPooler.instance.sprayAmount.ToString();
-        levelText.text = "Level 1"; // TODO: + level variable.
+        levelText.text = "Level " + GameManager.Instance.currentLevel.ToString();
 
         Tweening.Instance.TweenVertically(levelText.gameObject, 0.6f, 0, true, true);
     }

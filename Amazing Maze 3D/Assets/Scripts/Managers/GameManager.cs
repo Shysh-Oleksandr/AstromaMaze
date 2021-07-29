@@ -8,8 +8,9 @@ public class GameManager : GenericSingletonClass<GameManager>
     public static event Action<GameState> OnGameStateChanged;
 
     public int totalCoins;
-    public float difficultyCoefficient = 1f;    
+    public int currentLevel = 0;
     public int maxLevelReached;
+    public float difficultyCoefficient = 1f;
     public bool isGameRunning = true;
 
     private void Start()
@@ -101,6 +102,11 @@ public class GameManager : GenericSingletonClass<GameManager>
         isGameRunning = false;
         Time.timeScale = 0f;
         Tweening.Instance.TweenVictoryLoseMenu(UIManager.Instance.victoryMenu, UIManager.Instance.victoryMenuBg, UIManager.Instance.victoryMenuElements);
+
+        if(currentLevel == maxLevelReached)
+        {
+            maxLevelReached++;
+        }
     }
 
     public void QuitGame()

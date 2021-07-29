@@ -46,18 +46,18 @@ MonoBehaviour:
   sounds:
   - name: Click
     clip: {fileID: 8300000, guid: 32d4b1811dda14a6cb9e059ee8ad17d2, type: 3}
-    volume: 1
+    volume: 0.7
     pitch: 1
-    randomVolume: 0.2
-    randomPitch: 0.2
+    randomVolume: 0.5
+    randomPitch: 0.5
     loop: 0
     source: {fileID: 0}
   - name: Swap
     clip: {fileID: 8300000, guid: d46323e22e74e46baa241cbf48c85671, type: 3}
-    volume: 1
+    volume: 0.8
     pitch: 1
-    randomVolume: 0.2
-    randomPitch: 0.2
+    randomVolume: 0.5
+    randomPitch: 0.5
     loop: 0
     source: {fileID: 0}
   - name: Fading
@@ -73,16 +73,16 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     randomVolume: 0.2
-    randomPitch: 0.4
+    randomPitch: 0.2
     loop: 0
     source: {fileID: 0}
   - name: Spray
-    clip: {fileID: 8300000, guid: 4655dda4b8239754a97439c157390309, type: 3}
-    volume: 1
+    clip: {fileID: 8300000, guid: c292b97442b1cee489603c502cd03672, type: 3}
+    volume: 0.7
     pitch: 1
     randomVolume: 0.2
     randomPitch: 0.2
-    loop: 0
+    loop: 1
     source: {fileID: 0}
   - name: BirdsUp
     clip: {fileID: 8300000, guid: 910842d42febfe2468c1d57fe84853b5, type: 3}
@@ -102,18 +102,18 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Coin
     clip: {fileID: 8300000, guid: 64121409ae24b364c9fcf0c4e36a083d, type: 3}
-    volume: 1
+    volume: 0.9
     pitch: 1
-    randomVolume: 0.2
+    randomVolume: 0.5
     randomPitch: 0.5
     loop: 0
     source: {fileID: 0}
   - name: Whoosh
     clip: {fileID: 8300000, guid: b55ff3978dea3744db2b19cd4470d552, type: 3}
-    volume: 1
+    volume: 0.6
     pitch: 1
-    randomVolume: 0.2
-    randomPitch: 0.2
+    randomVolume: 0.5
+    randomPitch: 0.5
     loop: 0
     source: {fileID: 0}
   - name: Heartbeat
@@ -129,7 +129,7 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     randomVolume: 0
-    randomPitch: 0.086
+    randomPitch: 0.1
     loop: 0
     source: {fileID: 0}
   - name: Lose
@@ -137,22 +137,30 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     randomVolume: 0
-    randomPitch: 0.128
+    randomPitch: 0.1
     loop: 0
     source: {fileID: 0}
   - name: Footstep
-    clip: {fileID: 8300000, guid: e85ebefcaa228bc42adb2554e5a428d4, type: 3}
-    volume: 1
+    clip: {fileID: 8300000, guid: afc81148cf88b3c48bfbd59d42bdfa91, type: 3}
+    volume: 0.5
     pitch: 1
-    randomVolume: 0.4
-    randomPitch: 0.404
-    loop: 0
+    randomVolume: 0.5
+    randomPitch: 0.5
+    loop: 1
     source: {fileID: 0}
   - name: TweenWhoosh
     clip: {fileID: 8300000, guid: fed7d753b64d8544e92d84c1f5522e9a, type: 3}
-    volume: 1
+    volume: 0.5
     pitch: 1
-    randomVolume: 0.209
-    randomPitch: 0.222
+    randomVolume: 0.5
+    randomPitch: 0.5
+    loop: 0
+    source: {fileID: 0}
+  - name: BackTweenWhoosh
+    clip: {fileID: 8300000, guid: d5cf28fd0ba7f50409bc0fe06c2057ef, type: 3}
+    volume: 0.5
+    pitch: 1
+    randomVolume: 0.5
+    randomPitch: 0.5
     loop: 0
     source: {fileID: 0}

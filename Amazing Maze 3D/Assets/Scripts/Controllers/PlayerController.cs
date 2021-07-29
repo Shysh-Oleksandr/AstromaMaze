@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public Transform groundCheck;
     public LayerMask groundLayer;
     public BootItem bootItem;
+    public LevelManager levelManager;
 
     public delegate void OnCoinTake(int coins);
     public event OnCoinTake OnCoinTakeEvent;
@@ -107,19 +108,27 @@ public class PlayerController : MonoBehaviour
             Tweening.Instance.TweenVertically(UIManager.Instance.surpiseText.gameObject, 0.6f, 0, true, false);
         }
 
-        if (other.GetComponent<LevelIndex>() != null)
-        {
-            GameManager.Instance.UpdateGameState("Playing");
-            int levelIndex = other.GetComponent<LevelIndex>().levelIndex;
-            SceneChanger.Instance.FadeToLevel(levelIndex);
-        }
-
         if (other.CompareTag("Coin"))
         {
             Destroy(other.gameObject);
             AudioManager.Instance.Play("Coin");
 
             OnCoinTakeEvent?.Invoke(other.GetComponent<Coin>().coinValue);
+        }
+
+        if (other.GetComponent<LevelIndex>() != null)
+        {
+            if (!other.GetComponent<LevelIndex>().isLocked)
+            {
+                GameManager.Instance.UpdateGameState("Playing");
+                int levelIndex = other.GetComponent<LevelIndex>().levelIndex;
+                SceneChanger.Instance.FadeToLevel(levelIndex);
+            }
+            else
+            {
+                Tweening.Instance.TweenVertically(levelManager.lockLevelText.gameObject, 1.2f, 0, true, false);
+            }
+
         }
     }
 }

@@ -19,6 +19,7 @@ MonoBehaviour:
     m_Items:
     - id: 0
     - id: 1
+    - id: 2
   m_TableData:
   - m_Id: 162354257920
     m_Localized: "INCRE\xCDBLE LABERINTO"
@@ -302,6 +303,15 @@ MonoBehaviour:
     m_Localized: Nivel maximo
     m_Metadata:
       m_Items: []
+  - m_Id: 11958646377373696
+    m_Localized: "Este nivel est\xE1 bloqueado"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11960068703608832
+    m_Localized: "Est\xE1s en el nivel {maxLevelReached}"
+    m_Metadata:
+      m_Items:
+      - id: 2
   references:
     version: 1
     00000000:
@@ -312,3 +322,7 @@ MonoBehaviour:
       type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_Entries: 006091fc516f1800
+    00000002:
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 0060917e9e7d2a00

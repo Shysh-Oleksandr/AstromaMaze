@@ -5,14 +5,13 @@ public class Tweening : MonoBehaviour
 {
     [SerializeField] private float tweenDuration, tweenDelay;
     [SerializeField] private bool tweenOnStart = false;
-    public bool isTweening;
+    public bool isTweening, isVerticalTweening;
 
     private bool isArrayInited;
-    private int id;
-    private LTDescr d;
+    private int id, verticalId;
+    private LTDescr d, verticalD;
     private GameObject[] pastTweeningElements;
     private Vector3[] pauseMenuElementsStartPos, menuElementsStartPos;
-    private AudioSource tweenSource;
 
     #region Singleton 
     private static Tweening instance;
@@ -44,6 +43,7 @@ public class Tweening : MonoBehaviour
     private void Update()
     {
         d = LeanTween.descr(id);
+        verticalD = LeanTween.descr(verticalId);
 
         if (d != null)
         {
@@ -53,6 +53,17 @@ public class Tweening : MonoBehaviour
         {
             isTweening = false;
         }
+
+        if (verticalD != null)
+        {
+            isVerticalTweening = true;
+        }
+        else
+        {
+            isVerticalTweening = false;
+        }
+
+
     }
 
     public void Tween(GameObject optionElements, float tweenDuration, float tweenDelay)
@@ -210,10 +221,15 @@ public class Tweening : MonoBehaviour
 
     public void TweenVertically(GameObject go, float duration, float delay, bool tweenBack, bool tweenUp)
     {
-        go.gameObject.SetActive(true);
+        if (isVerticalTweening)
+        {
+            LeanTween.cancel(verticalId);
+        }
 
         go.gameObject.transform.localPosition = new Vector2(0, -Screen.height / 2);
-        go.gameObject.LeanMoveLocalY(0, duration).setEaseOutCubic()
+
+        go.gameObject.SetActive(true);
+        verticalId = go.gameObject.LeanMoveLocalY(0, duration).setEaseOutCubic()
             .setIgnoreTimeScale(true)
             .setOnComplete(() =>
             {
@@ -233,7 +249,8 @@ public class Tweening : MonoBehaviour
                     }
                 }
             })
-            .delay = delay;
-
+            .id;
+        LTDescr descr = LeanTween.descr(verticalId);
+        descr.delay = delay;
     }
 }
