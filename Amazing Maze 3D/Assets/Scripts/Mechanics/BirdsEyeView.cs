@@ -9,7 +9,11 @@ public class BirdsEyeView : MonoBehaviour
     public Camera birdsEyeCam;
     public Transform playerTransform;
     public SwitchCamera switchCamera;
+    public SpellCooldown spellCooldown;
     public BirdsEyeViewItem birdsEyeViewItem;
+
+    public delegate void OnBirdsEyeView();
+    public event OnBirdsEyeView OnBirdsEyeViewEvent;
 
     [SerializeField] [Range(0, 5)] private float startOffset;
 
@@ -48,7 +52,11 @@ public class BirdsEyeView : MonoBehaviour
             yield return null;
         }
 
-        switchCamera.nextBirdsEyeView = Time.time + birdsEyeViewItem.birdsEyeViewCooldown;
+        var tempColor = spellCooldown.skillImage.color;
+        tempColor.a = 1f;
+        spellCooldown.skillImage.color = tempColor;
+
+        OnBirdsEyeViewEvent?.Invoke();
         switchCamera.SwitchCameras();
     }
 }

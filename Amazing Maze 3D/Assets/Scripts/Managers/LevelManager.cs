@@ -39,7 +39,6 @@ public class LevelManager : MonoBehaviour
                 if(spawnPositions[pos].suitableLevels[level] == maxLevelReached)
                 {
                     playerPosition.position = spawnPositions[pos].spawnPosition.position;
-                    print(pos + " " + level);
                     break;
                 }
             }
