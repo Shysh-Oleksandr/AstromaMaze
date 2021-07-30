@@ -5,30 +5,38 @@ using TMPro;
 public class Compass : MonoBehaviour
 {
     public Transform mPlayerTransform, exitTransform;
-    public GameObject compassPanel;
+    public GameObject compassPanel, compassCooldownUI;
     public CompassItem compassItem;
     public TextMeshProUGUI distanceText;
     public PlayerController player;
+    public SpellCooldown spellCooldown;
     [SerializeField] float rotationSpeed, distanceToExit;
 
     [Tooltip("The direction towards which the compass points. Default for North is (0, 0, 1)")]
     public Vector3 kReferenceVector = new Vector3(0, 0, 1);
 
+    public delegate void OnCompassRotate();
+    public event OnCompassRotate OnCompassRotateEvent;
+
     private Vector3 _mTempVector;
     private float _mTempAngle;
-    private float nextRotateToNorth;
 
     private void Start()
     {
         compassPanel.SetActive(compassItem.isBought);
+        compassCooldownUI.SetActive(compassItem.canRotateToNorth);
         distanceText.gameObject.SetActive(compassItem.canShowDistance);
 
+        spellCooldown.cooldownTime = compassItem.compassCooldown;
+
         player.OnMovementChangedEvent += ShowDistance;
+        OnCompassRotateEvent += spellCooldown.UseSpell;
     }
 
     private void OnDestroy()
     {
         player.OnMovementChangedEvent -= ShowDistance;
+        OnCompassRotateEvent -= spellCooldown.UseSpell;
     }
 
     private void Update()
@@ -39,10 +47,10 @@ public class Compass : MonoBehaviour
 
     private void RotateToFinish()
     {
-        if (Input.GetKeyDown(KeyCode.R) && compassItem.canRotateToNorth && Time.time > nextRotateToNorth)
+        if (Input.GetKeyDown(KeyCode.R) && compassItem.canRotateToNorth && !spellCooldown.isCooldown)
         {
             AudioManager.Instance.Play("Whoosh");
-            nextRotateToNorth = Time.time + compassItem.compassCooldown;
+            OnCompassRotateEvent?.Invoke();
             StartCoroutine(RotateToNorth());
         }
     }

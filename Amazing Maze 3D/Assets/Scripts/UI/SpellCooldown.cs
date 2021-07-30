@@ -7,7 +7,6 @@ public class SpellCooldown : MonoBehaviour
 {
     [SerializeField] private Image imageCooldown, imageEdge;
     public Image skillImage, imageFrame;
-    public BirdsEyeView birdsEyeView;
 
     public bool isCooldown = false;
     public float cooldownTime;
@@ -15,14 +14,8 @@ public class SpellCooldown : MonoBehaviour
 
     private void Start()
     {
-        birdsEyeView.OnBirdsEyeViewEvent += UseSpell;
         imageCooldown.fillAmount = 0;
         imageFrame.enabled = true;
-    }
-
-    private void OnDestroy()
-    {
-        birdsEyeView.OnBirdsEyeViewEvent -= UseSpell;
     }
 
     private void Update()
@@ -39,9 +32,15 @@ public class SpellCooldown : MonoBehaviour
 
         if(cooldownTimer < 0)
         {
+            AudioManager.Instance.Play("BackTweenWhoosh");
+
             isCooldown = false;
             imageCooldown.fillAmount = 0f;
             imageFrame.enabled = true;
+
+            var tempColor = skillImage.color;
+            tempColor.a = 1f;
+            skillImage.color = tempColor;
         }
         else
         {

@@ -15,11 +15,11 @@ E:/IT/Games/UnityGames/AmazingMaze3D/Amazing Maze 3D
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-53330
+52902
 Successfully changed project path to: E:/IT/Games/UnityGames/AmazingMaze3D/Amazing Maze 3D
 E:/IT/Games/UnityGames/AmazingMaze3D/Amazing Maze 3D
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 188.88 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 302.75 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.11f1 (99c7afb366b3)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.11f1/Editor/Data/Resources/UnitySubsystems
@@ -36,778 +36,754 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.11f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.11f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.11f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56732
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56536
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.11f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.005878 seconds.
+Registered in 0.005495 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 200.20 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 160.55 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  3.506 seconds
+- Completed reload, in 17.777 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.012889 seconds.
+Registered in 0.020009 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 230.50 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 170.10 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  4.173 seconds
+- Completed reload, in  3.558 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.24 seconds
-Refreshing native plugins compatible for Editor in 1.58 ms, found 2 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.27 seconds
+Refreshing native plugins compatible for Editor in 1.85 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3583 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 3584 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 183.1 MB.
-System memory in use after: 183.2 MB.
+System memory in use after: 183.3 MB.
 
-Unloading 25 unused Assets to reduce memory usage. Loaded Objects now: 4053.
-Total: 7.647000 ms (FindLiveObjects: 0.654400 ms CreateObjectMapping: 0.382700 ms MarkObjects: 6.203200 ms  DeleteObjects: 0.404500 ms)
+Unloading 25 unused Assets to reduce memory usage. Loaded Objects now: 4054.
+Total: 9.840400 ms (FindLiveObjects: 0.909500 ms CreateObjectMapping: 0.637400 ms MarkObjects: 7.933100 ms  DeleteObjects: 0.357100 ms)
 
 ========================================================================
 Received Import Request.
   path: Assets/Scenes/Level1.unity
   artifactKey: Guid(1ee33f7d44d0ed64281df5add2b48c38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Level1.unity using Guid(1ee33f7d44d0ed64281df5add2b48c38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a85074cefe4abc0154e3a3d4adfb0e8b') in 0.086017 seconds
-  Import took 0.117328 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 136.223461 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Icons/Update.png
-  artifactKey: Guid(73e421a875bc1b940a75fcdc5b6bafc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Icons/Update.png using Guid(73e421a875bc1b940a75fcdc5b6bafc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a14ecd05c76795d9908a341122479cce') in 0.617143 seconds
-  Import took 0.659461 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000633 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Icons/View.png
-  artifactKey: Guid(35b2bb3492db5be40930a20818c9d136) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Icons/View.png using Guid(35b2bb3492db5be40930a20818c9d136) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd105fafaaea944ca71e59ba65f38b256') in 0.116999 seconds
-  Import took 0.179418 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000542 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Icons/Update.png
-  artifactKey: Guid(73e421a875bc1b940a75fcdc5b6bafc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Icons/Update.png using Guid(73e421a875bc1b940a75fcdc5b6bafc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a14ecd05c76795d9908a341122479cce') in 0.039764 seconds
-  Import took 0.053577 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.209979 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Elements/Square Shadow.png
-  artifactKey: Guid(d5c1f7c36945d3d46bf3e0bb0318c628) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Elements/Square Shadow.png using Guid(d5c1f7c36945d3d46bf3e0bb0318c628) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ea2e3715d78e174e1391dd9c969e7d3') in 0.113580 seconds
-  Import took 0.191340 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000716 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Elements/Square Outline.png
-  artifactKey: Guid(a9b53e4a2b293b34188ac48b59d1f8e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Elements/Square Outline.png using Guid(a9b53e4a2b293b34188ac48b59d1f8e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e7d81bf704978065c899d948b8db5dd4') in 0.048390 seconds
-  Import took 0.116901 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000744 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Elements/Square Shadowed.png
-  artifactKey: Guid(c435d628874ea5549bb1eeaaa736227c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Elements/Square Shadowed.png using Guid(c435d628874ea5549bb1eeaaa736227c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '643ccdf8654e14e200b35d4607e78edb') in 0.096280 seconds
-  Import took 0.157443 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000745 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Elements/Square.png
-  artifactKey: Guid(d03fea6710d5d5b47b6157005fec0375) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Elements/Square.png using Guid(d03fea6710d5d5b47b6157005fec0375) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ab06bd391880ff3eafe1fd5a79133e2') in 0.061420 seconds
-  Import took 0.123699 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000769 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Elements/Square Dotted Outline.png
-  artifactKey: Guid(0eef136d195d7754ab20358ba0ef79b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Elements/Square Dotted Outline.png using Guid(0eef136d195d7754ab20358ba0ef79b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '240ecc7e2603d59f081a7629d792d01c') in 0.093732 seconds
-  Import took 0.150403 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000667 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Icons/Star.png
-  artifactKey: Guid(639c1478b323d6a41ad2539b928d8010) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Icons/Star.png using Guid(639c1478b323d6a41ad2539b928d8010) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f855dd220282d3320f5cfbb78651b404') in 0.122540 seconds
-  Import took 0.162510 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.368985 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Icons/Share.png
-  artifactKey: Guid(f3d0f726bceeac646ba5a124840389d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Icons/Share.png using Guid(f3d0f726bceeac646ba5a124840389d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e52ea44e9a4f12a75a7c2597e61429de') in 0.154902 seconds
-  Import took 0.213174 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000804 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Icons/Setting.png
-  artifactKey: Guid(b461a552bbdc81846a670b44f5250f2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Icons/Setting.png using Guid(b461a552bbdc81846a670b44f5250f2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e4ef38164e4ee6b6014bbb8aaae55e9') in 0.109439 seconds
-  Import took 0.182868 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000783 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Elements/Rounded Square Outline.png
-  artifactKey: Guid(a7c354099fc3dc347972af2a63a91179) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Elements/Rounded Square Outline.png using Guid(a7c354099fc3dc347972af2a63a91179) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b8991d7eec6f1f8ddac1e0116d5ac26f') in 0.122880 seconds
-  Import took 0.165808 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000694 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Icons/Sound.png
-  artifactKey: Guid(e492d02d90d35f243b2829c3f03859cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Icons/Sound.png using Guid(e492d02d90d35f243b2829c3f03859cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b26343c8cce2002ed197fbb636d4ec0b') in 0.125845 seconds
-  Import took 0.177359 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000705 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Icons/Shield.png
-  artifactKey: Guid(a529d1cc104670d4484e610a84a21917) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Icons/Shield.png using Guid(a529d1cc104670d4484e610a84a21917) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7de620e20a2e1188aba86b5f99bafd7c') in 0.089433 seconds
-  Import took 0.129116 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000702 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Icons/Search.png
-  artifactKey: Guid(9bf7d4a6ee904034d888dcc0522f3975) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Icons/Search.png using Guid(9bf7d4a6ee904034d888dcc0522f3975) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e8a2e23f9547951c47de1f675d18b2b') in 0.113601 seconds
-  Import took 0.165032 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000686 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Icons/Save.png
-  artifactKey: Guid(5139fa4d495a3de479c2cd7d0b03727e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Icons/Save.png using Guid(5139fa4d495a3de479c2cd7d0b03727e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6d148e865ec41b5d7467948285e9af26') in 0.110661 seconds
-  Import took 0.158501 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.250465 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Icons/Ranking.png
-  artifactKey: Guid(9a3349a157574c24a8c727d0f9f3f217) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Icons/Ranking.png using Guid(9a3349a157574c24a8c727d0f9f3f217) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5c736cdbe2a93f5240d936df54f17586') in 0.156301 seconds
-  Import took 0.210809 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000790 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Elements/Rounded Square Dotted Outline.png
-  artifactKey: Guid(c0e313976f2ff294d8041a9c86a671ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Elements/Rounded Square Dotted Outline.png using Guid(c0e313976f2ff294d8041a9c86a671ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b28cd61dc4730a391bab24acc983e4d') in 0.111513 seconds
-  Import took 0.143428 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000638 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Elements/Rounded Square.png
-  artifactKey: Guid(10645e95a9c6dac4c994eff825984384) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Elements/Rounded Square.png using Guid(10645e95a9c6dac4c994eff825984384) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b2a0a4639876bb6a0bc39777203e1a64') in 0.114090 seconds
-  Import took 0.155004 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000702 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Icons/Refresh.png
-  artifactKey: Guid(459f0374d08507841b6969751d3e47e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Icons/Refresh.png using Guid(459f0374d08507841b6969751d3e47e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8fa4506eb532d231ed152e062e989495') in 0.116285 seconds
-  Import took 0.152502 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.774248 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Icons/Ok.png
-  artifactKey: Guid(a341abb3765fc4241bd031494f03c0bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Icons/Ok.png using Guid(a341abb3765fc4241bd031494f03c0bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '20f819e3a0bde6e24d2c53607600ccd1') in 0.068290 seconds
-  Import took 0.115569 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000723 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Icons/Navigation.png
-  artifactKey: Guid(7aaa8e236c3785f4da59b9732e934c0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Icons/Navigation.png using Guid(7aaa8e236c3785f4da59b9732e934c0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad940acb8922267bc322775ba6e63220') in 0.124446 seconds
-  Import took 0.187284 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000734 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Icons/More.png
-  artifactKey: Guid(c7c9eb7cb3ec5b841909b0b03d66e02c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Icons/More.png using Guid(c7c9eb7cb3ec5b841909b0b03d66e02c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '533f4345049371ef66612ee95b134d59') in 0.090856 seconds
-  Import took 0.140991 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000705 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Icons/Next.png
-  artifactKey: Guid(de5cecddae69ecd47a3602b91f44ef5d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Icons/Next.png using Guid(de5cecddae69ecd47a3602b91f44ef5d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e1675001d16d6fe697621d86e444a8ac') in 0.115262 seconds
-  Import took 0.159544 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000667 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Icons/Plus.png
-  artifactKey: Guid(726d7b476842d53499e18be780818c48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Icons/Plus.png using Guid(726d7b476842d53499e18be780818c48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ace105fc8581432f578c7b26e9c7c0f1') in 0.108337 seconds
-  Import took 0.168388 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000700 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Icons/Person.png
-  artifactKey: Guid(12a6ad9decdb9644ba80c70107876400) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Icons/Person.png using Guid(12a6ad9decdb9644ba80c70107876400) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9f2e0a7c1d71ece55130ce157cd8b556') in 0.122749 seconds
-  Import took 0.156700 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.003646 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Icons/Message.png
-  artifactKey: Guid(b8d4038d43e3f7744a1743020000e10d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Icons/Message.png using Guid(b8d4038d43e3f7744a1743020000e10d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f8c778f0a64a8d5b78f69e7b49ae45bd') in 0.124073 seconds
-  Import took 0.156618 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000691 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Icons/Minus.png
-  artifactKey: Guid(a710e9e8ae178e249a937c52eca5ea1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Icons/Minus.png using Guid(a710e9e8ae178e249a937c52eca5ea1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d9b19a68a882713c9cd89bf9b39972a') in 0.132368 seconds
-  Import took 0.178766 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.258763 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Icons/List.png
-  artifactKey: Guid(1929554932a27a043bf0c30899015047) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Icons/List.png using Guid(1929554932a27a043bf0c30899015047) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '16a3631fe18e5c7b067750c0460297e2') in 0.145439 seconds
-  Import took 0.250442 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000785 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Icons/Locked.png
-  artifactKey: Guid(a7e596542bcca6540987d28297588d59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Icons/Locked.png using Guid(a7e596542bcca6540987d28297588d59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5e1ac2e7236e5b9aa91874f9e36733c5') in 0.126784 seconds
-  Import took 0.165596 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000953 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Icons/Home.png
-  artifactKey: Guid(26095cea90be4584cbab9802c8c60449) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Icons/Home.png using Guid(26095cea90be4584cbab9802c8c60449) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b1ff2d397282c966a355860b5be666da') in 0.121064 seconds
-  Import took 0.175285 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000728 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Icons/Location.png
-  artifactKey: Guid(d79edf6777b9b064db337318257d1b9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Icons/Location.png using Guid(d79edf6777b9b064db337318257d1b9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '38b6d8b697f036e19feb3a7567511952') in 0.078540 seconds
-  Import took 0.157024 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000753 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Icons/Info.png
-  artifactKey: Guid(3fccbea4b15adee4e98fc59b09952d10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Icons/Info.png using Guid(3fccbea4b15adee4e98fc59b09952d10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05853a554568a67b0fdd303eacf59882') in 0.098436 seconds
-  Import took 0.137179 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000728 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Icons/Link.png
-  artifactKey: Guid(55a785d63b96af04782b939e24908dfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Icons/Link.png using Guid(55a785d63b96af04782b939e24908dfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '68ec1bb98cef7cee68c02ec5fe812d06') in 0.104065 seconds
-  Import took 0.237985 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000857 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Icons/Mark.png
-  artifactKey: Guid(5216e79063450d447b0e08e05d5ddab5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Icons/Mark.png using Guid(5216e79063450d447b0e08e05d5ddab5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '268b9d17b6072625ad80464aaf3d03b0') in 0.131729 seconds
-  Import took 0.226003 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 4.522508 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Icons/Good.png
-  artifactKey: Guid(c7c34ce9d5790de408b83e0fcd7a17a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Icons/Good.png using Guid(c7c34ce9d5790de408b83e0fcd7a17a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0374b4387bddf2817a3633f89044aac5') in 0.155989 seconds
-  Import took 0.220309 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000727 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Elements/Header.png
-  artifactKey: Guid(983d402d99210e841baafff3e522d4eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Elements/Header.png using Guid(983d402d99210e841baafff3e522d4eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a0df23d1b9077c838fdef05531e4834') in 0.135764 seconds
-  Import took 0.173582 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000759 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Icons/Grade.png
-  artifactKey: Guid(ee0e1901911f8144e849786d4101a309) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Icons/Grade.png using Guid(ee0e1901911f8144e849786d4101a309) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd9058632145023e6303f44729ca2dc50') in 0.116555 seconds
-  Import took 0.215744 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000632 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Icons/Hide.png
-  artifactKey: Guid(b489c6c9f6a2a0c4585dea48c4a2c76e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Icons/Hide.png using Guid(b489c6c9f6a2a0c4585dea48c4a2c76e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88591c0df4750ad78f415609bc329d0e') in 0.101698 seconds
-  Import took 0.144038 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.300229 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Icons/Friends.png
-  artifactKey: Guid(bf0fce8bec922ef4e91da77a98e26570) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Icons/Friends.png using Guid(bf0fce8bec922ef4e91da77a98e26570) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '435621b2420b3deab67a11acc3e9a139') in 0.136402 seconds
-  Import took 0.215700 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000573 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Icons/Front.png
-  artifactKey: Guid(09b7e51ab5390814a84a543b06b9c918) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Icons/Front.png using Guid(09b7e51ab5390814a84a543b06b9c918) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '685950e6142d89fe497ebb3796adc3c6') in 0.099085 seconds
-  Import took 0.132892 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.357650 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Icons/Followers.png
-  artifactKey: Guid(d892303628f0aa24499ccbac9aaafb63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Icons/Followers.png using Guid(d892303628f0aa24499ccbac9aaafb63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '67a55925cd7168ba94e488aec0730b42') in 0.126678 seconds
-  Import took 0.184727 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000804 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Icons/Following.png
-  artifactKey: Guid(2a42a271d6ff80d419ac0eb08bca7f0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Icons/Following.png using Guid(2a42a271d6ff80d419ac0eb08bca7f0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ec919e916fe89d1886e14493658ff1d') in 0.115081 seconds
-  Import took 0.132685 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000751 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Icons/Forward.png
-  artifactKey: Guid(3ad51edd66adec446bd49a6c01ce6444) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Icons/Forward.png using Guid(3ad51edd66adec446bd49a6c01ce6444) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2234cdee8adeb886877ed06750bf1cb1') in 0.103059 seconds
-  Import took 0.132648 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000669 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Icons/Font.png
-  artifactKey: Guid(44f52361cb8183745aee1d463caea5da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Icons/Font.png using Guid(44f52361cb8183745aee1d463caea5da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f224a7ceb84f30ba53836bd9990df673') in 0.143593 seconds
-  Import took 0.189982 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.147070 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Icons/Emote.png
-  artifactKey: Guid(d80ed2cedba16874190fc8006435823d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Icons/Emote.png using Guid(d80ed2cedba16874190fc8006435823d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '219624afdeec5e06a54d7ace79c37a94') in 0.149204 seconds
-  Import took 0.231125 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000676 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Icons/Feedback.png
-  artifactKey: Guid(f082c638cc1921341b104af9843a8824) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Icons/Feedback.png using Guid(f082c638cc1921341b104af9843a8824) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '86936cedb492d2ada3be7a687617cb5b') in 0.114528 seconds
-  Import took 0.184882 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000781 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Icons/File.png
-  artifactKey: Guid(aecd27e35f899054c809b4b7da40cd72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Icons/File.png using Guid(aecd27e35f899054c809b4b7da40cd72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0080fdce0b4eccada49782bc29aa8f5a') in 0.130481 seconds
-  Import took 0.161405 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000688 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Icons/Earth.png
-  artifactKey: Guid(579c4d5b2aa357541ac1ad684a2c825b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Icons/Earth.png using Guid(579c4d5b2aa357541ac1ad684a2c825b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '55c11a8bae962980736ecaab9e65fe02') in 0.084367 seconds
-  Import took 0.142061 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000726 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Icons/Exit.png
-  artifactKey: Guid(8902d7ebdf4e5fc42a00c1f68a79f4fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Icons/Exit.png using Guid(8902d7ebdf4e5fc42a00c1f68a79f4fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '398723b349f42cf49e8b73ae90e4ba7c') in 0.106028 seconds
-  Import took 0.146110 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000660 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Icons/Edit.png
-  artifactKey: Guid(8d56712869198a2429ed8fbf2e62be82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Icons/Edit.png using Guid(8d56712869198a2429ed8fbf2e62be82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dbd4d0875c5d41ab099e9efc44aa93a5') in 0.116515 seconds
-  Import took 0.172032 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.157795 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Elements/Crosshair.png
-  artifactKey: Guid(576e7db613e9d024fb1ac68e765255bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Elements/Crosshair.png using Guid(576e7db613e9d024fb1ac68e765255bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e72253532919f657edcba9392bb13918') in 0.118353 seconds
-  Import took 0.205471 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000760 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Icons/Download.png
-  artifactKey: Guid(c47358044f5c5ed4295070bf7d05ca01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Icons/Download.png using Guid(c47358044f5c5ed4295070bf7d05ca01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8155216c785021f9e78baf2ba994083a') in 0.111022 seconds
-  Import took 0.170320 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000728 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Icons/Delete.png
-  artifactKey: Guid(fdaa702100942474b96dcde34cb72803) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Icons/Delete.png using Guid(fdaa702100942474b96dcde34cb72803) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a6de4e7fc0d9e111344785198b573fc') in 0.111849 seconds
-  Import took 0.201588 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 6.322210 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Elements/Compass.png
-  artifactKey: Guid(e9974645e2b89844e8f6c370f502ca20) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Elements/Compass.png using Guid(e9974645e2b89844e8f6c370f502ca20) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a78c484f5d28b00b5be55faaac8191f9') in 0.205752 seconds
-  Import took 0.254104 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000745 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Elements/CompassLine.png
-  artifactKey: Guid(2172cca045c47b24f96a75a4ab631049) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Elements/CompassLine.png using Guid(2172cca045c47b24f96a75a4ab631049) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd4b984e7297cbad76406a5a758320b2c') in 0.158747 seconds
-  Import took 0.233932 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000757 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Elements/CompassBackground.png
-  artifactKey: Guid(62b15a40e8c97224bb27b56f33dcb832) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Elements/CompassBackground.png using Guid(62b15a40e8c97224bb27b56f33dcb832) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '67d6fe6ac1231a1f622d381fc34cd7f4') in 0.114646 seconds
-  Import took 0.153636 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.152593 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Elements/Circle Outline.png
-  artifactKey: Guid(caf5fcd9de186224ba336911a0f680b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Elements/Circle Outline.png using Guid(caf5fcd9de186224ba336911a0f680b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '18c94f0c81b2acd5d9d4782680a68fcd') in 0.075754 seconds
-  Import took 0.163197 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000779 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Icons/Compas.png
-  artifactKey: Guid(f397df8f642d4594ebf9995bea62e308) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Icons/Compas.png using Guid(f397df8f642d4594ebf9995bea62e308) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '39fd416317b0c79e5d9dfbbf2d374403') in 0.122649 seconds
-  Import took 0.184817 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000736 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Icons/Cancel.png
-  artifactKey: Guid(e7494d709beed4f4d9252e5cddfbfa9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Icons/Cancel.png using Guid(e7494d709beed4f4d9252e5cddfbfa9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '078b7bbbe57f5021872ec6dd6e9557d1') in 0.130706 seconds
-  Import took 0.194810 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000712 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Elements/Circle Big.png
-  artifactKey: Guid(4e1c295a2e6ae824fbd7144812bd7a97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Elements/Circle Big.png using Guid(4e1c295a2e6ae824fbd7144812bd7a97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3b62ff683e37da21743c01cd50422e35') in 0.217333 seconds
-  Import took 0.284608 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000766 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Elements/Circle Outline Big.png
-  artifactKey: Guid(f2ce57ceddb53384ea358da0a27445b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Elements/Circle Outline Big.png using Guid(f2ce57ceddb53384ea358da0a27445b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '99f5014d5ff48e98f4b5cacd02daeed0') in 0.116902 seconds
-  Import took 0.210237 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000761 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Elements/Circle.png
-  artifactKey: Guid(e63e19b592fc89c46b22961b98684cd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Elements/Circle.png using Guid(e63e19b592fc89c46b22961b98684cd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '562dc59e9fa2dc7df6f30d030a45ee14') in 0.094907 seconds
-  Import took 0.153042 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000687 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Icons/Comments.png
-  artifactKey: Guid(a06fc930d3ce8b8459ab6d4a29dd7806) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Icons/Comments.png using Guid(a06fc930d3ce8b8459ab6d4a29dd7806) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f3ed27c50b31933b788f1884a0cc0c85') in 0.109644 seconds
-  Import took 0.201132 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000726 seconds.
-  path: Assets/Models/Devion Games/Flat GUI/Elements/Circle Inner Glow Big.png
-  artifactKey: Guid(9bd49b3d56e6e8b4197c83fda3a853e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Devion Games/Flat GUI/Elements/Circle Inner Glow Big.png using Guid(9bd49b3d56e6e8b4197c83fda3a853e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '303f894f8e87d4fbd3dada66f599c7e4') in 0.121163 seconds
-  Import took 0.166442 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 316.480355 seconds.
-  path: Assets/Models/Sprites/EyeIcon.jpg
-  artifactKey: Guid(9c167aaae4ee3ee419ee328a6b2e3d0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Sprites/EyeIcon.jpg using Guid(9c167aaae4ee3ee419ee328a6b2e3d0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc7583121ce6431eeb7aefff30783a3b') in 0.201095 seconds
-  Import took 0.252195 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.002079 seconds.
-  path: Assets/Models/Sprites/EyeIcon.jpg
-  artifactKey: Guid(9c167aaae4ee3ee419ee328a6b2e3d0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Sprites/EyeIcon.jpg using Guid(9c167aaae4ee3ee419ee328a6b2e3d0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc7583121ce6431eeb7aefff30783a3b') in 0.065791 seconds
-  Import took 0.084193 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 4.946179 seconds.
-  path: Assets/Models/Sprites/EyeIcon.jpg
-  artifactKey: Guid(9c167aaae4ee3ee419ee328a6b2e3d0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Sprites/EyeIcon.jpg using Guid(9c167aaae4ee3ee419ee328a6b2e3d0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2bfffc774e5810faba3f2f1b9a68983c') in 0.110950 seconds
-  Import took 0.153768 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 103.995835 seconds.
-  path: Assets/Models/Sprites/EyeIcon 1.jpg
-  artifactKey: Guid(eaf64c6e5923d2b4fbd13a9701c1d5c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Sprites/EyeIcon 1.jpg using Guid(eaf64c6e5923d2b4fbd13a9701c1d5c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24312dd0a02a13c0bb3a40a842ecb191') in 0.014715 seconds
-  Import took 0.055338 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.655880 seconds.
-  path: Assets/Models/Sprites/EyeIcon 1.jpg
-  artifactKey: Guid(eaf64c6e5923d2b4fbd13a9701c1d5c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Sprites/EyeIcon 1.jpg using Guid(eaf64c6e5923d2b4fbd13a9701c1d5c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '500dbb0f955cbeca2f41d5433b9db82d') in 0.004977 seconds
-  Import took 0.146916 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 90.533338 seconds.
-  path: Assets/Models/Sprites/eye-3-128.png
-  artifactKey: Guid(7fa9576cc863c9f469470d473d7f148e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Sprites/eye-3-128.png using Guid(7fa9576cc863c9f469470d473d7f148e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd94d57f0b228fc1c52d406639f56621') in 0.043112 seconds
-  Import took 0.103639 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.947899 seconds.
-  path: Assets/Models/Sprites/eye-3-128.png
-  artifactKey: Guid(7fa9576cc863c9f469470d473d7f148e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Sprites/eye-3-128.png using Guid(7fa9576cc863c9f469470d473d7f148e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b457b258e7acef7c87a477f5189ad0ae') in 0.040801 seconds
-  Import took 0.171464 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1827.490021 seconds.
-  path: Assets/Models/Sprites/eyeSkillIcon.jpg
-  artifactKey: Guid(161bc3c5608613e4181da20f65c1f90b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Sprites/eyeSkillIcon.jpg using Guid(161bc3c5608613e4181da20f65c1f90b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '360060c652d29f66f6f69dce4fe07403') in 0.044302 seconds
-  Import took 0.096219 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 4.166946 seconds.
-  path: Assets/Models/Sprites/eyeSkillIcon.jpg
-  artifactKey: Guid(161bc3c5608613e4181da20f65c1f90b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Sprites/eyeSkillIcon.jpg using Guid(161bc3c5608613e4181da20f65c1f90b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '835c00017a3cfc1d687bdbb969b32168') in 0.050114 seconds
-  Import took 0.113181 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 560.961478 seconds.
-  path: Assets/Sprites/CoolDown.png
-  artifactKey: Guid(4e5becdb9db2b1242831fb0a180f00c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/CoolDown.png using Guid(4e5becdb9db2b1242831fb0a180f00c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1b7b7ae1a5f7302cdcb856b389ced454') in 0.045803 seconds
-  Import took 0.087862 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 29.633316 seconds.
-  path: Assets/Sprites
-  artifactKey: Guid(6188b7eead9b8384081f0bc76959ef64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites using Guid(6188b7eead9b8384081f0bc76959ef64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ef631c2680b62d9a983c53bb021f9b0') in 0.017139 seconds
-  Import took 0.126506 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.249003 seconds.
-  path: Assets/Sprites/BasicEdge.png
-  artifactKey: Guid(9b634477a225c4c44a0e9b24b2fe9364) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/BasicEdge.png using Guid(9b634477a225c4c44a0e9b24b2fe9364) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a2dbbc95ca560c488019e381f93d37d5') in 0.025062 seconds
-  Import took 0.104309 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 309.808021 seconds.
-  path: Assets/Models/Sprites/Frame.psd
-  artifactKey: Guid(89f38737a51b93645a740e3fe57e1f46) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Sprites/Frame.psd using Guid(89f38737a51b93645a740e3fe57e1f46) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eda52387b38f10f833659a6f3184c85b') in 0.047650 seconds
-  Import took 0.128053 seconds .
+Start importing Assets/Scenes/Level1.unity using Guid(1ee33f7d44d0ed64281df5add2b48c38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e209e686b268132635e62c10cc5c529d') in 0.085187 seconds
+  Import took 0.190665 seconds .
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.016296 seconds.
+Registered in 0.010511 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.63 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 1.28 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  3.445 seconds
+- Completed reload, in  2.960 seconds
 Platform modules already initialized, skipping
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.25 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 1.35 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3423 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 176.8 MB.
-System memory in use after: 177.0 MB.
+System memory in use before: 173.8 MB.
+System memory in use after: 174.0 MB.
 
-Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 4079.
-Total: 6.642100 ms (FindLiveObjects: 0.806300 ms CreateObjectMapping: 0.313100 ms MarkObjects: 5.313500 ms  DeleteObjects: 0.207300 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 1129.309568 seconds.
-  path: Assets/Scripts/UI/SpellCooldown.cs
-  artifactKey: Guid(ff1d19649e95f8046947cbf3e7b5281c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/UI/SpellCooldown.cs using Guid(ff1d19649e95f8046947cbf3e7b5281c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a2753937b2617c4c52448cc78dc2295d') in 0.066085 seconds
-  Import took 0.096877 seconds .
+Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 4057.
+Total: 7.215100 ms (FindLiveObjects: 0.999000 ms CreateObjectMapping: 0.459000 ms MarkObjects: 5.553800 ms  DeleteObjects: 0.199900 ms)
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.012015 seconds.
+Registered in 0.013493 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.35 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.811 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 2.08 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3423 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 173.9 MB.
+System memory in use after: 174.1 MB.
+
+Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 4060.
+Total: 7.228800 ms (FindLiveObjects: 0.850600 ms CreateObjectMapping: 0.435300 ms MarkObjects: 5.707100 ms  DeleteObjects: 0.231500 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.011012 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.69 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.991 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.64 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3423 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 173.9 MB.
+System memory in use after: 174.1 MB.
+
+Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 4063.
+Total: 8.584700 ms (FindLiveObjects: 0.869200 ms CreateObjectMapping: 0.481500 ms MarkObjects: 7.038600 ms  DeleteObjects: 0.192600 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.013331 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 2.13 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  4.658 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 2.89 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3423 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 173.9 MB.
+System memory in use after: 174.1 MB.
+
+Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 4066.
+Total: 10.956000 ms (FindLiveObjects: 1.223200 ms CreateObjectMapping: 0.716600 ms MarkObjects: 8.746400 ms  DeleteObjects: 0.265700 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 718.642219 seconds.
+  path: Assets/Scenes/Level1.unity
+  artifactKey: Guid(1ee33f7d44d0ed64281df5add2b48c38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Level1.unity using Guid(1ee33f7d44d0ed64281df5add2b48c38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b1ed2c22e363474040ace072d1472a2c') in 0.060336 seconds
+  Import took 0.130065 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.009705 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 2.35 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.083 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.19 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3423 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 173.9 MB.
+System memory in use after: 174.1 MB.
+
+Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 4069.
+Total: 7.519700 ms (FindLiveObjects: 0.572000 ms CreateObjectMapping: 0.304100 ms MarkObjects: 6.446500 ms  DeleteObjects: 0.195300 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.010249 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 2.71 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.257 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 2.43 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3423 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 173.9 MB.
+System memory in use after: 174.1 MB.
+
+Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 4072.
+Total: 12.912600 ms (FindLiveObjects: 1.232700 ms CreateObjectMapping: 0.706600 ms MarkObjects: 10.622100 ms  DeleteObjects: 0.347300 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.018503 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.41 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.290 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.99 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3423 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 174.0 MB.
+System memory in use after: 174.2 MB.
+
+Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 4075.
+Total: 10.824100 ms (FindLiveObjects: 0.802600 ms CreateObjectMapping: 0.485000 ms MarkObjects: 9.195400 ms  DeleteObjects: 0.337600 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.015129 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.44 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.060 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.37 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3423 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 174.0 MB.
+System memory in use after: 174.2 MB.
+
+Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 4078.
+Total: 6.235100 ms (FindLiveObjects: 0.580900 ms CreateObjectMapping: 0.376400 ms MarkObjects: 5.088600 ms  DeleteObjects: 0.187200 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.009704 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.28 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.892 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.17 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3423 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 174.0 MB.
+System memory in use after: 174.2 MB.
+
+Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 4081.
+Total: 9.055400 ms (FindLiveObjects: 0.694300 ms CreateObjectMapping: 0.428300 ms MarkObjects: 7.716700 ms  DeleteObjects: 0.213400 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.015692 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.40 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  4.166 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.53 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3423 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 174.0 MB.
+System memory in use after: 174.2 MB.
+
+Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 4084.
+Total: 5.897600 ms (FindLiveObjects: 0.550700 ms CreateObjectMapping: 0.388900 ms MarkObjects: 4.803000 ms  DeleteObjects: 0.153300 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 941.257977 seconds.
+  path: Assets/Scenes/Level1.unity
+  artifactKey: Guid(1ee33f7d44d0ed64281df5add2b48c38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Level1.unity using Guid(1ee33f7d44d0ed64281df5add2b48c38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b1d4889fae83f2972bf9cdefbca3ada') in 0.123214 seconds
+  Import took 0.179457 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 48.561154 seconds.
+  path: Assets/Prefabs/Menus/EyeCooldown.prefab
+  artifactKey: Guid(ad766e9a2ad015746aadddc498313d74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Menus/EyeCooldown.prefab using Guid(ad766e9a2ad015746aadddc498313d74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f013af1b2f4e76746d68f17b636b9534') in 0.232971 seconds
+  Import took 0.272304 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.939545 seconds.
+  path: Assets/Prefabs/UI
+  artifactKey: Guid(5a7bc3f9522df6a4aafd32bd6b1d1afa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/UI using Guid(5a7bc3f9522df6a4aafd32bd6b1d1afa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9f2572ef15d2d6b155b288d6c0803fc4') in 0.116464 seconds
+  Import took 0.159378 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 28.143186 seconds.
+  path: Assets/Prefabs/UI/CompassUI.prefab
+  artifactKey: Guid(0e9dd97b8338d5f41a50d94697356203) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/UI/CompassUI.prefab using Guid(0e9dd97b8338d5f41a50d94697356203) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6aa87749e0bfa1eeeef361d51e35c0d0') in 0.437978 seconds
+  Import took 0.483301 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.535555 seconds.
+  path: Assets/Prefabs/UI/PaintingPointer.prefab
+  artifactKey: Guid(bb3251283d03cf744ac82ffe3e3c26c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/UI/PaintingPointer.prefab using Guid(bb3251283d03cf744ac82ffe3e3c26c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '32f3b087c1836db3984f193d750646df') in 0.016248 seconds
+  Import took 0.066987 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.949465 seconds.
+  path: Assets/Prefabs/UI/SurpriseText.prefab
+  artifactKey: Guid(ab00bbe825acceb4e94b681fe7e247da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/UI/SurpriseText.prefab using Guid(ab00bbe825acceb4e94b681fe7e247da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6fba790903769ad0dadc572dfab34058') in 1.078399 seconds
+  Import took 1.134184 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.588773 seconds.
+  path: Assets/Prefabs/UI/LevelText.prefab
+  artifactKey: Guid(4818d69841fd4f4478a08255c3991642) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/UI/LevelText.prefab using Guid(4818d69841fd4f4478a08255c3991642) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd0875f0586b9ae722d273551e2bd790') in 0.122245 seconds
+  Import took 0.176218 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.963772 seconds.
+  path: Assets/Prefabs/UI/TimerText.prefab
+  artifactKey: Guid(153a303058dfeee44bafcf1856ad2cfc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/UI/TimerText.prefab using Guid(153a303058dfeee44bafcf1856ad2cfc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a7ec85460a3e03552764770944bab9a') in 0.169566 seconds
+  Import took 0.221944 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.540065 seconds.
+  path: Assets/Prefabs/UI/CoinsText.prefab
+  artifactKey: Guid(51e3e4b42d2fa24438ef35ba9c26f974) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/UI/CoinsText.prefab using Guid(51e3e4b42d2fa24438ef35ba9c26f974) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fdf5e3a698d50b75c6be6894f03dc2cf') in 0.117714 seconds
+  Import took 0.239805 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.540244 seconds.
+  path: Assets/Prefabs/UI/SprayText.prefab
+  artifactKey: Guid(c803560819c754348b4bcbf6b0696880) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/UI/SprayText.prefab using Guid(c803560819c754348b4bcbf6b0696880) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4005b4194bb3235bb0e156a3368db0ce') in 0.102430 seconds
+  Import took 0.172542 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 23.825416 seconds.
+  path: Assets/Prefabs/Ground.prefab
+  artifactKey: Guid(4551d220e8b204040925cb557946bae8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Ground.prefab using Guid(4551d220e8b204040925cb557946bae8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9279242ad87d83949e852ec04194e6b7') in 1.038976 seconds
+  Import took 1.081743 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.474448 seconds.
+  path: Assets/Prefabs/Managers/CameraSwitch.prefab
+  artifactKey: Guid(b3187beaa30691345a07ab1be6b9a3fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Managers/CameraSwitch.prefab using Guid(b3187beaa30691345a07ab1be6b9a3fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '834dc04d819a8096edc2387e04e9359f') in 0.156024 seconds
+  Import took 0.194172 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 582.473758 seconds.
+  path: Assets/Models/compassSkill.png
+  artifactKey: Guid(6197e43d952cdc74ab7ce45ae7b8ca67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/compassSkill.png using Guid(6197e43d952cdc74ab7ce45ae7b8ca67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '98b33dcba42812669b366f941ed64757') in 0.122078 seconds
+  Import took 0.167481 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.068822 seconds.
+  path: Assets/Models/compassSkill.png
+  artifactKey: Guid(6197e43d952cdc74ab7ce45ae7b8ca67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/compassSkill.png using Guid(6197e43d952cdc74ab7ce45ae7b8ca67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '98b33dcba42812669b366f941ed64757') in 0.057141 seconds
+  Import took 0.071291 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.391558 seconds.
+  path: Assets/Models/compassSkill.png
+  artifactKey: Guid(6197e43d952cdc74ab7ce45ae7b8ca67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/compassSkill.png using Guid(6197e43d952cdc74ab7ce45ae7b8ca67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88cd398f512c56f8098b0d68600f4cd3') in 0.192331 seconds
+  Import took 0.317835 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002506 seconds.
+  path: Assets/Models/compassSkill.png
+  artifactKey: Guid(6197e43d952cdc74ab7ce45ae7b8ca67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/compassSkill.png using Guid(6197e43d952cdc74ab7ce45ae7b8ca67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88cd398f512c56f8098b0d68600f4cd3') in 0.063085 seconds
+  Import took 0.083478 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 141.927001 seconds.
+  path: Assets/Models/compassSkillIcon.png
+  artifactKey: Guid(ab362053f97fb7e4e99ed205e903fc3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/compassSkillIcon.png using Guid(ab362053f97fb7e4e99ed205e903fc3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9fe0931ce27d1c0512f2fe58b20d0940') in 0.050804 seconds
+  Import took 0.092556 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.797709 seconds.
+  path: Assets/Models/compassSkillIcon.png
+  artifactKey: Guid(ab362053f97fb7e4e99ed205e903fc3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/compassSkillIcon.png using Guid(ab362053f97fb7e4e99ed205e903fc3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5e8be3f03ab5a38f4069aa99c5756667') in 0.042152 seconds
+  Import took 0.108914 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.011026 seconds.
+  path: Assets/Models/compassSkillIcon.png
+  artifactKey: Guid(ab362053f97fb7e4e99ed205e903fc3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/compassSkillIcon.png using Guid(ab362053f97fb7e4e99ed205e903fc3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5e8be3f03ab5a38f4069aa99c5756667') in 0.053395 seconds
+  Import took 0.067433 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.025049 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.39 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.908 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Refreshing native plugins compatible for Editor in 1.38 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  2.860 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.63 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3423 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 176.9 MB.
-System memory in use after: 177.1 MB.
+System memory in use before: 179.3 MB.
+System memory in use after: 179.5 MB.
 
-Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 4082.
-Total: 8.811500 ms (FindLiveObjects: 0.704500 ms CreateObjectMapping: 0.363900 ms MarkObjects: 7.401700 ms  DeleteObjects: 0.338400 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 595.162283 seconds.
-  path: Assets/Scripts/UI/SpellCooldown.cs
-  artifactKey: Guid(ff1d19649e95f8046947cbf3e7b5281c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/UI/SpellCooldown.cs using Guid(ff1d19649e95f8046947cbf3e7b5281c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd48eecb05c70f6cdaf5cbabed0b2d682') in 0.017703 seconds
-  Import took 0.104946 seconds .
+Unloading 21 unused Assets to reduce memory usage. Loaded Objects now: 4137.
+Total: 6.903700 ms (FindLiveObjects: 0.582700 ms CreateObjectMapping: 0.387600 ms MarkObjects: 5.775200 ms  DeleteObjects: 0.156300 ms)
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.009628 seconds.
+Registered in 0.010698 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.56 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 1.28 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.917 seconds
+- Completed reload, in  2.831 seconds
 Platform modules already initialized, skipping
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.55 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 1.33 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3423 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 176.9 MB.
-System memory in use after: 177.1 MB.
+System memory in use before: 179.3 MB.
+System memory in use after: 179.6 MB.
 
-Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 4085.
-Total: 8.016300 ms (FindLiveObjects: 0.875000 ms CreateObjectMapping: 0.544500 ms MarkObjects: 6.395100 ms  DeleteObjects: 0.199100 ms)
+Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 4140.
+Total: 6.391300 ms (FindLiveObjects: 0.606300 ms CreateObjectMapping: 0.314500 ms MarkObjects: 5.297800 ms  DeleteObjects: 0.170200 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 520.380312 seconds.
-  path: Assets/Scripts/UI/SpellCooldown.cs
-  artifactKey: Guid(ff1d19649e95f8046947cbf3e7b5281c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/UI/SpellCooldown.cs using Guid(ff1d19649e95f8046947cbf3e7b5281c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ea3dd19035803b4b9e025e4f7df97b56') in 0.012219 seconds
-  Import took 0.117669 seconds .
+  Time since last request: 706.629635 seconds.
+  path: Assets/Scenes/Level1.unity
+  artifactKey: Guid(1ee33f7d44d0ed64281df5add2b48c38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Level1.unity using Guid(1ee33f7d44d0ed64281df5add2b48c38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6f8393e8f01dba319258097e65fb1576') in 0.240453 seconds
+  Import took 0.282833 seconds .
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.014030 seconds.
+Registered in 0.013492 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.09 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 1.31 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.766 seconds
+- Completed reload, in  2.890 seconds
 Platform modules already initialized, skipping
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.14 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3423 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 179.4 MB.
+System memory in use after: 179.6 MB.
+
+Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 4143.
+Total: 6.718600 ms (FindLiveObjects: 0.780100 ms CreateObjectMapping: 0.307000 ms MarkObjects: 5.434200 ms  DeleteObjects: 0.194500 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 549.146428 seconds.
+  path: Assets/Scripts/ScriptableObjects/CompassItem.asset
+  artifactKey: Guid(11a2659a9dd00d1489294f068d1d063f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/ScriptableObjects/CompassItem.asset using Guid(11a2659a9dd00d1489294f068d1d063f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd886fc875c2f33c9b638677f718ca4a6') in 0.147231 seconds
+  Import took 0.159954 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.010472 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.37 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.972 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.66 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3423 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 179.4 MB.
+System memory in use after: 179.6 MB.
+
+Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 4146.
+Total: 6.698900 ms (FindLiveObjects: 0.692100 ms CreateObjectMapping: 0.285900 ms MarkObjects: 5.513000 ms  DeleteObjects: 0.205700 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.008552 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.99 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.919 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.02 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3423 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 179.4 MB.
+System memory in use after: 179.6 MB.
+
+Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 4149.
+Total: 6.196800 ms (FindLiveObjects: 0.498800 ms CreateObjectMapping: 0.345400 ms MarkObjects: 5.192600 ms  DeleteObjects: 0.158300 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 885.546532 seconds.
+  path: Assets/Audio/BackTweenWhoosh.wav
+  artifactKey: Guid(d5cf28fd0ba7f50409bc0fe06c2057ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Audio/BackTweenWhoosh.wav using Guid(d5cf28fd0ba7f50409bc0fe06c2057ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '95f6bd68431478415442280fe2ffbf0d') in 0.275436 seconds
+  Import took 0.298875 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.009199 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.49 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.574 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.03 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3423 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 179.4 MB.
+System memory in use after: 179.7 MB.
+
+Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 4155.
+Total: 6.741200 ms (FindLiveObjects: 0.664000 ms CreateObjectMapping: 0.421600 ms MarkObjects: 5.504300 ms  DeleteObjects: 0.148000 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 204.763190 seconds.
+  path: Assets/Scenes/Level1.unity
+  artifactKey: Guid(1ee33f7d44d0ed64281df5add2b48c38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Level1.unity using Guid(1ee33f7d44d0ed64281df5add2b48c38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef011d91784000c5f24453941c88d4e9') in 0.070024 seconds
+  Import took 0.161912 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.015246 seconds.
+  path: Assets/Scenes/Level1.unity
+  artifactKey: Guid(1ee33f7d44d0ed64281df5add2b48c38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Level1.unity using Guid(1ee33f7d44d0ed64281df5add2b48c38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef011d91784000c5f24453941c88d4e9') in 0.004411 seconds
+  Import took 0.015903 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 93.988115 seconds.
+  path: Assets/Prefabs/UI/CompassCooldown Variant.prefab
+  artifactKey: Guid(f1d020d1d79e30b459d9c9db5f732015) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/UI/CompassCooldown Variant.prefab using Guid(f1d020d1d79e30b459d9c9db5f732015) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5e8d7bd7309c2456cc9f8cc5b3cc451a') in 0.048505 seconds
+  Import took 0.061885 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.008316 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.96 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.941 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.93 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3423 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 179.5 MB.
+System memory in use after: 179.7 MB.
+
+Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 4158.
+Total: 4.799400 ms (FindLiveObjects: 0.500400 ms CreateObjectMapping: 0.300000 ms MarkObjects: 3.869000 ms  DeleteObjects: 0.128500 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.010079 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.98 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.035 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+D3D shader create error for pixel shader [0x8007000e]
+D3D shader create error for vertex shader [0x8007000e]
+D3D shader create error for vertex shader [0x8007000e]
+D3D shader create error for pixel shader [0x8007000e]
+D3D shader create error for vertex shader [0x8007000e]
+D3D shader create error for pixel shader [0x8007000e]
 Crash!!!
   ERROR: Error while initializing dbghelp.dll, GetLastError: 'Операция успешно завершена.' (Address: 0000000000000000)
 
 ========== OUTPUTTING STACK TRACE ==================
 
+SymInit: Symbol-SearchPath: 'C:/Program Files/Unity/Hub/Editor/2020.3.11f1/Editor/Data/Mono;.;E:\IT\Games\UnityGames\AmazingMaze3D\Amazing Maze 3D;C:\Program Files\Unity\Hub\Editor\2020.3.11f1\Editor;C:\WINDOWS;C:\WINDOWS\system32;SRV*C:\websymbols*http://msdl.microsoft.com/download/symbols;', symOptions: 534, UserName: 'shush'
+OS-Version: 10.0.0
+C:\Program Files\Unity\Hub\Editor\2020.3.11f1\Editor\Unity.exe:Unity.exe (00007FF78AD90000), size: 134782976 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 2020.3.11.51119
 Received signal SIGSEGV
-A crash has been intercepted by the crash handler. For call stack and other details, see the latest crash report generated in:
- * C:/Users/shush/AppData/Local/Temp/Unity/Editor/Crashes
-A crash has been intercepted by the crash handler. For call stack and other details, see the latest crash report generated in:
- * C:/Users/shush/AppData/Local/Temp/Unity/Editor/Crashes
-Stack trace:
+C:\WINDOWS\SYSTEM32\ntdll.dll:ntdll.dll (00007FFFB5DF0000), size: 2052096 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1110
+C:\WINDOWS\System32\KERNEL32.DLL:KERNEL32.DLL (00007FFFB5810000), size: 774144 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1023
+C:\WINDOWS\System32\KERNELBASE.dll:KERNELBASE.dll (00007FFFB3820000), size: 2920448 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1110
+C:\WINDOWS\System32\CRYPT32.dll:CRYPT32.dll (00007FFFB3AF0000), size: 1437696 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.844
+C:\WINDOWS\System32\ucrtbase.dll:ucrtbase.dll (00007FFFB3C50000), size: 1048576 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.789
+C:\WINDOWS\System32\USER32.dll:USER32.dll (00007FFFB4080000), size: 1703936 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.906
+C:\WINDOWS\System32\win32u.dll:win32u.dll (00007FFFB3E30000), size: 139264 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1110
+C:\Program Files\Unity\Hub\Editor\2020.3.11f1\Editor\optix.6.0.0.dll:optix.6.0.0.dll (00007FFF95AC0000), size: 208896 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 6.0.0.0
+C:\Program Files\Unity\Hub\Editor\2020.3.11f1\Editor\libfbxsdk.dll:libfbxsdk.dll (00007FFF66390000), size: 10215424 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 2020.2.0.0
+C:\Program Files\Unity\Hub\Editor\2020.3.11f1\Editor\OpenImageDenoise.dll:OpenImageDenoise.dll (00007FFF57040000), size: 43806720 (result: 0), SymType: '-deferred-', PDB: ''
+C:\WINDOWS\System32\GDI32.dll:GDI32.dll (00007FFFB5D70000), size: 172032 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.746
+C:\WINDOWS\System32\gdi32full.dll:gdi32full.dll (00007FFFB35D0000), size: 1093632 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1110
+C:\WINDOWS\System32\msvcp_win.dll:msvcp_win.dll (00007FFFB3530000), size: 643072 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.789
+C:\WINDOWS\System32\ADVAPI32.dll:ADVAPI32.dll (00007FFFB4220000), size: 704512 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1052
+C:\WINDOWS\System32\msvcrt.dll:msvcrt.dll (00007FFFB5510000), size: 647168 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 7.0.19041.546
+C:\WINDOWS\System32\sechost.dll:sechost.dll (00007FFFB4590000), size: 634880 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.906
+C:\Program Files\Unity\Hub\Editor\2020.3.11f1\Editor\umbraoptimizer64.dll:umbraoptimizer64.dll (00007FFF813D0000), size: 1306624 (result: 0), SymType: '-deferred-', PDB: ''
+C:\WINDOWS\System32\RPCRT4.dll:RPCRT4.dll (00007FFFB53E0000), size: 1220608 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1081
+C:\WINDOWS\System32\WS2_32.dll:WS2_32.dll (00007FFFB4520000), size: 438272 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\Program Files\Unity\Hub\Editor\2020.3.11f1\Editor\FreeImage.dll:FreeImage.dll (0000000180000000), size: 6414336 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 3.18.0.0
+C:\WINDOWS\System32\WLDAP32.dll:WLDAP32.dll (00007FFFB3E60000), size: 352256 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\WINDOWS\System32\SHELL32.dll:SHELL32.dll (00007FFFB46C0000), size: 7598080 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1023
+C:\Program Files\Unity\Hub\Editor\2020.3.11f1\Editor\ispc_texcomp.dll:ispc_texcomp.dll (00007FFF80FC0000), size: 1609728 (result: 0), SymType: '-deferred-', PDB: ''
+C:\WINDOWS\System32\Normaliz.dll:Normaliz.dll (00007FFFB4630000), size: 32768 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\WINDOWS\System32\SHLWAPI.dll:SHLWAPI.dll (00007FFFB4020000), size: 348160 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1023
+C:\Program Files\Unity\Hub\Editor\2020.3.11f1\Editor\WinPixEventRuntime.dll:WinPixEventRuntime.dll (00007FFFAB500000), size: 45056 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 1.0.1812.6001
+C:\WINDOWS\System32\ole32.dll:ole32.dll (00007FFFB42D0000), size: 1220608 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.746
+C:\WINDOWS\System32\combase.dll:combase.dll (00007FFFB58D0000), size: 3493888 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1081
+C:\Program Files\Unity\Hub\Editor\2020.3.11f1\Editor\tbb.dll:tbb.dll (00007FFF892E0000), size: 413696 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 2017.0.2016.1004
+C:\WINDOWS\SYSTEM32\VCRUNTIME140.dll:VCRUNTIME140.dll (00007FFFA1A50000), size: 102400 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 14.28.29334.0
+C:\WINDOWS\System32\IMM32.dll:IMM32.dll (00007FFFB5CE0000), size: 196608 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\WINDOWS\System32\SETUPAPI.dll:SETUPAPI.dll (00007FFFB4E00000), size: 4624384 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.844
+C:\WINDOWS\System32\cfgmgr32.dll:cfgmgr32.dll (00007FFFB37D0000), size: 319488 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\WINDOWS\System32\bcrypt.dll:bcrypt.dll (00007FFFB3E00000), size: 159744 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1023
+C:\WINDOWS\SYSTEM32\MSVCP140.dll:MSVCP140.dll (00007FFFA0A00000), size: 598016 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 14.28.29334.0
+C:\WINDOWS\System32\OLEAUT32.dll:OLEAUT32.dll (00007FFFB3EF0000), size: 839680 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.985
+C:\WINDOWS\System32\WINTRUST.dll:WINTRUST.dll (00007FFFB3770000), size: 393216 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1110
+C:\WINDOWS\SYSTEM32\MSVCP120.dll:MSVCP120.dll (00007FFF7F170000), size: 679936 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 12.0.40664.0
+C:\WINDOWS\SYSTEM32\OPENGL32.dll:OPENGL32.dll (00007FFF966F0000), size: 1200128 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1081
+C:\WINDOWS\SYSTEM32\GLU32.dll:GLU32.dll (00007FFF9A580000), size: 180224 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1081
+C:\WINDOWS\SYSTEM32\MSVCR120.dll:MSVCR120.dll (00007FFF7D890000), size: 978944 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 12.0.40664.0
+C:\WINDOWS\SYSTEM32\IPHLPAPI.DLL:IPHLPAPI.DLL (00007FFFB29A0000), size: 241664 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\WINDOWS\SYSTEM32\WINHTTP.dll:WINHTTP.dll (00007FFFA9A40000), size: 1089536 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1110
+C:\WINDOWS\SYSTEM32\WINMM.dll:WINMM.dll (00007FFF9D220000), size: 159744 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\WINDOWS\SYSTEM32\HID.DLL:HID.DLL (00007FFFB1E00000), size: 53248 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\Program Files\Unity\Hub\Editor\2020.3.11f1\Editor\RadeonImageFilters.dll:RadeonImageFilters.dll (00007FFF78970000), size: 2535424 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 1.5.1.0
+C:\Program Files\Unity\Hub\Editor\2020.3.11f1\Editor\SketchUpAPI.dll:SketchUpAPI.dll (00007FFF68260000), size: 8978432 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 19.0.753.0
+C:\WINDOWS\SYSTEM32\VERSION.dll:VERSION.dll (00007FFFAC780000), size: 40960 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\WINDOWS\SYSTEM32\VCRUNTIME140_1.dll:VCRUNTIME140_1.dll (00007FFFA1A40000), size: 49152 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 14.28.29334.0
+C:\WINDOWS\SYSTEM32\WSOCK32.dll:WSOCK32.dll (00007FFFAB460000), size: 36864 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1
+C:\Program Files\Unity\Hub\Editor\2020.3.11f1\Editor\SketchUpCommonPreferences.dll:SketchUpCommonPreferences.dll (00007FFF81350000), size: 483328 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 19.0.753.20342
+C:\WINDOWS\SYSTEM32\Secur32.dll:Secur32.dll (00007FFFAD1A0000), size: 49152 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\WINDOWS\SYSTEM32\SSPICLI.DLL:SSPICLI.DLL (00007FFFB33F0000), size: 200704 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.906
+C:\Program Files\Unity\Hub\Editor\2020.3.11f1\Editor\OpenRL.dll:OpenRL.dll (00000281CF360000), size: 12779520 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 1.5.0.2907
+C:\WINDOWS\SYSTEM32\MSVCP100.dll:MSVCP100.dll (0000000075690000), size: 622592 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.40219.325
+C:\WINDOWS\SYSTEM32\MSVCR100.dll:MSVCR100.dll (0000000075000000), size: 860160 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.40219.325
+C:\Program Files\Unity\Hub\Editor\2020.3.11f1\Editor\embree.dll:embree.dll (00007FFF653A0000), size: 16711680 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 2.14.0.0
+C:\WINDOWS\SYSTEM32\MSWSOCK.DLL:MSWSOCK.DLL (00007FFFB2CB0000), size: 434176 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\Program Files\Unity\Hub\Editor\2020.3.11f1\Editor\OpenRL_pthread.dll:OpenRL_pthread.dll (00000281CFFB0000), size: 61440 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 2.9.0.0
+C:\WINDOWS\SYSTEM32\MSASN1.dll:MSASN1.dll (00007FFFB3120000), size: 73728 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\WINDOWS\SYSTEM32\kernel.appcore.dll:kernel.appcore.dll (00007FFFB1380000), size: 73728 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\WINDOWS\System32\bcryptPrimitives.dll:bcryptPrimitives.dll (00007FFFB36E0000), size: 536576 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1023
+C:\WINDOWS\system32\uxtheme.dll:uxtheme.dll (00007FFFB0E70000), size: 647168 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1081
+C:\WINDOWS\System32\shcore.dll:shcore.dll (00007FFFB5760000), size: 712704 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1023
+C:\WINDOWS\SYSTEM32\windows.storage.dll:windows.storage.dll (00007FFFB1660000), size: 7933952 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1081
+C:\WINDOWS\SYSTEM32\Wldp.dll:Wldp.dll (00007FFFB2F50000), size: 180224 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.662
+C:\WINDOWS\SYSTEM32\profapi.dll:profapi.dll (00007FFFB3470000), size: 126976 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.844
+C:\WINDOWS\System32\clbcatq.dll:clbcatq.dll (00007FFFB5C30000), size: 692224 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 2001.12.10941.16384
+C:\WINDOWS\System32\netprofm.dll:netprofm.dll (00007FFFB0750000), size: 253952 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.906
+C:\WINDOWS\System32\npmproxy.dll:npmproxy.dll (00007FFFA9010000), size: 65536 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.906
+C:\WINDOWS\System32\NSI.dll:NSI.dll (00007FFFB5DA0000), size: 32768 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.610
+C:\WINDOWS\SYSTEM32\dhcpcsvc6.DLL:dhcpcsvc6.DLL (00007FFFAD0F0000), size: 94208 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\WINDOWS\SYSTEM32\dhcpcsvc.DLL:dhcpcsvc.DLL (00007FFFAD240000), size: 118784 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\WINDOWS\SYSTEM32\DNSAPI.dll:DNSAPI.dll (00007FFFB29E0000), size: 835584 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1023
+C:\WINDOWS\System32\fwpuclnt.dll:fwpuclnt.dll (00007FFFA93C0000), size: 520192 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1081
+C:\Windows\System32\rasadhlp.dll:rasadhlp.dll (00007FFFA90D0000), size: 40960 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\WINDOWS\SYSTEM32\d3d11.dll:d3d11.dll (00007FFFAE860000), size: 2506752 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.746
+C:\WINDOWS\SYSTEM32\dxgi.dll:dxgi.dll (00007FFFB1F80000), size: 999424 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.964
+C:\WINDOWS\System32\DriverStore\FileRepository\nvaci.inf_amd64_86d41f9d255b539f\nvldumdx.dll:nvldumdx.dll (00007FFF81240000), size: 1069056 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 27.21.14.6677
+C:\WINDOWS\SYSTEM32\cryptnet.dll:cryptnet.dll (00007FFFAC740000), size: 200704 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.906
+C:\WINDOWS\SYSTEM32\cryptbase.dll:cryptbase.dll (00007FFFB2E90000), size: 49152 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\WINDOWS\System32\imagehlp.dll:imagehlp.dll (00007FFFB3ED0000), size: 118784 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\WINDOWS\SYSTEM32\CRYPTSP.dll:CRYPTSP.dll (00007FFFB2EA0000), size: 98304 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\WINDOWS\system32\rsaenh.dll:rsaenh.dll (00007FFFB2630000), size: 212992 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1052
+C:\WINDOWS\System32\DriverStore\FileRepository\nvaci.inf_amd64_86d41f9d255b539f\nvwgf2umx.dll:nvwgf2umx.dll (00007FFF4CF50000), size: 74567680 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 27.21.14.6677
+C:\WINDOWS\system32\nvspcap64.dll:nvspcap64.dll (00007FFF4CC90000), size: 2875392 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 3.22.0.32
+C:\WINDOWS\SYSTEM32\ntmarta.dll:ntmarta.dll (00007FFFB2230000), size: 208896 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\WINDOWS\SYSTEM32\dxcore.dll:dxcore.dll (00007FFFABE20000), size: 241664 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\WINDOWS\system32\wbem\wbemprox.dll:wbemprox.dll (00007FFFA4390000), size: 69632 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1081
+C:\WINDOWS\SYSTEM32\wbemcomn.dll:wbemcomn.dll (00007FFFA4570000), size: 598016 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1081
+C:\WINDOWS\system32\wbem\wbemsvc.dll:wbemsvc.dll (00007FFFA0EA0000), size: 81920 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1081
+C:\WINDOWS\system32\wbem\fastprox.dll:fastprox.dll (00007FFFA1ED0000), size: 1093632 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\WINDOWS\SYSTEM32\amsi.dll:amsi.dll (00007FFFAD5B0000), size: 102400 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.746
+C:\WINDOWS\SYSTEM32\USERENV.dll:USERENV.dll (00007FFFB3430000), size: 188416 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.572
+C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.2106.6-0\MpOav.dll:MpOav.dll (00007FFFAD4F0000), size: 495616 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 4.18.2106.6
+C:\Program Files\Unity\Hub\Editor\2020.3.11f1\Editor\cudart64_90.dll:cudart64_90.dll (00007FFF858E0000), size: 397312 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 6.14.11.9000
+C:\WINDOWS\SYSTEM32\opencl.dll:opencl.dll (00007FFF633B0000), size: 1462272 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 3.0.1.0
+C:\Program Files\Unity\Hub\Editor\2020.3.11f1\Editor\radeonrays.dll:radeonrays.dll (00007FFF811B0000), size: 552960 (result: 0), SymType: '-deferred-', PDB: ''
+C:\Program Files\Unity\Hub\Editor\2020.3.11f1\Editor\Data\MonoBleedingEdge\EmbedRuntime\mono-2.0-bdwgc.dll:mono-2.0-bdwgc.dll (00007FFF4C520000), size: 7790592 (result: 0), SymType: '-deferred-', PDB: ''
+C:\WINDOWS\System32\PSAPI.DLL:PSAPI.DLL (00007FFFB3EC0000), size: 32768 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\ProgramData\Microsoft\VisualStudio\Setup\x64\Microsoft.VisualStudio.Setup.Configuration.Native.dll:Microsoft.VisualStudio.Setup.Configuration.Native.dll (00007FFF93D20000), size: 327680 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 2.7.3111.17308
+C:\WINDOWS\SYSTEM32\PROPSYS.dll:PROPSYS.dll (00007FFFAF720000), size: 1007616 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 7.0.19041.1023
+C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e\comctl32.dll:comctl32.dll (00007FFF9AF90000), size: 2727936 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 6.10.19041.1110
+C:\WINDOWS\SYSTEM32\WindowsCodecs.dll:WindowsCodecs.dll (00007FFFA7C60000), size: 1785856 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1023
+C:\Windows\System32\thumbcache.dll:thumbcache.dll (00007FFF961B0000), size: 417792 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.746
+C:\WINDOWS\SYSTEM32\policymanager.dll:policymanager.dll (00007FFFADB20000), size: 655360 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.1023
+C:\WINDOWS\SYSTEM32\msvcp110_win.dll:msvcp110_win.dll (00007FFFB26C0000), size: 565248 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.546
+C:\WINDOWS\SYSTEM32\dbghelp.dll:dbghelp.dll (00007FFF9CAA0000), size: 1982464 (result: 0), SymType: '-deferred-', PDB: '', fileVersion: 10.0.19041.867
+0x00007FFF4D3662A5 (nvwgf2umx) NVENCODEAPI_Thunk
+0x00007FFF4D366072 (nvwgf2umx) NVENCODEAPI_Thunk
+0x00007FFF4D4DF85C (nvwgf2umx) NVENCODEAPI_Thunk
+0x00007FFF4E0C0F94 (nvwgf2umx) OpenAdapter12
+0x00007FFFB5827034 (KERNEL32) BaseThreadInitThunk
+0x00007FFFB5E42651 (ntdll) RtlUserThreadStart
 
+========== END OF STACKTRACE ===========
+
+A crash has been intercepted by the crash handler. For call stack and other details, see the latest crash report generated in:
+ * C:/Users/shush/AppData/Local/Temp/Unity/Editor/Crashes

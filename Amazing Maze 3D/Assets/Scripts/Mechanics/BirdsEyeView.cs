@@ -20,6 +20,11 @@ public class BirdsEyeView : MonoBehaviour
     private Vector3 startPosition;
     private Vector3 targetPosition;
 
+    private void Start()
+    {
+        OnBirdsEyeViewEvent += spellCooldown.UseSpell;
+    }
+
     private void OnEnable()
     {
         startPosition = transform.position;
@@ -27,6 +32,10 @@ public class BirdsEyeView : MonoBehaviour
         StartCoroutine(BirdsEyeViewCoroutine());
     }
 
+    private void OnDestroy()
+    {
+        OnBirdsEyeViewEvent -= spellCooldown.UseSpell;
+    }
 
     IEnumerator BirdsEyeViewCoroutine()
     {
@@ -53,9 +62,8 @@ public class BirdsEyeView : MonoBehaviour
         }
 
         var tempColor = spellCooldown.skillImage.color;
-        tempColor.a = 1f;
+        tempColor.a = 0.8f;
         spellCooldown.skillImage.color = tempColor;
-
         OnBirdsEyeViewEvent?.Invoke();
         switchCamera.SwitchCameras();
     }
