@@ -533,10 +533,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aeb0ff172014392438fdfbf755bf5f9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprayText: {fileID: 1908392299}
-  timerText: {fileID: 99342754}
-  loseText: {fileID: 733122688}
-  timeLeft: 300
+  State: 0
+  totalCoins: 0
+  currentLevel: 0
+  maxLevelReached: 0
+  difficultyCoefficient: 1
+  isGameRunning: 1
 --- !u!1001 &165969015
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1492,6 +1494,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCam: {fileID: 963194227}
   birdsEyeCam: {fileID: 1289801866}
+  spellCooldown: {fileID: 0}
+  nextBirdsEyeView: 0
+  birdsEyeViewItem: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1933,14 +1938,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6b3009fd9a15bf4887b0ecd5ceb8a7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 12
   groundDistance: 0
-  birdsEyeCam: {fileID: 1289801866}
-  winnerText: {fileID: 2128252085}
   groundCheck: {fileID: 1580363060}
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  bootItem: {fileID: 0}
+  levelManager: {fileID: 0}
 --- !u!1001 &852269574
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2729,8 +2733,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 183a44dbac02788459aca7dd5c9073fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  upEasing:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  downEasing:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   mainCam: {fileID: 963194227}
   birdsEyeCam: {fileID: 1289801866}
+  playerTransform: {fileID: 0}
+  switchCamera: {fileID: 0}
+  spellCooldown: {fileID: 0}
+  birdsEyeViewItem: {fileID: 0}
+  startOffset: 0
 --- !u!114 &1289801871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3364,9 +3385,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 213b89ece545f1d4ea5b91c7d68bb841, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pooledObjects: []
-  objectToPool: {fileID: 4545625219983034106, guid: 5b48ffc07f7e5374bb9e1d5b8028550a, type: 3}
-  amountToPool: 5000
+  pools: []
+  sprayItem: {fileID: 0}
   sprayAmount: 0
 --- !u!4 &1690817321
 Transform:
@@ -3398,9 +3418,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   playerTransform: {fileID: 825215973}
+  sprayItem: {fileID: 0}
   brushSize: 0.15
-  availableDistance: 10
-  distanceToHit: 0
+  maxDistance: 10
   localRotationY: 0
 --- !u!1001 &1704564012
 PrefabInstance:
