@@ -15,11 +15,11 @@ E:/IT/Games/UnityGames/AmazingMaze3D/Amazing Maze 3D
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-53802
+58914
 Successfully changed project path to: E:/IT/Games/UnityGames/AmazingMaze3D/Amazing Maze 3D
 E:/IT/Games/UnityGames/AmazingMaze3D/Amazing Maze 3D
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 119.73 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 267.39 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.11f1 (99c7afb366b3)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.11f1/Editor/Data/Resources/UnitySubsystems
@@ -36,84 +36,59 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.11f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.11f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.11f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56388
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56708
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.11f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.002718 seconds.
+Registered in 0.004637 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 113.50 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 189.98 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.836 seconds
+- Completed reload, in  3.178 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.008247 seconds.
+Registered in 0.015966 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 114.04 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 188.90 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.265 seconds
+- Completed reload, in  3.742 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Launched and connected shader compiler UnityShaderCompiler.exe after 2.27 seconds
-Refreshing native plugins compatible for Editor in 1.24 ms, found 2 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.24 seconds
+Refreshing native plugins compatible for Editor in 2.19 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3584 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 184.3 MB.
-System memory in use after: 184.5 MB.
+System memory in use before: 184.4 MB.
+System memory in use after: 184.6 MB.
 
 Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 4061.
-Total: 5.082100 ms (FindLiveObjects: 1.146700 ms CreateObjectMapping: 0.347200 ms MarkObjects: 3.362200 ms  DeleteObjects: 0.224600 ms)
+Total: 8.451200 ms (FindLiveObjects: 0.763700 ms CreateObjectMapping: 0.700400 ms MarkObjects: 6.643800 ms  DeleteObjects: 0.340700 ms)
 
 ========================================================================
 Received Import Request.
-  path: Assets/Scenes/Level7.unity
-  artifactKey: Guid(e320d9759dcd1fb4eb893354dee84d31) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Level7.unity using Guid(e320d9759dcd1fb4eb893354dee84d31) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c49063e19edc749af9f51d8a1b8618b') in 0.110244 seconds
-  Import took 0.195312 seconds .
+  path: Assets/Scenes/BossLevel1.unity
+  artifactKey: Guid(715d4f2c907138e40afa155f5b81dae8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/BossLevel1.unity using Guid(715d4f2c907138e40afa155f5b81dae8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f051eadcd75489d27e4a95610561597') in 0.175450 seconds
+  Import took 0.245332 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 32.240181 seconds.
-  path: Assets/Scenes/Level9.unity
-  artifactKey: Guid(ceebc2ba65fdf2f49a734b48ee671da4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Level9.unity using Guid(ceebc2ba65fdf2f49a734b48ee671da4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2a700241169b3edbbfce2af14ef0f4b3') in 0.012561 seconds
-  Import took 0.168084 seconds .
+  Time since last request: 46.340422 seconds.
+  path: Assets/Scenes/Level8.unity
+  artifactKey: Guid(7369539dc60571041bee6ff9ff47e104) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Level8.unity using Guid(7369539dc60571041bee6ff9ff47e104) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6ae7e488d5fc6d849a159f92cf944cd1') in 0.017058 seconds
+  Import took 0.257331 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 19.991012 seconds.
-  path: Assets/Scenes/Level10.unity
-  artifactKey: Guid(ce5cda26a8183614d9cf894ad4c902ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Level10.unity using Guid(ce5cda26a8183614d9cf894ad4c902ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '96dcf3c58f187eb12bc2249b08086c1f') in 0.011901 seconds
-  Import took 0.082405 seconds .
+  Time since last request: 10.101418 seconds.
+  path: Assets/Scenes/Level16.unity
+  artifactKey: Guid(19ff9dcb1f60fa84bbee50dcbb7a24f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Level16.unity using Guid(19ff9dcb1f60fa84bbee50dcbb7a24f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0c3a2bc509579f9c4269efb843c25ff0') in 0.014801 seconds
+  Import took 0.094981 seconds .
 
-========================================================================
-Received Import Request.
-  Time since last request: 45.289069 seconds.
-  path: Assets/Scenes/Level12.unity
-  artifactKey: Guid(12e3a5cf7624c224abeec1d6e688cb44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Level12.unity using Guid(12e3a5cf7624c224abeec1d6e688cb44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a8a123090855d5048cdbe9678db8654') in 0.012368 seconds
-  Import took 0.058574 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 96.863043 seconds.
-  path: Assets/Scenes/Level13.unity
-  artifactKey: Guid(43a9082dcd6c7ef4999309773114d510) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Level13.unity using Guid(43a9082dcd6c7ef4999309773114d510) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4db6917be72d15a8fc21e74341127167') in 0.013283 seconds
-  Import took 0.077320 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2635.257684 seconds.
-  path: Assets/Scenes/MainMenu.unity
-  artifactKey: Guid(291a044e08b96874c9da956bd7d54cf2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/MainMenu.unity using Guid(291a044e08b96874c9da956bd7d54cf2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b7eb3396925262137e7cf989ca1c2a92') in 0.016675 seconds
-  Import took 0.101916 seconds .
-
-AssetImportWorkerClient::OnTransportError - code=2 error=End of file
