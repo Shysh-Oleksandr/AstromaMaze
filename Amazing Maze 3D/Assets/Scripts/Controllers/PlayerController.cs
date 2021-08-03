@@ -11,6 +11,9 @@ public class PlayerController : MonoBehaviour
     public LayerMask groundLayer;
     public BootItem bootItem;
     public LevelManager levelManager;
+    public Timer timer;
+
+    public bool isReplacing; // Whether the player position is replaced to checkpoint.
 
     public delegate void OnCoinTake(int coins);
     public event OnCoinTake OnCoinTakeEvent;
@@ -19,11 +22,15 @@ public class PlayerController : MonoBehaviour
     public event OnMovementChanged OnMovementChangedEvent;
 
     private Vector3 velocity;
+    public Checkpoint lastCheckpoint;
+    public Vector3 lastCheckpointPosition;
     private CharacterController controller;
     private AudioSource footstepSource;
 
     void Start()
     {
+        lastCheckpointPosition = gameObject.transform.position;
+        print("Pl start pos: " + lastCheckpointPosition);
         foreach (Sound s in AudioManager.Instance.sounds)
         {
             if (s.name == "Footstep")
@@ -37,7 +44,10 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        PlayerMovement();
+        if (!isReplacing)
+        {
+            PlayerMovement();
+        }
     }
 
     private void PlayerMovement()
@@ -128,7 +138,16 @@ public class PlayerController : MonoBehaviour
             {
                 Tweening.Instance.TweenVertically(levelManager.lockLevelText.gameObject, 1.2f, 0, true, false);
             }
-
         }
+
+        if (other.CompareTag("Checkpoint") && !other.GetComponent<Checkpoint>().isChecked)
+        {
+            AudioManager.Instance.Play("Checkpoint");
+            lastCheckpoint = other.GetComponent<Checkpoint>();
+            lastCheckpointPosition = lastCheckpoint.transform.position;
+            lastCheckpoint.isChecked = true;
+            timer.UpdateSubmazeTimer(lastCheckpoint.checkpointIndex);
+        }
+
     }
 }

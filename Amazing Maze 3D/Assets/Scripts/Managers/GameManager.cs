@@ -10,11 +10,13 @@ public class GameManager : GenericSingletonClass<GameManager>
     public int totalCoins;
     public int currentLevel = 0;
     public int maxLevelReached;
+    public int lives = 3;
     public float difficultyCoefficient = 1f;
-    public bool isGameRunning = true;
+    public bool isGameRunning = true, isBossLevel = false;
 
     private void Start()
     {
+        isBossLevel = false;
         isGameRunning = true;
         LoadGameData();
     }

@@ -24,7 +24,7 @@ public class Compass : MonoBehaviour
     private void Start()
     {
         compassPanel.SetActive(compassItem.isBought);
-        compassCooldownUI.SetActive(compassItem.canRotateToNorth);
+        compassCooldownUI.SetActive(compassItem.canRotateToNorth && compassItem.compassCooldown > 0);
         distanceText.gameObject.SetActive(compassItem.canShowDistance);
 
         spellCooldown.cooldownTime = compassItem.compassCooldown;
@@ -64,7 +64,7 @@ public class Compass : MonoBehaviour
         }
     }
 
-    IEnumerator RotateToNorth()
+    public IEnumerator RotateToNorth()
     {
         Quaternion targetRotation = Quaternion.identity;
         do

@@ -3052,6 +3052,58 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 57983665398757955, guid: b003fa6e4d5c7ec43b1438ab9d54c579, type: 3}
+      propertyPath: sounds.Array.size
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 57983665398757955, guid: b003fa6e4d5c7ec43b1438ab9d54c579, type: 3}
+      propertyPath: sounds.Array.data[15].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7c1a11c8687ff2e408c4ce8c2fc42e4c, type: 3}
+    - target: {fileID: 57983665398757955, guid: b003fa6e4d5c7ec43b1438ab9d54c579, type: 3}
+      propertyPath: sounds.Array.data[15].name
+      value: Death
+      objectReference: {fileID: 0}
+    - target: {fileID: 57983665398757955, guid: b003fa6e4d5c7ec43b1438ab9d54c579, type: 3}
+      propertyPath: sounds.Array.data[16].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 0c3112d479138f248bc89c08ba86ae30, type: 3}
+    - target: {fileID: 57983665398757955, guid: b003fa6e4d5c7ec43b1438ab9d54c579, type: 3}
+      propertyPath: sounds.Array.data[16].name
+      value: Checkpoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 57983665398757955, guid: b003fa6e4d5c7ec43b1438ab9d54c579, type: 3}
+      propertyPath: sounds.Array.data[15].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 57983665398757955, guid: b003fa6e4d5c7ec43b1438ab9d54c579, type: 3}
+      propertyPath: sounds.Array.data[16].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 57983665398757955, guid: b003fa6e4d5c7ec43b1438ab9d54c579, type: 3}
+      propertyPath: sounds.Array.data[15].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 57983665398757955, guid: b003fa6e4d5c7ec43b1438ab9d54c579, type: 3}
+      propertyPath: sounds.Array.data[16].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 57983665398757955, guid: b003fa6e4d5c7ec43b1438ab9d54c579, type: 3}
+      propertyPath: sounds.Array.data[15].randomPitch
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 57983665398757955, guid: b003fa6e4d5c7ec43b1438ab9d54c579, type: 3}
+      propertyPath: sounds.Array.data[16].randomPitch
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 57983665398757955, guid: b003fa6e4d5c7ec43b1438ab9d54c579, type: 3}
+      propertyPath: sounds.Array.data[15].randomVolume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 57983665398757955, guid: b003fa6e4d5c7ec43b1438ab9d54c579, type: 3}
+      propertyPath: sounds.Array.data[16].randomVolume
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 57983665398757964, guid: b003fa6e4d5c7ec43b1438ab9d54c579, type: 3}
       propertyPath: m_Name
       value: AudioManager
