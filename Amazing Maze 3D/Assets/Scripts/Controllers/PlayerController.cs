@@ -30,7 +30,6 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         lastCheckpointPosition = gameObject.transform.position;
-        print("Pl start pos: " + lastCheckpointPosition);
         foreach (Sound s in AudioManager.Instance.sounds)
         {
             if (s.name == "Footstep")

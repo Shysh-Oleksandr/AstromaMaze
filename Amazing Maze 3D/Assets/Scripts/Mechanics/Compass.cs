@@ -24,7 +24,7 @@ public class Compass : MonoBehaviour
     private void Start()
     {
         compassPanel.SetActive(compassItem.isBought);
-        compassCooldownUI.SetActive(compassItem.canRotateToNorth && compassItem.compassCooldown > 0);
+        compassCooldownUI.SetActive(compassItem.canRotateToNorth);
         distanceText.gameObject.SetActive(compassItem.canShowDistance);
 
         spellCooldown.cooldownTime = compassItem.compassCooldown;
