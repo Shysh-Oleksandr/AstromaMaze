@@ -254,6 +254,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e7292c128dc4804b88ca4b4de7b66fe, type: 3}
+--- !u!4 &29101037 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2383580517405740736, guid: 5e7292c128dc4804b88ca4b4de7b66fe, type: 3}
+  m_PrefabInstance: {fileID: 29101036}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &47225660 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1546194040931676036, guid: f1d020d1d79e30b459d9c9db5f732015, type: 3}
@@ -9369,7 +9374,7 @@ PrefabInstance:
     - target: {fileID: 7435475936848658566, guid: 0e9dd97b8338d5f41a50d94697356203, type: 3}
       propertyPath: exitTransform
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 29101037}
     - target: {fileID: 7435475936848658566, guid: 0e9dd97b8338d5f41a50d94697356203, type: 3}
       propertyPath: mPlayerTransform
       value: 

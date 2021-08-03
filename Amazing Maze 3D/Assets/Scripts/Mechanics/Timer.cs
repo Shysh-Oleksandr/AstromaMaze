@@ -21,7 +21,10 @@ public class Timer : MonoBehaviour
 
     private void Start()
     {
-        playerController = player.GetComponent<PlayerController>();
+        if (GameManager.Instance.isBossLevel)
+        {
+            playerController = player.GetComponent<PlayerController>();
+        }
 
         criticalTimeColor = new Color32(178, 24, 24, 255);
         addingTimeColor = new Color32(46, 178, 24, 255);
@@ -51,6 +54,7 @@ public class Timer : MonoBehaviour
         if(criticalTimeArray.Contains((int)TimeLeft))
         {
             UIManager.Instance.TweenTimerText(criticalTimeColor);
+            print(criticalTimeColor.r + ", " + criticalTimeColor.g + ", " + criticalTimeColor.b + ", " + criticalTimeColor.a);
         }
 
         TimeLeft--;
