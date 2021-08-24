@@ -4,8 +4,10 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float groundDistance = 0.4f;
     private float gravity = -9.81f;
+    private float playerVelocity;
     private bool isGrounded, isMoving;
     private Vector3 lastPosition;
+    private Vector3 lastPlayerPos;
 
     public Transform groundCheck;
     public LayerMask groundLayer;
@@ -21,15 +23,18 @@ public class PlayerController : MonoBehaviour
     public delegate void OnMovementChanged();
     public event OnMovementChanged OnMovementChangedEvent;
 
-    private Vector3 velocity;
-    public Checkpoint lastCheckpoint;
+    public Checkpoint lastCheckpoint; 
     public Vector3 lastCheckpointPosition;
+    private Vector3 velocity;
     private CharacterController controller;
     private AudioSource footstepSource;
+    private Animator playerAnimator;
 
     void Start()
     {
         lastCheckpointPosition = gameObject.transform.position;
+        lastPlayerPos = transform.position;
+        playerAnimator = GetComponentInChildren<Animator>();
         foreach (Sound s in AudioManager.Instance.sounds)
         {
             if (s.name == "Footstep")
@@ -70,10 +75,11 @@ public class PlayerController : MonoBehaviour
         Vector3 move = transform.right * x + transform.forward * z;
 
         controller.Move(move * bootItem.speed * Time.deltaTime);
-
+        
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
+
         #endregion
 
         OnMovementChangedEvent?.Invoke();
@@ -88,6 +94,15 @@ public class PlayerController : MonoBehaviour
         else
         {
             isMoving = false;
+        }
+
+        if (isMoving)
+        {
+            playerAnimator.SetFloat("Speed", 1);
+        }
+        else
+        {
+            playerAnimator.SetFloat("Speed", 0);
         }
 
         if (isMoving && (GameManager.Instance.State == GameState.Playing || GameManager.Instance.State == GameState.LevelSelection))

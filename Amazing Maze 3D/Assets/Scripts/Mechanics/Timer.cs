@@ -54,7 +54,6 @@ public class Timer : MonoBehaviour
         if(criticalTimeArray.Contains((int)TimeLeft))
         {
             UIManager.Instance.TweenTimerText(criticalTimeColor);
-            print(criticalTimeColor.r + ", " + criticalTimeColor.g + ", " + criticalTimeColor.b + ", " + criticalTimeColor.a);
         }
 
         TimeLeft--;
