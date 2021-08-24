@@ -4,10 +4,8 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float groundDistance = 0.4f;
     private float gravity = -9.81f;
-    private float playerVelocity;
     private bool isGrounded, isMoving;
     private Vector3 lastPosition;
-    private Vector3 lastPlayerPos;
 
     public Transform groundCheck;
     public LayerMask groundLayer;
@@ -33,7 +31,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         lastCheckpointPosition = gameObject.transform.position;
-        lastPlayerPos = transform.position;
+        lastPosition = transform.position;
         playerAnimator = GetComponentInChildren<Animator>();
         foreach (Sound s in AudioManager.Instance.sounds)
         {
