@@ -11,6 +11,7 @@ public class SceneChanger : GenericSingletonClass<SceneChanger>
     public Slider slider;
     public TextMeshProUGUI progressText;
     public bool isLoading;
+    public Image[] starsBgImages, randomColorImages; // For first, changes scale; for second, doesn't.
 
     private int levelToLoad;
     private AudioSource fadingSource;
@@ -24,7 +25,32 @@ public class SceneChanger : GenericSingletonClass<SceneChanger>
                 fadingSource = s.source;
             }
         }
+
+        ChangeImagesColor();
     }
+
+    public void ChangeImagesColor()
+    {
+        foreach (Image image in randomColorImages)
+        {
+            if(image != null)
+            {
+                image.color = SetRandomHue(image, false);
+            }
+        }
+    }
+
+    public void ChangeStarsBgColor()
+    {
+        foreach (Image image in starsBgImages)
+        {
+            if (image != null)
+            {
+                image.color = SetRandomHue(image, true);
+            }
+        }
+    }
+
     public void FadeToNextLevel()
     {
         Instance.FadeToLevel(SceneManager.GetActiveScene().buildIndex + 1);
@@ -42,7 +68,6 @@ public class SceneChanger : GenericSingletonClass<SceneChanger>
         GameManager.Instance.UpdateGameState("MainMenu");
     }
 
-
     public void FadeToLevel(int levelIndex)
     {
         AudioManager.Instance.Play("Fading");
@@ -52,6 +77,8 @@ public class SceneChanger : GenericSingletonClass<SceneChanger>
             animator.SetTrigger("FadeOut");
         }
         Instance.isLoading = true;
+        SetRandomHue(starsBgImages[0], true); // Changing loading bg hue and size.
+        SetRandomHue(randomColorImages[0], false); // Changing loading bar hue.
     }
 
     public void OnFadeComplete()
@@ -84,7 +111,43 @@ public class SceneChanger : GenericSingletonClass<SceneChanger>
         {
             GameManager.Instance.UpdateGameState("MainMenu");
         }
+    }
 
+    private Color SetRandomHue(Image image, bool changeScale)
+    {
+        float h, s, v;
+        float H = Random.Range(0, 1.0f);
+        float a = image.color.a;
+        
 
+        Color.RGBToHSV(image.color, out h, out s, out v);
+        image.color = Color.HSVToRGB(H, s, v);
+        Color startColor = image.color;
+
+        startColor.a = a;
+        image.color = startColor;
+
+        if (changeScale)
+        {
+            float xScale = Random.Range(1.0f, 2.0f);
+            float yScale = Random.Range(1.0f, 2.0f);
+            int flip = Random.Range(0, 1);
+            Vector3 scale = image.gameObject.transform.localScale;
+
+            scale.x = xScale;
+            scale.y = yScale;
+            image.gameObject.transform.localScale = scale;
+
+            if (flip == 1)
+            {
+                image.gameObject.transform.eulerAngles = new Vector3(
+                    image.gameObject.transform.eulerAngles.x,
+                    image.gameObject.transform.eulerAngles.y,
+                    180
+                );
+            }
+        }
+        
+        return image.color;
     }
 }

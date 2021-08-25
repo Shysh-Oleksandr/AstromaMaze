@@ -124,7 +124,6 @@ public class MainMenuUI : MonoBehaviour
         Tweening.Instance.TweenArray(mainMenuElements, tweenDuration, 0.35f, true);
 
         totalCoinsText.text = GameManager.Instance.totalCoins.ToString();
-
         #region Adding listeners to the tabs.
         videoTab.GetComponent<Button>().onClick.AddListener(() => TweenTab(videoTab, videoElements, tweenDuration, tweenDelay));
         audioTab.GetComponent<Button>().onClick.AddListener(() => TweenTab(audioTab, audioElements, tweenDuration, tweenDelay));
