@@ -60,7 +60,7 @@ public class Compass : MonoBehaviour
         if (compassItem.canShowDistance)
         {
             distanceToExit = (int)Vector3.Distance(mPlayerTransform.position, exitTransform.position);
-            distanceText.text = distanceToExit.ToString() + " m";
+            distanceText.text = $"{((distanceToExit - 2) < 0 ? 0 : (distanceToExit - 2)).ToString()} m";
         }
     }
 

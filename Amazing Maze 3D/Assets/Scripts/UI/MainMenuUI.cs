@@ -23,11 +23,18 @@ public struct CompassStats
     public TextMeshProUGUI statText;
 }
 
-[System.Serializable]
+[Serializable]
 public class ItemStats
 {
     public string statName;
     public int[] stat;
+}
+
+[Serializable]
+public class TabsContents
+{
+    public GameObject tab;
+    public GameObject[] content;
 }
 
 public class MainMenuUI : MonoBehaviour
@@ -39,35 +46,21 @@ public class MainMenuUI : MonoBehaviour
     public Transform optionsMenu;
     public Transform shopMenu;
 
+    [Header("Bg")]
+    public Image[] starsBgImages, randomColorImages; // For first, changes scale; for second, doesn't.
+
     [Header("Tab Elements")]
     public GameObject[] mainMenuElements;
-    [SerializeField] private GameObject[] videoElements;
-    [SerializeField] private GameObject[] audioElements;
-    [SerializeField] private GameObject[] gameElements;
-    [SerializeField] private GameObject[] languageElements;
-    [SerializeField] private GameObject[] sprayElements;
-    [SerializeField] private GameObject[] bootsElements;
-    [SerializeField] private GameObject[] birdsElements;
-    [SerializeField] private GameObject[] compassElements;
-
-    [Header("Tabs")]
-    [SerializeField] private GameObject videoTab;
-    [SerializeField] private GameObject audioTab;
-    [SerializeField] private GameObject gameTab;
-    [SerializeField] private GameObject languageTab;
-    [SerializeField] private GameObject sprayTab;
-    [SerializeField] private GameObject bootsTab;
-    [SerializeField] private GameObject birdsTab;
-    [SerializeField] private GameObject compassTab;
 
     [Header("Tween variables")]
     [SerializeField] private float screenCenterX;
     [SerializeField] private float tweenDuration = 0.4f;
     [SerializeField] private float tweenDelay = 0.2f;
 
-    [Header("Upgrade dictionaries")]
+    [Header("Dictionaries")]
     public UpgradeElements[] upgradeElements;
     public CompassStats[] compassStats;
+    public TabsContents[] tabsContents;
     [Header("Texts")]
     public TextMeshProUGUI maxLevelUpgradedText;
     public TextMeshProUGUI totalCoinsText;
@@ -76,6 +69,10 @@ public class MainMenuUI : MonoBehaviour
     [SerializeField] private UpgradeManager upgradeManager;
     public Vector2 optionsMenuStartPos, shopMenuStartPos;
     public Button backButtonOption, backButtonShop;
+
+    [Header("Tabs arrays")]
+    [SerializeField] private GameObject[] optionsTabs;
+    [SerializeField] private GameObject[] shopsTabs;
 
     #endregion
 
@@ -106,34 +103,28 @@ public class MainMenuUI : MonoBehaviour
     {
         upgradeManager.OnCoinChangedEvent -= ChangeCoinsText;
     }
+
     private void Start()
     {
-        #region Tab click sounds
-        videoTab.GetComponent<Button>().onClick.AddListener(() => AudioManager.Instance.Play("Click"));
-        audioTab.GetComponent<Button>().onClick.AddListener(() => AudioManager.Instance.Play("Click"));
-        gameTab.GetComponent<Button>().onClick.AddListener(() => AudioManager.Instance.Play("Click"));
-        languageTab.GetComponent<Button>().onClick.AddListener(() => AudioManager.Instance.Play("Click"));
-        sprayTab.GetComponent<Button>().onClick.AddListener(() => AudioManager.Instance.Play("Click"));
-        bootsTab.GetComponent<Button>().onClick.AddListener(() => AudioManager.Instance.Play("Click"));
-        birdsTab.GetComponent<Button>().onClick.AddListener(() => AudioManager.Instance.Play("Click"));
-        compassTab.GetComponent<Button>().onClick.AddListener(() => AudioManager.Instance.Play("Click"));
-        #endregion
+        foreach (var tabsContent in tabsContents)
+        {
+            tabsContent.tab.GetComponent<Button>().onClick.AddListener(() => AudioManager.Instance.Play("Click"));
+        }
+
         optionsMenuStartPos = new Vector2(Screen.width, menuY);
         shopMenuStartPos = new Vector2(-Screen.width, menuY);
 
         Tweening.Instance.TweenArray(mainMenuElements, tweenDuration, 0.35f, true);
 
         totalCoinsText.text = GameManager.Instance.totalCoins.ToString();
-        #region Adding listeners to the tabs.
-        videoTab.GetComponent<Button>().onClick.AddListener(() => TweenTab(videoTab, videoElements, tweenDuration, tweenDelay));
-        audioTab.GetComponent<Button>().onClick.AddListener(() => TweenTab(audioTab, audioElements, tweenDuration, tweenDelay));
-        gameTab.GetComponent<Button>().onClick.AddListener(() => TweenTab(gameTab, gameElements, tweenDuration, tweenDelay));
-        languageTab.GetComponent<Button>().onClick.AddListener(() => TweenTab(languageTab, languageElements, tweenDuration, tweenDelay));
-        sprayTab.GetComponent<Button>().onClick.AddListener(() => TweenTab(sprayTab, sprayElements, 0.15f, 0.2f));
-        bootsTab.GetComponent<Button>().onClick.AddListener(() => TweenTab(bootsTab, bootsElements, 0.15f, 0.2f));
-        birdsTab.GetComponent<Button>().onClick.AddListener(() => TweenTab(birdsTab, birdsElements, 0.15f, 0.2f));
-        compassTab.GetComponent<Button>().onClick.AddListener(() => TweenTab(compassTab, compassElements, 0.15f, 0.2f));
-        #endregion
+
+        SceneChanger.Instance.ChangeStarsBgColor();
+
+
+        foreach (var tabsContent in tabsContents)
+        {
+            tabsContent.tab.GetComponent<Button>().onClick.AddListener(() => TweenTab(tabsContent.tab, tabsContent.content, tweenDuration, tweenDelay));
+        }
     }
 
     public void TweenTab(GameObject tab, GameObject[] elements, float duration, float delay)
@@ -166,55 +157,111 @@ public class MainMenuUI : MonoBehaviour
         if (isOptionsMenu)
         {
             backButtonOption.interactable = false;
-            videoTab.GetComponent<Button>().interactable = false;
-            audioTab.GetComponent<Button>().interactable = false;
-            gameTab.GetComponent<Button>().interactable = false;
-            languageTab.GetComponent<Button>().interactable = false;
+
+            // Setting interactable to false for all options tabs.
+            for (int i = 0; i < 4; i++)
+            {
+                tabsContents[i].tab.GetComponent<Button>().interactable = false;
+            }
+
         }
         else
         {
             backButtonShop.interactable = false;
-            sprayTab.GetComponent<Button>().interactable = false;
-            bootsTab.GetComponent<Button>().interactable = false;
-            birdsTab.GetComponent<Button>().interactable = false;
-            compassTab.GetComponent<Button>().interactable = false;
+            // Setting interactable to false for all shops tabs.
+            for (int i = 4; i < 8; i++)
+            {
+                tabsContents[i].tab.GetComponent<Button>().interactable = false;
+            }
         }
         StartCoroutine(BackButtonTweenCoroutine(isOptionsMenu));
+    }
+
+    private void CallActiveTabEvent(GameObject tab)
+    {
+        tab.GetComponent<DevionGames.UIWidgets.Tab>().isOn = false;
+        tab.GetComponent<Button>().onClick.Invoke();
     }
 
     public void EnableOptionsMenu()
     {
         AudioManager.Instance.Play("Swap");
+        SceneChanger.Instance.SetRandomHue(starsBgImages[2], true);
 
         optionsMenu.gameObject.SetActive(true);
         backButtonOption.interactable = true;
-        videoTab.GetComponent<Button>().interactable = true;
-        audioTab.GetComponent<Button>().interactable = true;
-        gameTab.GetComponent<Button>().interactable = true;
-        languageTab.GetComponent<Button>().interactable = true;
+        // Setting interactable to true for all options tabs.
+        for (int i = 0; i < 4; i++)
+        {
+            tabsContents[i].tab.GetComponent<Button>().interactable = true;
+        }
+
+        GameObject activeTab = null;
+
+        foreach (GameObject tab in optionsTabs)
+        {
+            if (tab.GetComponent<DevionGames.UIWidgets.Tab>().isOn)
+            {
+                activeTab = tab;
+                foreach (var tabContent in tabsContents)
+                {
+                    if (tabContent.tab == tab)
+                    {
+                        foreach (var content in tabContent.content)
+                        {
+                            content.SetActive(false);
+                        }
+                    }
+                }
+            }
+        }
 
         optionsMenu.localPosition = optionsMenuStartPos;
-        optionsMenu.LeanMoveLocalX(screenCenterX, tweenDuration).setEaseOutExpo();
+        optionsMenu.LeanMoveLocalX(screenCenterX, tweenDuration).setEaseOutExpo().setOnComplete(() => CallActiveTabEvent(activeTab));
     }
 
     public void EnableShopMenu()
     {
         AudioManager.Instance.Play("Swap");
+        SceneChanger.Instance.SetRandomHue(starsBgImages[3], true);
 
         shopMenu.gameObject.SetActive(true);
         backButtonShop.interactable = true;
-        sprayTab.GetComponent<Button>().interactable = true;
-        bootsTab.GetComponent<Button>().interactable = true;
-        birdsTab.GetComponent<Button>().interactable = true;
-        compassTab.GetComponent<Button>().interactable = true;
+        // Setting interactable to true for all shops tabs.
+        for (int i = 4; i < 8; i++)
+        {
+            tabsContents[i].tab.GetComponent<Button>().interactable = true;
+        }
+
+        GameObject activeTab = null;
+
+        foreach (GameObject tab in shopsTabs)
+        {
+            if (tab.GetComponent<DevionGames.UIWidgets.Tab>().isOn)
+            {
+                activeTab = tab;
+                foreach (var tabContent in tabsContents)
+                {
+                    if (tabContent.tab == tab)
+                    {
+                        foreach (var content in tabContent.content)
+                        {
+                            content.SetActive(false);
+                        }
+                    }
+                }
+            }
+        }
 
         shopMenu.localPosition = shopMenuStartPos;
-        shopMenu.LeanMoveLocalX(screenCenterX, tweenDuration).setEaseOutExpo();
+        shopMenu.LeanMoveLocalX(screenCenterX, tweenDuration).setEaseOutExpo().setOnComplete(() => CallActiveTabEvent(activeTab));
     }
 
     private void DisableOptionsMenu()
     {
         AudioManager.Instance.Play("Swap");
+        SceneChanger.Instance.SetRandomHue(starsBgImages[1], true);
+
         for (int i = 0; i < mainMenuElements.Length; i++)
         {
             mainMenuElements[i].SetActive(false);
@@ -230,6 +277,7 @@ public class MainMenuUI : MonoBehaviour
     private void DisableShopMenu()
     {
         AudioManager.Instance.Play("Swap");
+        SceneChanger.Instance.SetRandomHue(starsBgImages[1], true);
         for (int i = 0; i < mainMenuElements.Length; i++)
         {
             mainMenuElements[i].SetActive(false);

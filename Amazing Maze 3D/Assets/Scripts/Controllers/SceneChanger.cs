@@ -11,7 +11,6 @@ public class SceneChanger : GenericSingletonClass<SceneChanger>
     public Slider slider;
     public TextMeshProUGUI progressText;
     public bool isLoading;
-    public Image[] starsBgImages, randomColorImages; // For first, changes scale; for second, doesn't.
 
     private int levelToLoad;
     private AudioSource fadingSource;
@@ -25,13 +24,11 @@ public class SceneChanger : GenericSingletonClass<SceneChanger>
                 fadingSource = s.source;
             }
         }
-
-        ChangeImagesColor();
     }
 
     public void ChangeImagesColor()
     {
-        foreach (Image image in randomColorImages)
+        foreach (Image image in MainMenuUI.Instance.randomColorImages)
         {
             if(image != null)
             {
@@ -42,7 +39,7 @@ public class SceneChanger : GenericSingletonClass<SceneChanger>
 
     public void ChangeStarsBgColor()
     {
-        foreach (Image image in starsBgImages)
+        foreach (Image image in MainMenuUI.Instance.starsBgImages)
         {
             if (image != null)
             {
@@ -77,8 +74,8 @@ public class SceneChanger : GenericSingletonClass<SceneChanger>
             animator.SetTrigger("FadeOut");
         }
         Instance.isLoading = true;
-        SetRandomHue(starsBgImages[0], true); // Changing loading bg hue and size.
-        SetRandomHue(randomColorImages[0], false); // Changing loading bar hue.
+        SetRandomHue(MainMenuUI.Instance.starsBgImages[0], true); // Changing loading bg hue and size.
+        SetRandomHue(MainMenuUI.Instance.randomColorImages[0], false); // Changing loading bar hue.
     }
 
     public void OnFadeComplete()
@@ -113,7 +110,7 @@ public class SceneChanger : GenericSingletonClass<SceneChanger>
         }
     }
 
-    private Color SetRandomHue(Image image, bool changeScale)
+    public Color SetRandomHue(Image image, bool changeScale)
     {
         float h, s, v;
         float H = Random.Range(0, 1.0f);
@@ -131,7 +128,7 @@ public class SceneChanger : GenericSingletonClass<SceneChanger>
         {
             float xScale = Random.Range(1.0f, 2.0f);
             float yScale = Random.Range(1.0f, 2.0f);
-            int flip = Random.Range(0, 1);
+            int flip = Random.Range(0, 2);
             Vector3 scale = image.gameObject.transform.localScale;
 
             scale.x = xScale;

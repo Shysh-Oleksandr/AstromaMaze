@@ -20,6 +20,8 @@ public class UIManager : MonoBehaviour
 
     public int levelCoins = 0, totalCoins;
 
+    private Image starsPauseBg;
+
     #region Singleton 
     private static UIManager instance;
 
@@ -42,10 +44,13 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         GameManager.Instance.currentLevel = SceneManager.GetActiveScene().buildIndex - 1;
+        levelCoins = 0;
+        totalCoins = GameManager.Instance.totalCoins;
 
         playerController.OnCoinTakeEvent += OnCoinChanged;
         paint.OnSprayChangedEvent += OnSprayChanged;
 
+        // For boss level---------------------------
         if (heartIcons.Length > 0)
         {
             GameManager.Instance.isBossLevel = true;
@@ -56,9 +61,6 @@ public class UIManager : MonoBehaviour
             GameManager.Instance.isBossLevel = false;
         }
 
-        levelCoins = 0;
-        totalCoins = GameManager.Instance.totalCoins;
-
         if (GameManager.Instance.isBossLevel)
         {
             OnHeartsChanged(GameManager.Instance.lives);
@@ -68,10 +70,13 @@ public class UIManager : MonoBehaviour
         {
             levelText.text = "Level " + GameManager.Instance.currentLevel.ToString();
         }
+        // ----------------------
         coinsText.text = "0";
         sprayText.text = ObjectPooler.instance.sprayAmount.ToString();
 
         Tweening.Instance.TweenVertically(levelText.gameObject, 0.6f, 0, true, true);
+
+        starsPauseBg = pauseMenu.GetComponentsInChildren<Image>()[1];
     }
 
     private void OnDestroy()
@@ -110,6 +115,7 @@ public class UIManager : MonoBehaviour
 
     public void TweenPauseMenu()
     {
+        SceneChanger.Instance.SetRandomHue(starsPauseBg, true);
         Tweening.Instance.TweenScale(pauseMenu, 0.15f, true, 0f);
     }
 
