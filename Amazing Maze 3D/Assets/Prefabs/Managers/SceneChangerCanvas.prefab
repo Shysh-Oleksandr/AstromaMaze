@@ -746,13 +746,8 @@ MonoBehaviour:
   slider: {fileID: 4873480006253254404}
   progressText: {fileID: 4873480006552305342}
   isLoading: 0
-  starsBgImages:
-  - {fileID: 6183076345158364502}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  randomColorImages:
-  - {fileID: 4873480007233897874}
+  starLoadingBg: {fileID: 6183076345158364502}
+  loadingSliderImage: {fileID: 4873480007233897874}
 --- !u!95 &4873480007113020619
 Animator:
   serializedVersion: 3
@@ -805,7 +800,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.558, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -940,7 +935,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5116976277737150003, guid: d9ab0b78983bad6458d75d85504bec18, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -1.7127075
+      value: -1.7126465
       objectReference: {fileID: 0}
     - target: {fileID: 5116976277737150003, guid: d9ab0b78983bad6458d75d85504bec18, type: 3}
       propertyPath: m_AnchoredPosition.y

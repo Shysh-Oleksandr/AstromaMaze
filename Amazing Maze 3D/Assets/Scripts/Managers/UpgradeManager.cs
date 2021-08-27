@@ -51,7 +51,7 @@ public class UpgradeManager : MonoBehaviour
         }
     }
 
-    private void UpdateItemStats()
+    public void UpdateItemStats()
     {
         spray.sprayAmount = MainMenuUI.Instance.upgradeElements[0].itemStats[0].stat[spray.upgradingLevel - 1];
         spray.baseLifetime = MainMenuUI.Instance.upgradeElements[0].itemStats[1].stat[spray.upgradingLevel - 1];
@@ -186,7 +186,7 @@ public class UpgradeManager : MonoBehaviour
         return price;
     }
 
-    private void LoadItemsData()
+    public void LoadItemsData()
     {
         ItemData data = SaveSystem.LoadItems();
 

@@ -51,7 +51,6 @@ public class ObjectPooler : MonoBehaviour
             }
 
             poolDictionary.Add(pool.tag, pooledObjects);
-
         }
 
     }

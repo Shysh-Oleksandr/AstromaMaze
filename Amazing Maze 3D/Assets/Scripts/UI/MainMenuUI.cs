@@ -3,6 +3,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 
 [Serializable]
@@ -47,7 +48,7 @@ public class MainMenuUI : MonoBehaviour
     public Transform shopMenu;
 
     [Header("Bg")]
-    public Image[] starsBgImages, randomColorImages; // For first, changes scale; for second, doesn't.
+    public Image[] starsBgImages;
 
     [Header("Tab Elements")]
     public GameObject[] mainMenuElements;
@@ -67,8 +68,11 @@ public class MainMenuUI : MonoBehaviour
     public TextMeshProUGUI noMoneyText;
     [Header("References")]
     [SerializeField] private UpgradeManager upgradeManager;
+    [SerializeField] private SettingsMenu settingsMenu;
+    public AudioMixer mainMixer;
     public Vector2 optionsMenuStartPos, shopMenuStartPos;
     public Button backButtonOption, backButtonShop;
+    public Slider volumeSlider;
 
     [Header("Tabs arrays")]
     [SerializeField] private GameObject[] optionsTabs;
@@ -106,6 +110,11 @@ public class MainMenuUI : MonoBehaviour
 
     private void Start()
     {
+        settingsMenu.LoadSettingsData();
+        settingsMenu.volumeSlider.value = settingsMenu.startVolume;
+        upgradeManager.LoadItemsData();
+        upgradeManager.UpdateItemStats();
+
         foreach (var tabsContent in tabsContents)
         {
             tabsContent.tab.GetComponent<Button>().onClick.AddListener(() => AudioManager.Instance.Play("Click"));
@@ -186,7 +195,7 @@ public class MainMenuUI : MonoBehaviour
     public void EnableOptionsMenu()
     {
         AudioManager.Instance.Play("Swap");
-        SceneChanger.Instance.SetRandomHue(starsBgImages[2], true);
+        SceneChanger.Instance.SetRandomHue(starsBgImages[1], true);
 
         optionsMenu.gameObject.SetActive(true);
         backButtonOption.interactable = true;
@@ -223,7 +232,7 @@ public class MainMenuUI : MonoBehaviour
     public void EnableShopMenu()
     {
         AudioManager.Instance.Play("Swap");
-        SceneChanger.Instance.SetRandomHue(starsBgImages[3], true);
+        SceneChanger.Instance.SetRandomHue(starsBgImages[2], true);
 
         shopMenu.gameObject.SetActive(true);
         backButtonShop.interactable = true;
@@ -260,7 +269,7 @@ public class MainMenuUI : MonoBehaviour
     private void DisableOptionsMenu()
     {
         AudioManager.Instance.Play("Swap");
-        SceneChanger.Instance.SetRandomHue(starsBgImages[1], true);
+        SceneChanger.Instance.SetRandomHue(starsBgImages[0], true);
 
         for (int i = 0; i < mainMenuElements.Length; i++)
         {
@@ -277,7 +286,7 @@ public class MainMenuUI : MonoBehaviour
     private void DisableShopMenu()
     {
         AudioManager.Instance.Play("Swap");
-        SceneChanger.Instance.SetRandomHue(starsBgImages[1], true);
+        SceneChanger.Instance.SetRandomHue(starsBgImages[0], true);
         for (int i = 0; i < mainMenuElements.Length; i++)
         {
             mainMenuElements[i].SetActive(false);

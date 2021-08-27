@@ -88,7 +88,7 @@ public static class SaveSystem
 
     public static SettingsData LoadSettings()
     {
-        Debug.Log("SaveSettings");
+        Debug.Log("LoadSettings");
         string path = GetPath("/settings.dat");
 
         if (File.Exists(path))
@@ -122,7 +122,7 @@ public static class SaveSystem
 
     public static LanguageData LoadLanguage()
     {
-        Debug.Log("SaveLanguage");
+        Debug.Log("LoadLanguage");
         string path = GetPath("/language.dat");
 
         if (File.Exists(path))

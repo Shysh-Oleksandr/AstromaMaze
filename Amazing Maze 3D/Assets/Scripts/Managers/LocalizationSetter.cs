@@ -62,10 +62,10 @@ public class LocalizationSetter : MonoBehaviour
         languageIndex = data.languageIndex;
     }
 
-    private void OnDestroy()
+    /*private void OnDestroy()
     {
         SaveSystem.SaveLanguage(this);
-    }
+    }*/
 
     private void OnApplicationQuit()
     {

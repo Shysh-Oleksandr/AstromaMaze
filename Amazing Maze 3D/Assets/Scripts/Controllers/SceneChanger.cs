@@ -11,6 +11,7 @@ public class SceneChanger : GenericSingletonClass<SceneChanger>
     public Slider slider;
     public TextMeshProUGUI progressText;
     public bool isLoading;
+    public Image starLoadingBg, loadingSliderImage;
 
     private int levelToLoad;
     private AudioSource fadingSource;
@@ -22,17 +23,6 @@ public class SceneChanger : GenericSingletonClass<SceneChanger>
             if (s.name == "Fading")
             {
                 fadingSource = s.source;
-            }
-        }
-    }
-
-    public void ChangeImagesColor()
-    {
-        foreach (Image image in MainMenuUI.Instance.randomColorImages)
-        {
-            if(image != null)
-            {
-                image.color = SetRandomHue(image, false);
             }
         }
     }
@@ -74,8 +64,8 @@ public class SceneChanger : GenericSingletonClass<SceneChanger>
             animator.SetTrigger("FadeOut");
         }
         Instance.isLoading = true;
-        SetRandomHue(MainMenuUI.Instance.starsBgImages[0], true); // Changing loading bg hue and size.
-        SetRandomHue(MainMenuUI.Instance.randomColorImages[0], false); // Changing loading bar hue.
+        SetRandomHue(starLoadingBg, true); // Changing loading bg hue and size.
+        SetRandomHue(loadingSliderImage, false); // Changing loading bar hue.
     }
 
     public void OnFadeComplete()
