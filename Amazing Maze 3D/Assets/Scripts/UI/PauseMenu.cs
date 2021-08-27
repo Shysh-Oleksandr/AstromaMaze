@@ -27,7 +27,8 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !SceneChanger.Instance.isLoading && !isMenuShown)
+        if (Input.GetKeyDown(KeyCode.Escape) && !SceneChanger.Instance.isLoading && 
+            !isMenuShown && !Tweening.Instance.isPauseMenuTweening && !SceneChanger.Instance.blackFader.enabled)
         {
             if (isPaused)
             {

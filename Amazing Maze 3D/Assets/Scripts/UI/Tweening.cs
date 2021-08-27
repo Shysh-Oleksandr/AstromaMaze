@@ -5,11 +5,11 @@ public class Tweening : MonoBehaviour
 {
     [SerializeField] private float tweenDuration, tweenDelay;
     [SerializeField] private bool tweenOnStart = false;
-    public bool isTweening, isVerticalTweening;
+    public bool isTweening, isVerticalTweening, isPauseMenuTweening;
 
     private bool isArrayInited;
-    private int id, verticalId;
-    private LTDescr d, verticalD;
+    private int id, verticalId, pauseId;
+    private LTDescr d, verticalD, pauseD;
     private GameObject[] pastTweeningElements;
     private Vector3[] pauseMenuElementsStartPos, menuElementsStartPos;
 
@@ -44,6 +44,7 @@ public class Tweening : MonoBehaviour
     {
         d = LeanTween.descr(id);
         verticalD = LeanTween.descr(verticalId);
+        pauseD = LeanTween.descr(pauseId);
 
         if (d != null)
         {
@@ -52,6 +53,15 @@ public class Tweening : MonoBehaviour
         else
         {
             isTweening = false;
+        }
+
+        if (pauseD != null)
+        {
+            isPauseMenuTweening = true;
+        }
+        else
+        {
+            isPauseMenuTweening = false;
         }
 
         if (verticalD != null)
@@ -188,16 +198,18 @@ public class Tweening : MonoBehaviour
         if (scaleIn)
         {
             gameObject.transform.localScale = Vector2.zero;
-            gameObject.transform.LeanScale(Vector2.one, tweenDuration).setEaseOutExpo().setIgnoreTimeScale(true)
-                .setOnComplete(() => TweenPauseMenuElements(UIManager.Instance.pauseMenuElements, 0.15f, 0.15f, true))
-                .delay = delay;
+            pauseId = gameObject.transform.LeanScale(Vector2.one, tweenDuration).setEaseOutExpo().setIgnoreTimeScale(true)
+                .setOnComplete(() => TweenPauseMenuElements(UIManager.Instance.pauseMenuElements, 0.15f, 0.15f, true)).id;
+            LTDescr descr = LeanTween.descr(pauseId);
+            descr.delay = delay;
         }
         else
         {
             gameObject.transform.localScale = Vector2.one;
-            gameObject.transform.LeanScale(Vector2.zero, tweenDuration).setEaseOutExpo().setIgnoreTimeScale(true)
-                .setOnComplete(() => UIManager.Instance.pauseMenu.SetActive(false))
-                .delay = delay;
+            pauseId = gameObject.transform.LeanScale(Vector2.zero, tweenDuration).setEaseOutExpo().setIgnoreTimeScale(true)
+                .setOnComplete(() => UIManager.Instance.pauseMenu.SetActive(false)).id;
+            LTDescr descr = LeanTween.descr(pauseId);
+            descr.delay = delay;
         }
     }
 

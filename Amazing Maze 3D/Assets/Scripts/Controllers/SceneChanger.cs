@@ -11,7 +11,7 @@ public class SceneChanger : GenericSingletonClass<SceneChanger>
     public Slider slider;
     public TextMeshProUGUI progressText;
     public bool isLoading;
-    public Image starLoadingBg, loadingSliderImage;
+    public Image starLoadingBg, loadingSliderImage, blackFader;
 
     private int levelToLoad;
     private AudioSource fadingSource;
