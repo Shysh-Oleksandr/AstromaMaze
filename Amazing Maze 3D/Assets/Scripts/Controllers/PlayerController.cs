@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public Transform groundCheck;
     public LayerMask groundLayer;
     public BootItem bootItem;
+    public CompassItem compassItem;
     public LevelManager levelManager;
     public Timer timer;
 
@@ -27,12 +28,18 @@ public class PlayerController : MonoBehaviour
     private CharacterController controller;
     private AudioSource footstepSource;
     private Animator playerAnimator;
+    private Compass compass;
 
     void Start()
     {
         lastCheckpointPosition = gameObject.transform.position;
         lastPosition = transform.position;
         playerAnimator = GetComponentInChildren<Animator>();
+        if (GameManager.Instance.isBossLevel && compassItem.upgradingLevel == 4)
+        {
+            compass = FindObjectOfType<Compass>();
+        }
+
         foreach (Sound s in AudioManager.Instance.sounds)
         {
             if (s.name == "Footstep")
@@ -158,6 +165,7 @@ public class PlayerController : MonoBehaviour
             lastCheckpoint = other.GetComponent<Checkpoint>();
             lastCheckpointPosition = lastCheckpoint.transform.position;
             lastCheckpoint.isChecked = true;
+            compass.currentExitTransform++;
             timer.UpdateSubmazeTimer(lastCheckpoint.checkpointIndex);
         }
 

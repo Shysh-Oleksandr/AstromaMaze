@@ -11,6 +11,9 @@ public class Compass : MonoBehaviour
     public PlayerController player;
     public SpellCooldown spellCooldown;
     [SerializeField] float rotationSpeed, distanceToExit;
+    [Header("For Boss level")]
+    public Transform[] exitTransforms;
+    [Range(0, 2)] public int currentExitTransform = 0;
 
     [Tooltip("The direction towards which the compass points. Default for North is (0, 0, 1)")]
     public Vector3 kReferenceVector = new Vector3(0, 0, 1);
@@ -59,8 +62,16 @@ public class Compass : MonoBehaviour
     {
         if (compassItem.canShowDistance)
         {
-            distanceToExit = (int)Vector3.Distance(mPlayerTransform.position, exitTransform.position);
-            distanceText.text = $"{((distanceToExit - 2) < 0 ? 0 : (distanceToExit - 2)).ToString()} m";
+            if (GameManager.Instance.isBossLevel)
+            {
+                distanceToExit = (int)Vector3.Distance(mPlayerTransform.position, exitTransforms[currentExitTransform > exitTransforms.Length - 1 ? exitTransforms.Length : currentExitTransform].position);
+                distanceText.text = $"{((distanceToExit - 2) < 0 ? 0 : (distanceToExit - 2)).ToString()} m";
+            }
+            else
+            {
+                distanceToExit = (int)Vector3.Distance(mPlayerTransform.position, exitTransform.position);
+                distanceText.text = $"{((distanceToExit - 2) < 0 ? 0 : (distanceToExit - 2)).ToString()} m";
+            }
         }
     }
 
