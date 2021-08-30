@@ -110,8 +110,8 @@ public class PlayerController : MonoBehaviour
             playerAnimator.SetFloat("Speed", 0);
         }
 
-        if (isMoving && (GameManager.Instance.State == GameState.Playing || GameManager.Instance.State == GameState.LevelSelection))
-        {
+        if (isMoving && (GameManager.Instance.State == GameState.Playing || GameManager.Instance.State == GameState.LevelSelection) && !SceneChanger.Instance.isLoading)
+        { 
             if (!footstepSource.isPlaying)
             {
                 AudioManager.Instance.Play("Footstep");
