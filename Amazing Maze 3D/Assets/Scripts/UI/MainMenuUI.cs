@@ -40,7 +40,7 @@ public class TabsContents
 
 public class MainMenuUI : MonoBehaviour
 {
-    private const float menuY = 132f;
+    private const float menuY = 132f, menuPosZ = -53.10346f;
 
     #region Variables declaration
     [Header("Menus")]
@@ -70,9 +70,9 @@ public class MainMenuUI : MonoBehaviour
     [SerializeField] private UpgradeManager upgradeManager;
     [SerializeField] private SettingsMenu settingsMenu;
     public AudioMixer mainMixer;
-    public Vector2 optionsMenuStartPos, shopMenuStartPos;
     public Button backButtonOption, backButtonShop;
     public Slider volumeSlider;
+    private Vector3 optionsMenuStartPos, shopMenuStartPos;
 
     [Header("Tabs arrays")]
     [SerializeField] private GameObject[] optionsTabs;
@@ -115,13 +115,8 @@ public class MainMenuUI : MonoBehaviour
         upgradeManager.LoadItemsData();
         upgradeManager.UpdateItemStats();
 
-        foreach (var tabsContent in tabsContents)
-        {
-            tabsContent.tab.GetComponent<Button>().onClick.AddListener(() => AudioManager.Instance.Play("Click"));
-        }
-
-        optionsMenuStartPos = new Vector2(Screen.width, menuY);
-        shopMenuStartPos = new Vector2(-Screen.width, menuY);
+        optionsMenuStartPos = new Vector3(Screen.width, menuY, menuPosZ);
+        shopMenuStartPos = new Vector3(-Screen.width, menuY, menuPosZ);
 
         Tweening.Instance.TweenArray(mainMenuElements, tweenDuration, 0.35f, true);
 
@@ -132,6 +127,7 @@ public class MainMenuUI : MonoBehaviour
 
         foreach (var tabsContent in tabsContents)
         {
+            tabsContent.tab.GetComponent<Button>().onClick.AddListener(() => AudioManager.Instance.Play("Click"));
             tabsContent.tab.GetComponent<Button>().onClick.AddListener(() => TweenTab(tabsContent.tab, tabsContent.content, tweenDuration, tweenDelay));
         }
     }

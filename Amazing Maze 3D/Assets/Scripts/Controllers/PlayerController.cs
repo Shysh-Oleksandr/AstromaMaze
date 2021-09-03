@@ -167,6 +167,21 @@ public class PlayerController : MonoBehaviour
             lastCheckpoint.isChecked = true;
             compass.currentExitTransform++;
             timer.UpdateSubmazeTimer(lastCheckpoint.checkpointIndex);
+
+            foreach (var checkpoint in UIManager.Instance.checkpointArrows)
+            {
+                if(checkpoint.checkpoint == lastCheckpoint.gameObject)
+                {
+                    print("Changed");
+                    MeshRenderer checkpointMesh = lastCheckpoint.gameObject.GetComponentInChildren<MeshRenderer>();
+                    checkpointMesh.material.color = UIManager.Instance.passedCheckpointColor;
+                    foreach (var arrow in checkpoint.arrows)
+                    {
+                        Renderer rend = arrow.GetComponent<Renderer>();
+                        rend.material.color = UIManager.Instance.passedCheckpointColor;
+                    }
+                }
+            }
         }
 
     }

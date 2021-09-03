@@ -4,6 +4,15 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+
+[Serializable]
+public struct CheckpointArrows
+{
+    public GameObject checkpoint;
+    public MeshRenderer[] arrows;
+}
+
+
 public class UIManager : MonoBehaviour
 {
     public TextMeshProUGUI sprayText, timerText, coinsText, levelText, surpiseText;
@@ -13,6 +22,7 @@ public class UIManager : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject[] pauseMenuElements, victoryMenuElements, replayMenuElements;
     public CanvasGroup victoryMenuBg, loseMenuBg;
+    public CheckpointArrows[] checkpointArrows;
 
     public PlayerController playerController;
     public Checkpoint checkpoint;
@@ -21,6 +31,8 @@ public class UIManager : MonoBehaviour
     public int levelCoins = 0, totalCoins;
 
     private Image starsPauseBg;
+    [HideInInspector]
+    public Color passedCheckpointColor = new Color32(25, 255, 0, 103);
 
     #region Singleton 
     private static UIManager instance;

@@ -19,9 +19,9 @@ public class LevelManager : MonoBehaviour
 
     public int maxLevelReached;
 
-    private Color passedColor = new Color32(52, 217, 63, 155);
-    private Color reachedColor = new Color32(212, 236, 45, 155);
-    private Color lockedColor = new Color32(202, 10, 10, 155);
+    private Color passedColor = new Color32(0, 166, 3, 180);
+    private Color reachedColor = new Color32(223, 255, 0, 220);
+    private Color lockedColor = new Color32(215, 90, 27, 220);
 
     private void Start()
     {
