@@ -59,14 +59,15 @@ public class LocalizationSetter : MonoBehaviour
     {
         LanguageData data = SaveSystem.LoadLanguage();
 
+        while (data == null)
+        {
+            SaveSystem.SaveLanguage(this);
+            data = SaveSystem.LoadLanguage();
+        }
+
         languageIndex = data.languageIndex;
+
     }
-
-    /*private void OnDestroy()
-    {
-        SaveSystem.SaveLanguage(this);
-    }*/
-
     private void OnApplicationQuit()
     {
         SaveSystem.SaveLanguage(this);

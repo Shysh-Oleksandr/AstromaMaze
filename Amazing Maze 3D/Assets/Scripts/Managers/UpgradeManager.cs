@@ -190,6 +190,12 @@ public class UpgradeManager : MonoBehaviour
     {
         ItemData data = SaveSystem.LoadItems();
 
+        while (data == null)
+        {
+            SaveSystem.SaveItems(this);
+            data = SaveSystem.LoadItems();
+        }
+
         spray.upgradingLevel = data.sprayItemLevel;
         boots.upgradingLevel = data.bootsItemLevel;
         birdsEyeView.upgradingLevel = data.birdsItemLevel;

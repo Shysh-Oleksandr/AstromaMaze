@@ -121,6 +121,12 @@ public class GameManager : GenericSingletonClass<GameManager>
     {
         GameData data = SaveSystem.LoadGame();
 
+        while(data == null)
+        {
+            SaveSystem.SaveGame(this);
+            data = SaveSystem.LoadGame();
+        }
+
         totalCoins = data.totalCoins;
         difficultyCoefficient = data.difficultyCoefficient;
         maxLevelReached = data.maxLevelReached;

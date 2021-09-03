@@ -14,7 +14,7 @@ public class SettingsMenu : MonoBehaviour
     public Toggle fullScreenToggle;
     public int quality = 1, startResolutionIndex, difficultyIndex = 1;
     public float startVolume;
-    public bool isFullScreen;
+    public bool isFullScreen = true;
 
     Resolution[] resolutions;
 
@@ -109,6 +109,11 @@ public class SettingsMenu : MonoBehaviour
     {
         SettingsData data = SaveSystem.LoadSettings();
 
+        while(data == null)
+        {
+            SaveSystem.SaveSettings(this);
+            data = SaveSystem.LoadSettings();
+        }
         quality = data.qualityLevel;
         startVolume = data.volume;
         isFullScreen = data.fullScreen;

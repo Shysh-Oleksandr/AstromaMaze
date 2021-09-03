@@ -4436,6 +4436,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: VictoryMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 6522853668438374059, guid: 95e4eceb38fe1ed4aa5dac3a0620c911, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95e4eceb38fe1ed4aa5dac3a0620c911, type: 3}
 --- !u!1001 &6597008493107904000
@@ -4844,6 +4848,18 @@ PrefabInstance:
     - target: {fileID: 7948246380019376532, guid: 3e45e983eddd49e4ebf519753c621d46, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7948246380148950785, guid: 3e45e983eddd49e4ebf519753c621d46, type: 3}
+      propertyPath: m_RenderShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7948246380148950785, guid: 3e45e983eddd49e4ebf519753c621d46, type: 3}
+      propertyPath: m_RenderPostProcessing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7948246380148950788, guid: 3e45e983eddd49e4ebf519753c621d46, type: 3}
+      propertyPath: m_OcclusionCulling
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7948246381449837305, guid: 3e45e983eddd49e4ebf519753c621d46, type: 3}
       propertyPath: switchCamera
