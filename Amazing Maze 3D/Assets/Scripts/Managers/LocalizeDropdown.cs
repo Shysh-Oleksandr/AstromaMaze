@@ -29,11 +29,14 @@ namespace Utilities.Localization
         // ========
         private IEnumerator Start()
         {
+            print("LocalazeDropdown");
             yield return PopulateDropdown();
         }
 
         private void OnEnable()
         {
+            print("Localaze Enable");
+
             var locale = LocalizationSettings.SelectedLocale;
             if (currentLocale != null && locale != currentLocale)
             {
@@ -50,6 +53,8 @@ namespace Utilities.Localization
         private IEnumerator PopulateDropdown()
         {
             // Clear any options that might be present
+            print("Localaze Ienum pop dr");
+
             selectedOptionIndex = Dropdown.value;
 
             Dropdown.ClearOptions();
@@ -106,6 +111,8 @@ namespace Utilities.Localization
         {
             // Updating all options in the dropdown
             // Assumes that this list is the same as the options passed on in the inspector window
+            print("Localaze UpdatedroOpti");
+
             for (var i = 0; i < Dropdown.options.Count; ++i)
             {
                 var optionI = i;
@@ -149,6 +156,8 @@ namespace Utilities.Localization
 
         private void UpdateSelectedText(string text)
         {
+            print("Localaze UpdaSelText");
+
             if (Dropdown.captionText != null)
             {
                 Dropdown.captionText.text = text;

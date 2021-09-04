@@ -111,7 +111,14 @@ public class MainMenuUI : MonoBehaviour
     private void Start()
     {
         settingsMenu.LoadSettingsData();
-        settingsMenu.volumeSlider.value = settingsMenu.startVolume;
+        volumeSlider.value = settingsMenu.startVolume;
+        settingsMenu.fullScreenToggle.isOn = settingsMenu.isFullScreen;
+        settingsMenu.qualitySlider.value = settingsMenu.quality;
+        settingsMenu.difficultyDropdown.value = settingsMenu.difficultyIndex;
+        settingsMenu.SetFullscreen(settingsMenu.isFullScreen);
+        settingsMenu.SetQuality(settingsMenu.quality);
+        settingsMenu.SetDifficulties(settingsMenu.difficultyIndex);
+
         upgradeManager.LoadItemsData();
         upgradeManager.UpdateItemStats();
 

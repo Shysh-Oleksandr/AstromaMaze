@@ -13,7 +13,7 @@ public class SettingsMenu : MonoBehaviour
     public Slider qualitySlider, volumeSlider;
     public Toggle fullScreenToggle;
     public int quality = 1, startResolutionIndex, difficultyIndex = 1;
-    public float startVolume;
+    public float startVolume = 1;
     public bool isFullScreen = true;
 
     Resolution[] resolutions;
@@ -22,14 +22,13 @@ public class SettingsMenu : MonoBehaviour
     {
         SetResolutionDropdownValues();
 
-        SetResolution(startResolutionIndex); // Maybe not the best idea?
-        SetFullscreen(isFullScreen);
-        SetQuality(quality);
-        SetDifficulties(difficultyIndex);
-
         fullScreenToggle.isOn = isFullScreen;
         qualitySlider.value = quality;
         difficultyDropdown.value = difficultyIndex;
+
+        SetFullscreen(isFullScreen);
+        SetQuality(quality);
+        SetDifficulties(difficultyIndex);
     }
 
     public void SetDifficulties(int index)
@@ -111,6 +110,9 @@ public class SettingsMenu : MonoBehaviour
 
         while(data == null)
         {
+            isFullScreen = true;
+            startVolume = 1;
+
             SaveSystem.SaveSettings(this);
             data = SaveSystem.LoadSettings();
         }
