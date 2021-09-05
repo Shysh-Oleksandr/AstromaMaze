@@ -72,7 +72,7 @@ namespace Utilities.Localization
                     var localizedTextHandle = option.text.GetLocalizedString();
                     yield return localizedTextHandle;
 
-                    localizedText = localizedTextHandle.Result;
+                    //localizedText = localizedTextHandle.Result;
 
                     // If this is the selected item, also update the caption text
                     if (i == selectedOptionIndex)
@@ -122,7 +122,7 @@ namespace Utilities.Localization
                 if (!option.text.IsEmpty)
                 {
                     var localizedTextHandle = option.text.GetLocalizedString(locale);
-                    localizedTextHandle.Completed += (handle) =>
+                    /*localizedTextHandle.Completed += (handle) =>
                     {
                         Dropdown.options[optionI].text = handle.Result;
 
@@ -131,7 +131,7 @@ namespace Utilities.Localization
                         {
                             UpdateSelectedText(handle.Result);
                         }
-                    };
+                    };*/
                 }
 
                 // Update the sprite
