@@ -10,6 +10,7 @@ public class LocalizationSetter : MonoBehaviour
     public int languageIndex;
 
     public TMP_Dropdown languageDropdown;
+    public Utilities.Localization.LocalizeDropdown localizeDropdown;
 
     private void Awake()
     {
@@ -44,6 +45,7 @@ public class LocalizationSetter : MonoBehaviour
         AudioManager.Instance.Play("Click");
         languageIndex = index;
         LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[index];
+        localizeDropdown.UpdateDropdownOptions(LocalizationSettings.SelectedLocale);
     }
 
     public IEnumerator SetLanguage(int i)

@@ -10,7 +10,7 @@ using UnityEngine.Localization.Settings;
 namespace Utilities.Localization
 {
     [RequireComponent(typeof(TMP_Dropdown))]
-    [AddComponentMenu("Localization/Localize Dropdown")]
+    [AddComponentMenu("Localization/Localize dropdown")]
     public class LocalizeDropdown : MonoBehaviour
     {
         // Fields
@@ -18,8 +18,6 @@ namespace Utilities.Localization
         public List<LocalizedDropdownOption> options;
 
         public int selectedOptionIndex = 0;
-
-        private Locale currentLocale = null;
 
         // Properties
         // ===========
@@ -29,22 +27,23 @@ namespace Utilities.Localization
         // ========
         private IEnumerator Start()
         {
-            print("LocalazeDropdown");
+            selectedOptionIndex = GameManager.Instance.difficultyCoefficient switch
+            {
+                // Easy
+                1.5f => 0,
+                // Medium
+                1f => 1,
+                // Hard
+                0.75f => 2,
+                // Expert
+                0.5f => 3,
+                _ => 1,
+            };
+
             yield return PopulateDropdown();
         }
 
-        private void OnEnable()
-        {
-            print("Localaze Enable");
-
-            var locale = LocalizationSettings.SelectedLocale;
-            if (currentLocale != null && locale != currentLocale)
-            {
-                UpdateDropdownOptions(locale);
-                currentLocale = locale;
-            }
-            LocalizationSettings.SelectedLocaleChanged += UpdateDropdownOptions;
-        }
+        private void OnEnable() => LocalizationSettings.SelectedLocaleChanged += UpdateDropdownOptions;
 
         private void OnDisable() => LocalizationSettings.SelectedLocaleChanged -= UpdateDropdownOptions;
 
@@ -53,10 +52,6 @@ namespace Utilities.Localization
         private IEnumerator PopulateDropdown()
         {
             // Clear any options that might be present
-            print("Localaze Ienum pop dr");
-
-            selectedOptionIndex = Dropdown.value;
-
             Dropdown.ClearOptions();
             Dropdown.onValueChanged.RemoveListener(UpdateSelectedOptionIndex);
 
@@ -69,10 +64,10 @@ namespace Utilities.Localization
                 // If the option has text, fetch the localized version
                 if (!option.text.IsEmpty)
                 {
-                    var localizedTextHandle = option.text.GetLocalizedString();
+                    var localizedTextHandle = option.text.GetLocalizedStringAsync();
                     yield return localizedTextHandle;
 
-                    //localizedText = localizedTextHandle.Result;
+                    localizedText = localizedTextHandle.Result;
 
                     // If this is the selected item, also update the caption text
                     if (i == selectedOptionIndex)
@@ -103,16 +98,12 @@ namespace Utilities.Localization
             // Update selected option, to make sure the correct option can be displayed in the caption
             Dropdown.value = selectedOptionIndex;
             Dropdown.onValueChanged.AddListener(UpdateSelectedOptionIndex);
-            currentLocale = LocalizationSettings.SelectedLocale;
-
         }
 
-        private void UpdateDropdownOptions(Locale locale)
+        public void UpdateDropdownOptions(Locale locale)
         {
             // Updating all options in the dropdown
             // Assumes that this list is the same as the options passed on in the inspector window
-            print("Localaze UpdatedroOpti");
-
             for (var i = 0; i < Dropdown.options.Count; ++i)
             {
                 var optionI = i;
@@ -121,8 +112,8 @@ namespace Utilities.Localization
                 // Update the text
                 if (!option.text.IsEmpty)
                 {
-                    var localizedTextHandle = option.text.GetLocalizedString(locale);
-                    /*localizedTextHandle.Completed += (handle) =>
+                    var localizedTextHandle = option.text.GetLocalizedStringAsync(locale);
+                    localizedTextHandle.Completed += (handle) =>
                     {
                         Dropdown.options[optionI].text = handle.Result;
 
@@ -131,7 +122,7 @@ namespace Utilities.Localization
                         {
                             UpdateSelectedText(handle.Result);
                         }
-                    };*/
+                    };
                 }
 
                 // Update the sprite
@@ -156,8 +147,6 @@ namespace Utilities.Localization
 
         private void UpdateSelectedText(string text)
         {
-            print("Localaze UpdaSelText");
-
             if (Dropdown.captionText != null)
             {
                 Dropdown.captionText.text = text;
