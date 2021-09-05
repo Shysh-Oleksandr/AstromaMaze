@@ -16,11 +16,299 @@ MonoBehaviour:
     m_Code: en
   m_SharedData: {fileID: 11400000, guid: 9a5f0abf32245f4499b2c00b174f64b3, type: 2}
   m_Metadata:
-    m_Items: []
+    m_Items:
+    - id: 0
   m_TableData:
   - m_Id: 1486357618688
     m_Localized: Space Maze
     m_Metadata:
       m_Items: []
+  - m_Id: 9629967933440
+    m_Localized: Audio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9757244088320
+    m_Localized: Back
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9881227714560
+    m_Localized: Choose level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10283847344128
+    m_Localized: Complete
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10381658513408
+    m_Localized: Difficulty
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10562181357568
+    m_Localized: Easy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10701230923776
+    m_Localized: English
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10839609401344
+    m_Localized: Expert
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11191259848704
+    m_Localized: Fullscreen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11323262984192
+    m_Localized: Graphics
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11462144778240
+    m_Localized: Hard
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11702461620224
+    m_Localized: High
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11835370725376
+    m_Localized: Language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11897379315712
+    m_Localized: Loading...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12049208926208
+    m_Localized: Low
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12102262677504
+    m_Localized: Main menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12252817219584
+    m_Localized: Medium
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12339861610496
+    m_Localized: Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12427702919168
+    m_Localized: Next
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12496728580096
+    m_Localized: Options
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12637082574848
+    m_Localized: Paused
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12744528060416
+    m_Localized: Play
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12813985734656
+    m_Localized: Quit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12880922632192
+    m_Localized: Replay
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12995913670656
+    m_Localized: Resolution
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13228512993280
+    m_Localized: Restart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13343403368448
+    m_Localized: Resume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13462722928640
+    m_Localized: Russian
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13546843889664
+    m_Localized: Inventory
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13731762364416
+    m_Localized: Spanish
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13849878159360
+    m_Localized: Ukrainian
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14030732353536
+    m_Localized: Ultra
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14096532594688
+    m_Localized: Video
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14212798701568
+    m_Localized: Volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14329370992640
+    m_Localized: m to exit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14507003961344
+    m_Localized: Game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14594950127616
+    m_Localized: How to play
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14714907222016
+    m_Localized: WASD - move
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14923783561216
+    m_Localized: LMB - paint
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15073167892480
+    m_Localized: E - bird's eye view
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15458842533888
+    m_Localized: R - turn the compass towards the exit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15801802383360
+    m_Localized: Earned {levelCoins}
+    m_Metadata:
+      m_Items:
+      - id: 0
+  - m_Id: 16076743204864
+    m_Localized: Total {totalCoins}
+    m_Metadata:
+      m_Items:
+      - id: 0
+  - m_Id: 16321426317312
+    m_Localized: Surprise!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16413734559744
+    m_Localized: Spray
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16510572650496
+    m_Localized: Boots
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16607544958976
+    m_Localized: Bird's eye view
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17216759226368
+    m_Localized: Compass
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17395436576768
+    m_Localized: Amount
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17589515411456
+    m_Localized: Lifetime(s)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17886275002368
+    m_Localized: Distance(m)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18089270927360
+    m_Localized: Color
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18195609116672
+    m_Localized: Speed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18287950913536
+    m_Localized: Footprint duration(s)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18571620081664
+    m_Localized: Cooldown
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18736905019392
+    m_Localized: Duration(s)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18958334910464
+    m_Localized: Max height(m)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19120839024640
+    m_Localized: Delay at the top(s)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19436452012032
+    m_Localized: Level1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19489870667776
+    m_Localized: Level2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19526579216384
+    m_Localized: Level4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19509063802880
+    m_Localized: Level3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19853500047360
+    m_Localized: Shows the directions
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20025936273408
+    m_Localized: Rotates to the north by pressing. Cooldown 30 s
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20312021360640
+    m_Localized: Cooldown 0 s
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20464622723072
+    m_Localized: Shows distance to the exit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20629446287360
+    m_Localized: The maximum level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20750170939392
+    m_Localized: The maximum unlock level is the level {maxLevelReached}
+    m_Metadata:
+      m_Items:
+      - id: 0
+  - m_Id: 21499982471168
+    m_Localized: You've got not enough money
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21829952561152
+    m_Localized: Congratulations!
+    m_Metadata:
+      m_Items: []
   references:
     version: 1
+    00000000:
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 0060d1245f0e0000006091289f0e000000609146df120000
