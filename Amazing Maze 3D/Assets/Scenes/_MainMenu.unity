@@ -1399,6 +1399,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7104896114868674237, guid: 91c4276eaa173fc45bbf51bae92170b6, type: 3}
   m_PrefabInstance: {fileID: 7104896115160510143}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &480621718 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1002255454, guid: 91c4276eaa173fc45bbf51bae92170b6, type: 3}
+  m_PrefabInstance: {fileID: 7104896115160510143}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 480621715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21f40f998ab445047a37d6bacb176168, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &504985770 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3109676574685414838, guid: 8d07496cbc8ca67458817f43b7d56951, type: 3}
@@ -1977,6 +1988,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   languageIndex: 0
   languageDropdown: {fileID: 701116574}
+  localizeDropdown: {fileID: 480621718}
 --- !u!4 &704139712
 Transform:
   m_ObjectHideFlags: 0
@@ -3925,7 +3937,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1002255454, guid: 91c4276eaa173fc45bbf51bae92170b6, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1002255454, guid: 91c4276eaa173fc45bbf51bae92170b6, type: 3}
       propertyPath: options.Array.data[0].text.m_TableEntryReference.m_KeyId
