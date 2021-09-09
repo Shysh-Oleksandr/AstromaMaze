@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class SettingsMenu : MonoBehaviour
 {
     public AudioMixer audioMixer;
+    public LocalizationSetter localizationSetter;
     public TMP_Dropdown resolutionDropdown;
     public TMP_Dropdown difficultyDropdown;
     public Slider qualitySlider, volumeSlider;
@@ -131,5 +132,6 @@ public class SettingsMenu : MonoBehaviour
     private void OnDisable()
     {
         SaveSystem.SaveSettings(this);
+        SaveSystem.SaveLanguage(localizationSetter);
     }
 }
