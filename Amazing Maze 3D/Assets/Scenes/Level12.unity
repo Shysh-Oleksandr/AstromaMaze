@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.46091676, g: 0.16051224, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.17963265, g: 0.022106852, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -922,7 +922,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12116027d239afb4c9a65e57c7ba0a4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundMaterial: {fileID: 2100000, guid: c784d20713d62f343a18fede267a6c22, type: 2}
+  groundMaterial: {fileID: 2100000, guid: 73974907201d9ee448c83e7cc8b43f11, type: 2}
   wallMaterial: {fileID: 2100000, guid: 4406fe3fc5c02d74d996b35568bf0483, type: 2}
   asteroidMaterial: {fileID: 2100000, guid: 274532c23615bb5408e2769b706ef91e, type: 2}
   groundMaterialColor: {r: 0.8627451, g: 0.5254902, b: 0.16862746, a: 0}
@@ -2475,7 +2475,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.92597413, g: 1, b: 0.5, a: 1}
+  m_Color: {r: 1, g: 0.66900617, b: 0.5019608, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -5643,7 +5643,7 @@ PrefabInstance:
     - target: {fileID: 1136169781991209930, guid: 4551d220e8b204040925cb557946bae8, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: c784d20713d62f343a18fede267a6c22, type: 2}
+      objectReference: {fileID: 2100000, guid: 73974907201d9ee448c83e7cc8b43f11, type: 2}
     - target: {fileID: 1136169781991209940, guid: 4551d220e8b204040925cb557946bae8, type: 3}
       propertyPath: m_RootOrder
       value: 6
