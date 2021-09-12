@@ -118,6 +118,7 @@ public class MainMenuUI : MonoBehaviour
         settingsMenu.SetFullscreen(settingsMenu.isFullScreen);
         settingsMenu.SetQuality(settingsMenu.quality);
         settingsMenu.SetDifficulties(settingsMenu.difficultyIndex);
+        settingsMenu.SetVolume(settingsMenu.startVolume);
 
         upgradeManager.LoadItemsData();
         upgradeManager.UpdateItemStats();
@@ -125,12 +126,10 @@ public class MainMenuUI : MonoBehaviour
         optionsMenuStartPos = new Vector3(Screen.width, menuY, menuPosZ);
         shopMenuStartPos = new Vector3(-Screen.width, menuY, menuPosZ);
 
-        Tweening.Instance.TweenArray(mainMenuElements, tweenDuration, 0.35f, true);
-
         totalCoinsText.text = GameManager.Instance.totalCoins.ToString();
 
         SceneChanger.Instance.ChangeStarsBgColor();
-
+        Tweening.Instance.TweenArray(mainMenuElements, tweenDuration, 0.35f, true);
 
         foreach (var tabsContent in tabsContents)
         {

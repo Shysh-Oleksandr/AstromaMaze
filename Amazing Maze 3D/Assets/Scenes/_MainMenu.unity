@@ -334,8 +334,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294632920
-  m_fontColor: {r: 0.84705883, g: 0.89816993, b: 0.98039216, a: 1}
+    rgba: 4294633436
+  m_fontColor: {r: 0.8627451, g: 0.9077278, b: 0.98039216, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -538,8 +538,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294632920
-  m_fontColor: {r: 0.84705883, g: 0.89816993, b: 0.98039216, a: 1}
+    rgba: 4294633436
+  m_fontColor: {r: 0.8627451, g: 0.9077278, b: 0.98039216, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -889,8 +889,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294632920
-  m_fontColor: {r: 0.84705883, g: 0.89816993, b: 0.98039216, a: 1}
+    rgba: 4294633436
+  m_fontColor: {r: 0.8627451, g: 0.9077278, b: 0.98039216, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1070,8 +1070,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294632920
-  m_fontColor: {r: 0.84705883, g: 0.89816993, b: 0.98039216, a: 1}
+    rgba: 4294633436
+  m_fontColor: {r: 0.8627451, g: 0.9077278, b: 0.98039216, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1241,11 +1241,11 @@ MonoBehaviour:
     - {fileID: 1889695277}
     itemStats:
     - statName: Amount
-      stat: 64000000fa00000058020000e8030000
+      stat: c80000005e01000058020000e8030000
     - statName: Lifetime
-      stat: 0f000000140000001e00000032000000
+      stat: 140000001e0000002800000037000000
     - statName: Distance
-      stat: 05000000080000000b00000010000000
+      stat: 07000000090000000b0000000d000000
   - item: {fileID: 11400000, guid: 6baed95bd604077499b8fe1e30a4123b, type: 2}
     upgradeButton: {fileID: 1256138019}
     maxLevelText: {fileID: 537839205}
@@ -1255,9 +1255,9 @@ MonoBehaviour:
     - {fileID: 138421621}
     itemStats:
     - statName: Speed
-      stat: 090000000b0000000d00000010000000
+      stat: 0a0000000c0000000d0000000f000000
     - statName: FootprintDuration
-      stat: 05000000080000000d00000014000000
+      stat: 05000000070000000d00000014000000
   - item: {fileID: 11400000, guid: 6d1818afa257e4f4ca668c8afa193c17, type: 2}
     upgradeButton: {fileID: 1339593035}
     maxLevelText: {fileID: 1444527348}
@@ -1269,13 +1269,13 @@ MonoBehaviour:
     - {fileID: 1030256233}
     itemStats:
     - statName: Cooldown
-      stat: 1900000016000000130000000f000000
+      stat: 16000000120000000f0000000c000000
     - statName: Duration
       stat: 01000000020000000300000004000000
     - statName: MaxHeight
-      stat: 19000000230000002d0000003c000000
+      stat: 140000001e0000002800000032000000
     - statName: TopDelay
-      stat: 01000000020000000300000004000000
+      stat: 01000000010000000200000003000000
   - item: {fileID: 11400000, guid: 11a2659a9dd00d1489294f068d1d063f, type: 2}
     upgradeButton: {fileID: 1205764740}
     maxLevelText: {fileID: 958665506}
@@ -1587,11 +1587,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2950423175671214377, guid: 6f415c948397d474e9624b7e81681a07, type: 3}
       propertyPath: m_Color.g
-      value: 0.89816993
+      value: 0.9077278
       objectReference: {fileID: 0}
     - target: {fileID: 2950423175671214377, guid: 6f415c948397d474e9624b7e81681a07, type: 3}
       propertyPath: m_Color.r
-      value: 0.84705883
+      value: 0.8627451
       objectReference: {fileID: 0}
     - target: {fileID: 3345222013022996354, guid: 6f415c948397d474e9624b7e81681a07, type: 3}
       propertyPath: m_Name
@@ -1742,7 +1742,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Space Maze
+  m_text: Astroma
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 62e3e01a738fb734980d8b91f6ada44e, type: 2}
   m_sharedMaterial: {fileID: 5588376598468928986, guid: 62e3e01a738fb734980d8b91f6ada44e, type: 2}
@@ -1751,8 +1751,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294632920
-  m_fontColor: {r: 0.84705883, g: 0.89816993, b: 0.98039216, a: 1}
+    rgba: 4294633436
+  m_fontColor: {r: 0.8627451, g: 0.9077278, b: 0.98039216, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1826,7 +1826,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 618261685}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 69beb381e244f92449b8c4cf954630e9, type: 3}
   m_Name: 

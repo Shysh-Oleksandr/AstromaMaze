@@ -54,7 +54,7 @@ public class BirdsEyeView : MonoBehaviour
         startPosition = transform.position;
         targetPosition = playerTransform.position;
 
-        for (float i = 0; i < 1; i += Time.deltaTime / birdsEyeViewItem.coroutineDuration)
+        for (float i = 0; i < 1; i += Time.deltaTime / (birdsEyeViewItem.coroutineDuration * 0.65f))
         {
             targetPosition = playerTransform.position + Vector3.up * startOffset;
             transform.position = Vector3.Lerp(startPosition, targetPosition, downEasing.Evaluate(i));

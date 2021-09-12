@@ -6,8 +6,6 @@ public static class SaveSystem
 {
     public static void SaveGame(GameManager gameManager)
     {
-        Debug.Log("SaveGame");
-
         BinaryFormatter formatter = new BinaryFormatter();
         string path = GetPath("/game.dat");
         using (FileStream stream = new FileStream(path, FileMode.Create))
@@ -20,7 +18,6 @@ public static class SaveSystem
 
     public static GameData LoadGame()
     {
-        Debug.Log("LoadGame");
         string path = GetPath("/game.dat");
 
         if (File.Exists(path))
@@ -33,15 +30,13 @@ public static class SaveSystem
         }
         else
         {
-            Debug.LogWarning("Save file not found in " + path);
+            // Debug.LogWarning("Save file not found in " + path);
             return null;
         }
     }
     
     public static void SaveItems(UpgradeManager upgradeManager)
     {
-        Debug.Log("SaveItems");
-
         BinaryFormatter formatter = new BinaryFormatter();
         string path = GetPath("/items.dat");
         using (FileStream stream = new FileStream(path, FileMode.Create))
@@ -54,7 +49,6 @@ public static class SaveSystem
 
     public static ItemData LoadItems()
     {
-        Debug.Log("LoadItems");
         string path = GetPath("/items.dat");
 
         if (File.Exists(path))
@@ -67,15 +61,13 @@ public static class SaveSystem
         }
         else
         {
-            Debug.LogWarning("Save file not found in " + path);
+            // Debug.LogWarning("Save file not found in " + path);
             return null;
         }
     }
 
     public static void SaveSettings(SettingsMenu settingsMenu)
     {
-        Debug.Log("SaveSettings");
-
         BinaryFormatter formatter = new BinaryFormatter();
         string path = GetPath("/settings.dat");
         using (FileStream stream = new FileStream(path, FileMode.Create))
@@ -88,7 +80,6 @@ public static class SaveSystem
 
     public static SettingsData LoadSettings()
     {
-        Debug.Log("LoadSettings");
         string path = GetPath("/settings.dat");
 
         if (File.Exists(path))
@@ -101,15 +92,13 @@ public static class SaveSystem
         }
         else
         {
-            Debug.LogWarning("Save file not found in " + path);
+            // Debug.LogWarning("Save file not found in " + path);
             return null;
         }
     }
     
     public static void SaveLanguage(LocalizationSetter localization)
     {
-        Debug.Log("SaveLanguage");
-
         BinaryFormatter formatter = new BinaryFormatter();
         string path = GetPath("/language.dat");
         using (FileStream stream = new FileStream(path, FileMode.Create))
@@ -122,7 +111,6 @@ public static class SaveSystem
 
     public static LanguageData LoadLanguage()
     {
-        Debug.Log("LoadLanguage");
         string path = GetPath("/language.dat");
 
         if (File.Exists(path))
@@ -135,7 +123,7 @@ public static class SaveSystem
         }
         else
         {
-            Debug.LogWarning("Save file not found in " + path);
+            //Debug.LogWarning("Save file not found in " + path);
             return null;
         }
     }

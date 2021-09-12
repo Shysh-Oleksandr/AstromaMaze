@@ -8,6 +8,6 @@ public class Coin : MonoBehaviour
 
     private void Start()
     {
-        coinValue = Random.Range(1, 6);
+        coinValue = Random.Range(2, 6);
     }
 }

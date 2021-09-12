@@ -30,7 +30,6 @@ public class GameManager : GenericSingletonClass<GameManager>
     public void UpdateGameState(string newState)
     {
         Instance.State = SetEnum(newState);
-        Debug.Log(Instance.State);
 
         switch (Instance.State)
         {

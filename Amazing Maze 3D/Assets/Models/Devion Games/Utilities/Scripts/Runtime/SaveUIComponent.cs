@@ -20,9 +20,9 @@ namespace DevionGames
             }
 
             if (target is Slider) {
-                Slider slider = target as Slider;
+                /*Slider slider = target as Slider;
                 slider.value = LoadFloat(slider.value);
-                slider.onValueChanged.AddListener(SaveFloat);
+                slider.onValueChanged.AddListener(SaveFloat);*/
             }else if (target is Dropdown){
                 Dropdown dropdown = target as Dropdown;
                 dropdown.value = LoadInt(dropdown.value);

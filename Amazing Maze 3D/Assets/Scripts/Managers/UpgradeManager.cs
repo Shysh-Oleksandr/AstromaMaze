@@ -192,6 +192,11 @@ public class UpgradeManager : MonoBehaviour
 
         while (data == null)
         {
+            spray.upgradingLevel = 1;
+            boots.upgradingLevel = 1;
+            birdsEyeView.upgradingLevel = 1;
+            compass.upgradingLevel = 0;
+
             SaveSystem.SaveItems(this);
             data = SaveSystem.LoadItems();
         }

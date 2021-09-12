@@ -14,7 +14,6 @@ public class ColorManager : MonoBehaviour
 
     public void ShowHideColorPanel()
     {
-        print("Btn");
         colorPanel.SetActive(!colorPanel.activeInHierarchy);
     }
 }
