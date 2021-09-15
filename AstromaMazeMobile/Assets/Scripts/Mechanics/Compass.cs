@@ -45,12 +45,12 @@ public class Compass : MonoBehaviour
     private void Update()
     {
         CompassRotation();
-        RotateToFinish();
     }
 
-    private void RotateToFinish()
+    public void RotateToFinish()
     {
-        if (Input.GetKeyDown(KeyCode.R) && compassItem.canRotateToNorth && !spellCooldown.isCooldown)
+        print("Compass");
+        if (compassItem.canRotateToNorth && !spellCooldown.isCooldown)
         {
             AudioManager.Instance.Play("Whoosh");
             OnCompassRotateEvent?.Invoke();

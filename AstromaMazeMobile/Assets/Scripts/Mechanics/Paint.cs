@@ -8,6 +8,7 @@ public class Paint : MonoBehaviour
 
     [SerializeField] private float brushSize = 0.1f, maxDistance = 10f;
     [SerializeField] private float localRotationY;
+    [SerializeField] private bool isPaintMode = false;
 
     public delegate void OnSprayChanged();
 
@@ -39,7 +40,8 @@ public class Paint : MonoBehaviour
         if (Input.GetMouseButton(0) && 
             mainCam.gameObject.activeSelf && 
             GameManager.Instance.isGameRunning &&
-            objectPooler.sprayAmount > 0)
+            objectPooler.sprayAmount > 0 &&
+            isPaintMode)
         {
             PaintWall();
         }

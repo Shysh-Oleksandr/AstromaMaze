@@ -14,14 +14,14 @@ public class SwitchCamera : MonoBehaviour
 
     bool isMainCam;
 
-
     private void Start()
     {
         spellCooldown.cooldownTime = birdsEyeViewItem.birdsEyeViewCooldown;
     }
-    void Update()
+
+    public void PressBirdsEyeViewBtn()
     {
-        if (Input.GetKeyDown(KeyCode.E) && !spellCooldown.isCooldown && GameManager.Instance.isGameRunning && !birdsEyeCam.gameObject.activeSelf)
+        if (!spellCooldown.isCooldown && GameManager.Instance.isGameRunning && !birdsEyeCam.gameObject.activeSelf)
         {
             var tempColor = spellCooldown.skillImage.color;
             tempColor.a = 0.45f;

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class SpellCooldown : MonoBehaviour
 {
-    [SerializeField] private Image imageCooldown, imageEdge;
+    [SerializeField] private Image imageCooldown;
     public Image skillImage, imageFrame;
 
     public bool isCooldown = false;
