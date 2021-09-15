@@ -25,27 +25,16 @@ public class PauseMenu : MonoBehaviour
         UIManager.Instance.pauseMenu.SetActive(false);
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape) && !SceneChanger.Instance.isLoading && 
-            !isMenuShown && !Tweening.Instance.isPauseMenuTweening && !SceneChanger.Instance.blackFader.enabled)
-        {
-            if (isPaused)
-            {
-                ResumeGame();
-            }
-            else
-            {
-                PauseGame();
-            }
-        }
-    }
 
     public void PauseGame()
     {
-        GameManager.Instance.UpdateGameState("Pause");
-        UIManager.Instance.pauseMenu.gameObject.SetActive(true);
-        UIManager.Instance.paintingPointer.gameObject.SetActive(false);
+        if(!SceneChanger.Instance.isLoading &&
+            !isMenuShown && !Tweening.Instance.isPauseMenuTweening && !SceneChanger.Instance.blackFader.enabled)
+        {
+            GameManager.Instance.UpdateGameState("Pause");
+            UIManager.Instance.pauseMenu.gameObject.SetActive(true);
+        }
+        
     }
 
     public void ResumeGame()
@@ -53,7 +42,6 @@ public class PauseMenu : MonoBehaviour
         GameManager.Instance.UpdateGameState("Playing");
         Tweening.Instance.TweenArrayOut(UIManager.Instance.pauseMenuElements, 0.1f, 0.1f, false);
         Tweening.Instance.TweenScale(UIManager.Instance.pauseMenu, 0.25f, false, 0.4f);
-        UIManager.Instance.paintingPointer.gameObject.SetActive(mainCam.gameObject.activeSelf);
     }
 
     private void OnPausedChanged(GameState state)

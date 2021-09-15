@@ -33,18 +33,12 @@ public class ItemData
 [System.Serializable]
 public class SettingsData
 {
-    public int qualityLevel; // 0 - low, 1 - medium, 2 - high, 3 - ultra
     public float volume;
-    public bool fullScreen;
-    public int resolutionIndex;
     public int difficultyIndex;
 
     public SettingsData(SettingsMenu settingsMenu)
     {
-        qualityLevel = settingsMenu.quality;
         volume = settingsMenu.startVolume;
-        fullScreen = settingsMenu.isFullScreen;
-        resolutionIndex = settingsMenu.startResolutionIndex;
         difficultyIndex = settingsMenu.difficultyIndex;
     }
 }

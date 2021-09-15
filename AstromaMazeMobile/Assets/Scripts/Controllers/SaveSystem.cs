@@ -7,7 +7,7 @@ public static class SaveSystem
     public static void SaveGame(GameManager gameManager)
     {
         BinaryFormatter formatter = new BinaryFormatter();
-        string path = GetPath("/game.dat");
+        string path = GetPath("/gameMobile.dat");
         using (FileStream stream = new FileStream(path, FileMode.Create))
         {
             GameData data = new GameData(gameManager);
@@ -18,7 +18,7 @@ public static class SaveSystem
 
     public static GameData LoadGame()
     {
-        string path = GetPath("/game.dat");
+        string path = GetPath("/gameMobile.dat");
 
         if (File.Exists(path))
         {
@@ -38,7 +38,7 @@ public static class SaveSystem
     public static void SaveItems(UpgradeManager upgradeManager)
     {
         BinaryFormatter formatter = new BinaryFormatter();
-        string path = GetPath("/items.dat");
+        string path = GetPath("/itemsMobile.dat");
         using (FileStream stream = new FileStream(path, FileMode.Create))
         {
             ItemData data = new ItemData(upgradeManager);
@@ -49,7 +49,7 @@ public static class SaveSystem
 
     public static ItemData LoadItems()
     {
-        string path = GetPath("/items.dat");
+        string path = GetPath("/itemsMobile.dat");
 
         if (File.Exists(path))
         {
@@ -69,7 +69,7 @@ public static class SaveSystem
     public static void SaveSettings(SettingsMenu settingsMenu)
     {
         BinaryFormatter formatter = new BinaryFormatter();
-        string path = GetPath("/settings.dat");
+        string path = GetPath("/settingsMobile.dat");
         using (FileStream stream = new FileStream(path, FileMode.Create))
         {
             SettingsData data = new SettingsData(settingsMenu);
@@ -80,7 +80,7 @@ public static class SaveSystem
 
     public static SettingsData LoadSettings()
     {
-        string path = GetPath("/settings.dat");
+        string path = GetPath("/settingsMobile.dat");
 
         if (File.Exists(path))
         {
@@ -100,7 +100,7 @@ public static class SaveSystem
     public static void SaveLanguage(LocalizationSetter localization)
     {
         BinaryFormatter formatter = new BinaryFormatter();
-        string path = GetPath("/language.dat");
+        string path = GetPath("/languageMobile.dat");
         using (FileStream stream = new FileStream(path, FileMode.Create))
         {
             LanguageData data = new LanguageData(localization);
@@ -111,7 +111,7 @@ public static class SaveSystem
 
     public static LanguageData LoadLanguage()
     {
-        string path = GetPath("/language.dat");
+        string path = GetPath("/languageMobile.dat");
 
         if (File.Exists(path))
         {

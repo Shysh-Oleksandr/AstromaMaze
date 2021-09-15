@@ -1,10 +1,10 @@
 Using pre-set license
-Built from '2020.3/staging' branch; Version is '2020.3.11f1 (99c7afb366b3) revision 10078127'; Using compiler version '192528614'; Build Type 'Release'
+Built from '2020.3/staging' branch; Version is '2020.3.18f1 (a7d1c678663c) revision 10998214'; Using compiler version '192528614'; Build Type 'Release'
 OS: 'Windows 10 Home; OS build 19042.1165; Version 2009; 64bit' Language: 'ru' Physical Memory: 8034 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
- COMMAND LINE ARGUMENTS:
-C:\Program Files\Unity\Hub\Editor\2020.3.11f1\Editor\Unity.exe
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2020.3.18f1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
@@ -15,14 +15,14 @@ E:/IT/Games/UnityGames/AstromaMaze/AstromaMazeMobile
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-64269
+61115
 Successfully changed project path to: E:/IT/Games/UnityGames/AstromaMaze/AstromaMazeMobile
 E:/IT/Games/UnityGames/AstromaMaze/AstromaMazeMobile
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 121.48 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 124.98 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Initialize engine version: 2020.3.11f1 (99c7afb366b3)
-[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.11f1/Editor/Data/Resources/UnitySubsystems
+Initialize engine version: 2020.3.18f1 (a7d1c678663c)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.18f1/Editor/Data/Resources/UnitySubsystems
 [Subsystems] Discovering subsystems at path E:/IT/Games/UnityGames/AstromaMaze/AstromaMazeMobile/Assets
 GfxDevice: creating device client; threaded=0
 Direct3D:
@@ -31,133 +31,9 @@ Direct3D:
     Vendor:   
     VRAM:     2996 MB
     Driver:   27.21.14.6677
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Initialize mono
-Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.11f1/Editor/Data/Managed'
-Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.11f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
-Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.11f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56072
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.18f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.18f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.18f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56300
 Begin MonoManager ReloadAssembly
-Registering precompiled unity dll's ...
-Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.11f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.002946 seconds.
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 123.50 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.923 seconds
-Platform modules already initialized, skipping
-Registering precompiled user dll's ...
-Registered in 0.008599 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 148.34 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  2.800 seconds
-Platform modules already initialized, skipping
-========================================================================
-Worker process is ready to serve import requests
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
-Refreshing native plugins compatible for Editor in 1.63 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3909 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 165.3 MB.
-System memory in use after: 165.5 MB.
-
-Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 4344.
-Total: 7.274300 ms (FindLiveObjects: 0.648200 ms CreateObjectMapping: 0.357200 ms MarkObjects: 6.106000 ms  DeleteObjects: 0.160600 ms)
-
-========================================================================
-Received Import Request.
-  path: Assets/Scripts/Managers
-  artifactKey: Guid(7ffdea5038600a04e82f0353bc17c2ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Managers using Guid(7ffdea5038600a04e82f0353bc17c2ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6dc3c4b6b31ba991ff455aeaab603130') in 0.024264 seconds
-  Import took 0.039533 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000442 seconds.
-  path: Assets/Scripts/UI/Test.cs
-  artifactKey: Guid(ff5dd31663a9b6844a9dd695afb41dc8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/UI/Test.cs using Guid(ff5dd31663a9b6844a9dd695afb41dc8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '93fece9389642dc3f38f3616f13b2e55') in 0.231279 seconds
-  Import took 0.248931 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.007430 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.93 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  2.185 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.98 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3719 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 153.5 MB.
-System memory in use after: 153.8 MB.
-
-Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 4347.
-Total: 8.976600 ms (FindLiveObjects: 1.368300 ms CreateObjectMapping: 0.505200 ms MarkObjects: 7.061100 ms  DeleteObjects: 0.038100 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 84.026214 seconds.
-  path: Assets/Models/Graphics/TextMesh Pro/Resources/Style Sheets/Default Style Sheet.asset
-  artifactKey: Guid(f952c082cb03451daed3ee968ac6c63e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Graphics/TextMesh Pro/Resources/Style Sheets/Default Style Sheet.asset using Guid(f952c082cb03451daed3ee968ac6c63e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa38b3e3673612ae67028172dc037fc3') in 0.958729 seconds
-  Import took 0.970234 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000542 seconds.
-  path: Assets/Textures/Stylize Wood Texture/Materials/Main_Stylize WoodRefl.mat
-  artifactKey: Guid(d6b323ca5f5661248b2267ced3bb6d03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Textures/Stylize Wood Texture/Materials/Main_Stylize WoodRefl.mat using Guid(d6b323ca5f5661248b2267ced3bb6d03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '95b153a31df5f59d688b97fb3e080f99') in 1.245714 seconds
-  Import took 1.258640 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000449 seconds.
-  path: Assets/Textures/Stylize Wood Texture/Materials/Main_Stylize Wood.mat
-  artifactKey: Guid(73974907201d9ee448c83e7cc8b43f11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Textures/Stylize Wood Texture/Materials/Main_Stylize Wood.mat using Guid(73974907201d9ee448c83e7cc8b43f11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4f0226fda2bd1fe8eb4f4853ebcc6dbb') in 0.608687 seconds
-  Import took 0.619795 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000456 seconds.
-  path: Assets/Textures/Stylize Wood Texture
-  artifactKey: Guid(c94a42d173c4b174580b6e4027eb09c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Textures/Stylize Wood Texture using Guid(c94a42d173c4b174580b6e4027eb09c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '92eed414fa7de1ed6af922125bd6be4f') in 0.010866 seconds
-  Import took 0.030387 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.696672 seconds.
-  path: Assets/Textures/Stylize Wood Texture/Textures/vol_2_3_Ambient_Occlusion.png
-  artifactKey: Guid(40a62786649ecba4280166147e79e5f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Textures/Stylize Wood Texture/Textures/vol_2_3_Ambient_Occlusion.png using Guid(40a62786649ecba4280166147e79e5f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2ca93735a172a59345ebfe9a85550ee1') in 0.030565 seconds
-  Import took 0.040481 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.088257 seconds.
-  path: Assets/Textures/Stylize Wood Texture/Textures/vol_2_3_Ambient_Occlusion.png
-  artifactKey: Guid(40a62786649ecba4280166147e79e5f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Textures/Stylize Wood Texture/Textures/vol_2_3_Ambient_Occlusion.png using Guid(40a62786649ecba4280166147e79e5f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2ca93735a172a59345ebfe9a85550ee1') in 0.018902 seconds
-  Import took 0.031701 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.103810 seconds.
-  path: Assets/Textures/Stylize Wood Texture/Textures/vol_2_3_Height.png
-  artifactKey: Guid(ff699ec2e2baca441a519cd901ae2f86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Textures/Stylize Wood Texture/Textures/vol_2_3_Height.png using Guid(ff699ec2e2baca441a519cd901ae2f86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f1cec287ae62c18d3eaec65bfe7a7644') in 0.052124 seconds
-  Import took 0.063201 seconds .
-

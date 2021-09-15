@@ -39,15 +39,11 @@ public class SwitchCamera : MonoBehaviour
         {
             mainCam.gameObject.SetActive(false);
             birdsEyeCam.gameObject.SetActive(true);
-
-            UIManager.Instance.paintingPointer.gameObject.SetActive(false);
         }
         else
         {
             mainCam.gameObject.SetActive(true);
             birdsEyeCam.gameObject.SetActive(false);
-
-            UIManager.Instance.paintingPointer.gameObject.SetActive(true);
         }
 
     }

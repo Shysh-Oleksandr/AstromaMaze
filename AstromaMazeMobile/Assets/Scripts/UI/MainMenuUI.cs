@@ -112,19 +112,15 @@ public class MainMenuUI : MonoBehaviour
     {
         settingsMenu.LoadSettingsData();
         volumeSlider.value = settingsMenu.startVolume;
-        settingsMenu.fullScreenToggle.isOn = settingsMenu.isFullScreen;
-        settingsMenu.qualitySlider.value = settingsMenu.quality;
         settingsMenu.difficultyDropdown.value = settingsMenu.difficultyIndex;
-        settingsMenu.SetFullscreen(settingsMenu.isFullScreen);
-        settingsMenu.SetQuality(settingsMenu.quality);
         settingsMenu.SetDifficulties(settingsMenu.difficultyIndex);
         settingsMenu.SetVolume(settingsMenu.startVolume);
 
         upgradeManager.LoadItemsData();
         upgradeManager.UpdateItemStats();
 
-        optionsMenuStartPos = new Vector3(Screen.width, menuY, menuPosZ);
-        shopMenuStartPos = new Vector3(-Screen.width, menuY, menuPosZ);
+        optionsMenuStartPos = new Vector3(Screen.width, 0, 0);
+        shopMenuStartPos = new Vector3(-Screen.width, 0, 0);
 
         totalCoinsText.text = GameManager.Instance.totalCoins.ToString();
 
@@ -170,7 +166,7 @@ public class MainMenuUI : MonoBehaviour
             backButtonOption.interactable = false;
 
             // Setting interactable to false for all options tabs.
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < 3; i++)
             {
                 tabsContents[i].tab.GetComponent<Button>().interactable = false;
             }
@@ -180,7 +176,7 @@ public class MainMenuUI : MonoBehaviour
         {
             backButtonShop.interactable = false;
             // Setting interactable to false for all shops tabs.
-            for (int i = 4; i < 8; i++)
+            for (int i = 3; i < 7; i++)
             {
                 tabsContents[i].tab.GetComponent<Button>().interactable = false;
             }
@@ -202,7 +198,7 @@ public class MainMenuUI : MonoBehaviour
         optionsMenu.gameObject.SetActive(true);
         backButtonOption.interactable = true;
         // Setting interactable to true for all options tabs.
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < 3; i++)
         {
             tabsContents[i].tab.GetComponent<Button>().interactable = true;
         }
@@ -228,7 +224,7 @@ public class MainMenuUI : MonoBehaviour
         }
 
         optionsMenu.localPosition = optionsMenuStartPos;
-        optionsMenu.LeanMoveLocalX(screenCenterX, tweenDuration).setEaseOutExpo().setOnComplete(() => CallActiveTabEvent(activeTab));
+        optionsMenu.LeanMoveLocalX(0, tweenDuration).setEaseOutExpo().setOnComplete(() => CallActiveTabEvent(activeTab));
     }
 
     public void EnableShopMenu()
@@ -239,7 +235,7 @@ public class MainMenuUI : MonoBehaviour
         shopMenu.gameObject.SetActive(true);
         backButtonShop.interactable = true;
         // Setting interactable to true for all shops tabs.
-        for (int i = 4; i < 8; i++)
+        for (int i = 3; i < 7; i++)
         {
             tabsContents[i].tab.GetComponent<Button>().interactable = true;
         }
@@ -265,7 +261,7 @@ public class MainMenuUI : MonoBehaviour
         }
 
         shopMenu.localPosition = shopMenuStartPos;
-        shopMenu.LeanMoveLocalX(screenCenterX, tweenDuration).setEaseOutExpo().setOnComplete(() => CallActiveTabEvent(activeTab));
+        shopMenu.LeanMoveLocalX(0, tweenDuration).setEaseOutExpo().setOnComplete(() => CallActiveTabEvent(activeTab));
     }
 
     private void DisableOptionsMenu()

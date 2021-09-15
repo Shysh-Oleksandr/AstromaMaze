@@ -1,4 +1,5 @@
 using UnityEngine;
+using EasyJoystick;
 
 public class PlayerController : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class PlayerController : MonoBehaviour
     public CompassItem compassItem;
     public LevelManager levelManager;
     public Timer timer;
+    public Joystick joystick;
 
     public bool isReplacing; // Whether the player position is replaced to checkpoint.
 
@@ -74,8 +76,19 @@ public class PlayerController : MonoBehaviour
         #endregion
 
         #region Moving
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
+        float x = joystick.Horizontal();
+        float z = joystick.Vertical();
+
+        if(x >= -0.2f && x <= 0.2f)
+        {
+            x = 0;
+        }
+
+        if(z >= -0.2f && z <= 0.2f)
+        {
+            z = 0;
+        }
+
 
         Vector3 move = transform.right * x + transform.forward * z;
 
