@@ -1,29 +1,26 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Camera))]
 public class MouseLook : MonoBehaviour
 {
     [SerializeField] [Range(10f, 300f)] private float mouseSensitivity = 100f;
+    private Touch initTouch = new Touch();
 
-    float xRotation = 0f;
+    float xRotation = 0f, rotX, rotY;
+    private Vector3 origRot;
+
+    public float rotSpeed = 0.5f, direction = -1; // direction?
 
     public Transform playerBody;
 
-    private void Awake()
-    {
-        GameManager.OnGameStateChanged += ChangeCursor;
-    }
-
-    private void OnDestroy()
-    {
-        GameManager.OnGameStateChanged -= ChangeCursor;
-    }
-
     private void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        origRot = transform.eulerAngles;
+        rotX = origRot.x;
+        rotY = origRot.y;
     }
 
-    void Update()
+    /*void Update()
     {
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
@@ -33,19 +30,32 @@ public class MouseLook : MonoBehaviour
 
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         playerBody.Rotate(Vector3.up * mouseX);
-    }
+    }*/
 
-    private void ChangeCursor(GameState state)
+    private void Update()
     {
-        if (state == GameState.Playing || state == GameState.LevelSelection)
+        foreach (var touch in Input.touches)
         {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-        }
-        else
-        {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
+            if (touch.phase == TouchPhase.Began)
+            {
+                initTouch = touch;
+            }
+            else if (touch.phase == TouchPhase.Moved)
+            {
+                float deltaX = initTouch.position.x - touch.position.x;
+                float deltaY = initTouch.position.y - touch.position.y;
+
+                rotX -= deltaY * Time.deltaTime * rotSpeed * direction;
+                rotY -= deltaX * Time.deltaTime * rotSpeed * direction;
+                rotX = Mathf.Clamp(rotX, -90f, 65f);
+
+                transform.eulerAngles = new Vector3(rotX, rotY, 0f);
+                playerBody.Rotate(Vector3.up * rotX);
+            }
+            else if (touch.phase == TouchPhase.Ended)
+            {
+                initTouch = new Touch();
+            }
         }
     }
 }
