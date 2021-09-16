@@ -49,7 +49,6 @@ public class Compass : MonoBehaviour
 
     public void RotateToFinish()
     {
-        print("Compass");
         if (compassItem.canRotateToNorth && !spellCooldown.isCooldown)
         {
             AudioManager.Instance.Play("Whoosh");

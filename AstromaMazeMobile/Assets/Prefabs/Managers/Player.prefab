@@ -93,6 +93,7 @@ MonoBehaviour:
   compassItem: {fileID: 11400000, guid: 11a2659a9dd00d1489294f068d1d063f, type: 2}
   levelManager: {fileID: 0}
   timer: {fileID: 0}
+  joystick: {fileID: 0}
   isReplacing: 0
   lastCheckpoint: {fileID: 0}
   lastCheckpointPosition: {x: 0, y: 0, z: 0}
@@ -132,9 +133,14 @@ MonoBehaviour:
     m_Bits: 64
   playerTransform: {fileID: 7948246380019376530}
   sprayItem: {fileID: 11400000, guid: e9855cf2e7a9d7147bc14e9ecf45170a, type: 2}
+  sprayModeIcon: {fileID: 0}
+  sprayModeImage: {fileID: 0}
+  sprayAmountImage: {fileID: 0}
+  sprayIconFrame: {fileID: 0}
   brushSize: 0.15
   maxDistance: 10
   localRotationY: 0
+  isPaintMode: 0
 --- !u!1 &7948246380148950790
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,8 +238,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9343365c283fec643a13bab4ae95d979, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 200
-  playerBody: {fileID: 7948246380019376530}
+  playerTransform: {fileID: 7948246380019376530}
+  cameraSensitivity: 7
+  paint: {fileID: 7772469754280686442}
 --- !u!114 &7948246380148950785
 MonoBehaviour:
   m_ObjectHideFlags: 0

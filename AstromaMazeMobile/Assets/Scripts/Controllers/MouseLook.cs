@@ -3,59 +3,104 @@ using UnityEngine;
 [RequireComponent(typeof(Camera))]
 public class MouseLook : MonoBehaviour
 {
-    [SerializeField] [Range(10f, 300f)] private float mouseSensitivity = 100f;
-    private Touch initTouch = new Touch();
+    // References
+    [SerializeField] private Transform playerTransform;
+    // Player settings
+    [SerializeField] private float cameraSensitivity;
+    [SerializeField] private Paint paint;
 
-    float xRotation = 0f, rotX, rotY;
-    private Vector3 origRot;
+    // Touch detection
+    private int rightFingerId;
+    private float touchableScreenWidth;
 
-    public float rotSpeed = 0.5f, direction = -1; // direction?
+    // Camera control
+    private Vector2 lookInput;
+    private float cameraPitch;
 
-    public Transform playerBody;
 
     private void Start()
     {
-        origRot = transform.eulerAngles;
-        rotX = origRot.x;
-        rotY = origRot.y;
+        // id = -1 means the finger is not being tracked
+        rightFingerId = -1;
+
+        // only calculate once
+        touchableScreenWidth = Screen.width / 4;
     }
 
-    /*void Update()
-    {
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
-
-        xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -90f, 65f);
-
-        transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-        playerBody.Rotate(Vector3.up * mouseX);
-    }*/
-
+    // Update is called once per frame
     private void Update()
     {
-        foreach (var touch in Input.touches)
+        if (!paint.isPaintMode)
         {
-            if (touch.phase == TouchPhase.Began)
-            {
-                initTouch = touch;
-            }
-            else if (touch.phase == TouchPhase.Moved)
-            {
-                float deltaX = initTouch.position.x - touch.position.x;
-                float deltaY = initTouch.position.y - touch.position.y;
+            // Handles input
+            GetTouchInput();
 
-                rotX -= deltaY * Time.deltaTime * rotSpeed * direction;
-                rotY -= deltaX * Time.deltaTime * rotSpeed * direction;
-                rotX = Mathf.Clamp(rotX, -90f, 65f);
 
-                transform.eulerAngles = new Vector3(rotX, rotY, 0f);
-                playerBody.Rotate(Vector3.up * rotX);
-            }
-            else if (touch.phase == TouchPhase.Ended)
+            if (rightFingerId != -1)
             {
-                initTouch = new Touch();
+                // look around if the right finger is being tracked
+                LookAround();
             }
         }
+    }
+
+    private void GetTouchInput()
+    {
+        // Iterate through all the detected touches
+        for (int i = 0; i < Input.touchCount; i++)
+        {
+
+            Touch t = Input.GetTouch(i);
+
+            // Check each touch's phase
+            switch (t.phase)
+            {
+                case TouchPhase.Began:
+
+                    if (t.position.x > touchableScreenWidth && rightFingerId == -1)
+                    {
+                        // Start tracking the rightfinger if it was not previously being tracked
+                        rightFingerId = t.fingerId;
+                    }
+
+                    break;
+                case TouchPhase.Ended:
+                case TouchPhase.Canceled:
+
+                    if (t.fingerId == rightFingerId)
+                    {
+                        // Stop tracking the right finger
+                        rightFingerId = -1;
+                    }
+
+                    break;
+                case TouchPhase.Moved:
+
+                    // Get input for looking around
+                    if (t.fingerId == rightFingerId)
+                    {
+                        lookInput = t.deltaPosition * cameraSensitivity * Time.deltaTime;
+                    }
+
+                    break;
+                case TouchPhase.Stationary:
+                    // Set the look input to zero if the finger is still
+                    if (t.fingerId == rightFingerId)
+                    {
+                        lookInput = Vector2.zero;
+                    }
+                    break;
+            }
+        }
+    }
+
+    private void LookAround()
+    {
+        // vertical (pitch) rotation
+        cameraPitch = Mathf.Clamp(cameraPitch - lookInput.y, -90f, 65f);
+        transform.localRotation = Quaternion.Euler(cameraPitch, 0, 0);
+
+        // horizontal (yaw) rotation
+        playerTransform.Rotate(playerTransform.up, lookInput.x);
     }
 }

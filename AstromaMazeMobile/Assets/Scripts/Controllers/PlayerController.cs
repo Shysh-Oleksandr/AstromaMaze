@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (!isReplacing)
+        if (!isReplacing && !SceneChanger.Instance.isLoading)
         {
             PlayerMovement();
         }
