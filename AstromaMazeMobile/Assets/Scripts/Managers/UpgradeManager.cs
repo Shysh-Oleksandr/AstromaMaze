@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class UpgradeManager : MonoBehaviour
 {
-    public SprayItem spray;
+    public SlowTimeItem slowTime;
     public BootItem boots;
     public BirdsEyeViewItem birdsEyeView;
     public CompassItem compass;
@@ -14,7 +14,7 @@ public class UpgradeManager : MonoBehaviour
     public delegate void OnCoinChanged();
 
     public event OnCoinChanged OnCoinChangedEvent;
-
+     
     void Start()
     {
         LoadItemsData();
@@ -53,9 +53,10 @@ public class UpgradeManager : MonoBehaviour
 
     public void UpdateItemStats()
     {
-        spray.sprayAmount = MainMenuUI.Instance.upgradeElements[0].itemStats[0].stat[spray.upgradingLevel - 1];
-        spray.baseLifetime = MainMenuUI.Instance.upgradeElements[0].itemStats[1].stat[spray.upgradingLevel - 1];
-        spray.maxDistance = MainMenuUI.Instance.upgradeElements[0].itemStats[2].stat[spray.upgradingLevel - 1];
+        slowTime.duration = (int)MainMenuUI.Instance.upgradeElements[0].itemStats[0].stat[slowTime.upgradingLevel - 1]; // Careful in inspector!!!!!!!!
+        slowTime.slowCoefficient = MainMenuUI.Instance.upgradeElements[0].itemStats[1].stat[slowTime.upgradingLevel - 1];
+        slowTime.cooldown = (int)MainMenuUI.Instance.upgradeElements[0].itemStats[2].stat[slowTime.upgradingLevel - 1];
+        slowTime.speedUpCoefficient = MainMenuUI.Instance.upgradeElements[0].itemStats[3].stat[slowTime.upgradingLevel - 1];
 
         boots.speed = MainMenuUI.Instance.upgradeElements[1].itemStats[0].stat[boots.upgradingLevel - 1];
         boots.baseLifetime = MainMenuUI.Instance.upgradeElements[1].itemStats[1].stat[boots.upgradingLevel - 1];
@@ -112,7 +113,7 @@ public class UpgradeManager : MonoBehaviour
             else
             {
                 string pattern;
-                pattern = @"\/?\w+";
+                pattern = @"(\/?)([0-9]*[.])?[0-9]+";
 
                 for (int stat = 0; stat < MainMenuUI.Instance.upgradeElements[i].statsTexts.Length; stat++)
                 {
@@ -192,7 +193,7 @@ public class UpgradeManager : MonoBehaviour
 
         while (data == null)
         {
-            spray.upgradingLevel = 1;
+            slowTime.upgradingLevel = 1;
             boots.upgradingLevel = 1;
             birdsEyeView.upgradingLevel = 1;
             compass.upgradingLevel = 0;
@@ -201,7 +202,7 @@ public class UpgradeManager : MonoBehaviour
             data = SaveSystem.LoadItems();
         }
 
-        spray.upgradingLevel = data.sprayItemLevel;
+        slowTime.upgradingLevel = data.slowTimeLevel;
         boots.upgradingLevel = data.bootsItemLevel;
         birdsEyeView.upgradingLevel = data.birdsItemLevel;
         compass.upgradingLevel = data.compassItemLevel;

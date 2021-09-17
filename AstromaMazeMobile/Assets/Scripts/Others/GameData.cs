@@ -16,14 +16,14 @@ public class GameData
 [System.Serializable]
 public class ItemData
 {
-    public int sprayItemLevel;
+    public int slowTimeLevel;
     public int bootsItemLevel;
     public int birdsItemLevel;
     public int compassItemLevel;
 
     public ItemData(UpgradeManager upgradeManager)
     {
-        sprayItemLevel = upgradeManager.spray.upgradingLevel;
+        slowTimeLevel = upgradeManager.slowTime.upgradingLevel;
         bootsItemLevel = upgradeManager.boots.upgradingLevel;
         birdsItemLevel = upgradeManager.birdsEyeView.upgradingLevel;
         compassItemLevel = upgradeManager.compass.upgradingLevel;

@@ -25,7 +25,8 @@ public class UIManager : MonoBehaviour
 
     public PlayerController playerController;
     public Checkpoint checkpoint;
-    public Paint paint;
+    public SlowTimeItem slowTimeItem;
+    public SlowTime slowTime;
 
     public int levelCoins = 0, totalCoins;
 
@@ -59,7 +60,6 @@ public class UIManager : MonoBehaviour
         totalCoins = GameManager.Instance.totalCoins;
 
         playerController.OnCoinTakeEvent += OnCoinChanged;
-        paint.OnSprayChangedEvent += OnSprayChanged;
 
         // For boss level---------------------------
         if (heartIcons.Length > 0)
@@ -83,7 +83,6 @@ public class UIManager : MonoBehaviour
         }
         // ----------------------
         coinsText.text = "0";
-        sprayText.text = ObjectPooler.instance.sprayAmount.ToString();
 
         Tweening.Instance.TweenVertically(levelText.gameObject, 0.6f, 0, true, true);
 
@@ -93,7 +92,6 @@ public class UIManager : MonoBehaviour
     private void OnDestroy()
     {
         playerController.OnCoinTakeEvent -= OnCoinChanged;
-        paint.OnSprayChangedEvent -= OnSprayChanged;
     }
 
     public void OnHeartsChanged(int lives)
@@ -109,11 +107,6 @@ public class UIManager : MonoBehaviour
                 heartIcons[i].enabled = false;
             }
         }
-    }
-
-    private void OnSprayChanged()
-    {
-        sprayText.text = ObjectPooler.instance.sprayAmount.ToString();
     }
 
     public void OnCoinChanged(int coinValue)
@@ -135,11 +128,11 @@ public class UIManager : MonoBehaviour
         AudioManager.Instance.Play("Heartbeat");
         timerText.fontStyle = FontStyles.Bold;
         timerText.color = color;
-        timerText.gameObject.LeanScale(new Vector2(1.4f, 1.4f), 0.5f)
+        timerText.gameObject.LeanScale(new Vector2(1.4f, 1.4f), slowTime.isSlowTimeMode ? 0.5f * slowTimeItem.slowCoefficient : 0.5f )
             .setEaseInOutBack()
             .setOnComplete(() =>
             {
-                timerText.gameObject.LeanScale(new Vector2(1f, 1f), 0.5f)
+                timerText.gameObject.LeanScale(new Vector2(1f, 1f), slowTime.isSlowTimeMode ? 0.5f * slowTimeItem.slowCoefficient : 0.5f)
                     .setEaseInOutBack()
                     .setOnComplete(() =>
                     {

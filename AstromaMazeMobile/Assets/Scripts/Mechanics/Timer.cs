@@ -8,13 +8,14 @@ public class Timer : MonoBehaviour
     public bool isNextAddingColor, isNextCriticalColor;
     [SerializeField] private int[] submazeTimers; // 0 means a second subMaze, 1 - a third one... 
     [SerializeField] private Compass compass;
+    [SerializeField] private SlowTime slowTime;
     private bool takingAway = false;
     private int[] criticalTimeArray = new int[] { 30, 20, 15, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0};
 
     private float startTime;
     public GameObject player;
     private PlayerController playerController;
-    private Color32 criticalTimeColor, addingTimeColor;
+    private Color32 criticalTimeColor, addingTimeColor, slowTimeColor;
 
     [SerializeField] private float timeLeft;
     public float TimeLeft { get => timeLeft; set => timeLeft = value; }
@@ -28,6 +29,7 @@ public class Timer : MonoBehaviour
 
         criticalTimeColor = new Color32(178, 24, 24, 255);
         addingTimeColor = new Color32(46, 178, 24, 255);
+        slowTimeColor = new Color32(90, 140, 241, 255);
         TimeLeft = (int)TimeLeft * GameManager.Instance.difficultyCoefficient;
         
         for (int i = 0; i < submazeTimers.Length; i++)
@@ -102,6 +104,15 @@ public class Timer : MonoBehaviour
             UIManager.Instance.TweenTimerText(criticalTimeColor);
             isNextCriticalColor = false;
         }
+
+        if (slowTime.isSlowTimeMode)
+        {
+            UIManager.Instance.TweenTimerText(slowTimeColor);
+            yield return new WaitForSeconds(slowTime.slowCoefficient - 1);
+
+        }
+
+
         yield return new WaitForSeconds(1);
         takingAway = false;
     }

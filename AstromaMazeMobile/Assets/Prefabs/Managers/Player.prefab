@@ -26,7 +26,6 @@ GameObject:
   - component: {fileID: 7948246380019376531}
   - component: {fileID: 7948246380019376529}
   - component: {fileID: 7948246380019376528}
-  - component: {fileID: 7772469754280686442}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -116,31 +115,6 @@ MonoBehaviour:
   player: {fileID: 7948246380019376532}
   leftFootLocation: {fileID: 7948246381634718918}
   rightFootLocation: {fileID: 7948246381314288406}
---- !u!114 &7772469754280686442
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7948246380019376532}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2907fd2c9c3db934989efc2bcb9108ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  paintableLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  playerTransform: {fileID: 7948246380019376530}
-  sprayItem: {fileID: 11400000, guid: e9855cf2e7a9d7147bc14e9ecf45170a, type: 2}
-  sprayModeIcon: {fileID: 0}
-  sprayModeImage: {fileID: 0}
-  sprayAmountImage: {fileID: 0}
-  sprayIconFrame: {fileID: 0}
-  brushSize: 0.15
-  maxDistance: 10
-  localRotationY: 0
-  isPaintMode: 0
 --- !u!1 &7948246380148950790
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,7 +214,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 7948246380019376530}
   cameraSensitivity: 7
-  paint: {fileID: 7772469754280686442}
 --- !u!114 &7948246380148950785
 MonoBehaviour:
   m_ObjectHideFlags: 0

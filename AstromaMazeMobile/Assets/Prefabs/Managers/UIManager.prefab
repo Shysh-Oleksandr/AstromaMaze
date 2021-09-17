@@ -48,7 +48,8 @@ MonoBehaviour:
   timerText: {fileID: 0}
   coinsText: {fileID: 0}
   levelText: {fileID: 0}
-  paintingPointer: {fileID: 0}
+  surpiseText: {fileID: 0}
+  heartIcons: []
   victoryMenu: {fileID: 0}
   replayMenu: {fileID: 0}
   pauseMenu: {fileID: 0}
@@ -72,8 +73,14 @@ MonoBehaviour:
   - {fileID: 0}
   victoryMenuBg: {fileID: 0}
   loseMenuBg: {fileID: 0}
+  checkpointArrows: []
   playerController: {fileID: 0}
-  paint: {fileID: 0}
+  checkpoint: {fileID: 0}
+  slowTimeItem: {fileID: 11400000, guid: d1af4f7ef5306f74085caf4fd4d63af4, type: 2}
+  slowTime: {fileID: 0}
+  levelCoins: 0
+  totalCoins: 0
+  passedCheckpointColor: {r: 0.09803922, g: 1, b: 0, a: 0.40392157}
 --- !u!114 &502897644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89,5 +96,6 @@ MonoBehaviour:
   tweenDuration: 0
   tweenDelay: 0
   tweenOnStart: 0
-  pauseMenuElementsStartPos: []
-  menuElementsStartPos: []
+  isTweening: 0
+  isVerticalTweening: 0
+  isPauseMenuTweening: 0

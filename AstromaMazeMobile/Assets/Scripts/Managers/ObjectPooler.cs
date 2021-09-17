@@ -15,9 +15,6 @@ public class ObjectPooler : MonoBehaviour
 
     public List<Pool> pools;
     public Dictionary<string, List<GameObject>> poolDictionary;
-    public SprayItem sprayItem;
-
-    public int sprayAmount;
 
     #region Singleton
     public static ObjectPooler instance;
@@ -42,12 +39,6 @@ public class ObjectPooler : MonoBehaviour
                 obj.SetActive(false);
                 pooledObjects.Add(obj);
                 obj.transform.SetParent(this.transform);
-
-                if (pool.tag == "Paint")
-                {
-                    pool.size = sprayItem.sprayAmount;
-                    sprayAmount = pool.size;
-                }
             }
 
             poolDictionary.Add(pool.tag, pooledObjects);

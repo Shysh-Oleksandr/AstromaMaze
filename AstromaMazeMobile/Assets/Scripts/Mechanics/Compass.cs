@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class Compass : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class Compass : MonoBehaviour
     public TextMeshProUGUI distanceText;
     public PlayerController player;
     public SpellCooldown spellCooldown;
+    public Image compassFrame;
     [SerializeField] float rotationSpeed, distanceToExit;
     [Header("For Boss level")]
     public Transform[] exitTransforms;
@@ -26,8 +28,9 @@ public class Compass : MonoBehaviour
 
     private void Start()
     {
-        compassPanel.SetActive(compassItem.isBought);
+        compassPanel.SetActive(true);
         compassCooldownUI.SetActive(compassItem.canRotateToNorth);
+        compassFrame.enabled = compassItem.canRotateToNorth;
         distanceText.gameObject.SetActive(compassItem.canShowDistance);
 
         spellCooldown.cooldownTime = compassItem.compassCooldown;

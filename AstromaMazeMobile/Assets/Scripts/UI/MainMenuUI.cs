@@ -28,7 +28,7 @@ public struct CompassStats
 public class ItemStats
 {
     public string statName;
-    public int[] stat;
+    public float[] stat;
 }
 
 [Serializable]

@@ -7,7 +7,6 @@ public class MouseLook : MonoBehaviour
     [SerializeField] private Transform playerTransform;
     // Player settings
     [SerializeField] private float cameraSensitivity;
-    [SerializeField] private Paint paint;
 
     // Touch detection
     private int rightFingerId;
@@ -30,17 +29,14 @@ public class MouseLook : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (!paint.isPaintMode)
+        // Handles input
+        GetTouchInput();
+
+
+        if (rightFingerId != -1)
         {
-            // Handles input
-            GetTouchInput();
-
-
-            if (rightFingerId != -1)
-            {
-                // look around if the right finger is being tracked
-                LookAround();
-            }
+            // look around if the right finger is being tracked
+            LookAround();
         }
     }
 

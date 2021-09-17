@@ -6,7 +6,6 @@ public class FadeOut : MonoBehaviour, IPooledObject
     private float startDelay = 10f, fadeRate = 0.05f, timeForOneFade = 0.5f;
     private float startAlpha;
     public Material material;
-    public SprayItem sprayItem;
     public BootItem bootItem;
 
     private Material mat;
@@ -37,14 +36,7 @@ public class FadeOut : MonoBehaviour, IPooledObject
     private void OnEnable()
     {
         mat = Instantiate(material);
-        if (gameObject.CompareTag("Brush"))
-        {
-            startDelay = sprayItem.baseLifetime;
-            fadeRate = sprayItem.fadeRate;
-            timeForOneFade = sprayItem.fadeDelay;
-            mat.SetColor("_BaseColor", sprayItem.paintColor);
-        }
-        else if (gameObject.CompareTag("Footprint"))
+        if (gameObject.CompareTag("Footprint"))
         {
             startDelay = bootItem.baseLifetime;
             fadeRate = bootItem.fadeRate;

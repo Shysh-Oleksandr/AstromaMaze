@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class SpellCooldown : MonoBehaviour
 {
-    [SerializeField] private Image imageCooldown;
+    [SerializeField] private Image imageFiller;
     public Image skillImage, imageFrame;
 
     public bool isCooldown = false;
@@ -14,7 +14,7 @@ public class SpellCooldown : MonoBehaviour
 
     private void Start()
     {
-        imageCooldown.fillAmount = 0;
+        imageFiller.fillAmount = 0;
         imageFrame.enabled = true;
     }
 
@@ -35,7 +35,7 @@ public class SpellCooldown : MonoBehaviour
             AudioManager.Instance.Play("BackTweenWhoosh");
 
             isCooldown = false;
-            imageCooldown.fillAmount = 0f;
+            imageFiller.fillAmount = 0f;
             imageFrame.enabled = true;
 
             var tempColor = skillImage.color;
@@ -44,7 +44,7 @@ public class SpellCooldown : MonoBehaviour
         }
         else
         {
-            imageCooldown.fillAmount = cooldownTimer / cooldownTime;
+            imageFiller.fillAmount = cooldownTimer / cooldownTime;
         }
     }
 

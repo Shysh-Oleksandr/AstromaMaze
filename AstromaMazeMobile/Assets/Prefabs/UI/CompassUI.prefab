@@ -255,7 +255,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff1d19649e95f8046947cbf3e7b5281c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  imageCooldown: {fileID: 217531796}
+  imageFiller: {fileID: 217531796}
   skillImage: {fileID: 2036497462740560972}
   imageFrame: {fileID: 38225687}
   isCooldown: 0
@@ -325,7 +325,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: M
+  m_text: 292 M
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 62e3e01a738fb734980d8b91f6ada44e, type: 2}
   m_sharedMaterial: {fileID: 5588376598468928986, guid: 62e3e01a738fb734980d8b91f6ada44e, type: 2}
@@ -405,6 +405,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 720652220, guid: 079d24d7749a2d449820364aa65e5602, type: 3}
+      propertyPath: compassFrame
+      value: 
+      objectReference: {fileID: 38225687}
     - target: {fileID: 720652220, guid: 079d24d7749a2d449820364aa65e5602, type: 3}
       propertyPath: distanceText
       value: 
