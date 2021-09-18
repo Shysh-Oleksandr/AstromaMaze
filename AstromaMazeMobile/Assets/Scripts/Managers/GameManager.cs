@@ -12,6 +12,7 @@ public class GameManager : GenericSingletonClass<GameManager>
     public int maxLevelReached;
     public int lives = 3;
     public float difficultyCoefficient = 1f;
+    public float cameraSensitivity;
     public bool isGameRunning = true, isBossLevel = false;
 
     private void Start()

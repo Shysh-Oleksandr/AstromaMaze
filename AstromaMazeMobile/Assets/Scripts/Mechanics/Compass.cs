@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Compass : MonoBehaviour
 {
     public Transform mPlayerTransform, exitTransform;
-    public GameObject compassPanel, compassCooldownUI;
+    public GameObject compassCooldownUI;
     public CompassItem compassItem;
     public TextMeshProUGUI distanceText;
     public PlayerController player;
@@ -28,8 +28,7 @@ public class Compass : MonoBehaviour
 
     private void Start()
     {
-        compassPanel.SetActive(true);
-        compassCooldownUI.SetActive(compassItem.canRotateToNorth);
+        compassCooldownUI.SetActive(compassItem.isBought);
         compassFrame.enabled = compassItem.canRotateToNorth;
         distanceText.gameObject.SetActive(compassItem.canShowDistance);
 

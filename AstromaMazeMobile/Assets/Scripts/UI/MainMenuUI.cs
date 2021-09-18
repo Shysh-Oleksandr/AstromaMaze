@@ -115,6 +115,7 @@ public class MainMenuUI : MonoBehaviour
         settingsMenu.difficultyDropdown.value = settingsMenu.difficultyIndex;
         settingsMenu.SetDifficulties(settingsMenu.difficultyIndex);
         settingsMenu.SetVolume(settingsMenu.startVolume);
+        settingsMenu.SetCameraSensitivity(settingsMenu.cameraSensitivity);
 
         upgradeManager.LoadItemsData();
         upgradeManager.UpdateItemStats();

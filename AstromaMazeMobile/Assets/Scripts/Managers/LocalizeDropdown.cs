@@ -51,19 +51,25 @@ namespace Utilities.Localization
 
         private IEnumerator PopulateDropdown()
         {
+            print("Populatedr");
             // Clear any options that might be present
             Dropdown.ClearOptions();
             Dropdown.onValueChanged.RemoveListener(UpdateSelectedOptionIndex);
 
+            print(options.Count);
             for (var i = 0; i < options.Count; ++i)
             {
+                print("Optino");
                 var option = options[i];
                 var localizedText = string.Empty;
                 Sprite localizedSprite = null;
 
+                print("1");
                 // If the option has text, fetch the localized version
                 if (!option.text.IsEmpty)
                 {
+                    print("2");
+
                     var localizedTextHandle = option.text.GetLocalizedStringAsync();
                     yield return localizedTextHandle;
 
@@ -73,8 +79,13 @@ namespace Utilities.Localization
                     if (i == selectedOptionIndex)
                     {
                         UpdateSelectedText(localizedText);
+                        print("3");
+
                     }
+                    print("4");
+
                 }
+                print("5");
 
                 // If the option has a sprite, fetch the localized version
                 if (!option.sprite.IsEmpty)
@@ -91,6 +102,7 @@ namespace Utilities.Localization
                     }
                 }
 
+                print("added option");
                 // Finally add the option with the localized content
                 Dropdown.options.Add(new TMP_Dropdown.OptionData(localizedText, localizedSprite));
             }
@@ -98,12 +110,14 @@ namespace Utilities.Localization
             // Update selected option, to make sure the correct option can be displayed in the caption
             Dropdown.value = selectedOptionIndex;
             Dropdown.onValueChanged.AddListener(UpdateSelectedOptionIndex);
+            print("+ listhent");
         }
 
         public void UpdateDropdownOptions(Locale locale)
         {
             // Updating all options in the dropdown
             // Assumes that this list is the same as the options passed on in the inspector window
+            print("UpdateDrOp");
             for (var i = 0; i < Dropdown.options.Count; ++i)
             {
                 var optionI = i;

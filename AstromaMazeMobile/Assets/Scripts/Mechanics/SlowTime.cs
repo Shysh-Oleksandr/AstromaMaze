@@ -45,7 +45,7 @@ public class SlowTime : MonoBehaviour
         {
             isSlowTimeMode = true;
             slowTimeButton.interactable = false;
-            transform.localScale = Vector3.one * 0.75f;
+            transform.localScale = Vector3.one * 1.33f;
 
             var tempColor = spellCooldown.skillImage.color;
             tempColor.a = 0.8f;
@@ -64,7 +64,7 @@ public class SlowTime : MonoBehaviour
 
         OnSlowTimeEvent?.Invoke();
         bootItem.speed /= speedUpCoefficient;
-        transform.localScale = Vector3.one * 0.6f;
+        transform.localScale = Vector3.one * 1.14f;
         slowTimeButton.interactable = true;
         isSlowTimeMode = false;
     }

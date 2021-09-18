@@ -196,7 +196,7 @@ public class UpgradeManager : MonoBehaviour
             slowTime.upgradingLevel = 1;
             boots.upgradingLevel = 1;
             birdsEyeView.upgradingLevel = 1;
-            compass.upgradingLevel = 0;
+            compass.upgradingLevel = 1;
 
             SaveSystem.SaveItems(this);
             data = SaveSystem.LoadItems();

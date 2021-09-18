@@ -35,11 +35,13 @@ public class SettingsData
 {
     public float volume;
     public int difficultyIndex;
+    public float cameraSensitivity;
 
     public SettingsData(SettingsMenu settingsMenu)
     {
         volume = settingsMenu.startVolume;
         difficultyIndex = settingsMenu.difficultyIndex;
+        cameraSensitivity = settingsMenu.cameraSensitivity;
     }
 }
 

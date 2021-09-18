@@ -13,11 +13,12 @@ public class SettingsMenu : MonoBehaviour
     public Slider volumeSlider;
     public int difficultyIndex = 1;
     public float startVolume = 1;
+    public float cameraSensitivity;
 
     private void Start()
     {
         difficultyDropdown.value = difficultyIndex;
-
+        cameraSensitivity = GameManager.Instance.cameraSensitivity;
         SetDifficulties(difficultyIndex);
     }
 
@@ -39,6 +40,13 @@ public class SettingsMenu : MonoBehaviour
         };
     }
 
+    public void SetCameraSensitivity(float sensitivity)
+    {
+        cameraSensitivity = sensitivity;
+
+        GameManager.Instance.cameraSensitivity = sensitivity;
+    }
+
     public void SetVolume(float volume)
     {
         startVolume = volume;
@@ -58,12 +66,14 @@ public class SettingsMenu : MonoBehaviour
         while(data == null)
         {
             startVolume = 1;
+            cameraSensitivity = 8;
 
             SaveSystem.SaveSettings(this);
             data = SaveSystem.LoadSettings();
         }
         startVolume = data.volume;
         difficultyIndex = data.difficultyIndex;
+        GameManager.Instance.cameraSensitivity = data.cameraSensitivity;
     }
 
     private void OnApplicationQuit()

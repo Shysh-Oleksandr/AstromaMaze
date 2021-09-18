@@ -6,7 +6,8 @@ public class MouseLook : MonoBehaviour
     // References
     [SerializeField] private Transform playerTransform;
     // Player settings
-    [SerializeField] private float cameraSensitivity;
+
+    [Range(1, 20)] [SerializeField] private float cameraSensitivity;
 
     // Touch detection
     private int rightFingerId;
@@ -20,6 +21,7 @@ public class MouseLook : MonoBehaviour
     private void Start()
     {
         // id = -1 means the finger is not being tracked
+        cameraSensitivity = GameManager.Instance.cameraSensitivity;
         rightFingerId = -1;
 
         // only calculate once
