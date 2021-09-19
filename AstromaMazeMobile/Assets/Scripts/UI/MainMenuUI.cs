@@ -71,7 +71,7 @@ public class MainMenuUI : MonoBehaviour
     [SerializeField] private SettingsMenu settingsMenu;
     public AudioMixer mainMixer;
     public Button backButtonOption, backButtonShop;
-    public Slider volumeSlider;
+    public Slider volumeSlider, sensitiveSlider;
     private Vector3 optionsMenuStartPos, shopMenuStartPos;
 
     [Header("Tabs arrays")]
@@ -112,6 +112,7 @@ public class MainMenuUI : MonoBehaviour
     {
         settingsMenu.LoadSettingsData();
         volumeSlider.value = settingsMenu.startVolume;
+        sensitiveSlider.value = settingsMenu.cameraSensitivity;
         settingsMenu.difficultyDropdown.value = settingsMenu.difficultyIndex;
         settingsMenu.SetDifficulties(settingsMenu.difficultyIndex);
         settingsMenu.SetVolume(settingsMenu.startVolume);

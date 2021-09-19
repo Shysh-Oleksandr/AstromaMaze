@@ -7,7 +7,7 @@ public class MouseLook : MonoBehaviour
     [SerializeField] private Transform playerTransform;
     // Player settings
 
-    [Range(1, 20)] [SerializeField] private float cameraSensitivity;
+    [Range(1, 15)] [SerializeField] private float cameraSensitivity;
 
     // Touch detection
     private int rightFingerId;

@@ -31,6 +31,7 @@ public class UIManager : MonoBehaviour
     public int levelCoins = 0, totalCoins;
 
     private Image starsPauseBg;
+    public Image iceFrame;
     [HideInInspector]
     public Color passedCheckpointColor = new Color32(25, 255, 0, 103);
 
@@ -128,11 +129,11 @@ public class UIManager : MonoBehaviour
         AudioManager.Instance.Play("Heartbeat");
         timerText.fontStyle = FontStyles.Bold;
         timerText.color = color;
-        timerText.gameObject.LeanScale(new Vector2(1.4f, 1.4f), slowTime.isSlowTimeMode ? 0.5f * slowTimeItem.slowCoefficient : 0.5f )
+        timerText.gameObject.LeanScale(new Vector2(3.22f, 3.22f), slowTime.isSlowTimeMode ? 0.5f * slowTimeItem.slowCoefficient : 0.5f )
             .setEaseInOutBack()
             .setOnComplete(() =>
             {
-                timerText.gameObject.LeanScale(new Vector2(1f, 1f), slowTime.isSlowTimeMode ? 0.5f * slowTimeItem.slowCoefficient : 0.5f)
+                timerText.gameObject.LeanScale(new Vector2(2.3f, 2.3f), slowTime.isSlowTimeMode ? 0.5f * slowTimeItem.slowCoefficient : 0.5f)
                     .setEaseInOutBack()
                     .setOnComplete(() =>
                     {

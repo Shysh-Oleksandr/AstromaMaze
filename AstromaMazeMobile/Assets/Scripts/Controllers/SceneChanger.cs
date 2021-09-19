@@ -14,7 +14,7 @@ public class SceneChanger : GenericSingletonClass<SceneChanger>
     public Image starLoadingBg, loadingSliderImage, blackFader;
 
     private int levelToLoad;
-    private AudioSource fadingSource;
+    private AudioSource fadingSource, footstepSource;
 
     private void Start()
     {
@@ -24,6 +24,13 @@ public class SceneChanger : GenericSingletonClass<SceneChanger>
             {
                 fadingSource = s.source;
             }
+
+            if (s.name == "Footstep")
+            {
+                footstepSource = s.source;
+            }
+
+
         }
     }
 
@@ -64,6 +71,7 @@ public class SceneChanger : GenericSingletonClass<SceneChanger>
             animator.SetTrigger("FadeOut");
         }
         Instance.isLoading = true;
+        footstepSource.Stop();
         SetRandomHue(starLoadingBg, true); // Changing loading bg hue and size.
         SetRandomHue(loadingSliderImage, false); // Changing loading bar hue.
     }
@@ -116,8 +124,8 @@ public class SceneChanger : GenericSingletonClass<SceneChanger>
 
         if (changeScale)
         {
-            float xScale = Random.Range(1.0f, 2.0f);
-            float yScale = Random.Range(1.0f, 2.0f);
+            float xScale = Random.Range(1.0f, 1.8f);
+            float yScale = Random.Range(1.0f, 1.8f);
             int flip = Random.Range(0, 2);
             Vector3 scale = image.gameObject.transform.localScale;
 

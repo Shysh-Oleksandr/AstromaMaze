@@ -13,7 +13,7 @@ public class SettingsMenu : MonoBehaviour
     public Slider volumeSlider;
     public int difficultyIndex = 1;
     public float startVolume = 1;
-    public float cameraSensitivity;
+    public float cameraSensitivity = 7;
 
     private void Start()
     {
@@ -66,13 +66,14 @@ public class SettingsMenu : MonoBehaviour
         while(data == null)
         {
             startVolume = 1;
-            cameraSensitivity = 8;
+            cameraSensitivity = 7;
 
             SaveSystem.SaveSettings(this);
             data = SaveSystem.LoadSettings();
         }
         startVolume = data.volume;
         difficultyIndex = data.difficultyIndex;
+        cameraSensitivity = data.cameraSensitivity;
         GameManager.Instance.cameraSensitivity = data.cameraSensitivity;
     }
 

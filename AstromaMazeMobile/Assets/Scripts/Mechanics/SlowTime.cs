@@ -43,15 +43,19 @@ public class SlowTime : MonoBehaviour
     {
         if (!spellCooldown.isCooldown && GameManager.Instance.isGameRunning)
         {
+            AudioManager.Instance.Play("TimeDilation");
+
             isSlowTimeMode = true;
             slowTimeButton.interactable = false;
-            transform.localScale = Vector3.one * 1.33f;
+            transform.localScale = Vector3.one * 1.54f;
 
             var tempColor = spellCooldown.skillImage.color;
             tempColor.a = 0.8f;
             spellCooldown.skillImage.color = tempColor;
 
             bootItem.speed *= speedUpCoefficient;
+
+            UIManager.Instance.iceFrame.enabled = true;
 
             StartCoroutine(SlowDownTimeCoroutine());
         }
@@ -64,7 +68,8 @@ public class SlowTime : MonoBehaviour
 
         OnSlowTimeEvent?.Invoke();
         bootItem.speed /= speedUpCoefficient;
-        transform.localScale = Vector3.one * 1.14f;
+        transform.localScale = Vector3.one * 1.32f;
+        UIManager.Instance.iceFrame.enabled = false;
         slowTimeButton.interactable = true;
         isSlowTimeMode = false;
     }

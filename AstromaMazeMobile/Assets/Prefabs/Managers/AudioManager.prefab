@@ -76,13 +76,13 @@ MonoBehaviour:
     randomPitch: 0.2
     loop: 0
     source: {fileID: 0}
-  - name: Spray
-    clip: {fileID: 8300000, guid: c292b97442b1cee489603c502cd03672, type: 3}
-    volume: 0.7
+  - name: TimeDilation
+    clip: {fileID: 8300000, guid: 1c0e7b2c6e71b654e9c8619dcf0f3be9, type: 3}
+    volume: 0.903
     pitch: 1
-    randomVolume: 0.2
-    randomPitch: 0.2
-    loop: 1
+    randomVolume: 0.339
+    randomPitch: 0.333
+    loop: 0
     source: {fileID: 0}
   - name: BirdsUp
     clip: {fileID: 8300000, guid: 910842d42febfe2468c1d57fe84853b5, type: 3}
@@ -110,7 +110,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Whoosh
     clip: {fileID: 8300000, guid: b55ff3978dea3744db2b19cd4470d552, type: 3}
-    volume: 0.6
+    volume: 0.604
     pitch: 1
     randomVolume: 0.5
     randomPitch: 0.5
@@ -164,3 +164,20 @@ MonoBehaviour:
     randomPitch: 0.5
     loop: 0
     source: {fileID: 0}
+  - name: Death
+    clip: {fileID: 8300000, guid: 7c1a11c8687ff2e408c4ce8c2fc42e4c, type: 3}
+    volume: 1
+    pitch: 1
+    randomVolume: 0.5
+    randomPitch: 0.5
+    loop: 0
+    source: {fileID: 0}
+  - name: Checkpoint
+    clip: {fileID: 8300000, guid: 0c3112d479138f248bc89c08ba86ae30, type: 3}
+    volume: 1
+    pitch: 1
+    randomVolume: 0.5
+    randomPitch: 0.5
+    loop: 0
+    source: {fileID: 0}
+  mainMixer: {fileID: 24300002, guid: 2aa1accbb7c3d124cb716fecc5af67c8, type: 2}

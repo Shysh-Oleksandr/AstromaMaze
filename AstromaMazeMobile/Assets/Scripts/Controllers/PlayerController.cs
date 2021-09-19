@@ -20,11 +20,11 @@ public class PlayerController : MonoBehaviour
 
     public delegate void OnCoinTake(int coins);
     public event OnCoinTake OnCoinTakeEvent;
-    
+
     public delegate void OnMovementChanged();
     public event OnMovementChanged OnMovementChangedEvent;
 
-    public Checkpoint lastCheckpoint; 
+    public Checkpoint lastCheckpoint;
     public Vector3 lastCheckpointPosition;
     private Vector3 velocity;
     private CharacterController controller;
@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (!isReplacing && !SceneChanger.Instance.isLoading)
+        if (!isReplacing && (!SceneChanger.Instance.isLoading || GameManager.Instance.currentLevel == 0))
         {
             PlayerMovement();
         }

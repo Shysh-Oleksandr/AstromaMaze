@@ -141,7 +141,7 @@ public class Tweening : MonoBehaviour
                 pauseMenuElementsStartPos[i] = element.transform.position;
             }
 
-            element.transform.localPosition = new Vector2(Screen.width, -Screen.height / 2);
+            element.transform.localPosition = new Vector2(Screen.width * 3, -Screen.height * 3);
             element.SetActive(true);
 
             if (startDelay)
@@ -220,7 +220,7 @@ public class Tweening : MonoBehaviour
         bg.LeanAlpha(1f, 1f).setIgnoreTimeScale(true);
 
         menu.gameObject.SetActive(true);
-        menu.transform.localPosition = new Vector2(0, -Screen.height);
+        menu.transform.localPosition = new Vector2(0, -Screen.height * 2);
         AudioManager.Instance.Play("Whoosh");
         menu.LeanMoveLocalY(0, 1f).setEaseOutBack()
             .setIgnoreTimeScale(true)
@@ -238,7 +238,7 @@ public class Tweening : MonoBehaviour
             LeanTween.cancel(verticalId);
         }
 
-        go.gameObject.transform.localPosition = new Vector2(0, -Screen.height / 2);
+        go.gameObject.transform.localPosition = new Vector2(0, -Screen.height);
 
         go.gameObject.SetActive(true);
         verticalId = go.gameObject.LeanMoveLocalY(0, duration).setEaseOutCubic()
