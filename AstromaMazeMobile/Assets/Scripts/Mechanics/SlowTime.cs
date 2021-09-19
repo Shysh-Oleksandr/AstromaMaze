@@ -66,6 +66,7 @@ public class SlowTime : MonoBehaviour
     {        
         yield return new WaitForSeconds(duration);
 
+        AudioManager.Instance.Play("Whoosh");
         OnSlowTimeEvent?.Invoke();
         bootItem.speed /= speedUpCoefficient;
         transform.localScale = Vector3.one * 1.32f;

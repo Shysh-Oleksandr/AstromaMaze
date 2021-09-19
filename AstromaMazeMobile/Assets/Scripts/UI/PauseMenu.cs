@@ -6,7 +6,6 @@ using UnityEngine.Localization.Settings;
 public class PauseMenu : MonoBehaviour
 {
     public static bool isPaused;
-    public Camera mainCam;
 
     private bool isMenuShown;
 

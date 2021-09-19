@@ -15,7 +15,7 @@ public struct CheckpointArrows
 
 public class UIManager : MonoBehaviour
 {
-    public TextMeshProUGUI sprayText, timerText, coinsText, levelText, surpiseText;
+    public TextMeshProUGUI timerText, coinsText, levelText, surpiseText;
     public Image[] heartIcons;
     public GameObject victoryMenu, replayMenu;
     public GameObject pauseMenu;
