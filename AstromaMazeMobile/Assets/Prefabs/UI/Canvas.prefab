@@ -72,7 +72,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 1
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -370,6 +370,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2491492476369102219}
     m_Modifications:
+    - target: {fileID: 5341394117422560517, guid: f4316d84e64e8c14685ff0ec339a62ec, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f77eea8d7c323034da88550c630d0d64, type: 3}
     - target: {fileID: 5341394117699007686, guid: f4316d84e64e8c14685ff0ec339a62ec, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -984,6 +988,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5303604019685882824, guid: 5d6dc268426164049823dc3e85cb8e58, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 2501329956124481976, guid: f6e1f3f797607574d9193c297eee9cbb, type: 3}
+    - target: {fileID: 5303613213792046896, guid: 5d6dc268426164049823dc3e85cb8e58, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -4524607120068843892, guid: f6e1f3f797607574d9193c297eee9cbb, type: 3}
     - target: {fileID: 5410565442068621926, guid: 5d6dc268426164049823dc3e85cb8e58, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1727,6 +1739,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2491492476369102219}
     m_Modifications:
+    - target: {fileID: 300263766061606843, guid: b3187beaa30691345a07ab1be6b9a3fd, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f77eea8d7c323034da88550c630d0d64, type: 3}
     - target: {fileID: 4560952566840405425, guid: b3187beaa30691345a07ab1be6b9a3fd, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

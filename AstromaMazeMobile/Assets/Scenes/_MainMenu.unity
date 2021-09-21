@@ -4264,10 +4264,10 @@ MonoBehaviour:
       - 24
     - statName: Speed-up boost
       stat:
-      - 1.25
+      - 1
+      - 1.15
+      - 1.3
       - 1.5
-      - 2
-      - 2.5
   - item: {fileID: 11400000, guid: 6baed95bd604077499b8fe1e30a4123b, type: 2}
     upgradeButton: {fileID: 2027520653}
     maxLevelText: {fileID: 1494884255}
@@ -9182,8 +9182,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 13.0716}
-  m_SizeDelta: {x: -0.5, y: 26.1433}
+  m_AnchoredPosition: {x: 34.177834, y: 14.4762}
+  m_SizeDelta: {x: 67.8557, y: 28.9524}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1198941124
 MonoBehaviour:
@@ -9232,12 +9232,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 21.4
+  m_fontSize: 24.35
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 24
+  m_fontSizeMax: 32
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
@@ -9268,7 +9268,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: -0.7628526, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -9290,7 +9290,7 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:9a5f0abf32245f4499b2c00b174f64b3
     m_TableEntryReference:
-      m_KeyId: 14212798701568
+      m_KeyId: 5773073069465600
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 1
@@ -9880,7 +9880,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1.25/1.5/2/2.5
+  m_text: 1/1.15/1.3/1.5
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a182094145cf80248a112fe0923d4cfe, type: 2}
   m_sharedMaterial: {fileID: 1860952767734162440, guid: a182094145cf80248a112fe0923d4cfe, type: 2}
@@ -14440,8 +14440,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1.6600342, y: 15.2}
-  m_SizeDelta: {x: -3.33, y: 24.7092}
+  m_AnchoredPosition: {x: 38.725, y: 15.2}
+  m_SizeDelta: {x: 70.8, y: 24.7092}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1860581343
 MonoBehaviour:
@@ -20766,6 +20766,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4873480007022224115, guid: 6e8a4d4129fdc6b4abe62d86a475c43d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4873480007113020616, guid: 6e8a4d4129fdc6b4abe62d86a475c43d, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -20852,11 +20856,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4873480007113020617, guid: 6e8a4d4129fdc6b4abe62d86a475c43d, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
-      value: 1
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 4873480007113020621, guid: 6e8a4d4129fdc6b4abe62d86a475c43d, type: 3}
       propertyPath: m_Name
       value: SceneChangerCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4873480007233897875, guid: 6e8a4d4129fdc6b4abe62d86a475c43d, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4873480007233897875, guid: 6e8a4d4129fdc6b4abe62d86a475c43d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e8a4d4129fdc6b4abe62d86a475c43d, type: 3}
@@ -21032,7 +21044,7 @@ MonoBehaviour:
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 21
+  m_fontSizeMax: 32
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
