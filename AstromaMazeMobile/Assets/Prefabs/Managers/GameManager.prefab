@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1176769217852819785}
   - component: {fileID: 1176769217852819786}
+  - component: {fileID: 1176769216964145581}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -45,6 +46,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   State: 0
   totalCoins: 0
+  currentLevel: 0
+  maxLevelReached: 1
+  lives: 3
   difficultyCoefficient: 1
-  maxLevelReached: 3
+  cameraSensitivity: 0
   isGameRunning: 1
+  isBossLevel: 0
+--- !u!114 &1176769216964145581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1176769217852819787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d9faeb8ffb12c54494c5a8a32416d6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _testMode: 1

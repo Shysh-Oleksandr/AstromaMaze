@@ -2631,7 +2631,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 22/18/15/12
+  m_text: 25/21/16/12
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a182094145cf80248a112fe0923d4cfe, type: 2}
   m_sharedMaterial: {fileID: 1860952767734162440, guid: a182094145cf80248a112fe0923d4cfe, type: 2}
@@ -4300,9 +4300,9 @@ MonoBehaviour:
     itemStats:
     - statName: Cooldown
       stat:
-      - 22
-      - 18
-      - 15
+      - 25
+      - 21
+      - 16
       - 12
     - statName: Duration
       stat:
@@ -17253,6 +17253,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 57983665398757955, guid: b003fa6e4d5c7ec43b1438ab9d54c579, type: 3}
+      propertyPath: sounds.Array.data[9].randomVolume
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 57983665398757964, guid: b003fa6e4d5c7ec43b1438ab9d54c579, type: 3}
       propertyPath: m_Name
       value: AudioManager
@@ -17430,10 +17434,6 @@ PrefabInstance:
     - target: {fileID: 1176769217852819785, guid: 51db92235ffa60942820a4a24e31c749, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1176769217852819786, guid: 51db92235ffa60942820a4a24e31c749, type: 3}
-      propertyPath: maxLevelReached
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1176769217852819787, guid: 51db92235ffa60942820a4a24e31c749, type: 3}
       propertyPath: m_Name

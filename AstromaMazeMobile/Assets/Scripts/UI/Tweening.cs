@@ -227,6 +227,13 @@ public class Tweening : MonoBehaviour
             .setOnComplete(() =>
             {
                 TweenArray(menuElements, 0.5f, 0.2f, true);
+                AdManager.numToNextAd++;
+                print(AdManager.numToNextAd);
+                if (AdManager.numToNextAd >= GameManager.Instance.gamesToShowAd)
+                {
+                    AdManager.numToNextAd = 0;
+                    AdManager.PlayAd(AdManager._video);
+                }
             })
             .delay = 0.7f;
     }

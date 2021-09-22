@@ -288,6 +288,18 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -1.25
       objectReference: {fileID: 0}
+    - target: {fileID: 7586201912365891312, guid: 5e7292c128dc4804b88ca4b4de7b66fe, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586201912365891312, guid: 5e7292c128dc4804b88ca4b4de7b66fe, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.434
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586201912365891312, guid: 5e7292c128dc4804b88ca4b4de7b66fe, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -12.17
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e7292c128dc4804b88ca4b4de7b66fe, type: 3}
 --- !u!4 &29101037 stripped
@@ -10737,6 +10749,18 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 7948246380306836090}
+    - target: {fileID: 5327476032531334629, guid: 638eed2465a03f649bba6eba695babc7, type: 3}
+      propertyPath: timeLeft
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5327476032531334629, guid: 638eed2465a03f649bba6eba695babc7, type: 3}
+      propertyPath: submazeTimers.Array.data[0]
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5327476032531334629, guid: 638eed2465a03f649bba6eba695babc7, type: 3}
+      propertyPath: submazeTimers.Array.data[1]
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 5327476032618490695, guid: 638eed2465a03f649bba6eba695babc7, type: 3}
       propertyPath: m_Pivot.x
       value: 0

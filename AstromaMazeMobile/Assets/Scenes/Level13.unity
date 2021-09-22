@@ -4575,6 +4575,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97e5064cfd3553f4da86560fcec80bea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1479331161 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7713373404618261172, guid: c759482775c22004aa0b1abe9dd64170, type: 3}
+  m_PrefabInstance: {fileID: 1479331158}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b522030e6b67fb4ea849be5450db1f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1482348463 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6609471152590010372, guid: c9a0a5e2e4a19234d97b8540ee176ea5, type: 3}
@@ -6586,6 +6597,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7948246380019376529, guid: 3e45e983eddd49e4ebf519753c621d46, type: 3}
+      propertyPath: joystick
+      value: 
+      objectReference: {fileID: 1479331161}
     - target: {fileID: 7948246380019376530, guid: 3e45e983eddd49e4ebf519753c621d46, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -6596,7 +6611,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7948246380019376530, guid: 3e45e983eddd49e4ebf519753c621d46, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.5335593
+      value: -0.41
       objectReference: {fileID: 0}
     - target: {fileID: 7948246380019376530, guid: 3e45e983eddd49e4ebf519753c621d46, type: 3}
       propertyPath: m_LocalPosition.z

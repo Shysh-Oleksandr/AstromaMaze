@@ -15,6 +15,9 @@ public class GameManager : GenericSingletonClass<GameManager>
     public float cameraSensitivity;
     public bool isGameRunning = true, isBossLevel = false;
 
+    public readonly int gamesToShowAd = 3;
+
+
     private void Start()
     {
         isBossLevel = false;
@@ -111,12 +114,6 @@ public class GameManager : GenericSingletonClass<GameManager>
         }
     }
 
-    public void QuitGame()
-    {
-        AudioManager.Instance.Play("Click");
-        Application.Quit();
-    }
-
     private void LoadGameData()
     {
         GameData data = SaveSystem.LoadGame();
@@ -134,6 +131,8 @@ public class GameManager : GenericSingletonClass<GameManager>
 
     private void OnApplicationQuit()
     {
+        PlayerPrefs.SetInt("numToAd", AdManager.numToNextAd);
+
         SaveSystem.SaveGame(this);
     }
 }
