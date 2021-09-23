@@ -31,13 +31,11 @@ public class Compass : MonoBehaviour
         compassCooldownUI.SetActive(compassItem.isBought);
         if (compassItem.canRotateToNorth)
         {
-            print("Frame enabled");
-            compassFrame.enabled = true;
+            compassFrame.gameObject.SetActive(true);
         }
         else
         {
-            print("frame disabled");
-            compassFrame.enabled = false    ;
+            compassFrame.gameObject.SetActive(false);
         }
         distanceText.gameObject.SetActive(compassItem.canShowDistance);
 

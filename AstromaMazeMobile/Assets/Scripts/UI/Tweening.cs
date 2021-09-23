@@ -228,7 +228,6 @@ public class Tweening : MonoBehaviour
             {
                 TweenArray(menuElements, 0.5f, 0.2f, true);
                 AdManager.numToNextAd++;
-                print(AdManager.numToNextAd);
                 if (AdManager.numToNextAd >= GameManager.Instance.gamesToShowAd)
                 {
                     AdManager.numToNextAd = 0;
