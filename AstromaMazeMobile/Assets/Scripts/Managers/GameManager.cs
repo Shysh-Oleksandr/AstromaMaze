@@ -15,7 +15,7 @@ public class GameManager : GenericSingletonClass<GameManager>
     public float cameraSensitivity;
     public bool isGameRunning = true, isBossLevel = false;
 
-    public readonly int gamesToShowAd = 3;
+    [HideInInspector] public readonly int gamesToShowAd = 2;
 
 
     private void Start()

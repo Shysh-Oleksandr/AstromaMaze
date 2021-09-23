@@ -29,7 +29,16 @@ public class Compass : MonoBehaviour
     private void Start()
     {
         compassCooldownUI.SetActive(compassItem.isBought);
-        compassFrame.enabled = compassItem.canRotateToNorth;
+        if (compassItem.canRotateToNorth)
+        {
+            print("Frame enabled");
+            compassFrame.enabled = true;
+        }
+        else
+        {
+            print("frame disabled");
+            compassFrame.enabled = false    ;
+        }
         distanceText.gameObject.SetActive(compassItem.canShowDistance);
 
         spellCooldown.cooldownTime = compassItem.compassCooldown;
