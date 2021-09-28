@@ -198,7 +198,9 @@ public class Tweening : MonoBehaviour
         if (scaleIn)
         {
             gameObject.transform.localScale = Vector2.zero;
-            pauseId = gameObject.transform.LeanScale(Vector2.one, tweenDuration).setEaseOutExpo().setIgnoreTimeScale(true)
+
+            pauseId = gameObject.transform.LeanScale(Vector2.one * 1.05f, tweenDuration).setEaseOutExpo().setIgnoreTimeScale(true)
+
                 .setOnComplete(() => TweenPauseMenuElements(UIManager.Instance.pauseMenuElements, 0.15f, 0.15f, true)).id;
             LTDescr descr = LeanTween.descr(pauseId);
             descr.delay = delay;
