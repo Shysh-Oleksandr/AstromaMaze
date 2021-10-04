@@ -14,4 +14,5 @@ To make things easier, you can use the following **features**:
 
 **So, are you ready to help a lonely astronaut?**
 
-Download it [here](https://frank-melward.itch.io/astroma-maze).
+Download PC version [here](https://frank-melward.itch.io/astroma-maze) 
+or Mobile version [here](https://play.google.com/store/apps/details?id=com.MelwardGames.AstromaMaze).
