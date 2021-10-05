@@ -1,7 +1,7 @@
 [![Logo](https://img.itch.zone/aW1nLzY5ODQxODMuanBn/original/sr5t9p.jpg)](https://frank-melward.itch.io/astroma-maze)
 
 # **Astroma Maze**
-Space and puzzles. Combine them to the **Astroma Maze**.
+Space and puzzles. Combine them to get the **Astroma Maze**.
 
 Your task is to help a lonely astronaut stuck on an uninhabited planet to get home. To do this, you must get out of the maze within a certain time, where a spaceship will be waiting for you at the exit. 
 
